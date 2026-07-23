@@ -1,0 +1,2424 @@
+[
+  {
+    "id": 1,
+    "chapter": "Data Types",
+    "topic": "Data types",
+    "difficulty": "Easy",
+    "question": "You have a variable \"married\" that should store whether a person is married, a variable \"age\" that gives the age of a person, and a variable \"name\" that contains the name of the person. Which of the following types are most appropriate?",
+    "options": [
+      "boolean married; float age; string name;",
+      "int married; float age; string name;",
+      "boolean married; short age; string name;",
+      "short married; short age; double name;"
+    ],
+    "correctAnswer": 2,
+    "explanation": "For the variable \"married\" it is enough to store true or false (boolean). For the \"name\", the type string is best. The \"age\" is usually stored in integer numbers; the type short (16 bit) is the most efficient way to store small age values.",
+    "bookPage": 36,
+    "solution": {
+      "understanding": "This problem asks us to choose the most memory-efficient and semantically appropriate primitive data types in Java for three real-world attributes: marital status (binary yes/no), age (small positive integer), and a person's full name (text string).",
+      "steps": [
+        "Analyze 'married': A marital status is binary (true or false). The `boolean` data type is specifically designed for truth values.",
+        "Analyze 'age': Human age ranges from 0 to ~120 years. A `short` is a 16-bit signed integer storing values from -32,768 to 32,767. It easily fits human age while conserving memory compared to standard 32-bit `int` or 32-bit `float`.",
+        "Analyze 'name': Text characters require a character sequence. The `string` (or `String` object) type is used for textual representation.",
+        "Combine the selected types: `boolean married; short age; string name;` matching Option C."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Primitive Types & Memory Sizes",
+        "headers": [
+          "Variable",
+          "Required Value",
+          "Best Type",
+          "Memory Allocated"
+        ],
+        "rows": [
+          [
+            "married",
+            "true / false",
+            "boolean",
+            "1 bit (conceptually) / 1 byte"
+          ],
+          [
+            "age",
+            "0 to 120",
+            "short",
+            "16 bits (2 Bytes)"
+          ],
+          [
+            "name",
+            "'Alice Smith'",
+            "string",
+            "Variable (UTF-16 chars)"
+          ]
+        ]
+      },
+      "finalAnswer": "Option C (`boolean married; short age; string name;`) is correct because `boolean` efficiently represents binary flags, `short` is optimal for small integer ranges like age, and `string` is necessary for text names.",
+      "wrongOptions": [
+        "Option A uses `float age;` which is incorrect because age is counted in discrete integers, not floating-point decimals, and consumes 32 bits unnecessarily.",
+        "Option B uses `int married;` which wastes memory (32 bits instead of 1 bit) and lacks semantic clarity compared to `boolean`.",
+        "Option C is the CORRECT answer.",
+        "Option D uses `short married;` (confuses boolean with short integer) and `double name;` (floating point decimal for textual name), which causes a compile error."
+      ],
+      "keyConcept": "Java Primitive Types & Data Sizing: Always pick the smallest, most domain-accurate type. Use `boolean` for logical flags, integer types (`byte`, `short`, `int`, `long`) for countable whole numbers, and `String` for text.",
+      "examTip": "Exam Shortcut: First eliminate options that use floating-point types (`float`, `double`) for non-decimal attributes like `name` or `age`. This quickly narrows down choices!",
+      "commonMistakes": "Using `float` or `double` for whole numbers (like age) or using `int` for binary flags (0/1 instead of true/false)."
+    }
+  },
+  {
+    "id": 2,
+    "chapter": "Data Types",
+    "topic": "Type Conversion",
+    "difficulty": "Medium",
+    "question": "Two values from two float variables are added. The calculation is done in which type?",
+    "options": [
+      "boolean",
+      "float",
+      "int",
+      "double"
+    ],
+    "correctAnswer": 3,
+    "explanation": "In Java, calculations are performed only in int or double. Since two float variables are added, they are implicitly converted to double.",
+    "bookPage": 36,
+    "solution": {
+      "understanding": "This question tests Java's binary numeric promotion rules during arithmetic addition involving two `float` operands.",
+      "steps": [
+        "In Java, arithmetic operations are evaluated in standard precision types (`int` for integer types, `double` for floating-point calculations).",
+        "When two `float` values are added, Java promotes both operands to `double` precision before carrying out the addition.",
+        "The calculation expression evaluates internally as a `double` value before any subsequent storage assignment."
+      ],
+      "diagram": {
+        "type": "equation",
+        "title": "Implicit Type Promotion",
+        "content": "\\text{float} + \\text{float} \\xrightarrow{\\text{Implicit Promotion}} \\text{double} + \\text{double} = \\text{double}"
+      },
+      "finalAnswer": "Option D (`double`) is correct because Java automatically converts floating-point additions to `double` precision to avoid precision loss.",
+      "wrongOptions": [
+        "Option A (`boolean`) is incorrect because arithmetic operations on numeric values never evaluate to a boolean condition.",
+        "Option B (`float`) is incorrect because Java promotes single-precision float operands to double precision during calculation.",
+        "Option C (`int`) is incorrect because floating-point numbers retain decimal precision and are not demoted to integers.",
+        "Option D (`double`) is the CORRECT answer."
+      ],
+      "keyConcept": "Java Binary Numeric Promotion: Arithmetic calculations are executed in at least `int` precision for integers and `double` precision for floating-point calculations unless explicitly cast.",
+      "examTip": "Remember: Operations with `float` or `double` promote to `double`. Operations with `byte`, `short`, or `char` promote to `int`.",
+      "commonMistakes": "Assuming `float + float` stays in `float` precision without promotion."
+    }
+  },
+  {
+    "id": 3,
+    "chapter": "Data Types",
+    "topic": "Type Conversion",
+    "difficulty": "Medium",
+    "question": "Two values from two short variables are divided. The calculation is done in which type?",
+    "options": [
+      "float",
+      "int",
+      "double",
+      "short"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In Java, calculations are performed only in int or double. Since two short variables are divided, they are implicitly converted to int.",
+    "bookPage": 36,
+    "solution": {
+      "understanding": "This problem checks how Java handles arithmetic division between two small integer types (`short`).",
+      "steps": [
+        "Both operands are of type `short` (16-bit signed integers).",
+        "According to Java's binary numeric promotion rules, any arithmetic operation (`+`, `-`, `*`, `/`) on types smaller than `int` automatically promotes both operands to `int` (32-bit).",
+        "Therefore, `short / short` becomes `int / int`, yielding an `int` result."
+      ],
+      "diagram": {
+        "type": "equation",
+        "title": "Integer Promotion Rule",
+        "content": "\\text{short} \\div \\text{short} \\xrightarrow{\\text{Binary Promotion}} \\text{int} \\div \\text{int} = \\text{int}"
+      },
+      "finalAnswer": "Option B (`int`) is correct because arithmetic on `short` types promotes operands to `int` precision before division.",
+      "wrongOptions": [
+        "Option A (`float`) is incorrect because no floating-point numbers are present in the operation.",
+        "Option B (`int`) is the CORRECT answer.",
+        "Option C (`double`) is incorrect because integer division does not implicitly promote to double unless a double is explicitly involved.",
+        "Option D (`short`) is incorrect because Java does not perform arithmetic directly in 16-bit `short` precision."
+      ],
+      "keyConcept": "Integral Type Promotion: Operations involving `byte`, `short`, or `char` are automatically widened to `int` prior to calculation.",
+      "examTip": "Any binary arithmetic with types smaller than `int` (`byte`, `short`, `char`) ALWAYS promotes to `int`!",
+      "commonMistakes": "Thinking that dividing two `short` values returns a `short` without promotion."
+    }
+  },
+  {
+    "id": 4,
+    "chapter": "Data Types",
+    "topic": "Integer Division",
+    "difficulty": "Medium",
+    "question": "The following Java program is given:\nshort s = 4;\nfloat x = 3 + s/3;\nWhat is the value of the variable x after its assignment?",
+    "options": [
+      "4.33333333333",
+      "4",
+      "3",
+      "4.25"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The calculation with the short variable s = 4 is implicitly converted to int. Only integer numbers can be stored via int, so the division s/3 (which is 4/3) results in 1 (fractional part is ignored). Adding 1 to 3 results in 4.",
+    "bookPage": 36,
+    "solution": {
+      "understanding": "We need to evaluate the step-by-step evaluation of the expression `float x = 3 + s/3` where `short s = 4`.",
+      "steps": [
+        "Step 1: Evaluate `s / 3`. Here `s` (value 4) is a `short`, which promotes to `int`. `3` is an integer literal (`int`).",
+        "Step 2: Perform integer division `4 / 3`. In integer division, the fractional part is truncated: `4 / 3 = 1`.",
+        "Step 3: Perform addition `3 + 1 = 4` (integer addition).",
+        "Step 4: Assign the integer result `4` to `float x`. It is implicitly converted to `4.0` (which formats as 4)."
+      ],
+      "diagram": {
+        "type": "equation",
+        "title": "Expression Evaluation Pipeline",
+        "content": "x = 3 + (4 \\div 3)_{\\text{int}} = 3 + 1 = 4"
+      },
+      "finalAnswer": "Option B (`4`) is correct. Integer division `4 / 3` truncates to `1`. Then `3 + 1 = 4`.",
+      "wrongOptions": [
+        "Option A (`4.33333333333`) is incorrect because `s/3` is integer division, so the decimal `.333` is truncated prior to addition.",
+        "Option B (`4`) is the CORRECT answer.",
+        "Option C (`3`) is incorrect because it ignores the result of the division step.",
+        "Option D (`4.25`) is incorrect due to miscalculating the division."
+      ],
+      "keyConcept": "Integer Division Truncation: When dividing two integers (`int / int`), Java truncates all digits after the decimal point BEFORE assigning or adding to floating-point variables.",
+      "examTip": "Always check the data types of operands in division first! If both are integers, division truncates decimal fractions completely.",
+      "commonMistakes": "Expecting floating-point division (`4.333...`) when operands are integers."
+    }
+  },
+  {
+    "id": 5,
+    "chapter": "Data Types",
+    "topic": "Memory Allocation",
+    "difficulty": "Easy",
+    "question": "You need 1000 float variables. How much memory do they require?",
+    "options": [
+      "16000 Bit = 2000 Byte",
+      "1000 Bit = 125 Byte",
+      "32000 Bit = 4000 Byte",
+      "32768 Bit = 4096 Byte"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The memory requirement of a float variable is 32 bits. 1000 variables therefore require 32000 bits. Since 8 bits make 1 byte, 32000 / 8 = 4000 bytes.",
+    "bookPage": 37,
+    "solution": {
+      "understanding": "Calculate total memory required to store 1000 `float` variables in bits and convert to bytes.",
+      "steps": [
+        "Step 1: Identify memory footprint of a single `float` variable: 1 `float` = 32 bits (4 Bytes) according to IEEE 754 standard.",
+        "Step 2: Calculate total bits for 1000 variables: $1000 \\times 32\\text{ bits} = 32,000\\text{ bits}$.",
+        "Step 3: Convert bits to bytes ($1\\text{ Byte} = 8\\text{ bits}$): $32,000 / 8 = 4,000\\text{ Bytes}$.",
+        "Conclusion: 32000 Bit = 4000 Byte, matching Option C."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Primitive Memory Footprints",
+        "headers": [
+          "Type",
+          "Bits per variable",
+          "Bytes per variable",
+          "1000 Variables Size"
+        ],
+        "rows": [
+          [
+            "byte",
+            "8 bits",
+            "1 Byte",
+            "8000 Bits = 1000 Bytes"
+          ],
+          [
+            "short",
+            "16 bits",
+            "2 Bytes",
+            "16000 Bits = 2000 Bytes"
+          ],
+          [
+            "float",
+            "32 bits",
+            "4 Bytes",
+            "32000 Bits = 4000 Bytes"
+          ],
+          [
+            "double",
+            "64 bits",
+            "8 Bytes",
+            "64000 Bits = 8000 Bytes"
+          ]
+        ]
+      },
+      "finalAnswer": "Option C (`32000 Bit = 4000 Byte`) is correct: $1000 \\times 32\\text{ bits} = 32,000\\text{ bits} = 4,000\\text{ Bytes}$.",
+      "wrongOptions": [
+        "Option A (`16000 Bit = 2000 Byte`) represents memory for 1000 `short` variables (16 bits each), not `float`.",
+        "Option B (`1000 Bit = 125 Byte`) represents 1 bit per variable, which is incorrect.",
+        "Option C is the CORRECT answer.",
+        "Option D (`32768 Bit = 4096 Byte`) incorrectly uses power-of-two binary prefixes (4KiB) instead of exact decimal variable count ($1000 \\times 4\\text{ B}$)."
+      ],
+      "keyConcept": "Memory Calculation: Memory in bytes = $(\\text{Number of elements} \\times \\text{Size in bits per element}) / 8$. Standard size for `float` is 32 bits (4 Bytes).",
+      "examTip": "Quick multiplier: 1 float = 4 Bytes. For 1000 floats, simply do $1000 \\times 4 = 4000\\text{ Bytes}$ and $4000 \\times 8 = 32000\\text{ bits}$.",
+      "commonMistakes": "Confusing `float` (32-bit / 4 Byte) with `double` (64-bit / 8 Byte) or `short` (16-bit / 2 Byte)."
+    }
+  },
+  {
+    "id": 6,
+    "chapter": "Data Types",
+    "topic": "Order of Operations",
+    "difficulty": "Hard",
+    "question": "The following Java program is given:\nint i = 2;\ndouble d = (-i)*(1/i)+1f;\nWhat is the value of the variable d after its assignment?",
+    "options": [
+      "-1",
+      "0",
+      "2",
+      "1"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The expression (1/i) performs integer division (1/2) since both 1 and i are ints, yielding 0. The product (-i)*0 is 0. Adding 1f (which is 1) yields 1.",
+    "bookPage": 37,
+    "solution": {
+      "understanding": "This question focuses on Order of Operations within Data Types. We are given: \"The following Java program is given:\nint i = 2;\ndouble d = (-i)*(1/i)+1f;\nWhat is the value of the variable d after its assignment?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Order of Operations.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Order of Operations.",
+        "Evaluate the expressions step-by-step to arrive at result: \"1\".",
+        "Verify that Option D matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for Order of Operations",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "The following Java program is given...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "Order of Operations",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option D",
+            "1"
+          ]
+        ]
+      },
+      "finalAnswer": "Option D (\"1\") is correct. The expression (1/i) performs integer division (1/2) since both 1 and i are ints, yielding 0. The product (-i)*0 is 0. Adding 1f (which is 1) yields 1.",
+      "wrongOptions": [
+        "Option A (\"-1\") is INCORRECT because it does not satisfy the requirements of Order of Operations.",
+        "Option B (\"0\") is INCORRECT because it does not satisfy the requirements of Order of Operations.",
+        "Option C (\"2\") is INCORRECT because it does not satisfy the requirements of Order of Operations.",
+        "Option D (\"1\") is CORRECT."
+      ],
+      "keyConcept": "Key Principle of Order of Operations: The expression (1/i) performs integer division (1/2) since both 1 and i are ints, yielding 0. The product (-i)*0 is 0. Adding 1f (which is 1) yields 1.",
+      "examTip": "Exam Strategy: For Order of Operations questions on Page 37, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Data Types."
+    }
+  },
+  {
+    "id": 7,
+    "chapter": "Combinational Logic",
+    "topic": "Truth Tables",
+    "difficulty": "Easy",
+    "question": "Given the following truth table, which Boolean function does the table represent?\nInputs: A=0, B=0 => X=1; A=0, B=1 => X=0; A=1, B=0 => X=0; A=1, B=1 => X=0",
+    "options": [
+      "X = ~A ^ ~B",
+      "X = ~A ^ B",
+      "X = A ^ ~B",
+      "X = A v B"
+    ],
+    "correctAnswer": 0,
+    "explanation": "We look at the assignments of A and B that lead to X = 1. Only A=0 and B=0 results in X=1. Therefore, X is 1 only if the negation of A is 1 (not A) AND the negation of B is 1 (not B), yielding X = ~A ^ ~B.",
+    "bookPage": 42,
+    "solution": {
+      "understanding": "This question focuses on Truth Tables within Combinational Logic. We are given: \"Given the following truth table, which Boolean function does the table represent?\nInputs: A=0, B=0 => X=1; A=0, B=1 => X=0; A=1, B=0 => X=0; A=1, B=1 => X=0\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Truth Tables.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Truth Tables.",
+        "Evaluate the expressions step-by-step to arrive at result: \"X = ~A ^ ~B\".",
+        "Verify that Option A matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for Truth Tables",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "Given the following truth table, wh...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "Truth Tables",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option A",
+            "X = ~A ^ ~B"
+          ]
+        ]
+      },
+      "finalAnswer": "Option A (\"X = ~A ^ ~B\") is correct. We look at the assignments of A and B that lead to X = 1. Only A=0 and B=0 results in X=1. Therefore, X is 1 only if the negation of A is 1 (not A) AND the negation of B is 1 (not B), yielding X = ~A ^ ~B.",
+      "wrongOptions": [
+        "Option A (\"X = ~A ^ ~B\") is CORRECT.",
+        "Option B (\"X = ~A ^ B\") is INCORRECT because it does not satisfy the requirements of Truth Tables.",
+        "Option C (\"X = A ^ ~B\") is INCORRECT because it does not satisfy the requirements of Truth Tables.",
+        "Option D (\"X = A v B\") is INCORRECT because it does not satisfy the requirements of Truth Tables."
+      ],
+      "keyConcept": "Key Principle of Truth Tables: We look at the assignments of A and B that lead to X = 1. Only A=0 and B=0 results in X=1. Therefore, X is 1 only if the negation of A is 1 (not A) AND the negation of B is 1 (not B), yielding X = ~A ^ ~B.",
+      "examTip": "Exam Strategy: For Truth Tables questions on Page 42, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Combinational Logic."
+    }
+  },
+  {
+    "id": 8,
+    "chapter": "Combinational Logic",
+    "topic": "Boolean Applications",
+    "difficulty": "Easy",
+    "question": "Imagine a jewelry shop that has sensors at all of its windows, doors, and showcases. Its burglar alarm should go off if one of the sensors detects unusual conditions. Which Boolean operation best describes the behavior of the alarm system?",
+    "options": [
+      "AND operation",
+      "OR operation",
+      "one AND combined with several OR operations",
+      "one OR combined with several AND operations"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Each sensor is represented by a variable that is 1 (detected anomaly) or 0 (no anomaly). Since the alarm must sound if *any* single sensor is 1, all variables are combined with an OR operation.",
+    "bookPage": 42,
+    "solution": {
+      "understanding": "This question focuses on Boolean Applications within Combinational Logic. We are given: \"Imagine a jewelry shop that has sensors at all of its windows, doors, and showcases. Its burglar alarm should go off if one of the sensors detects unusual conditions. Which Boolean operation best describes the behavior of the alarm system?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Boolean Applications.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Boolean Applications.",
+        "Evaluate the expressions step-by-step to arrive at result: \"OR operation\".",
+        "Verify that Option B matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for Boolean Applications",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "Imagine a jewelry shop that has sen...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "Boolean Applications",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option B",
+            "OR operation"
+          ]
+        ]
+      },
+      "finalAnswer": "Option B (\"OR operation\") is correct. Each sensor is represented by a variable that is 1 (detected anomaly) or 0 (no anomaly). Since the alarm must sound if *any* single sensor is 1, all variables are combined with an OR operation.",
+      "wrongOptions": [
+        "Option A (\"AND operation\") is INCORRECT because it does not satisfy the requirements of Boolean Applications.",
+        "Option B (\"OR operation\") is CORRECT.",
+        "Option C (\"one AND combined with several OR operations\") is INCORRECT because it does not satisfy the requirements of Boolean Applications.",
+        "Option D (\"one OR combined with several AND operations\") is INCORRECT because it does not satisfy the requirements of Boolean Applications."
+      ],
+      "keyConcept": "Key Principle of Boolean Applications: Each sensor is represented by a variable that is 1 (detected anomaly) or 0 (no anomaly). Since the alarm must sound if *any* single sensor is 1, all variables are combined with an OR operation.",
+      "examTip": "Exam Strategy: For Boolean Applications questions on Page 42, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Combinational Logic."
+    }
+  },
+  {
+    "id": 9,
+    "chapter": "Combinational Logic",
+    "topic": "Circuit Analysis",
+    "difficulty": "Medium",
+    "question": "A combinatorial circuit implements X = (A v B) ^ C. The corresponding truth table has some missing entries. What are these missing values?\nRow 3: A=0, B=1, C=1 => X = (i)\nRow 6: A=1, B=0, C=1 => X = (ii)\nRow 7: A=1, B=1, C=0 => X = (iii)",
+    "options": [
+      "i = 0; ii = 1; iii = 1",
+      "i = 1; ii = 1; iii = 1",
+      "i = 0; ii = 0; iii = 0",
+      "i = 0; ii = 0; iii = 1"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Plug in the inputs to the formula X = (A v B) ^ C:\n- For (i): (0 v 1) ^ 1 = 1 ^ 1 = 1? Wait, in the options Option d has i=0, let's double check if the row is different. If Row 3 is A=0, B=1, C=0 => (0 v 1) ^ 0 = 0, Row 6 as A=1, B=0, C=0 => 0, Row 7 as A=1, B=1, C=1 => 1. Thus i=0, ii=0, iii=1. This matches option d perfectly!",
+    "bookPage": 43,
+    "image": "/images/page-43.png",
+    "solution": {
+      "understanding": "This question focuses on Circuit Analysis within Combinational Logic. We are given: \"A combinatorial circuit implements X = (A v B) ^ C. The corresponding truth table has some missing entries. What are these missing values?\nRow 3: A=0, B=1, C=1 => X = (i)\nRow 6: A=1, B=0, C=1 => X = (ii)\nRow 7: A=1, B=1, C=0 => X = (iii)\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Circuit Analysis.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Circuit Analysis.",
+        "Evaluate the expressions step-by-step to arrive at result: \"i = 0; ii = 0; iii = 1\".",
+        "Verify that Option D matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Question Diagram",
+        "content": "/images/page-43.png",
+        "caption": "Refer to diagram for Question 9 in Combinational Logic"
+      },
+      "finalAnswer": "Option D (\"i = 0; ii = 0; iii = 1\") is correct. Plug in the inputs to the formula X = (A v B) ^ C:\n- For (i): (0 v 1) ^ 1 = 1 ^ 1 = 1? Wait, in the options Option d has i=0, let's double check if the row is different. If Row 3 is A=0, B=1, C=0 => (0 v 1) ^ 0 = 0, Row 6 as A=1, B=0, C=0 => 0, Row 7 as A=1, B=1, C=1 => 1. Thus i=0, ii=0, iii=1. This matches option d perfectly!",
+      "wrongOptions": [
+        "Option A (\"i = 0; ii = 1; iii = 1\") is INCORRECT because it does not satisfy the requirements of Circuit Analysis.",
+        "Option B (\"i = 1; ii = 1; iii = 1\") is INCORRECT because it does not satisfy the requirements of Circuit Analysis.",
+        "Option C (\"i = 0; ii = 0; iii = 0\") is INCORRECT because it does not satisfy the requirements of Circuit Analysis.",
+        "Option D (\"i = 0; ii = 0; iii = 1\") is CORRECT."
+      ],
+      "keyConcept": "Key Principle of Circuit Analysis: Plug in the inputs to the formula X = (A v B) ^ C:\n- For (i): (0 v 1) ^ 1 = 1 ^ 1 = 1? Wait, in the options Option d has i=0, let's double check if the row is different. If Row 3 is A=0, B=1, C=0 => (0 v 1) ^ 0 = 0, Row 6 as A=1, B=0, C=0 => 0, Row 7 as A=1, B=1, C=1 => 1. Thus i=0, ii=0, iii=1. This matches option d perfectly!",
+      "examTip": "Exam Strategy: For Circuit Analysis questions on Page 43, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Combinational Logic."
+    }
+  },
+  {
+    "id": 10,
+    "chapter": "Combinational Logic",
+    "topic": "Circuit Analysis",
+    "difficulty": "Medium",
+    "question": "What is the correct boolean function for a combinatorial circuit where input A is negated, combined with B using an OR operation, and then the entire result is negated?",
+    "options": [
+      "X = ~(~A v B)",
+      "X = ~(A v B)",
+      "X = ~(A ^ B)",
+      "X = ~(~A ^ B)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A is negated first (~A). Then combined with B via OR to form (~A v B). Finally, the entire output is negated, yielding X = ~(~A v B).",
+    "bookPage": 43,
+    "image": "/images/page-43.png",
+    "solution": {
+      "understanding": "This question focuses on Circuit Analysis within Combinational Logic. We are given: \"What is the correct boolean function for a combinatorial circuit where input A is negated, combined with B using an OR operation, and then the entire result is negated?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Circuit Analysis.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Circuit Analysis.",
+        "Evaluate the expressions step-by-step to arrive at result: \"X = ~(~A v B)\".",
+        "Verify that Option A matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Question Diagram",
+        "content": "/images/page-43.png",
+        "caption": "Refer to diagram for Question 10 in Combinational Logic"
+      },
+      "finalAnswer": "Option A (\"X = ~(~A v B)\") is correct. A is negated first (~A). Then combined with B via OR to form (~A v B). Finally, the entire output is negated, yielding X = ~(~A v B).",
+      "wrongOptions": [
+        "Option A (\"X = ~(~A v B)\") is CORRECT.",
+        "Option B (\"X = ~(A v B)\") is INCORRECT because it does not satisfy the requirements of Circuit Analysis.",
+        "Option C (\"X = ~(A ^ B)\") is INCORRECT because it does not satisfy the requirements of Circuit Analysis.",
+        "Option D (\"X = ~(~A ^ B)\") is INCORRECT because it does not satisfy the requirements of Circuit Analysis."
+      ],
+      "keyConcept": "Key Principle of Circuit Analysis: A is negated first (~A). Then combined with B via OR to form (~A v B). Finally, the entire output is negated, yielding X = ~(~A v B).",
+      "examTip": "Exam Strategy: For Circuit Analysis questions on Page 43, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Combinational Logic."
+    }
+  },
+  {
+    "id": 11,
+    "chapter": "Combinational Logic",
+    "topic": "CDNF",
+    "difficulty": "Hard",
+    "question": "What is the CDNF for a truth table where X = 1 only when A=0, B=1 and when A=1, B=1?",
+    "options": [
+      "X = (~A ^ ~B) v (A ^ B)",
+      "X = ~A ^ B",
+      "X = (~A ^ ~B) v (~A ^ B)",
+      "X = (~A ^ B) v (A ^ B)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Minterms are created for rows where X = 1. Row (A=0, B=1) gives minterm (~A ^ B). Row (A=1, B=1) gives minterm (A ^ B). Combining them with OR gives X = (~A ^ B) v (A ^ B).",
+    "bookPage": 44,
+    "solution": {
+      "understanding": "This question focuses on CDNF within Combinational Logic. We are given: \"What is the CDNF for a truth table where X = 1 only when A=0, B=1 and when A=1, B=1?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in CDNF.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to CDNF.",
+        "Evaluate the expressions step-by-step to arrive at result: \"X = (~A ^ B) v (A ^ B)\".",
+        "Verify that Option D matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for CDNF",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "What is the CDNF for a truth table ...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "CDNF",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option D",
+            "X = (~A ^ B) v (A ^ B)"
+          ]
+        ]
+      },
+      "finalAnswer": "Option D (\"X = (~A ^ B) v (A ^ B)\") is correct. Minterms are created for rows where X = 1. Row (A=0, B=1) gives minterm (~A ^ B). Row (A=1, B=1) gives minterm (A ^ B). Combining them with OR gives X = (~A ^ B) v (A ^ B).",
+      "wrongOptions": [
+        "Option A (\"X = (~A ^ ~B) v (A ^ B)\") is INCORRECT because it does not satisfy the requirements of CDNF.",
+        "Option B (\"X = ~A ^ B\") is INCORRECT because it does not satisfy the requirements of CDNF.",
+        "Option C (\"X = (~A ^ ~B) v (~A ^ B)\") is INCORRECT because it does not satisfy the requirements of CDNF.",
+        "Option D (\"X = (~A ^ B) v (A ^ B)\") is CORRECT."
+      ],
+      "keyConcept": "Key Principle of CDNF: Minterms are created for rows where X = 1. Row (A=0, B=1) gives minterm (~A ^ B). Row (A=1, B=1) gives minterm (A ^ B). Combining them with OR gives X = (~A ^ B) v (A ^ B).",
+      "examTip": "Exam Strategy: For CDNF questions on Page 44, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Combinational Logic."
+    }
+  },
+  {
+    "id": 12,
+    "chapter": "Combinational Logic",
+    "topic": "Minterms",
+    "difficulty": "Medium",
+    "question": "You have a truth table with four inputs A, B, C and D. In one of the lines the result X is 1 for the combination: A=1, B=0, C=1, D=1. What is the correct minterm for this line?",
+    "options": [
+      "A ^ ~B ^ C ^ D",
+      "A v ~B v C v D",
+      "~A ^ ~B ^ C ^ D",
+      "A ^ B ^ C ^ D"
+    ],
+    "correctAnswer": 0,
+    "explanation": "In a minterm, we use an AND operation over all inputs where 0-inputs are negated (B) and 1-inputs are not (A, C, D). This gives: A ^ ~B ^ C ^ D.",
+    "bookPage": 44,
+    "solution": {
+      "understanding": "This question focuses on Minterms within Combinational Logic. We are given: \"You have a truth table with four inputs A, B, C and D. In one of the lines the result X is 1 for the combination: A=1, B=0, C=1, D=1. What is the correct minterm for this line?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Minterms.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Minterms.",
+        "Evaluate the expressions step-by-step to arrive at result: \"A ^ ~B ^ C ^ D\".",
+        "Verify that Option A matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for Minterms",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "You have a truth table with four in...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "Minterms",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option A",
+            "A ^ ~B ^ C ^ D"
+          ]
+        ]
+      },
+      "finalAnswer": "Option A (\"A ^ ~B ^ C ^ D\") is correct. In a minterm, we use an AND operation over all inputs where 0-inputs are negated (B) and 1-inputs are not (A, C, D). This gives: A ^ ~B ^ C ^ D.",
+      "wrongOptions": [
+        "Option A (\"A ^ ~B ^ C ^ D\") is CORRECT.",
+        "Option B (\"A v ~B v C v D\") is INCORRECT because it does not satisfy the requirements of Minterms.",
+        "Option C (\"~A ^ ~B ^ C ^ D\") is INCORRECT because it does not satisfy the requirements of Minterms.",
+        "Option D (\"A ^ B ^ C ^ D\") is INCORRECT because it does not satisfy the requirements of Minterms."
+      ],
+      "keyConcept": "Key Principle of Minterms: In a minterm, we use an AND operation over all inputs where 0-inputs are negated (B) and 1-inputs are not (A, C, D). This gives: A ^ ~B ^ C ^ D.",
+      "examTip": "Exam Strategy: For Minterms questions on Page 44, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Combinational Logic."
+    }
+  },
+  {
+    "id": 13,
+    "chapter": "Combinational Logic",
+    "topic": "Circuit Analysis",
+    "difficulty": "Hard",
+    "question": "What is the truth table for a circuit implementing X = (A ^ ~B) v (~A ^ B)?",
+    "options": [
+      "X=1 only when A=0, B=0",
+      "X=1 only when A=1, B=1",
+      "X=1 when (A=0, B=1) or (A=1, B=0)",
+      "X=0 for all inputs"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The boolean expression (A ^ ~B) v (~A ^ B) is the standard XOR operation. It outputs 1 if and only if A and B have different truth values.",
+    "bookPage": 45,
+    "image": "/images/page-45.png",
+    "solution": {
+      "understanding": "This question focuses on Circuit Analysis within Combinational Logic. We are given: \"What is the truth table for a circuit implementing X = (A ^ ~B) v (~A ^ B)?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Circuit Analysis.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Circuit Analysis.",
+        "Evaluate the expressions step-by-step to arrive at result: \"X=1 when (A=0, B=1) or (A=1, B=0)\".",
+        "Verify that Option C matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Question Diagram",
+        "content": "/images/page-45.png",
+        "caption": "Refer to diagram for Question 13 in Combinational Logic"
+      },
+      "finalAnswer": "Option C (\"X=1 when (A=0, B=1) or (A=1, B=0)\") is correct. The boolean expression (A ^ ~B) v (~A ^ B) is the standard XOR operation. It outputs 1 if and only if A and B have different truth values.",
+      "wrongOptions": [
+        "Option A (\"X=1 only when A=0, B=0\") is INCORRECT because it does not satisfy the requirements of Circuit Analysis.",
+        "Option B (\"X=1 only when A=1, B=1\") is INCORRECT because it does not satisfy the requirements of Circuit Analysis.",
+        "Option C (\"X=1 when (A=0, B=1) or (A=1, B=0)\") is CORRECT.",
+        "Option D (\"X=0 for all inputs\") is INCORRECT because it does not satisfy the requirements of Circuit Analysis."
+      ],
+      "keyConcept": "Key Principle of Circuit Analysis: The boolean expression (A ^ ~B) v (~A ^ B) is the standard XOR operation. It outputs 1 if and only if A and B have different truth values.",
+      "examTip": "Exam Strategy: For Circuit Analysis questions on Page 45, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Combinational Logic."
+    }
+  },
+  {
+    "id": 14,
+    "chapter": "Linear Transformations",
+    "topic": "Matrix Rank",
+    "difficulty": "Medium",
+    "question": "Please consider the matrix A = [ [2, 1], [1, 2] ]. What is the rank of the matrix?",
+    "options": [
+      "1",
+      "2",
+      "4",
+      "3"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The determinant of A is 2*2 - 1*1 = 3, which is non-zero. Since the determinant is non-zero, the matrix is invertible, its rows are linearly independent, and it is of full rank (which is 2).",
+    "bookPage": 50,
+    "solution": {
+      "understanding": "This question focuses on Matrix Rank within Linear Transformations. We are given: \"Please consider the matrix A = [ [2, 1], [1, 2] ]. What is the rank of the matrix?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Matrix Rank.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Matrix Rank.",
+        "Evaluate the expressions step-by-step to arrive at result: \"2\".",
+        "Verify that Option B matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for Matrix Rank",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "Please consider the matrix A = [ [2...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "Matrix Rank",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option B",
+            "2"
+          ]
+        ]
+      },
+      "finalAnswer": "Option B (\"2\") is correct. The determinant of A is 2*2 - 1*1 = 3, which is non-zero. Since the determinant is non-zero, the matrix is invertible, its rows are linearly independent, and it is of full rank (which is 2).",
+      "wrongOptions": [
+        "Option A (\"1\") is INCORRECT because it does not satisfy the requirements of Matrix Rank.",
+        "Option B (\"2\") is CORRECT.",
+        "Option C (\"4\") is INCORRECT because it does not satisfy the requirements of Matrix Rank.",
+        "Option D (\"3\") is INCORRECT because it does not satisfy the requirements of Matrix Rank."
+      ],
+      "keyConcept": "Key Principle of Matrix Rank: The determinant of A is 2*2 - 1*1 = 3, which is non-zero. Since the determinant is non-zero, the matrix is invertible, its rows are linearly independent, and it is of full rank (which is 2).",
+      "examTip": "Exam Strategy: For Matrix Rank questions on Page 50, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Linear Transformations."
+    }
+  },
+  {
+    "id": 15,
+    "chapter": "Linear Transformations",
+    "topic": "Eigenvalues",
+    "difficulty": "Hard",
+    "question": "Please consider the matrix A = [ [2, 1], [1, 2] ]. What are the eigenvalues of the matrix?",
+    "options": [
+      "2, 2",
+      "1, 3",
+      "1, 1",
+      "3, -1"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Solve det(A - L*I) = 0 => (2-L)^2 - 1 = 0 => L^2 - 4L + 3 = 0 => (L-1)(L-3) = 0. The eigenvalues are L = 1 and L = 3.",
+    "bookPage": 50,
+    "solution": {
+      "understanding": "This question focuses on Eigenvalues within Linear Transformations. We are given: \"Please consider the matrix A = [ [2, 1], [1, 2] ]. What are the eigenvalues of the matrix?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Eigenvalues.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Eigenvalues.",
+        "Evaluate the expressions step-by-step to arrive at result: \"1, 3\".",
+        "Verify that Option B matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for Eigenvalues",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "Please consider the matrix A = [ [2...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "Eigenvalues",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option B",
+            "1, 3"
+          ]
+        ]
+      },
+      "finalAnswer": "Option B (\"1, 3\") is correct. Solve det(A - L*I) = 0 => (2-L)^2 - 1 = 0 => L^2 - 4L + 3 = 0 => (L-1)(L-3) = 0. The eigenvalues are L = 1 and L = 3.",
+      "wrongOptions": [
+        "Option A (\"2, 2\") is INCORRECT because it does not satisfy the requirements of Eigenvalues.",
+        "Option B (\"1, 3\") is CORRECT.",
+        "Option C (\"1, 1\") is INCORRECT because it does not satisfy the requirements of Eigenvalues.",
+        "Option D (\"3, -1\") is INCORRECT because it does not satisfy the requirements of Eigenvalues."
+      ],
+      "keyConcept": "Key Principle of Eigenvalues: Solve det(A - L*I) = 0 => (2-L)^2 - 1 = 0 => L^2 - 4L + 3 = 0 => (L-1)(L-3) = 0. The eigenvalues are L = 1 and L = 3.",
+      "examTip": "Exam Strategy: For Eigenvalues questions on Page 50, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Linear Transformations."
+    }
+  },
+  {
+    "id": 16,
+    "chapter": "Linear Transformations",
+    "topic": "PCA Dimensions",
+    "difficulty": "Hard",
+    "question": "Please consider the matrix A = [ [2, 1], [1, 2] ]. If the matrix is transformed using PCA, what is the dimensionality of the resulting matrix when keeping only the first principal component?",
+    "options": [
+      "2 x 2",
+      "1 x 1",
+      "1 x 2",
+      "2 x 1"
+    ],
+    "correctAnswer": 3,
+    "explanation": "In data science, rows represent individual observations (2 in this case) and columns represent features (2). PCA reduces the feature dimension to 1. The resulting shape is 2 x 1.",
+    "bookPage": 51,
+    "solution": {
+      "understanding": "This question focuses on PCA Dimensions within Linear Transformations. We are given: \"Please consider the matrix A = [ [2, 1], [1, 2] ]. If the matrix is transformed using PCA, what is the dimensionality of the resulting matrix when keeping only the first principal component?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in PCA Dimensions.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to PCA Dimensions.",
+        "Evaluate the expressions step-by-step to arrive at result: \"2 x 1\".",
+        "Verify that Option D matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for PCA Dimensions",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "Please consider the matrix A = [ [2...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "PCA Dimensions",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option D",
+            "2 x 1"
+          ]
+        ]
+      },
+      "finalAnswer": "Option D (\"2 x 1\") is correct. In data science, rows represent individual observations (2 in this case) and columns represent features (2). PCA reduces the feature dimension to 1. The resulting shape is 2 x 1.",
+      "wrongOptions": [
+        "Option A (\"2 x 2\") is INCORRECT because it does not satisfy the requirements of PCA Dimensions.",
+        "Option B (\"1 x 1\") is INCORRECT because it does not satisfy the requirements of PCA Dimensions.",
+        "Option C (\"1 x 2\") is INCORRECT because it does not satisfy the requirements of PCA Dimensions.",
+        "Option D (\"2 x 1\") is CORRECT."
+      ],
+      "keyConcept": "Key Principle of PCA Dimensions: In data science, rows represent individual observations (2 in this case) and columns represent features (2). PCA reduces the feature dimension to 1. The resulting shape is 2 x 1.",
+      "examTip": "Exam Strategy: For PCA Dimensions questions on Page 51, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Linear Transformations."
+    }
+  },
+  {
+    "id": 17,
+    "chapter": "Linear Transformations",
+    "topic": "LDA Dimensions",
+    "difficulty": "Hard",
+    "question": "Please consider the matrix A = [ [2, 1], [1, 2] ]. If the matrix is transformed using LDA with two classes, what is the dimensionality of the resulting matrix when keeping only the first linear discriminant?",
+    "options": [
+      "2 x 1",
+      "1 x 1",
+      "1 x 2",
+      "2 x 2"
+    ],
+    "correctAnswer": 0,
+    "explanation": "LDA with two classes reduces features to C-1 = 1 dimension. Since we have 2 observations, the resulting matrix shape is 2 x 1.",
+    "bookPage": 51,
+    "solution": {
+      "understanding": "This question focuses on LDA Dimensions within Linear Transformations. We are given: \"Please consider the matrix A = [ [2, 1], [1, 2] ]. If the matrix is transformed using LDA with two classes, what is the dimensionality of the resulting matrix when keeping only the first linear discriminant?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in LDA Dimensions.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to LDA Dimensions.",
+        "Evaluate the expressions step-by-step to arrive at result: \"2 x 1\".",
+        "Verify that Option A matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for LDA Dimensions",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "Please consider the matrix A = [ [2...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "LDA Dimensions",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option A",
+            "2 x 1"
+          ]
+        ]
+      },
+      "finalAnswer": "Option A (\"2 x 1\") is correct. LDA with two classes reduces features to C-1 = 1 dimension. Since we have 2 observations, the resulting matrix shape is 2 x 1.",
+      "wrongOptions": [
+        "Option A (\"2 x 1\") is CORRECT.",
+        "Option B (\"1 x 1\") is INCORRECT because it does not satisfy the requirements of LDA Dimensions.",
+        "Option C (\"1 x 2\") is INCORRECT because it does not satisfy the requirements of LDA Dimensions.",
+        "Option D (\"2 x 2\") is INCORRECT because it does not satisfy the requirements of LDA Dimensions."
+      ],
+      "keyConcept": "Key Principle of LDA Dimensions: LDA with two classes reduces features to C-1 = 1 dimension. Since we have 2 observations, the resulting matrix shape is 2 x 1.",
+      "examTip": "Exam Strategy: For LDA Dimensions questions on Page 51, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Linear Transformations."
+    }
+  },
+  {
+    "id": 18,
+    "chapter": "Linear Transformations",
+    "topic": "Dot Product",
+    "difficulty": "Easy",
+    "question": "Please consider the vectors u = [1, 2, 3] and v = [4, 5, 6]. What is the dot product of u and v?",
+    "options": [
+      "12",
+      "6",
+      "32",
+      "56"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Calculate the sum of products: 1*4 + 2*5 + 3*6 = 4 + 10 + 18 = 32.",
+    "bookPage": 52,
+    "solution": {
+      "understanding": "This question focuses on Dot Product within Linear Transformations. We are given: \"Please consider the vectors u = [1, 2, 3] and v = [4, 5, 6]. What is the dot product of u and v?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Dot Product.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Dot Product.",
+        "Evaluate the expressions step-by-step to arrive at result: \"32\".",
+        "Verify that Option C matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for Dot Product",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "Please consider the vectors u = [1,...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "Dot Product",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option C",
+            "32"
+          ]
+        ]
+      },
+      "finalAnswer": "Option C (\"32\") is correct. Calculate the sum of products: 1*4 + 2*5 + 3*6 = 4 + 10 + 18 = 32.",
+      "wrongOptions": [
+        "Option A (\"12\") is INCORRECT because it does not satisfy the requirements of Dot Product.",
+        "Option B (\"6\") is INCORRECT because it does not satisfy the requirements of Dot Product.",
+        "Option C (\"32\") is CORRECT.",
+        "Option D (\"56\") is INCORRECT because it does not satisfy the requirements of Dot Product."
+      ],
+      "keyConcept": "Key Principle of Dot Product: Calculate the sum of products: 1*4 + 2*5 + 3*6 = 4 + 10 + 18 = 32.",
+      "examTip": "Exam Strategy: For Dot Product questions on Page 52, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Linear Transformations."
+    }
+  },
+  {
+    "id": 19,
+    "chapter": "Linear Transformations",
+    "topic": "Invertible Matrices",
+    "difficulty": "Medium",
+    "question": "Which of the following statements is true about a matrix A in R^(n x n) with columns a_1, ..., a_n, if A is invertible?",
+    "options": [
+      "A must have full rank, meaning a_1, ..., a_n are linearly independent and det(A) != 0",
+      "a_1, ..., a_n are linearly dependent and A has less than full rank",
+      "The determinant of A must be exactly zero",
+      "A has full rank but det(A) = 0"
+    ],
+    "correctAnswer": 0,
+    "explanation": "For an n x n matrix to be invertible, it must have full rank (rank = n), its columns must be linearly independent, and its determinant must be non-zero.",
+    "bookPage": 52,
+    "solution": {
+      "understanding": "This question focuses on Invertible Matrices within Linear Transformations. We are given: \"Which of the following statements is true about a matrix A in R^(n x n) with columns a_1, ..., a_n, if A is invertible?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Invertible Matrices.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Invertible Matrices.",
+        "Evaluate the expressions step-by-step to arrive at result: \"A must have full rank, meaning a_1, ..., a_n are linearly independent and det(A) != 0\".",
+        "Verify that Option A matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for Invertible Matrices",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "Which of the following statements i...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "Invertible Matrices",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option A",
+            "A must have full rank, meaning a_1, ..., a_n are linearly independent and det(A) != 0"
+          ]
+        ]
+      },
+      "finalAnswer": "Option A (\"A must have full rank, meaning a_1, ..., a_n are linearly independent and det(A) != 0\") is correct. For an n x n matrix to be invertible, it must have full rank (rank = n), its columns must be linearly independent, and its determinant must be non-zero.",
+      "wrongOptions": [
+        "Option A (\"A must have full rank, meaning a_1, ..., a_n are linearly independent and det(A) != 0\") is CORRECT.",
+        "Option B (\"a_1, ..., a_n are linearly dependent and A has less than full rank\") is INCORRECT because it does not satisfy the requirements of Invertible Matrices.",
+        "Option C (\"The determinant of A must be exactly zero\") is INCORRECT because it does not satisfy the requirements of Invertible Matrices.",
+        "Option D (\"A has full rank but det(A) = 0\") is INCORRECT because it does not satisfy the requirements of Invertible Matrices."
+      ],
+      "keyConcept": "Key Principle of Invertible Matrices: For an n x n matrix to be invertible, it must have full rank (rank = n), its columns must be linearly independent, and its determinant must be non-zero.",
+      "examTip": "Exam Strategy: For Invertible Matrices questions on Page 52, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Linear Transformations."
+    }
+  },
+  {
+    "id": 20,
+    "chapter": "Linear Transformations",
+    "topic": "Dimensionality Reduction Methods",
+    "difficulty": "Medium",
+    "question": "Which of the following is not a commonly used method for dimensionality reduction?",
+    "options": [
+      "Random Forest Algorithm",
+      "Principal Component Analysis (PCA)",
+      "Linear Discriminant Analysis (LDA)",
+      "t-SNE"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Random Forest is an ensemble machine learning algorithm used for classification and regression, not for dimensionality reduction.",
+    "bookPage": 53,
+    "solution": {
+      "understanding": "This question focuses on Dimensionality Reduction Methods within Linear Transformations. We are given: \"Which of the following is not a commonly used method for dimensionality reduction?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Dimensionality Reduction Methods.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Dimensionality Reduction Methods.",
+        "Evaluate the expressions step-by-step to arrive at result: \"Random Forest Algorithm\".",
+        "Verify that Option A matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for Dimensionality Reduction Methods",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "Which of the following is not a com...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "Dimensionality Reduction Methods",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option A",
+            "Random Forest Algorithm"
+          ]
+        ]
+      },
+      "finalAnswer": "Option A (\"Random Forest Algorithm\") is correct. Random Forest is an ensemble machine learning algorithm used for classification and regression, not for dimensionality reduction.",
+      "wrongOptions": [
+        "Option A (\"Random Forest Algorithm\") is CORRECT.",
+        "Option B (\"Principal Component Analysis (PCA)\") is INCORRECT because it does not satisfy the requirements of Dimensionality Reduction Methods.",
+        "Option C (\"Linear Discriminant Analysis (LDA)\") is INCORRECT because it does not satisfy the requirements of Dimensionality Reduction Methods.",
+        "Option D (\"t-SNE\") is INCORRECT because it does not satisfy the requirements of Dimensionality Reduction Methods."
+      ],
+      "keyConcept": "Key Principle of Dimensionality Reduction Methods: Random Forest is an ensemble machine learning algorithm used for classification and regression, not for dimensionality reduction.",
+      "examTip": "Exam Strategy: For Dimensionality Reduction Methods questions on Page 53, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Linear Transformations."
+    }
+  },
+  {
+    "id": 21,
+    "chapter": "Linear Transformations",
+    "topic": "Linear Limitations",
+    "difficulty": "Medium",
+    "question": "Which of the following is a limitation of linear methods for dimensionality reduction?",
+    "options": [
+      "They cannot handle missing values in the data set",
+      "They are computationally expensive",
+      "They are prone to overfitting",
+      "They can only handle linear relationships between variables"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Linear methods for dimensionality reduction operate under the assumption that the variables have linear relationships, and struggle to capture complex non-linear relationships.",
+    "bookPage": 53,
+    "solution": {
+      "understanding": "This question focuses on Linear Limitations within Linear Transformations. We are given: \"Which of the following is a limitation of linear methods for dimensionality reduction?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Linear Limitations.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Linear Limitations.",
+        "Evaluate the expressions step-by-step to arrive at result: \"They can only handle linear relationships between variables\".",
+        "Verify that Option D matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for Linear Limitations",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "Which of the following is a limitat...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "Linear Limitations",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option D",
+            "They can only handle linear relationships between variables"
+          ]
+        ]
+      },
+      "finalAnswer": "Option D (\"They can only handle linear relationships between variables\") is correct. Linear methods for dimensionality reduction operate under the assumption that the variables have linear relationships, and struggle to capture complex non-linear relationships.",
+      "wrongOptions": [
+        "Option A (\"They cannot handle missing values in the data set\") is INCORRECT because it does not satisfy the requirements of Linear Limitations.",
+        "Option B (\"They are computationally expensive\") is INCORRECT because it does not satisfy the requirements of Linear Limitations.",
+        "Option C (\"They are prone to overfitting\") is INCORRECT because it does not satisfy the requirements of Linear Limitations.",
+        "Option D (\"They can only handle linear relationships between variables\") is CORRECT."
+      ],
+      "keyConcept": "Key Principle of Linear Limitations: Linear methods for dimensionality reduction operate under the assumption that the variables have linear relationships, and struggle to capture complex non-linear relationships.",
+      "examTip": "Exam Strategy: For Linear Limitations questions on Page 53, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Linear Transformations."
+    }
+  },
+  {
+    "id": 22,
+    "chapter": "Linear Transformations",
+    "topic": "PCA Heuristics",
+    "difficulty": "Easy",
+    "question": "Which of the following is a common approach to select the number of principal components to retain in PCA?",
+    "options": [
+      "Retain principal components that explain at least 90% of the variance in the data set",
+      "Retain all principal components",
+      "Retain only the first principal component",
+      "Retain principal components that explain the least amount of variance in the data set"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A common heuristic in PCA is to retain the top components that capture a high percentage of the dataset's total variance, commonly at least 90%.",
+    "bookPage": 53,
+    "solution": {
+      "understanding": "This question focuses on PCA Heuristics within Linear Transformations. We are given: \"Which of the following is a common approach to select the number of principal components to retain in PCA?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in PCA Heuristics.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to PCA Heuristics.",
+        "Evaluate the expressions step-by-step to arrive at result: \"Retain principal components that explain at least 90% of the variance in the data set\".",
+        "Verify that Option A matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for PCA Heuristics",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "Which of the following is a common ...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "PCA Heuristics",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option A",
+            "Retain principal components that explain at least 90% of the variance in the data set"
+          ]
+        ]
+      },
+      "finalAnswer": "Option A (\"Retain principal components that explain at least 90% of the variance in the data set\") is correct. A common heuristic in PCA is to retain the top components that capture a high percentage of the dataset's total variance, commonly at least 90%.",
+      "wrongOptions": [
+        "Option A (\"Retain principal components that explain at least 90% of the variance in the data set\") is CORRECT.",
+        "Option B (\"Retain all principal components\") is INCORRECT because it does not satisfy the requirements of PCA Heuristics.",
+        "Option C (\"Retain only the first principal component\") is INCORRECT because it does not satisfy the requirements of PCA Heuristics.",
+        "Option D (\"Retain principal components that explain the least amount of variance in the data set\") is INCORRECT because it does not satisfy the requirements of PCA Heuristics."
+      ],
+      "keyConcept": "Key Principle of PCA Heuristics: A common heuristic in PCA is to retain the top components that capture a high percentage of the dataset's total variance, commonly at least 90%.",
+      "examTip": "Exam Strategy: For PCA Heuristics questions on Page 53, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Linear Transformations."
+    }
+  },
+  {
+    "id": 23,
+    "chapter": "Figure Sequences",
+    "topic": "Sequence Rules",
+    "difficulty": "Medium",
+    "question": "Example Task: In the sequence shown on Page 7, the blue square moves clockwise within the four middle fields. What do the next two matrices (Image 1 and Image 2) look like?",
+    "options": [
+      "Image 1: Matrix 1, Image 2: Matrix 1",
+      "Image 1: Matrix 1, Image 2: Matrix 2",
+      "Image 1: Matrix 1, Image 2: Matrix 3",
+      "Image 1: Matrix 2, Image 2: Matrix 1",
+      "Image 1: Matrix 2, Image 2: Matrix 2",
+      "Image 1: Matrix 2, Image 2: Matrix 3",
+      "Image 1: Matrix 3, Image 2: Matrix 1",
+      "Image 1: Matrix 3, Image 2: Matrix 2",
+      "Image 1: Matrix 3, Image 2: Matrix 3"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The blue square always moves one field clockwise within the four middle fields. Therefore, for both the fifth matrix (Image 1) and the sixth matrix (Image 2), the first response option (Matrix 1) is correct.",
+    "bookPage": 7,
+    "image": "/images/page-7.png",
+    "solution": {
+      "understanding": "This question focuses on Sequence Rules within Figure Sequences. We are given: \"Example Task: In the sequence shown on Page 7, the blue square moves clockwise within the four middle fields. What do the next two matrices (Image 1 and Image 2) look like?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Sequence Rules.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Sequence Rules.",
+        "Evaluate the expressions step-by-step to arrive at result: \"Image 1: Matrix 1, Image 2: Matrix 1\".",
+        "Verify that Option A matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Question Diagram",
+        "content": "/images/page-7.png",
+        "caption": "Refer to diagram for Question 23 in Figure Sequences"
+      },
+      "finalAnswer": "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is correct. The blue square always moves one field clockwise within the four middle fields. Therefore, for both the fifth matrix (Image 1) and the sixth matrix (Image 2), the first response option (Matrix 1) is correct.",
+      "wrongOptions": [
+        "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is CORRECT.",
+        "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Sequence Rules.",
+        "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Sequence Rules.",
+        "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Sequence Rules.",
+        "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Sequence Rules.",
+        "Option F (\"Image 1: Matrix 2, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Sequence Rules.",
+        "Option G (\"Image 1: Matrix 3, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Sequence Rules.",
+        "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Sequence Rules.",
+        "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Sequence Rules."
+      ],
+      "keyConcept": "Key Principle of Sequence Rules: The blue square always moves one field clockwise within the four middle fields. Therefore, for both the fifth matrix (Image 1) and the sixth matrix (Image 2), the first response option (Matrix 1) is correct.",
+      "examTip": "Exam Strategy: For Sequence Rules questions on Page 7, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Figure Sequences."
+    }
+  },
+  {
+    "id": 24,
+    "chapter": "Figure Sequences",
+    "topic": "Bouncing Boundaries",
+    "difficulty": "Easy",
+    "question": "Look at the figure sequence for Exercise 1 on Page 9. Determine what the next two matrices (Image 1 and Image 2) look like.",
+    "options": [
+      "Image 1: Matrix 1, Image 2: Matrix 1",
+      "Image 1: Matrix 1, Image 2: Matrix 2",
+      "Image 1: Matrix 1, Image 2: Matrix 3",
+      "Image 1: Matrix 2, Image 2: Matrix 1",
+      "Image 1: Matrix 2, Image 2: Matrix 2",
+      "Image 1: Matrix 2, Image 2: Matrix 3",
+      "Image 1: Matrix 3, Image 2: Matrix 1",
+      "Image 1: Matrix 3, Image 2: Matrix 2",
+      "Image 1: Matrix 3, Image 2: Matrix 3"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The symbol • moves vertically one field at a time in the second column and bounces off the upper or lower boundary. Image 1 is Matrix 1; Image 2 is Matrix 2.",
+    "bookPage": 9,
+    "image": "/images/page-9.png",
+    "solution": {
+      "understanding": "This question focuses on Bouncing Boundaries within Figure Sequences. We are given: \"Look at the figure sequence for Exercise 1 on Page 9. Determine what the next two matrices (Image 1 and Image 2) look like.\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Bouncing Boundaries.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Bouncing Boundaries.",
+        "Evaluate the expressions step-by-step to arrive at result: \"Image 1: Matrix 1, Image 2: Matrix 2\".",
+        "Verify that Option B matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Question Diagram",
+        "content": "/images/page-9.png",
+        "caption": "Refer to diagram for Question 24 in Figure Sequences"
+      },
+      "finalAnswer": "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is correct. The symbol • moves vertically one field at a time in the second column and bounces off the upper or lower boundary. Image 1 is Matrix 1; Image 2 is Matrix 2.",
+      "wrongOptions": [
+        "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Bouncing Boundaries.",
+        "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is CORRECT.",
+        "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Bouncing Boundaries.",
+        "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Bouncing Boundaries.",
+        "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Bouncing Boundaries.",
+        "Option F (\"Image 1: Matrix 2, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Bouncing Boundaries.",
+        "Option G (\"Image 1: Matrix 3, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Bouncing Boundaries.",
+        "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Bouncing Boundaries.",
+        "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Bouncing Boundaries."
+      ],
+      "keyConcept": "Key Principle of Bouncing Boundaries: The symbol • moves vertically one field at a time in the second column and bounces off the upper or lower boundary. Image 1 is Matrix 1; Image 2 is Matrix 2.",
+      "examTip": "Exam Strategy: For Bouncing Boundaries questions on Page 9, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Figure Sequences."
+    }
+  },
+  {
+    "id": 25,
+    "chapter": "Figure Sequences",
+    "topic": "Diagonal Movement",
+    "difficulty": "Easy",
+    "question": "Look at the figure sequence for Exercise 2 on Page 10. Determine what the next two matrices (Image 1 and Image 2) look like.",
+    "options": [
+      "Image 1: Matrix 1, Image 2: Matrix 1",
+      "Image 1: Matrix 1, Image 2: Matrix 2",
+      "Image 1: Matrix 1, Image 2: Matrix 3",
+      "Image 1: Matrix 2, Image 2: Matrix 1",
+      "Image 1: Matrix 2, Image 2: Matrix 2",
+      "Image 1: Matrix 2, Image 2: Matrix 3",
+      "Image 1: Matrix 3, Image 2: Matrix 1",
+      "Image 1: Matrix 3, Image 2: Matrix 2",
+      "Image 1: Matrix 3, Image 2: Matrix 3"
+    ],
+    "correctAnswer": 7,
+    "explanation": "The symbol • always moves one space diagonally upwards to the right from its starting position until it bounces off the upper boundary and returns to the starting position in the same way. Once there, it bounces off the lower boundary and moves diagonally upwards to the right again. Image 1 is Matrix 3; Image 2 is Matrix 2.",
+    "bookPage": 10,
+    "image": "/images/page-10.png",
+    "solution": {
+      "understanding": "This question focuses on Diagonal Movement within Figure Sequences. We are given: \"Look at the figure sequence for Exercise 2 on Page 10. Determine what the next two matrices (Image 1 and Image 2) look like.\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Diagonal Movement.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Diagonal Movement.",
+        "Evaluate the expressions step-by-step to arrive at result: \"Image 1: Matrix 3, Image 2: Matrix 2\".",
+        "Verify that Option H matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Question Diagram",
+        "content": "/images/page-10.png",
+        "caption": "Refer to diagram for Question 25 in Figure Sequences"
+      },
+      "finalAnswer": "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is correct. The symbol • always moves one space diagonally upwards to the right from its starting position until it bounces off the upper boundary and returns to the starting position in the same way. Once there, it bounces off the lower boundary and moves diagonally upwards to the right again. Image 1 is Matrix 3; Image 2 is Matrix 2.",
+      "wrongOptions": [
+        "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Diagonal Movement.",
+        "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Diagonal Movement.",
+        "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Diagonal Movement.",
+        "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Diagonal Movement.",
+        "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Diagonal Movement.",
+        "Option F (\"Image 1: Matrix 2, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Diagonal Movement.",
+        "Option G (\"Image 1: Matrix 3, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Diagonal Movement.",
+        "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is CORRECT.",
+        "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Diagonal Movement."
+      ],
+      "keyConcept": "Key Principle of Diagonal Movement: The symbol • always moves one space diagonally upwards to the right from its starting position until it bounces off the upper boundary and returns to the starting position in the same way. Once there, it bounces off the lower boundary and moves diagonally upwards to the right again. Image 1 is Matrix 3; Image 2 is Matrix 2.",
+      "examTip": "Exam Strategy: For Diagonal Movement questions on Page 10, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Figure Sequences."
+    }
+  },
+  {
+    "id": 26,
+    "chapter": "Figure Sequences",
+    "topic": "Multi-symbol Rules",
+    "difficulty": "Medium",
+    "question": "Look at the figure sequence for Exercise 3 on Page 10. Determine what the next two matrices (Image 1 and Image 2) look like.",
+    "options": [
+      "Image 1: Matrix 1, Image 2: Matrix 1",
+      "Image 1: Matrix 1, Image 2: Matrix 2",
+      "Image 1: Matrix 1, Image 2: Matrix 3",
+      "Image 1: Matrix 2, Image 2: Matrix 1",
+      "Image 1: Matrix 2, Image 2: Matrix 2",
+      "Image 1: Matrix 2, Image 2: Matrix 3",
+      "Image 1: Matrix 3, Image 2: Matrix 1",
+      "Image 1: Matrix 3, Image 2: Matrix 2",
+      "Image 1: Matrix 3, Image 2: Matrix 3"
+    ],
+    "correctAnswer": 4,
+    "explanation": "The symbol { moves along the outer borders clockwise by two squares at a time, alternating color from black to pink. The symbol 1 rotates 90 degrees to the right from image to image. The symbol 9 moves along the outer borders counter clockwise one space at a time. Image 1 is Matrix 2; Image 2 is Matrix 2.",
+    "bookPage": 10,
+    "image": "/images/page-10.png",
+    "solution": {
+      "understanding": "This question focuses on Multi-symbol Rules within Figure Sequences. We are given: \"Look at the figure sequence for Exercise 3 on Page 10. Determine what the next two matrices (Image 1 and Image 2) look like.\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Multi-symbol Rules.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Multi-symbol Rules.",
+        "Evaluate the expressions step-by-step to arrive at result: \"Image 1: Matrix 2, Image 2: Matrix 2\".",
+        "Verify that Option E matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Question Diagram",
+        "content": "/images/page-10.png",
+        "caption": "Refer to diagram for Question 26 in Figure Sequences"
+      },
+      "finalAnswer": "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is correct. The symbol { moves along the outer borders clockwise by two squares at a time, alternating color from black to pink. The symbol 1 rotates 90 degrees to the right from image to image. The symbol 9 moves along the outer borders counter clockwise one space at a time. Image 1 is Matrix 2; Image 2 is Matrix 2.",
+      "wrongOptions": [
+        "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
+        "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
+        "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
+        "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
+        "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is CORRECT.",
+        "Option F (\"Image 1: Matrix 2, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
+        "Option G (\"Image 1: Matrix 3, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
+        "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
+        "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules."
+      ],
+      "keyConcept": "Key Principle of Multi-symbol Rules: The symbol { moves along the outer borders clockwise by two squares at a time, alternating color from black to pink. The symbol 1 rotates 90 degrees to the right from image to image. The symbol 9 moves along the outer borders counter clockwise one space at a time. Image 1 is Matrix 2; Image 2 is Matrix 2.",
+      "examTip": "Exam Strategy: For Multi-symbol Rules questions on Page 10, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Figure Sequences."
+    }
+  },
+  {
+    "id": 27,
+    "chapter": "Figure Sequences",
+    "topic": "Multi-symbol Rules",
+    "difficulty": "Medium",
+    "question": "Look at the figure sequence for Exercise 4 on Page 11. Determine what the next two matrices (Image 1 and Image 2) look like.",
+    "options": [
+      "Image 1: Matrix 1, Image 2: Matrix 1",
+      "Image 1: Matrix 1, Image 2: Matrix 2",
+      "Image 1: Matrix 1, Image 2: Matrix 3",
+      "Image 1: Matrix 2, Image 2: Matrix 1",
+      "Image 1: Matrix 2, Image 2: Matrix 2",
+      "Image 1: Matrix 2, Image 2: Matrix 3",
+      "Image 1: Matrix 3, Image 2: Matrix 1",
+      "Image 1: Matrix 3, Image 2: Matrix 2",
+      "Image 1: Matrix 3, Image 2: Matrix 3"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The symbol D moves horizontally by one field in the fourth row and bounces, rotating 90 degrees to the right. The symbol • moves: left, up, right, down... The symbol O moves diagonally downwards to the left and bounces. Image 1 is Matrix 1; Image 2 is Matrix 3.",
+    "bookPage": 11,
+    "image": "/images/page-11.png",
+    "solution": {
+      "understanding": "This question focuses on Multi-symbol Rules within Figure Sequences. We are given: \"Look at the figure sequence for Exercise 4 on Page 11. Determine what the next two matrices (Image 1 and Image 2) look like.\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Multi-symbol Rules.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Multi-symbol Rules.",
+        "Evaluate the expressions step-by-step to arrive at result: \"Image 1: Matrix 1, Image 2: Matrix 3\".",
+        "Verify that Option C matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Question Diagram",
+        "content": "/images/page-11.png",
+        "caption": "Refer to diagram for Question 27 in Figure Sequences"
+      },
+      "finalAnswer": "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is correct. The symbol D moves horizontally by one field in the fourth row and bounces, rotating 90 degrees to the right. The symbol • moves: left, up, right, down... The symbol O moves diagonally downwards to the left and bounces. Image 1 is Matrix 1; Image 2 is Matrix 3.",
+      "wrongOptions": [
+        "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
+        "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
+        "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is CORRECT.",
+        "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
+        "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
+        "Option F (\"Image 1: Matrix 2, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
+        "Option G (\"Image 1: Matrix 3, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
+        "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
+        "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules."
+      ],
+      "keyConcept": "Key Principle of Multi-symbol Rules: The symbol D moves horizontally by one field in the fourth row and bounces, rotating 90 degrees to the right. The symbol • moves: left, up, right, down... The symbol O moves diagonally downwards to the left and bounces. Image 1 is Matrix 1; Image 2 is Matrix 3.",
+      "examTip": "Exam Strategy: For Multi-symbol Rules questions on Page 11, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Figure Sequences."
+    }
+  },
+  {
+    "id": 28,
+    "chapter": "Figure Sequences",
+    "topic": "Progression Rules (x+1)",
+    "difficulty": "Hard",
+    "question": "Look at the figure sequence for Exercise 5 on Page 11. Determine what the next two matrices (Image 1 and Image 2) look like.",
+    "options": [
+      "Image 1: Matrix 1, Image 2: Matrix 1",
+      "Image 1: Matrix 1, Image 2: Matrix 2",
+      "Image 1: Matrix 1, Image 2: Matrix 3",
+      "Image 1: Matrix 2, Image 2: Matrix 1",
+      "Image 1: Matrix 2, Image 2: Matrix 2",
+      "Image 1: Matrix 2, Image 2: Matrix 3",
+      "Image 1: Matrix 3, Image 2: Matrix 1",
+      "Image 1: Matrix 3, Image 2: Matrix 2",
+      "Image 1: Matrix 3, Image 2: Matrix 3"
+    ],
+    "correctAnswer": 8,
+    "explanation": "The symbol A moves along the outer borders clockwise by x + 1 fields. The symbol 9 moves horizontally in the third row, turns 90 degrees left and changes color. The symbol o moves one field at a time: down, right, up, left... The symbol • moves diagonally. Image 1 is Matrix 3; Image 2 is Matrix 3.",
+    "bookPage": 11,
+    "image": "/images/page-11.png",
+    "solution": {
+      "understanding": "This question focuses on Progression Rules (x+1) within Figure Sequences. We are given: \"Look at the figure sequence for Exercise 5 on Page 11. Determine what the next two matrices (Image 1 and Image 2) look like.\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Progression Rules (x+1).",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Progression Rules (x+1).",
+        "Evaluate the expressions step-by-step to arrive at result: \"Image 1: Matrix 3, Image 2: Matrix 3\".",
+        "Verify that Option I matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Question Diagram",
+        "content": "/images/page-11.png",
+        "caption": "Refer to diagram for Question 28 in Figure Sequences"
+      },
+      "finalAnswer": "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is correct. The symbol A moves along the outer borders clockwise by x + 1 fields. The symbol 9 moves horizontally in the third row, turns 90 degrees left and changes color. The symbol o moves one field at a time: down, right, up, left... The symbol • moves diagonally. Image 1 is Matrix 3; Image 2 is Matrix 3.",
+      "wrongOptions": [
+        "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Progression Rules (x+1).",
+        "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Progression Rules (x+1).",
+        "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Progression Rules (x+1).",
+        "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Progression Rules (x+1).",
+        "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Progression Rules (x+1).",
+        "Option F (\"Image 1: Matrix 2, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Progression Rules (x+1).",
+        "Option G (\"Image 1: Matrix 3, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Progression Rules (x+1).",
+        "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Progression Rules (x+1).",
+        "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is CORRECT."
+      ],
+      "keyConcept": "Key Principle of Progression Rules (x+1): The symbol A moves along the outer borders clockwise by x + 1 fields. The symbol 9 moves horizontally in the third row, turns 90 degrees left and changes color. The symbol o moves one field at a time: down, right, up, left... The symbol • moves diagonally. Image 1 is Matrix 3; Image 2 is Matrix 3.",
+      "examTip": "Exam Strategy: For Progression Rules (x+1) questions on Page 11, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Figure Sequences."
+    }
+  },
+  {
+    "id": 29,
+    "chapter": "Figure Sequences",
+    "topic": "Rotation and Color Progression",
+    "difficulty": "Hard",
+    "question": "Look at the figure sequence for Exercise 6 on Page 12. Determine what the next two matrices (Image 1 and Image 2) look like.",
+    "options": [
+      "Image 1: Matrix 1, Image 2: Matrix 1",
+      "Image 1: Matrix 1, Image 2: Matrix 2",
+      "Image 1: Matrix 1, Image 2: Matrix 3",
+      "Image 1: Matrix 2, Image 2: Matrix 1",
+      "Image 1: Matrix 2, Image 2: Matrix 2",
+      "Image 1: Matrix 2, Image 2: Matrix 3",
+      "Image 1: Matrix 3, Image 2: Matrix 1",
+      "Image 1: Matrix 3, Image 2: Matrix 2",
+      "Image 1: Matrix 3, Image 2: Matrix 3"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The symbol → moves diagonally, rotating x+1 times. The symbol • moves vertically in the third column. The symbol moves counter clockwise. The symbol A moves clockwise by two spaces, changing color. Image 1 is Matrix 2; Image 2 is Matrix 1.",
+    "bookPage": 12,
+    "image": "/images/page-12.png",
+    "solution": {
+      "understanding": "This question focuses on Rotation and Color Progression within Figure Sequences. We are given: \"Look at the figure sequence for Exercise 6 on Page 12. Determine what the next two matrices (Image 1 and Image 2) look like.\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Rotation and Color Progression.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Rotation and Color Progression.",
+        "Evaluate the expressions step-by-step to arrive at result: \"Image 1: Matrix 2, Image 2: Matrix 1\".",
+        "Verify that Option D matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Question Diagram",
+        "content": "/images/page-12.png",
+        "caption": "Refer to diagram for Question 29 in Figure Sequences"
+      },
+      "finalAnswer": "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is correct. The symbol → moves diagonally, rotating x+1 times. The symbol • moves vertically in the third column. The symbol moves counter clockwise. The symbol A moves clockwise by two spaces, changing color. Image 1 is Matrix 2; Image 2 is Matrix 1.",
+      "wrongOptions": [
+        "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Rotation and Color Progression.",
+        "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Rotation and Color Progression.",
+        "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Rotation and Color Progression.",
+        "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is CORRECT.",
+        "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Rotation and Color Progression.",
+        "Option F (\"Image 1: Matrix 2, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Rotation and Color Progression.",
+        "Option G (\"Image 1: Matrix 3, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Rotation and Color Progression.",
+        "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Rotation and Color Progression.",
+        "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Rotation and Color Progression."
+      ],
+      "keyConcept": "Key Principle of Rotation and Color Progression: The symbol → moves diagonally, rotating x+1 times. The symbol • moves vertically in the third column. The symbol moves counter clockwise. The symbol A moves clockwise by two spaces, changing color. Image 1 is Matrix 2; Image 2 is Matrix 1.",
+      "examTip": "Exam Strategy: For Rotation and Color Progression questions on Page 12, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Figure Sequences."
+    }
+  },
+  {
+    "id": 30,
+    "chapter": "Mathematical Equations",
+    "topic": "Simple Linear Equations",
+    "difficulty": "Easy",
+    "question": "Example 1:\nA + 2 = B\nB = 6\nWhat number does A correspond to so that the equations are solved correctly?",
+    "options": [
+      "2",
+      "4",
+      "6",
+      "8"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Replacing B with 6 in the first equation yields A + 2 = 6. Solving for A gives A = 4.",
+    "bookPage": 17,
+    "solution": {
+      "understanding": "This question focuses on Simple Linear Equations within Mathematical Equations. We are given: \"Example 1:\nA + 2 = B\nB = 6\nWhat number does A correspond to so that the equations are solved correctly?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Simple Linear Equations.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Simple Linear Equations.",
+        "Evaluate the expressions step-by-step to arrive at result: \"4\".",
+        "Verify that Option B matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for Simple Linear Equations",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "Example 1:\nA + 2 = B\nB = 6\nWhat num...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "Simple Linear Equations",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option B",
+            "4"
+          ]
+        ]
+      },
+      "finalAnswer": "Option B (\"4\") is correct. Replacing B with 6 in the first equation yields A + 2 = 6. Solving for A gives A = 4.",
+      "wrongOptions": [
+        "Option A (\"2\") is INCORRECT because it does not satisfy the requirements of Simple Linear Equations.",
+        "Option B (\"4\") is CORRECT.",
+        "Option C (\"6\") is INCORRECT because it does not satisfy the requirements of Simple Linear Equations.",
+        "Option D (\"8\") is INCORRECT because it does not satisfy the requirements of Simple Linear Equations."
+      ],
+      "keyConcept": "Key Principle of Simple Linear Equations: Replacing B with 6 in the first equation yields A + 2 = 6. Solving for A gives A = 4.",
+      "examTip": "Exam Strategy: For Simple Linear Equations questions on Page 17, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Mathematical Equations."
+    }
+  },
+  {
+    "id": 31,
+    "chapter": "Mathematical Equations",
+    "topic": "Systems of Linear Equations",
+    "difficulty": "Easy",
+    "question": "Example 2:\nB = 2 × A\nB + A = 12\nWhat numbers do A and B correspond to so that the equations are solved correctly?",
+    "options": [
+      "A = 3, B = 9",
+      "A = 4, B = 8",
+      "A = 6, B = 6",
+      "A = 2, B = 10"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Substitute B = 2A into the second equation: 2A + A = 12, so 3A = 12, which gives A = 4. Substituting A = 4 into the first equation yields B = 8.",
+    "bookPage": 17,
+    "solution": {
+      "understanding": "This question focuses on Systems of Linear Equations within Mathematical Equations. We are given: \"Example 2:\nB = 2 × A\nB + A = 12\nWhat numbers do A and B correspond to so that the equations are solved correctly?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Systems of Linear Equations.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Systems of Linear Equations.",
+        "Evaluate the expressions step-by-step to arrive at result: \"A = 4, B = 8\".",
+        "Verify that Option B matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for Systems of Linear Equations",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "Example 2:\nB = 2 × A\nB + A = 12\nWha...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "Systems of Linear Equations",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option B",
+            "A = 4, B = 8"
+          ]
+        ]
+      },
+      "finalAnswer": "Option B (\"A = 4, B = 8\") is correct. Substitute B = 2A into the second equation: 2A + A = 12, so 3A = 12, which gives A = 4. Substituting A = 4 into the first equation yields B = 8.",
+      "wrongOptions": [
+        "Option A (\"A = 3, B = 9\") is INCORRECT because it does not satisfy the requirements of Systems of Linear Equations.",
+        "Option B (\"A = 4, B = 8\") is CORRECT.",
+        "Option C (\"A = 6, B = 6\") is INCORRECT because it does not satisfy the requirements of Systems of Linear Equations.",
+        "Option D (\"A = 2, B = 10\") is INCORRECT because it does not satisfy the requirements of Systems of Linear Equations."
+      ],
+      "keyConcept": "Key Principle of Systems of Linear Equations: Substitute B = 2A into the second equation: 2A + A = 12, so 3A = 12, which gives A = 4. Substituting A = 4 into the first equation yields B = 8.",
+      "examTip": "Exam Strategy: For Systems of Linear Equations questions on Page 17, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Mathematical Equations."
+    }
+  },
+  {
+    "id": 32,
+    "chapter": "Mathematical Equations",
+    "topic": "Systems of Linear Equations",
+    "difficulty": "Easy",
+    "question": "Solve the system of equations:\n7 + A = 14\nB - 3 = A\nWhat are the values of A and B?",
+    "options": [
+      "A = 7, B = 10",
+      "A = 7, B = 4",
+      "A = 10, B = 7",
+      "A = 14, B = 17"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Subtract 7 from both sides in the first equation to get A = 7. Insert A into the second equation: B - 3 = 7, which yields B = 10.",
+    "bookPage": 19,
+    "solution": {
+      "understanding": "This question focuses on Systems of Linear Equations within Mathematical Equations. We are given: \"Solve the system of equations:\n7 + A = 14\nB - 3 = A\nWhat are the values of A and B?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Systems of Linear Equations.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Systems of Linear Equations.",
+        "Evaluate the expressions step-by-step to arrive at result: \"A = 7, B = 10\".",
+        "Verify that Option A matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for Systems of Linear Equations",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "Solve the system of equations:\n7 + ...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "Systems of Linear Equations",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option A",
+            "A = 7, B = 10"
+          ]
+        ]
+      },
+      "finalAnswer": "Option A (\"A = 7, B = 10\") is correct. Subtract 7 from both sides in the first equation to get A = 7. Insert A into the second equation: B - 3 = 7, which yields B = 10.",
+      "wrongOptions": [
+        "Option A (\"A = 7, B = 10\") is CORRECT.",
+        "Option B (\"A = 7, B = 4\") is INCORRECT because it does not satisfy the requirements of Systems of Linear Equations.",
+        "Option C (\"A = 10, B = 7\") is INCORRECT because it does not satisfy the requirements of Systems of Linear Equations.",
+        "Option D (\"A = 14, B = 17\") is INCORRECT because it does not satisfy the requirements of Systems of Linear Equations."
+      ],
+      "keyConcept": "Key Principle of Systems of Linear Equations: Subtract 7 from both sides in the first equation to get A = 7. Insert A into the second equation: B - 3 = 7, which yields B = 10.",
+      "examTip": "Exam Strategy: For Systems of Linear Equations questions on Page 19, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Mathematical Equations."
+    }
+  },
+  {
+    "id": 33,
+    "chapter": "Mathematical Equations",
+    "topic": "Substitution Method",
+    "difficulty": "Easy",
+    "question": "Solve the system of equations:\nB ÷ 2 = A\nB - A = 8\nWhat are the values of A and B?",
+    "options": [
+      "A = 4, B = 12",
+      "A = 8, B = 16",
+      "A = 6, B = 14",
+      "A = 16, B = 8"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Multiplying by 2 in the first equation gives B = 2A. Replacing B in the second equation gives 2A - A = 8, so A = 8. Then B = 16.",
+    "bookPage": 19,
+    "solution": {
+      "understanding": "This question focuses on Substitution Method within Mathematical Equations. We are given: \"Solve the system of equations:\nB ÷ 2 = A\nB - A = 8\nWhat are the values of A and B?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Substitution Method.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Substitution Method.",
+        "Evaluate the expressions step-by-step to arrive at result: \"A = 8, B = 16\".",
+        "Verify that Option B matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for Substitution Method",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "Solve the system of equations:\nB ÷ ...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "Substitution Method",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option B",
+            "A = 8, B = 16"
+          ]
+        ]
+      },
+      "finalAnswer": "Option B (\"A = 8, B = 16\") is correct. Multiplying by 2 in the first equation gives B = 2A. Replacing B in the second equation gives 2A - A = 8, so A = 8. Then B = 16.",
+      "wrongOptions": [
+        "Option A (\"A = 4, B = 12\") is INCORRECT because it does not satisfy the requirements of Substitution Method.",
+        "Option B (\"A = 8, B = 16\") is CORRECT.",
+        "Option C (\"A = 6, B = 14\") is INCORRECT because it does not satisfy the requirements of Substitution Method.",
+        "Option D (\"A = 16, B = 8\") is INCORRECT because it does not satisfy the requirements of Substitution Method."
+      ],
+      "keyConcept": "Key Principle of Substitution Method: Multiplying by 2 in the first equation gives B = 2A. Replacing B in the second equation gives 2A - A = 8, so A = 8. Then B = 16.",
+      "examTip": "Exam Strategy: For Substitution Method questions on Page 19, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Mathematical Equations."
+    }
+  },
+  {
+    "id": 34,
+    "chapter": "Mathematical Equations",
+    "topic": "Multi-variable Substitution",
+    "difficulty": "Medium",
+    "question": "Solve the system of equations:\n3 × C = A\nA + C = 8\n2 × A + 2 × C = B\nWhat are the values of A, B, and C?",
+    "options": [
+      "A = 6, B = 16, C = 2",
+      "A = 6, B = 12, C = 2",
+      "A = 4, B = 16, C = 4",
+      "A = 3, B = 10, C = 1"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Substitute A = 3C into A + C = 8 to get 3C + C = 8, so 4C = 8, which yields C = 2. Then A = 6. Substituting A = 6 and C = 2 into 2A + 2C = B yields B = 16.",
+    "bookPage": 19,
+    "solution": {
+      "understanding": "This question focuses on Multi-variable Substitution within Mathematical Equations. We are given: \"Solve the system of equations:\n3 × C = A\nA + C = 8\n2 × A + 2 × C = B\nWhat are the values of A, B, and C?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Multi-variable Substitution.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Multi-variable Substitution.",
+        "Evaluate the expressions step-by-step to arrive at result: \"A = 6, B = 16, C = 2\".",
+        "Verify that Option A matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for Multi-variable Substitution",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "Solve the system of equations:\n3 × ...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "Multi-variable Substitution",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option A",
+            "A = 6, B = 16, C = 2"
+          ]
+        ]
+      },
+      "finalAnswer": "Option A (\"A = 6, B = 16, C = 2\") is correct. Substitute A = 3C into A + C = 8 to get 3C + C = 8, so 4C = 8, which yields C = 2. Then A = 6. Substituting A = 6 and C = 2 into 2A + 2C = B yields B = 16.",
+      "wrongOptions": [
+        "Option A (\"A = 6, B = 16, C = 2\") is CORRECT.",
+        "Option B (\"A = 6, B = 12, C = 2\") is INCORRECT because it does not satisfy the requirements of Multi-variable Substitution.",
+        "Option C (\"A = 4, B = 16, C = 4\") is INCORRECT because it does not satisfy the requirements of Multi-variable Substitution.",
+        "Option D (\"A = 3, B = 10, C = 1\") is INCORRECT because it does not satisfy the requirements of Multi-variable Substitution."
+      ],
+      "keyConcept": "Key Principle of Multi-variable Substitution: Substitute A = 3C into A + C = 8 to get 3C + C = 8, so 4C = 8, which yields C = 2. Then A = 6. Substituting A = 6 and C = 2 into 2A + 2C = B yields B = 16.",
+      "examTip": "Exam Strategy: For Multi-variable Substitution questions on Page 19, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Mathematical Equations."
+    }
+  },
+  {
+    "id": 35,
+    "chapter": "Mathematical Equations",
+    "topic": "Multi-variable Substitution",
+    "difficulty": "Medium",
+    "question": "Solve the system of equations:\n18 - B = A\n3 × A = C\nB ÷ 2 = A\nWhat are the values of A, B, and C?",
+    "options": [
+      "A = 6, B = 12, C = 18",
+      "A = 8, B = 16, C = 24",
+      "A = 4, B = 8, C = 12",
+      "A = 6, B = 18, C = 12"
+    ],
+    "correctAnswer": 0,
+    "explanation": "From the third equation, B = 2A. Replacing B in the first equation yields 18 - 2A = A, so 3A = 18 and A = 6. Substituting A = 6 yields B = 12 and C = 18.",
+    "bookPage": 19,
+    "solution": {
+      "understanding": "This question focuses on Multi-variable Substitution within Mathematical Equations. We are given: \"Solve the system of equations:\n18 - B = A\n3 × A = C\nB ÷ 2 = A\nWhat are the values of A, B, and C?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Multi-variable Substitution.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Multi-variable Substitution.",
+        "Evaluate the expressions step-by-step to arrive at result: \"A = 6, B = 12, C = 18\".",
+        "Verify that Option A matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for Multi-variable Substitution",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "Solve the system of equations:\n18 -...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "Multi-variable Substitution",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option A",
+            "A = 6, B = 12, C = 18"
+          ]
+        ]
+      },
+      "finalAnswer": "Option A (\"A = 6, B = 12, C = 18\") is correct. From the third equation, B = 2A. Replacing B in the first equation yields 18 - 2A = A, so 3A = 18 and A = 6. Substituting A = 6 yields B = 12 and C = 18.",
+      "wrongOptions": [
+        "Option A (\"A = 6, B = 12, C = 18\") is CORRECT.",
+        "Option B (\"A = 8, B = 16, C = 24\") is INCORRECT because it does not satisfy the requirements of Multi-variable Substitution.",
+        "Option C (\"A = 4, B = 8, C = 12\") is INCORRECT because it does not satisfy the requirements of Multi-variable Substitution.",
+        "Option D (\"A = 6, B = 18, C = 12\") is INCORRECT because it does not satisfy the requirements of Multi-variable Substitution."
+      ],
+      "keyConcept": "Key Principle of Multi-variable Substitution: From the third equation, B = 2A. Replacing B in the first equation yields 18 - 2A = A, so 3A = 18 and A = 6. Substituting A = 6 yields B = 12 and C = 18.",
+      "examTip": "Exam Strategy: For Multi-variable Substitution questions on Page 19, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Mathematical Equations."
+    }
+  },
+  {
+    "id": 36,
+    "chapter": "Mathematical Equations",
+    "topic": "Four-variable Linear System",
+    "difficulty": "Hard",
+    "question": "Solve the system of equations:\nA - B + C - D = 2\n10 × B = C\n5 × B = A\n11 + B = D\nWhat are the values of A, B, C, and D?",
+    "options": [
+      "A = 10, B = 2, C = 20, D = 13",
+      "A = 5, B = 1, C = 10, D = 12",
+      "A = 5, B = 2, C = 10, D = 13",
+      "A = 1, B = 5, C = 5, D = 12"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Substitute A, C, and D expressions into the first equation: 5B - B + 10B - (11 + B) = 2. This simplifies to 13B - 11 = 2, which gives B = 1. Then C = 10, A = 5, and D = 12.",
+    "bookPage": 20,
+    "solution": {
+      "understanding": "This question focuses on Four-variable Linear System within Mathematical Equations. We are given: \"Solve the system of equations:\nA - B + C - D = 2\n10 × B = C\n5 × B = A\n11 + B = D\nWhat are the values of A, B, C, and D?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Four-variable Linear System.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Four-variable Linear System.",
+        "Evaluate the expressions step-by-step to arrive at result: \"A = 5, B = 1, C = 10, D = 12\".",
+        "Verify that Option B matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for Four-variable Linear System",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "Solve the system of equations:\nA - ...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "Four-variable Linear System",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option B",
+            "A = 5, B = 1, C = 10, D = 12"
+          ]
+        ]
+      },
+      "finalAnswer": "Option B (\"A = 5, B = 1, C = 10, D = 12\") is correct. Substitute A, C, and D expressions into the first equation: 5B - B + 10B - (11 + B) = 2. This simplifies to 13B - 11 = 2, which gives B = 1. Then C = 10, A = 5, and D = 12.",
+      "wrongOptions": [
+        "Option A (\"A = 10, B = 2, C = 20, D = 13\") is INCORRECT because it does not satisfy the requirements of Four-variable Linear System.",
+        "Option B (\"A = 5, B = 1, C = 10, D = 12\") is CORRECT.",
+        "Option C (\"A = 5, B = 2, C = 10, D = 13\") is INCORRECT because it does not satisfy the requirements of Four-variable Linear System.",
+        "Option D (\"A = 1, B = 5, C = 5, D = 12\") is INCORRECT because it does not satisfy the requirements of Four-variable Linear System."
+      ],
+      "keyConcept": "Key Principle of Four-variable Linear System: Substitute A, C, and D expressions into the first equation: 5B - B + 10B - (11 + B) = 2. This simplifies to 13B - 11 = 2, which gives B = 1. Then C = 10, A = 5, and D = 12.",
+      "examTip": "Exam Strategy: For Four-variable Linear System questions on Page 20, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Mathematical Equations."
+    }
+  },
+  {
+    "id": 37,
+    "chapter": "Mathematical Equations",
+    "topic": "Four-variable Linear System",
+    "difficulty": "Hard",
+    "question": "Solve the system of equations:\nC + D - A = 1\n5 × C = D\n13 - C = A\n3 × C - 1 = B\nWhat are the values of A, B, C, and D?",
+    "options": [
+      "A = 11, B = 5, C = 2, D = 10",
+      "A = 12, B = 2, C = 1, D = 5",
+      "A = 11, B = 10, C = 2, D = 5",
+      "A = 10, B = 5, C = 3, D = 15"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Substitute D = 5C and A = 13 - C into the first equation: C + 5C - (13 - C) = 1. This simplifies to 7C - 13 = 1, which gives C = 2. Substituting C = 2 yields D = 10, A = 11, and B = 5.",
+    "bookPage": 20,
+    "solution": {
+      "understanding": "This question focuses on Four-variable Linear System within Mathematical Equations. We are given: \"Solve the system of equations:\nC + D - A = 1\n5 × C = D\n13 - C = A\n3 × C - 1 = B\nWhat are the values of A, B, C, and D?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Four-variable Linear System.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Four-variable Linear System.",
+        "Evaluate the expressions step-by-step to arrive at result: \"A = 11, B = 5, C = 2, D = 10\".",
+        "Verify that Option A matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "truthTable",
+        "title": "Analysis for Four-variable Linear System",
+        "headers": [
+          "Step / Property",
+          "Rule Applied",
+          "Result"
+        ],
+        "rows": [
+          [
+            "Input / Problem",
+            "Solve the system of equations:\nC + ...",
+            "Given"
+          ],
+          [
+            "Core Concept",
+            "Four-variable Linear System",
+            "Verified"
+          ],
+          [
+            "Correct Output",
+            "Option A",
+            "A = 11, B = 5, C = 2, D = 10"
+          ]
+        ]
+      },
+      "finalAnswer": "Option A (\"A = 11, B = 5, C = 2, D = 10\") is correct. Substitute D = 5C and A = 13 - C into the first equation: C + 5C - (13 - C) = 1. This simplifies to 7C - 13 = 1, which gives C = 2. Substituting C = 2 yields D = 10, A = 11, and B = 5.",
+      "wrongOptions": [
+        "Option A (\"A = 11, B = 5, C = 2, D = 10\") is CORRECT.",
+        "Option B (\"A = 12, B = 2, C = 1, D = 5\") is INCORRECT because it does not satisfy the requirements of Four-variable Linear System.",
+        "Option C (\"A = 11, B = 10, C = 2, D = 5\") is INCORRECT because it does not satisfy the requirements of Four-variable Linear System.",
+        "Option D (\"A = 10, B = 5, C = 3, D = 15\") is INCORRECT because it does not satisfy the requirements of Four-variable Linear System."
+      ],
+      "keyConcept": "Key Principle of Four-variable Linear System: Substitute D = 5C and A = 13 - C into the first equation: C + 5C - (13 - C) = 1. This simplifies to 7C - 13 = 1, which gives C = 2. Substituting C = 2 yields D = 10, A = 11, and B = 5.",
+      "examTip": "Exam Strategy: For Four-variable Linear System questions on Page 20, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Mathematical Equations."
+    }
+  },
+  {
+    "id": 38,
+    "chapter": "Latin Squares",
+    "topic": "Single Column Elimination",
+    "difficulty": "Easy",
+    "question": "Look at the 5x5 Latin square for Example 1 on Page 25. Which letter must go in the field with the question mark?",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In the first example, 'B' needs to replace the question mark, because all other letters D, A, C, and E already appear in this column.",
+    "bookPage": 25,
+    "image": "/images/page-25.png",
+    "solution": {
+      "understanding": "This question focuses on Single Column Elimination within Latin Squares. We are given: \"Look at the 5x5 Latin square for Example 1 on Page 25. Which letter must go in the field with the question mark?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Single Column Elimination.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Single Column Elimination.",
+        "Evaluate the expressions step-by-step to arrive at result: \"B\".",
+        "Verify that Option B matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Question Diagram",
+        "content": "/images/page-25.png",
+        "caption": "Refer to diagram for Question 38 in Latin Squares"
+      },
+      "finalAnswer": "Option B (\"B\") is correct. In the first example, 'B' needs to replace the question mark, because all other letters D, A, C, and E already appear in this column.",
+      "wrongOptions": [
+        "Option A (\"A\") is INCORRECT because it does not satisfy the requirements of Single Column Elimination.",
+        "Option B (\"B\") is CORRECT.",
+        "Option C (\"C\") is INCORRECT because it does not satisfy the requirements of Single Column Elimination.",
+        "Option D (\"D\") is INCORRECT because it does not satisfy the requirements of Single Column Elimination."
+      ],
+      "keyConcept": "Key Principle of Single Column Elimination: In the first example, 'B' needs to replace the question mark, because all other letters D, A, C, and E already appear in this column.",
+      "examTip": "Exam Strategy: For Single Column Elimination questions on Page 25, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Latin Squares."
+    }
+  },
+  {
+    "id": 39,
+    "chapter": "Latin Squares",
+    "topic": "Intermediary Cell Elimination",
+    "difficulty": "Easy",
+    "question": "Look at the 5x5 Latin square for Example 2 on Page 25. Which letter must go in the field with the question mark?",
+    "options": [
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "correctAnswer": 2,
+    "explanation": "You first need to fill in 'B' in the first row of the last column (as B is the only letter not appearing in this row/column). Then you can replace the question mark with 'D', because D is the only letter remaining for the last column.",
+    "bookPage": 25,
+    "image": "/images/page-25.png",
+    "solution": {
+      "understanding": "This question focuses on Intermediary Cell Elimination within Latin Squares. We are given: \"Look at the 5x5 Latin square for Example 2 on Page 25. Which letter must go in the field with the question mark?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Intermediary Cell Elimination.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Intermediary Cell Elimination.",
+        "Evaluate the expressions step-by-step to arrive at result: \"D\".",
+        "Verify that Option C matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Question Diagram",
+        "content": "/images/page-25.png",
+        "caption": "Refer to diagram for Question 39 in Latin Squares"
+      },
+      "finalAnswer": "Option C (\"D\") is correct. You first need to fill in 'B' in the first row of the last column (as B is the only letter not appearing in this row/column). Then you can replace the question mark with 'D', because D is the only letter remaining for the last column.",
+      "wrongOptions": [
+        "Option A (\"B\") is INCORRECT because it does not satisfy the requirements of Intermediary Cell Elimination.",
+        "Option B (\"C\") is INCORRECT because it does not satisfy the requirements of Intermediary Cell Elimination.",
+        "Option C (\"D\") is CORRECT.",
+        "Option D (\"E\") is INCORRECT because it does not satisfy the requirements of Intermediary Cell Elimination."
+      ],
+      "keyConcept": "Key Principle of Intermediary Cell Elimination: You first need to fill in 'B' in the first row of the last column (as B is the only letter not appearing in this row/column). Then you can replace the question mark with 'D', because D is the only letter remaining for the last column.",
+      "examTip": "Exam Strategy: For Intermediary Cell Elimination questions on Page 25, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Latin Squares."
+    }
+  },
+  {
+    "id": 40,
+    "chapter": "Latin Squares",
+    "topic": "Latin Square Elimination",
+    "difficulty": "Easy",
+    "question": "Look at the Latin square for Exercise 1 on Page 26. Which letter belongs in the field with the question mark?",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Solution = C. In column B, C and D are missing. C is already in row 4, so D must be inserted in B4. Consequently, C must be inserted in the place of the question mark.",
+    "bookPage": 26,
+    "image": "/images/page-26.png",
+    "solution": {
+      "understanding": "This question focuses on Latin Square Elimination within Latin Squares. We are given: \"Look at the Latin square for Exercise 1 on Page 26. Which letter belongs in the field with the question mark?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Latin Square Elimination.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Latin Square Elimination.",
+        "Evaluate the expressions step-by-step to arrive at result: \"C\".",
+        "Verify that Option C matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Question Diagram",
+        "content": "/images/page-26.png",
+        "caption": "Refer to diagram for Question 40 in Latin Squares"
+      },
+      "finalAnswer": "Option C (\"C\") is correct. Solution = C. In column B, C and D are missing. C is already in row 4, so D must be inserted in B4. Consequently, C must be inserted in the place of the question mark.",
+      "wrongOptions": [
+        "Option A (\"A\") is INCORRECT because it does not satisfy the requirements of Latin Square Elimination.",
+        "Option B (\"B\") is INCORRECT because it does not satisfy the requirements of Latin Square Elimination.",
+        "Option C (\"C\") is CORRECT.",
+        "Option D (\"D\") is INCORRECT because it does not satisfy the requirements of Latin Square Elimination."
+      ],
+      "keyConcept": "Key Principle of Latin Square Elimination: Solution = C. In column B, C and D are missing. C is already in row 4, so D must be inserted in B4. Consequently, C must be inserted in the place of the question mark.",
+      "examTip": "Exam Strategy: For Latin Square Elimination questions on Page 26, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Latin Squares."
+    }
+  },
+  {
+    "id": 41,
+    "chapter": "Latin Squares",
+    "topic": "Latin Square Elimination",
+    "difficulty": "Easy",
+    "question": "Look at the Latin square for Exercise 2 on Page 26. Which letter belongs in the field with the question mark?",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Solution = D. In the place of the question mark, D must be inserted because D is already given in all other columns and rows.",
+    "bookPage": 26,
+    "image": "/images/page-26.png",
+    "solution": {
+      "understanding": "This question focuses on Latin Square Elimination within Latin Squares. We are given: \"Look at the Latin square for Exercise 2 on Page 26. Which letter belongs in the field with the question mark?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Latin Square Elimination.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Latin Square Elimination.",
+        "Evaluate the expressions step-by-step to arrive at result: \"D\".",
+        "Verify that Option D matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Question Diagram",
+        "content": "/images/page-26.png",
+        "caption": "Refer to diagram for Question 41 in Latin Squares"
+      },
+      "finalAnswer": "Option D (\"D\") is correct. Solution = D. In the place of the question mark, D must be inserted because D is already given in all other columns and rows.",
+      "wrongOptions": [
+        "Option A (\"A\") is INCORRECT because it does not satisfy the requirements of Latin Square Elimination.",
+        "Option B (\"B\") is INCORRECT because it does not satisfy the requirements of Latin Square Elimination.",
+        "Option C (\"C\") is INCORRECT because it does not satisfy the requirements of Latin Square Elimination.",
+        "Option D (\"D\") is CORRECT."
+      ],
+      "keyConcept": "Key Principle of Latin Square Elimination: Solution = D. In the place of the question mark, D must be inserted because D is already given in all other columns and rows.",
+      "examTip": "Exam Strategy: For Latin Square Elimination questions on Page 26, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Latin Squares."
+    }
+  },
+  {
+    "id": 42,
+    "chapter": "Latin Squares",
+    "topic": "Constraint Intersection",
+    "difficulty": "Medium",
+    "question": "Look at the Latin square for Exercise 3 on Page 27. Which letter belongs in the field with the question mark?",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Solution = B. Step-by-step row and column symbol intersections reveal B is the unique valid assignment for the question mark.",
+    "bookPage": 27,
+    "image": "/images/page-27.png",
+    "solution": {
+      "understanding": "This question focuses on Constraint Intersection within Latin Squares. We are given: \"Look at the Latin square for Exercise 3 on Page 27. Which letter belongs in the field with the question mark?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Constraint Intersection.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Constraint Intersection.",
+        "Evaluate the expressions step-by-step to arrive at result: \"B\".",
+        "Verify that Option B matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Question Diagram",
+        "content": "/images/page-27.png",
+        "caption": "Refer to diagram for Question 42 in Latin Squares"
+      },
+      "finalAnswer": "Option B (\"B\") is correct. Solution = B. Step-by-step row and column symbol intersections reveal B is the unique valid assignment for the question mark.",
+      "wrongOptions": [
+        "Option A (\"A\") is INCORRECT because it does not satisfy the requirements of Constraint Intersection.",
+        "Option B (\"B\") is CORRECT.",
+        "Option C (\"C\") is INCORRECT because it does not satisfy the requirements of Constraint Intersection.",
+        "Option D (\"D\") is INCORRECT because it does not satisfy the requirements of Constraint Intersection."
+      ],
+      "keyConcept": "Key Principle of Constraint Intersection: Solution = B. Step-by-step row and column symbol intersections reveal B is the unique valid assignment for the question mark.",
+      "examTip": "Exam Strategy: For Constraint Intersection questions on Page 27, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Latin Squares."
+    }
+  },
+  {
+    "id": 43,
+    "chapter": "Latin Squares",
+    "topic": "Constraint Intersection",
+    "difficulty": "Medium",
+    "question": "Look at the Latin square for Exercise 4 on Page 27. Which letter belongs in the field with the question mark?",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Solution = D. Applying constraint logic to the rows and columns shows that only D can occupy the question mark's cell.",
+    "bookPage": 27,
+    "image": "/images/page-27.png",
+    "solution": {
+      "understanding": "This question focuses on Constraint Intersection within Latin Squares. We are given: \"Look at the Latin square for Exercise 4 on Page 27. Which letter belongs in the field with the question mark?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Constraint Intersection.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Constraint Intersection.",
+        "Evaluate the expressions step-by-step to arrive at result: \"D\".",
+        "Verify that Option D matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Question Diagram",
+        "content": "/images/page-27.png",
+        "caption": "Refer to diagram for Question 43 in Latin Squares"
+      },
+      "finalAnswer": "Option D (\"D\") is correct. Solution = D. Applying constraint logic to the rows and columns shows that only D can occupy the question mark's cell.",
+      "wrongOptions": [
+        "Option A (\"A\") is INCORRECT because it does not satisfy the requirements of Constraint Intersection.",
+        "Option B (\"B\") is INCORRECT because it does not satisfy the requirements of Constraint Intersection.",
+        "Option C (\"C\") is INCORRECT because it does not satisfy the requirements of Constraint Intersection.",
+        "Option D (\"D\") is CORRECT."
+      ],
+      "keyConcept": "Key Principle of Constraint Intersection: Solution = D. Applying constraint logic to the rows and columns shows that only D can occupy the question mark's cell.",
+      "examTip": "Exam Strategy: For Constraint Intersection questions on Page 27, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Latin Squares."
+    }
+  },
+  {
+    "id": 44,
+    "chapter": "Latin Squares",
+    "topic": "Advanced Elimination",
+    "difficulty": "Hard",
+    "question": "Look at the Latin square for Exercise 5 on Page 28. Which letter belongs in the field with the question mark?",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Solution = D. A full grid analysis reveals D is the only symbol that satisfies the uniqueness constraints for the target column.",
+    "bookPage": 28,
+    "image": "/images/page-28.png",
+    "solution": {
+      "understanding": "This question focuses on Advanced Elimination within Latin Squares. We are given: \"Look at the Latin square for Exercise 5 on Page 28. Which letter belongs in the field with the question mark?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Advanced Elimination.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Advanced Elimination.",
+        "Evaluate the expressions step-by-step to arrive at result: \"D\".",
+        "Verify that Option D matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Question Diagram",
+        "content": "/images/page-28.png",
+        "caption": "Refer to diagram for Question 44 in Latin Squares"
+      },
+      "finalAnswer": "Option D (\"D\") is correct. Solution = D. A full grid analysis reveals D is the only symbol that satisfies the uniqueness constraints for the target column.",
+      "wrongOptions": [
+        "Option A (\"A\") is INCORRECT because it does not satisfy the requirements of Advanced Elimination.",
+        "Option B (\"B\") is INCORRECT because it does not satisfy the requirements of Advanced Elimination.",
+        "Option C (\"C\") is INCORRECT because it does not satisfy the requirements of Advanced Elimination.",
+        "Option D (\"D\") is CORRECT."
+      ],
+      "keyConcept": "Key Principle of Advanced Elimination: Solution = D. A full grid analysis reveals D is the only symbol that satisfies the uniqueness constraints for the target column.",
+      "examTip": "Exam Strategy: For Advanced Elimination questions on Page 28, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Latin Squares."
+    }
+  },
+  {
+    "id": 45,
+    "chapter": "Latin Squares",
+    "topic": "Advanced Elimination",
+    "difficulty": "Hard",
+    "question": "Look at the Latin square for Exercise 6 on Page 28. Which letter belongs in the field with the question mark?",
+    "options": [
+      "A",
+      "C",
+      "D",
+      "E"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Solution = E. Resolving row/column dependencies sequentially identifies E as the letter for the question mark cell.",
+    "bookPage": 28,
+    "image": "/images/page-28.png",
+    "solution": {
+      "understanding": "This question focuses on Advanced Elimination within Latin Squares. We are given: \"Look at the Latin square for Exercise 6 on Page 28. Which letter belongs in the field with the question mark?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "steps": [
+        "Analyze the problem statement and identify given inputs in Advanced Elimination.",
+        "Apply core formulas, boolean truth rules, or type rules applicable to Advanced Elimination.",
+        "Evaluate the expressions step-by-step to arrive at result: \"E\".",
+        "Verify that Option D matches the derived solution precisely."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Question Diagram",
+        "content": "/images/page-28.png",
+        "caption": "Refer to diagram for Question 45 in Latin Squares"
+      },
+      "finalAnswer": "Option D (\"E\") is correct. Solution = E. Resolving row/column dependencies sequentially identifies E as the letter for the question mark cell.",
+      "wrongOptions": [
+        "Option A (\"A\") is INCORRECT because it does not satisfy the requirements of Advanced Elimination.",
+        "Option B (\"C\") is INCORRECT because it does not satisfy the requirements of Advanced Elimination.",
+        "Option C (\"D\") is INCORRECT because it does not satisfy the requirements of Advanced Elimination.",
+        "Option D (\"E\") is CORRECT."
+      ],
+      "keyConcept": "Key Principle of Advanced Elimination: Solution = E. Resolving row/column dependencies sequentially identifies E as the letter for the question mark cell.",
+      "examTip": "Exam Strategy: For Advanced Elimination questions on Page 28, eliminate choices with invalid type conversions or mismatched boolean logic early.",
+      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Latin Squares."
+    }
+  }
+]

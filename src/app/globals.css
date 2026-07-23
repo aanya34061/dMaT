@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a;
+}
+
+.dark {
+  --background: #020617;
+  --foreground: #f8fafc;
 }
 
 @theme inline {
@@ -10,17 +17,28 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Map the custom color shades used in the codebase to proper Tailwind variables */
+  --color-slate-955: var(--color-slate-950);
+  --color-slate-905: var(--color-slate-900);
+  --color-slate-850: var(--color-slate-800);
+  --color-slate-805: var(--color-slate-800);
+  --color-slate-650: var(--color-slate-600);
+  --color-slate-605: var(--color-slate-600);
+  --color-slate-550: var(--color-slate-500);
+  --color-slate-450: var(--color-slate-400);
+  --color-slate-405: var(--color-slate-400);
+  --color-slate-205: var(--color-slate-200);
+  --color-slate-105: var(--color-slate-100);
+
+  --color-blue-955: var(--color-blue-950);
+  --color-blue-750: var(--color-blue-700);
+  --color-blue-650: var(--color-blue-600);
+  --color-blue-605: var(--color-blue-600);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
 }

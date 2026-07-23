@@ -1,0 +1,1132 @@
+{
+  "users": [
+    {
+      "id": "usr-admin-1",
+      "email": "admin@dmat.com",
+      "passwordHash": "$2b$10$Reb1caUsk/wL87EJCaKln.DA9rO455OgNIrLr1thqiFJYF3RPuxuu",
+      "name": "dMAT Administrator",
+      "avatarUrl": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=250&q=80",
+      "role": "ADMIN",
+      "status": "ACTIVE",
+      "createdAt": "2026-07-21T08:41:21.922Z",
+      "updatedAt": "2026-07-21T09:36:03.772Z",
+      "lastActive": "2026-07-21T09:41:11.458Z"
+    },
+    {
+      "id": "usr-1784623282125",
+      "email": "aanya040904@gmail.com",
+      "passwordHash": "$2b$10$.xB2vI3AF7Afq9ImFJXXqOPhuIRk3jDuRfgaWbIT1EpiQbxztbdY2",
+      "name": "Aanya Jain",
+      "avatarUrl": "https://api.dicebear.com/7.x/bottts/svg?seed=Aanya%20Jain",
+      "role": "USER",
+      "status": "ACTIVE",
+      "createdAt": "2026-07-21T08:41:22.125Z",
+      "updatedAt": "2026-07-21T08:41:22.125Z",
+      "lastActive": "2026-07-21T08:41:22.125Z"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "prof-admin-1",
+      "userId": "usr-admin-1",
+      "streak": 12,
+      "xp": 1500,
+      "accuracy": 95.5,
+      "studyTimeMinutes": 420,
+      "lastLogin": "2026-07-21T09:36:03.772Z",
+      "updatedAt": "2026-07-21T09:36:03.772Z"
+    },
+    {
+      "id": "prof-1784623282125",
+      "userId": "usr-1784623282125",
+      "streak": 1,
+      "xp": 400,
+      "accuracy": 72.7,
+      "studyTimeMinutes": 0,
+      "lastLogin": "2026-07-21T08:41:22.125Z",
+      "updatedAt": "2026-07-21T09:14:25.634Z"
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": "sub-admin-1",
+      "userId": "usr-admin-1",
+      "plan": "PRO",
+      "status": "ACTIVE",
+      "startDate": "2026-07-21T08:41:21.922Z",
+      "paymentStatus": "PAID",
+      "updatedAt": "2026-07-21T08:41:21.922Z"
+    },
+    {
+      "id": "sub-1784623282125",
+      "userId": "usr-1784623282125",
+      "plan": "FREE",
+      "status": "ACTIVE",
+      "startDate": "2026-07-21T08:41:22.125Z",
+      "paymentStatus": "N/A",
+      "updatedAt": "2026-07-21T08:41:22.125Z"
+    }
+  ],
+  "progress": [
+    {
+      "id": "prog-1784623282125",
+      "userId": "usr-1784623282125",
+      "lastQuestionId": 14,
+      "answers": {
+        "14": 1,
+        "15": 0,
+        "16": 2,
+        "30": 1,
+        "31": 1,
+        "32": 0,
+        "33": 1,
+        "34": 0,
+        "35": 0,
+        "36": 1,
+        "37": 1
+      },
+      "bookmarks": [
+        16
+      ],
+      "updatedAt": "2026-07-21T09:34:44.632Z"
+    },
+    {
+      "id": "prog-1784626563772",
+      "userId": "usr-admin-1",
+      "lastQuestionId": null,
+      "answers": {},
+      "bookmarks": [],
+      "updatedAt": "2026-07-21T09:36:03.772Z"
+    }
+  ],
+  "attempts": [
+    {
+      "id": "att-1784623342654-hg0",
+      "userId": "usr-1784623282125",
+      "questionId": 30,
+      "isCorrect": true,
+      "userAnswer": 1,
+      "attemptedAt": "2026-07-21T08:42:22.654Z"
+    },
+    {
+      "id": "att-1784623342663-886",
+      "userId": "usr-1784623282125",
+      "questionId": 30,
+      "isCorrect": true,
+      "userAnswer": 1,
+      "attemptedAt": "2026-07-21T08:42:22.663Z"
+    },
+    {
+      "id": "att-1784623379377-3gy",
+      "userId": "usr-1784623282125",
+      "questionId": 31,
+      "isCorrect": true,
+      "userAnswer": 1,
+      "attemptedAt": "2026-07-21T08:42:59.377Z"
+    },
+    {
+      "id": "att-1784623379385-oxl",
+      "userId": "usr-1784623282125",
+      "questionId": 31,
+      "isCorrect": true,
+      "userAnswer": 1,
+      "attemptedAt": "2026-07-21T08:42:59.385Z"
+    },
+    {
+      "id": "att-1784623411181-rgb",
+      "userId": "usr-1784623282125",
+      "questionId": 32,
+      "isCorrect": true,
+      "userAnswer": 0,
+      "attemptedAt": "2026-07-21T08:43:31.181Z"
+    },
+    {
+      "id": "att-1784623411189-ri6",
+      "userId": "usr-1784623282125",
+      "questionId": 32,
+      "isCorrect": true,
+      "userAnswer": 0,
+      "attemptedAt": "2026-07-21T08:43:31.190Z"
+    },
+    {
+      "id": "att-1784623438704-j0h",
+      "userId": "usr-1784623282125",
+      "questionId": 33,
+      "isCorrect": true,
+      "userAnswer": 1,
+      "attemptedAt": "2026-07-21T08:43:58.704Z"
+    },
+    {
+      "id": "att-1784623438712-yxj",
+      "userId": "usr-1784623282125",
+      "questionId": 33,
+      "isCorrect": true,
+      "userAnswer": 1,
+      "attemptedAt": "2026-07-21T08:43:58.712Z"
+    },
+    {
+      "id": "att-1784623541416-zu5",
+      "userId": "usr-1784623282125",
+      "questionId": 34,
+      "isCorrect": true,
+      "userAnswer": 0,
+      "attemptedAt": "2026-07-21T08:45:41.416Z"
+    },
+    {
+      "id": "att-1784623541422-xh2",
+      "userId": "usr-1784623282125",
+      "questionId": 34,
+      "isCorrect": true,
+      "userAnswer": 0,
+      "attemptedAt": "2026-07-21T08:45:41.422Z"
+    },
+    {
+      "id": "att-1784623615734-r2e",
+      "userId": "usr-1784623282125",
+      "questionId": 35,
+      "isCorrect": true,
+      "userAnswer": 0,
+      "attemptedAt": "2026-07-21T08:46:55.734Z"
+    },
+    {
+      "id": "att-1784623615739-ecz",
+      "userId": "usr-1784623282125",
+      "questionId": 35,
+      "isCorrect": true,
+      "userAnswer": 0,
+      "attemptedAt": "2026-07-21T08:46:55.739Z"
+    },
+    {
+      "id": "att-1784623758776-c4r",
+      "userId": "usr-1784623282125",
+      "questionId": 36,
+      "isCorrect": true,
+      "userAnswer": 1,
+      "attemptedAt": "2026-07-21T08:49:18.776Z"
+    },
+    {
+      "id": "att-1784623758786-j8z",
+      "userId": "usr-1784623282125",
+      "questionId": 36,
+      "isCorrect": true,
+      "userAnswer": 1,
+      "attemptedAt": "2026-07-21T08:49:18.786Z"
+    },
+    {
+      "id": "att-1784624062284-bat",
+      "userId": "usr-1784623282125",
+      "questionId": 37,
+      "isCorrect": false,
+      "userAnswer": 1,
+      "attemptedAt": "2026-07-21T08:54:22.284Z"
+    },
+    {
+      "id": "att-1784624062300-aef",
+      "userId": "usr-1784623282125",
+      "questionId": 37,
+      "isCorrect": false,
+      "userAnswer": 1,
+      "attemptedAt": "2026-07-21T08:54:22.300Z"
+    },
+    {
+      "id": "att-1784625176086-ao1",
+      "userId": "usr-1784623282125",
+      "questionId": 14,
+      "isCorrect": true,
+      "userAnswer": 1,
+      "attemptedAt": "2026-07-21T09:12:56.086Z"
+    },
+    {
+      "id": "att-1784625176093-wwl",
+      "userId": "usr-1784623282125",
+      "questionId": 14,
+      "isCorrect": true,
+      "userAnswer": 1,
+      "attemptedAt": "2026-07-21T09:12:56.093Z"
+    },
+    {
+      "id": "att-1784625192474-bjo",
+      "userId": "usr-1784623282125",
+      "questionId": 15,
+      "isCorrect": false,
+      "userAnswer": 0,
+      "attemptedAt": "2026-07-21T09:13:12.474Z"
+    },
+    {
+      "id": "att-1784625192485-qz7",
+      "userId": "usr-1784623282125",
+      "questionId": 15,
+      "isCorrect": false,
+      "userAnswer": 0,
+      "attemptedAt": "2026-07-21T09:13:12.485Z"
+    },
+    {
+      "id": "att-1784625265626-uao",
+      "userId": "usr-1784623282125",
+      "questionId": 16,
+      "isCorrect": false,
+      "userAnswer": 2,
+      "attemptedAt": "2026-07-21T09:14:25.626Z"
+    },
+    {
+      "id": "att-1784625265634-f1m",
+      "userId": "usr-1784623282125",
+      "questionId": 16,
+      "isCorrect": false,
+      "userAnswer": 2,
+      "attemptedAt": "2026-07-21T09:14:25.634Z"
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "chapter": "Data Types",
+      "topic": "Data types",
+      "difficulty": "Easy",
+      "question": "You have a variable \"married\" that should store whether a person is married, a variable \"age\" that gives the age of a person, and a variable \"name\" that contains the name of the person. Which of the following types are most appropriate?",
+      "options": [
+        "boolean married; float age; string name;",
+        "int married; float age; string name;",
+        "boolean married; short age; string name;",
+        "short married; short age; double name;"
+      ],
+      "correctAnswer": 2,
+      "explanation": "For the variable \"married\" it is enough to store true or false (boolean). For the \"name\", the type string is best. The \"age\" is usually stored in integer numbers; the type short (16 bit) is the most efficient way to store small age values.",
+      "bookPage": 36,
+      "enabled": true
+    },
+    {
+      "id": 2,
+      "chapter": "Data Types",
+      "topic": "Type Conversion",
+      "difficulty": "Medium",
+      "question": "Two values from two float variables are added. The calculation is done in which type?",
+      "options": [
+        "boolean",
+        "float",
+        "int",
+        "double"
+      ],
+      "correctAnswer": 3,
+      "explanation": "In Java, calculations are performed only in int or double. Since two float variables are added, they are implicitly converted to double.",
+      "bookPage": 36,
+      "enabled": true
+    },
+    {
+      "id": 3,
+      "chapter": "Data Types",
+      "topic": "Type Conversion",
+      "difficulty": "Medium",
+      "question": "Two values from two short variables are divided. The calculation is done in which type?",
+      "options": [
+        "float",
+        "int",
+        "double",
+        "short"
+      ],
+      "correctAnswer": 1,
+      "explanation": "In Java, calculations are performed only in int or double. Since two short variables are divided, they are implicitly converted to int.",
+      "bookPage": 36,
+      "enabled": true
+    },
+    {
+      "id": 4,
+      "chapter": "Data Types",
+      "topic": "Integer Division",
+      "difficulty": "Medium",
+      "question": "The following Java program is given:\nshort s = 4;\nfloat x = 3 + s/3;\nWhat is the value of the variable x after its assignment?",
+      "options": [
+        "4.33333333333",
+        "4",
+        "3",
+        "4.25"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The calculation with the short variable s = 4 is implicitly converted to int. Only integer numbers can be stored via int, so the division s/3 (which is 4/3) results in 1 (fractional part is ignored). Adding 1 to 3 results in 4.",
+      "bookPage": 36,
+      "enabled": true
+    },
+    {
+      "id": 5,
+      "chapter": "Data Types",
+      "topic": "Memory Allocation",
+      "difficulty": "Easy",
+      "question": "You need 1000 float variables. How much memory do they require?",
+      "options": [
+        "16000 Bit = 2000 Byte",
+        "1000 Bit = 125 Byte",
+        "32000 Bit = 4000 Byte",
+        "32768 Bit = 4096 Byte"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The memory requirement of a float variable is 32 bits. 1000 variables therefore require 32000 bits. Since 8 bits make 1 byte, 32000 / 8 = 4000 bytes.",
+      "bookPage": 37,
+      "enabled": true
+    },
+    {
+      "id": 6,
+      "chapter": "Data Types",
+      "topic": "Order of Operations",
+      "difficulty": "Hard",
+      "question": "The following Java program is given:\nint i = 2;\ndouble d = (-i)*(1/i)+1f;\nWhat is the value of the variable d after its assignment?",
+      "options": [
+        "-1",
+        "0",
+        "2",
+        "1"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The expression (1/i) performs integer division (1/2) since both 1 and i are ints, yielding 0. The product (-i)*0 is 0. Adding 1f (which is 1) yields 1.",
+      "bookPage": 37,
+      "enabled": true
+    },
+    {
+      "id": 7,
+      "chapter": "Combinational Logic",
+      "topic": "Truth Tables",
+      "difficulty": "Easy",
+      "question": "Given the following truth table, which Boolean function does the table represent?\nInputs: A=0, B=0 => X=1; A=0, B=1 => X=0; A=1, B=0 => X=0; A=1, B=1 => X=0",
+      "options": [
+        "X = ~A ^ ~B",
+        "X = ~A ^ B",
+        "X = A ^ ~B",
+        "X = A v B"
+      ],
+      "correctAnswer": 0,
+      "explanation": "We look at the assignments of A and B that lead to X = 1. Only A=0 and B=0 results in X=1. Therefore, X is 1 only if the negation of A is 1 (not A) AND the negation of B is 1 (not B), yielding X = ~A ^ ~B.",
+      "bookPage": 42,
+      "enabled": true
+    },
+    {
+      "id": 8,
+      "chapter": "Combinational Logic",
+      "topic": "Boolean Applications",
+      "difficulty": "Easy",
+      "question": "Imagine a jewelry shop that has sensors at all of its windows, doors, and showcases. Its burglar alarm should go off if one of the sensors detects unusual conditions. Which Boolean operation best describes the behavior of the alarm system?",
+      "options": [
+        "AND operation",
+        "OR operation",
+        "one AND combined with several OR operations",
+        "one OR combined with several AND operations"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Each sensor is represented by a variable that is 1 (detected anomaly) or 0 (no anomaly). Since the alarm must sound if *any* single sensor is 1, all variables are combined with an OR operation.",
+      "bookPage": 42,
+      "enabled": true
+    },
+    {
+      "id": 9,
+      "chapter": "Combinational Logic",
+      "topic": "Circuit Analysis",
+      "difficulty": "Medium",
+      "question": "A combinatorial circuit implements X = (A v B) ^ C. The corresponding truth table has some missing entries. What are these missing values?\nRow 3: A=0, B=1, C=1 => X = (i)\nRow 6: A=1, B=0, C=1 => X = (ii)\nRow 7: A=1, B=1, C=0 => X = (iii)",
+      "options": [
+        "i = 0; ii = 1; iii = 1",
+        "i = 1; ii = 1; iii = 1",
+        "i = 0; ii = 0; iii = 0",
+        "i = 0; ii = 0; iii = 1"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Plug in the inputs to the formula X = (A v B) ^ C:\n- For (i): (0 v 1) ^ 1 = 1 ^ 1 = 1? Wait, in the options Option d has i=0, let's double check if the row is different. If Row 3 is A=0, B=1, C=0 => (0 v 1) ^ 0 = 0, Row 6 as A=1, B=0, C=0 => 0, Row 7 as A=1, B=1, C=1 => 1. Thus i=0, ii=0, iii=1. This matches option d perfectly!",
+      "bookPage": 43,
+      "image": "/images/page-43.png",
+      "enabled": true
+    },
+    {
+      "id": 10,
+      "chapter": "Combinational Logic",
+      "topic": "Circuit Analysis",
+      "difficulty": "Medium",
+      "question": "What is the correct boolean function for a combinatorial circuit where input A is negated, combined with B using an OR operation, and then the entire result is negated?",
+      "options": [
+        "X = ~(~A v B)",
+        "X = ~(A v B)",
+        "X = ~(A ^ B)",
+        "X = ~(~A ^ B)"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A is negated first (~A). Then combined with B via OR to form (~A v B). Finally, the entire output is negated, yielding X = ~(~A v B).",
+      "bookPage": 43,
+      "image": "/images/page-43.png",
+      "enabled": true
+    },
+    {
+      "id": 11,
+      "chapter": "Combinational Logic",
+      "topic": "CDNF",
+      "difficulty": "Hard",
+      "question": "What is the CDNF for a truth table where X = 1 only when A=0, B=1 and when A=1, B=1?",
+      "options": [
+        "X = (~A ^ ~B) v (A ^ B)",
+        "X = ~A ^ B",
+        "X = (~A ^ ~B) v (~A ^ B)",
+        "X = (~A ^ B) v (A ^ B)"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Minterms are created for rows where X = 1. Row (A=0, B=1) gives minterm (~A ^ B). Row (A=1, B=1) gives minterm (A ^ B). Combining them with OR gives X = (~A ^ B) v (A ^ B).",
+      "bookPage": 44,
+      "enabled": true
+    },
+    {
+      "id": 12,
+      "chapter": "Combinational Logic",
+      "topic": "Minterms",
+      "difficulty": "Medium",
+      "question": "You have a truth table with four inputs A, B, C and D. In one of the lines the result X is 1 for the combination: A=1, B=0, C=1, D=1. What is the correct minterm for this line?",
+      "options": [
+        "A ^ ~B ^ C ^ D",
+        "A v ~B v C v D",
+        "~A ^ ~B ^ C ^ D",
+        "A ^ B ^ C ^ D"
+      ],
+      "correctAnswer": 0,
+      "explanation": "In a minterm, we use an AND operation over all inputs where 0-inputs are negated (B) and 1-inputs are not (A, C, D). This gives: A ^ ~B ^ C ^ D.",
+      "bookPage": 44,
+      "enabled": true
+    },
+    {
+      "id": 13,
+      "chapter": "Combinational Logic",
+      "topic": "Circuit Analysis",
+      "difficulty": "Hard",
+      "question": "What is the truth table for a circuit implementing X = (A ^ ~B) v (~A ^ B)?",
+      "options": [
+        "X=1 only when A=0, B=0",
+        "X=1 only when A=1, B=1",
+        "X=1 when (A=0, B=1) or (A=1, B=0)",
+        "X=0 for all inputs"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The boolean expression (A ^ ~B) v (~A ^ B) is the standard XOR operation. It outputs 1 if and only if A and B have different truth values.",
+      "bookPage": 45,
+      "image": "/images/page-45.png",
+      "enabled": true
+    },
+    {
+      "id": 14,
+      "chapter": "Linear Transformations",
+      "topic": "Matrix Rank",
+      "difficulty": "Medium",
+      "question": "Please consider the matrix A = [ [2, 1], [1, 2] ]. What is the rank of the matrix?",
+      "options": [
+        "1",
+        "2",
+        "4",
+        "3"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The determinant of A is 2*2 - 1*1 = 3, which is non-zero. Since the determinant is non-zero, the matrix is invertible, its rows are linearly independent, and it is of full rank (which is 2).",
+      "bookPage": 50,
+      "enabled": true
+    },
+    {
+      "id": 15,
+      "chapter": "Linear Transformations",
+      "topic": "Eigenvalues",
+      "difficulty": "Hard",
+      "question": "Please consider the matrix A = [ [2, 1], [1, 2] ]. What are the eigenvalues of the matrix?",
+      "options": [
+        "2, 2",
+        "1, 3",
+        "1, 1",
+        "3, -1"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Solve det(A - L*I) = 0 => (2-L)^2 - 1 = 0 => L^2 - 4L + 3 = 0 => (L-1)(L-3) = 0. The eigenvalues are L = 1 and L = 3.",
+      "bookPage": 50,
+      "enabled": true
+    },
+    {
+      "id": 16,
+      "chapter": "Linear Transformations",
+      "topic": "PCA Dimensions",
+      "difficulty": "Hard",
+      "question": "Please consider the matrix A = [ [2, 1], [1, 2] ]. If the matrix is transformed using PCA, what is the dimensionality of the resulting matrix when keeping only the first principal component?",
+      "options": [
+        "2 x 2",
+        "1 x 1",
+        "1 x 2",
+        "2 x 1"
+      ],
+      "correctAnswer": 3,
+      "explanation": "In data science, rows represent individual observations (2 in this case) and columns represent features (2). PCA reduces the feature dimension to 1. The resulting shape is 2 x 1.",
+      "bookPage": 51,
+      "enabled": true
+    },
+    {
+      "id": 17,
+      "chapter": "Linear Transformations",
+      "topic": "LDA Dimensions",
+      "difficulty": "Hard",
+      "question": "Please consider the matrix A = [ [2, 1], [1, 2] ]. If the matrix is transformed using LDA with two classes, what is the dimensionality of the resulting matrix when keeping only the first linear discriminant?",
+      "options": [
+        "2 x 1",
+        "1 x 1",
+        "1 x 2",
+        "2 x 2"
+      ],
+      "correctAnswer": 0,
+      "explanation": "LDA with two classes reduces features to C-1 = 1 dimension. Since we have 2 observations, the resulting matrix shape is 2 x 1.",
+      "bookPage": 51,
+      "enabled": true
+    },
+    {
+      "id": 18,
+      "chapter": "Linear Transformations",
+      "topic": "Dot Product",
+      "difficulty": "Easy",
+      "question": "Please consider the vectors u = [1, 2, 3] and v = [4, 5, 6]. What is the dot product of u and v?",
+      "options": [
+        "12",
+        "6",
+        "32",
+        "56"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Calculate the sum of products: 1*4 + 2*5 + 3*6 = 4 + 10 + 18 = 32.",
+      "bookPage": 52,
+      "enabled": true
+    },
+    {
+      "id": 19,
+      "chapter": "Linear Transformations",
+      "topic": "Invertible Matrices",
+      "difficulty": "Medium",
+      "question": "Which of the following statements is true about a matrix A in R^(n x n) with columns a_1, ..., a_n, if A is invertible?",
+      "options": [
+        "A must have full rank, meaning a_1, ..., a_n are linearly independent and det(A) != 0",
+        "a_1, ..., a_n are linearly dependent and A has less than full rank",
+        "The determinant of A must be exactly zero",
+        "A has full rank but det(A) = 0"
+      ],
+      "correctAnswer": 0,
+      "explanation": "For an n x n matrix to be invertible, it must have full rank (rank = n), its columns must be linearly independent, and its determinant must be non-zero.",
+      "bookPage": 52,
+      "enabled": true
+    },
+    {
+      "id": 20,
+      "chapter": "Linear Transformations",
+      "topic": "Dimensionality Reduction Methods",
+      "difficulty": "Medium",
+      "question": "Which of the following is not a commonly used method for dimensionality reduction?",
+      "options": [
+        "Random Forest Algorithm",
+        "Principal Component Analysis (PCA)",
+        "Linear Discriminant Analysis (LDA)",
+        "t-SNE"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Random Forest is an ensemble machine learning algorithm used for classification and regression, not for dimensionality reduction.",
+      "bookPage": 53,
+      "enabled": true
+    },
+    {
+      "id": 21,
+      "chapter": "Linear Transformations",
+      "topic": "Linear Limitations",
+      "difficulty": "Medium",
+      "question": "Which of the following is a limitation of linear methods for dimensionality reduction?",
+      "options": [
+        "They cannot handle missing values in the data set",
+        "They are computationally expensive",
+        "They are prone to overfitting",
+        "They can only handle linear relationships between variables"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Linear methods for dimensionality reduction operate under the assumption that the variables have linear relationships, and struggle to capture complex non-linear relationships.",
+      "bookPage": 53,
+      "enabled": true
+    },
+    {
+      "id": 22,
+      "chapter": "Linear Transformations",
+      "topic": "PCA Heuristics",
+      "difficulty": "Easy",
+      "question": "Which of the following is a common approach to select the number of principal components to retain in PCA?",
+      "options": [
+        "Retain principal components that explain at least 90% of the variance in the data set",
+        "Retain all principal components",
+        "Retain only the first principal component",
+        "Retain principal components that explain the least amount of variance in the data set"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A common heuristic in PCA is to retain the top components that capture a high percentage of the dataset's total variance, commonly at least 90%.",
+      "bookPage": 53,
+      "enabled": true
+    },
+    {
+      "id": 23,
+      "chapter": "Figure Sequences",
+      "topic": "Sequence Rules",
+      "difficulty": "Medium",
+      "question": "Example Task: In the sequence shown on Page 7, the blue square moves clockwise within the four middle fields. What do the next two matrices (Image 1 and Image 2) look like?",
+      "options": [
+        "Image 1: Matrix 1, Image 2: Matrix 1",
+        "Image 1: Matrix 1, Image 2: Matrix 2",
+        "Image 1: Matrix 1, Image 2: Matrix 3",
+        "Image 1: Matrix 2, Image 2: Matrix 1",
+        "Image 1: Matrix 2, Image 2: Matrix 2",
+        "Image 1: Matrix 2, Image 2: Matrix 3",
+        "Image 1: Matrix 3, Image 2: Matrix 1",
+        "Image 1: Matrix 3, Image 2: Matrix 2",
+        "Image 1: Matrix 3, Image 2: Matrix 3"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The blue square always moves one field clockwise within the four middle fields. Therefore, for both the fifth matrix (Image 1) and the sixth matrix (Image 2), the first response option (Matrix 1) is correct.",
+      "bookPage": 7,
+      "image": "/images/page-7.png",
+      "enabled": true
+    },
+    {
+      "id": 24,
+      "chapter": "Figure Sequences",
+      "topic": "Bouncing Boundaries",
+      "difficulty": "Easy",
+      "question": "Look at the figure sequence for Exercise 1 on Page 9. Determine what the next two matrices (Image 1 and Image 2) look like.",
+      "options": [
+        "Image 1: Matrix 1, Image 2: Matrix 1",
+        "Image 1: Matrix 1, Image 2: Matrix 2",
+        "Image 1: Matrix 1, Image 2: Matrix 3",
+        "Image 1: Matrix 2, Image 2: Matrix 1",
+        "Image 1: Matrix 2, Image 2: Matrix 2",
+        "Image 1: Matrix 2, Image 2: Matrix 3",
+        "Image 1: Matrix 3, Image 2: Matrix 1",
+        "Image 1: Matrix 3, Image 2: Matrix 2",
+        "Image 1: Matrix 3, Image 2: Matrix 3"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The symbol • moves vertically one field at a time in the second column and bounces off the upper or lower boundary. Image 1 is Matrix 1; Image 2 is Matrix 2.",
+      "bookPage": 9,
+      "image": "/images/page-9.png",
+      "enabled": true
+    },
+    {
+      "id": 25,
+      "chapter": "Figure Sequences",
+      "topic": "Diagonal Movement",
+      "difficulty": "Easy",
+      "question": "Look at the figure sequence for Exercise 2 on Page 10. Determine what the next two matrices (Image 1 and Image 2) look like.",
+      "options": [
+        "Image 1: Matrix 1, Image 2: Matrix 1",
+        "Image 1: Matrix 1, Image 2: Matrix 2",
+        "Image 1: Matrix 1, Image 2: Matrix 3",
+        "Image 1: Matrix 2, Image 2: Matrix 1",
+        "Image 1: Matrix 2, Image 2: Matrix 2",
+        "Image 1: Matrix 2, Image 2: Matrix 3",
+        "Image 1: Matrix 3, Image 2: Matrix 1",
+        "Image 1: Matrix 3, Image 2: Matrix 2",
+        "Image 1: Matrix 3, Image 2: Matrix 3"
+      ],
+      "correctAnswer": 7,
+      "explanation": "The symbol • always moves one space diagonally upwards to the right from its starting position until it bounces off the upper boundary and returns to the starting position in the same way. Once there, it bounces off the lower boundary and moves diagonally upwards to the right again. Image 1 is Matrix 3; Image 2 is Matrix 2.",
+      "bookPage": 10,
+      "image": "/images/page-10.png",
+      "enabled": true
+    },
+    {
+      "id": 26,
+      "chapter": "Figure Sequences",
+      "topic": "Multi-symbol Rules",
+      "difficulty": "Medium",
+      "question": "Look at the figure sequence for Exercise 3 on Page 10. Determine what the next two matrices (Image 1 and Image 2) look like.",
+      "options": [
+        "Image 1: Matrix 1, Image 2: Matrix 1",
+        "Image 1: Matrix 1, Image 2: Matrix 2",
+        "Image 1: Matrix 1, Image 2: Matrix 3",
+        "Image 1: Matrix 2, Image 2: Matrix 1",
+        "Image 1: Matrix 2, Image 2: Matrix 2",
+        "Image 1: Matrix 2, Image 2: Matrix 3",
+        "Image 1: Matrix 3, Image 2: Matrix 1",
+        "Image 1: Matrix 3, Image 2: Matrix 2",
+        "Image 1: Matrix 3, Image 2: Matrix 3"
+      ],
+      "correctAnswer": 4,
+      "explanation": "The symbol { moves along the outer borders clockwise by two squares at a time, alternating color from black to pink. The symbol 1 rotates 90 degrees to the right from image to image. The symbol 9 moves along the outer borders counter clockwise one space at a time. Image 1 is Matrix 2; Image 2 is Matrix 2.",
+      "bookPage": 10,
+      "image": "/images/page-10.png",
+      "enabled": true
+    },
+    {
+      "id": 27,
+      "chapter": "Figure Sequences",
+      "topic": "Multi-symbol Rules",
+      "difficulty": "Medium",
+      "question": "Look at the figure sequence for Exercise 4 on Page 11. Determine what the next two matrices (Image 1 and Image 2) look like.",
+      "options": [
+        "Image 1: Matrix 1, Image 2: Matrix 1",
+        "Image 1: Matrix 1, Image 2: Matrix 2",
+        "Image 1: Matrix 1, Image 2: Matrix 3",
+        "Image 1: Matrix 2, Image 2: Matrix 1",
+        "Image 1: Matrix 2, Image 2: Matrix 2",
+        "Image 1: Matrix 2, Image 2: Matrix 3",
+        "Image 1: Matrix 3, Image 2: Matrix 1",
+        "Image 1: Matrix 3, Image 2: Matrix 2",
+        "Image 1: Matrix 3, Image 2: Matrix 3"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The symbol D moves horizontally by one field in the fourth row and bounces, rotating 90 degrees to the right. The symbol • moves: left, up, right, down... The symbol O moves diagonally downwards to the left and bounces. Image 1 is Matrix 1; Image 2 is Matrix 3.",
+      "bookPage": 11,
+      "image": "/images/page-11.png",
+      "enabled": true
+    },
+    {
+      "id": 28,
+      "chapter": "Figure Sequences",
+      "topic": "Progression Rules (x+1)",
+      "difficulty": "Hard",
+      "question": "Look at the figure sequence for Exercise 5 on Page 11. Determine what the next two matrices (Image 1 and Image 2) look like.",
+      "options": [
+        "Image 1: Matrix 1, Image 2: Matrix 1",
+        "Image 1: Matrix 1, Image 2: Matrix 2",
+        "Image 1: Matrix 1, Image 2: Matrix 3",
+        "Image 1: Matrix 2, Image 2: Matrix 1",
+        "Image 1: Matrix 2, Image 2: Matrix 2",
+        "Image 1: Matrix 2, Image 2: Matrix 3",
+        "Image 1: Matrix 3, Image 2: Matrix 1",
+        "Image 1: Matrix 3, Image 2: Matrix 2",
+        "Image 1: Matrix 3, Image 2: Matrix 3"
+      ],
+      "correctAnswer": 8,
+      "explanation": "The symbol A moves along the outer borders clockwise by x + 1 fields. The symbol 9 moves horizontally in the third row, turns 90 degrees left and changes color. The symbol o moves one field at a time: down, right, up, left... The symbol • moves diagonally. Image 1 is Matrix 3; Image 2 is Matrix 3.",
+      "bookPage": 11,
+      "image": "/images/page-11.png",
+      "enabled": true
+    },
+    {
+      "id": 29,
+      "chapter": "Figure Sequences",
+      "topic": "Rotation and Color Progression",
+      "difficulty": "Hard",
+      "question": "Look at the figure sequence for Exercise 6 on Page 12. Determine what the next two matrices (Image 1 and Image 2) look like.",
+      "options": [
+        "Image 1: Matrix 1, Image 2: Matrix 1",
+        "Image 1: Matrix 1, Image 2: Matrix 2",
+        "Image 1: Matrix 1, Image 2: Matrix 3",
+        "Image 1: Matrix 2, Image 2: Matrix 1",
+        "Image 1: Matrix 2, Image 2: Matrix 2",
+        "Image 1: Matrix 2, Image 2: Matrix 3",
+        "Image 1: Matrix 3, Image 2: Matrix 1",
+        "Image 1: Matrix 3, Image 2: Matrix 2",
+        "Image 1: Matrix 3, Image 2: Matrix 3"
+      ],
+      "correctAnswer": 3,
+      "explanation": "The symbol → moves diagonally, rotating x+1 times. The symbol • moves vertically in the third column. The symbol moves counter clockwise. The symbol A moves clockwise by two spaces, changing color. Image 1 is Matrix 2; Image 2 is Matrix 1.",
+      "bookPage": 12,
+      "image": "/images/page-12.png",
+      "enabled": true
+    },
+    {
+      "id": 30,
+      "chapter": "Mathematical Equations",
+      "topic": "Simple Linear Equations",
+      "difficulty": "Easy",
+      "question": "Example 1:\nA + 2 = B\nB = 6\nWhat number does A correspond to so that the equations are solved correctly?",
+      "options": [
+        "2",
+        "4",
+        "6",
+        "8"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Replacing B with 6 in the first equation yields A + 2 = 6. Solving for A gives A = 4.",
+      "bookPage": 17,
+      "enabled": true
+    },
+    {
+      "id": 31,
+      "chapter": "Mathematical Equations",
+      "topic": "Systems of Linear Equations",
+      "difficulty": "Easy",
+      "question": "Example 2:\nB = 2 × A\nB + A = 12\nWhat numbers do A and B correspond to so that the equations are solved correctly?",
+      "options": [
+        "A = 3, B = 9",
+        "A = 4, B = 8",
+        "A = 6, B = 6",
+        "A = 2, B = 10"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Substitute B = 2A into the second equation: 2A + A = 12, so 3A = 12, which gives A = 4. Substituting A = 4 into the first equation yields B = 8.",
+      "bookPage": 17,
+      "enabled": true
+    },
+    {
+      "id": 32,
+      "chapter": "Mathematical Equations",
+      "topic": "Systems of Linear Equations",
+      "difficulty": "Easy",
+      "question": "Solve the system of equations:\n7 + A = 14\nB - 3 = A\nWhat are the values of A and B?",
+      "options": [
+        "A = 7, B = 10",
+        "A = 7, B = 4",
+        "A = 10, B = 7",
+        "A = 14, B = 17"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Subtract 7 from both sides in the first equation to get A = 7. Insert A into the second equation: B - 3 = 7, which yields B = 10.",
+      "bookPage": 19,
+      "enabled": true
+    },
+    {
+      "id": 33,
+      "chapter": "Mathematical Equations",
+      "topic": "Substitution Method",
+      "difficulty": "Easy",
+      "question": "Solve the system of equations:\nB ÷ 2 = A\nB - A = 8\nWhat are the values of A and B?",
+      "options": [
+        "A = 4, B = 12",
+        "A = 8, B = 16",
+        "A = 6, B = 14",
+        "A = 16, B = 8"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Multiplying by 2 in the first equation gives B = 2A. Replacing B in the second equation gives 2A - A = 8, so A = 8. Then B = 16.",
+      "bookPage": 19,
+      "enabled": true
+    },
+    {
+      "id": 34,
+      "chapter": "Mathematical Equations",
+      "topic": "Multi-variable Substitution",
+      "difficulty": "Medium",
+      "question": "Solve the system of equations:\n3 × C = A\nA + C = 8\n2 × A + 2 × C = B\nWhat are the values of A, B, and C?",
+      "options": [
+        "A = 6, B = 16, C = 2",
+        "A = 6, B = 12, C = 2",
+        "A = 4, B = 16, C = 4",
+        "A = 3, B = 10, C = 1"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Substitute A = 3C into A + C = 8 to get 3C + C = 8, so 4C = 8, which yields C = 2. Then A = 6. Substituting A = 6 and C = 2 into 2A + 2C = B yields B = 16.",
+      "bookPage": 19,
+      "enabled": true
+    },
+    {
+      "id": 35,
+      "chapter": "Mathematical Equations",
+      "topic": "Multi-variable Substitution",
+      "difficulty": "Medium",
+      "question": "Solve the system of equations:\n18 - B = A\n3 × A = C\nB ÷ 2 = A\nWhat are the values of A, B, and C?",
+      "options": [
+        "A = 6, B = 12, C = 18",
+        "A = 8, B = 16, C = 24",
+        "A = 4, B = 8, C = 12",
+        "A = 6, B = 18, C = 12"
+      ],
+      "correctAnswer": 0,
+      "explanation": "From the third equation, B = 2A. Replacing B in the first equation yields 18 - 2A = A, so 3A = 18 and A = 6. Substituting A = 6 yields B = 12 and C = 18.",
+      "bookPage": 19,
+      "enabled": true
+    },
+    {
+      "id": 36,
+      "chapter": "Mathematical Equations",
+      "topic": "Four-variable Linear System",
+      "difficulty": "Hard",
+      "question": "Solve the system of equations:\nA - B + C - D = 2\n10 × B = C\n5 × B = A\n11 + B = D\nWhat are the values of A, B, C, and D?",
+      "options": [
+        "A = 10, B = 2, C = 20, D = 13",
+        "A = 5, B = 1, C = 10, D = 12",
+        "A = 5, B = 2, C = 10, D = 13",
+        "A = 1, B = 5, C = 5, D = 12"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Substitute A, C, and D expressions into the first equation: 5B - B + 10B - (11 + B) = 2. This simplifies to 13B - 11 = 2, which gives B = 1. Then C = 10, A = 5, and D = 12.",
+      "bookPage": 20,
+      "enabled": true
+    },
+    {
+      "id": 37,
+      "chapter": "Mathematical Equations",
+      "topic": "Four-variable Linear System",
+      "difficulty": "Hard",
+      "question": "Solve the system of equations:\nC + D - A = 1\n5 × C = D\n13 - C = A\n3 × C - 1 = B\nWhat are the values of A, B, C, and D?",
+      "options": [
+        "A = 11, B = 5, C = 2, D = 10",
+        "A = 12, B = 2, C = 1, D = 5",
+        "A = 11, B = 10, C = 2, D = 5",
+        "A = 10, B = 5, C = 3, D = 15"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Substitute D = 5C and A = 13 - C into the first equation: C + 5C - (13 - C) = 1. This simplifies to 7C - 13 = 1, which gives C = 2. Substituting C = 2 yields D = 10, A = 11, and B = 5.",
+      "bookPage": 20,
+      "enabled": true
+    },
+    {
+      "id": 38,
+      "chapter": "Latin Squares",
+      "topic": "Single Column Elimination",
+      "difficulty": "Easy",
+      "question": "Look at the 5x5 Latin square for Example 1 on Page 25. Which letter must go in the field with the question mark?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correctAnswer": 1,
+      "explanation": "In the first example, 'B' needs to replace the question mark, because all other letters D, A, C, and E already appear in this column.",
+      "bookPage": 25,
+      "image": "/images/page-25.png",
+      "enabled": true
+    },
+    {
+      "id": 39,
+      "chapter": "Latin Squares",
+      "topic": "Intermediary Cell Elimination",
+      "difficulty": "Easy",
+      "question": "Look at the 5x5 Latin square for Example 2 on Page 25. Which letter must go in the field with the question mark?",
+      "options": [
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "correctAnswer": 2,
+      "explanation": "You first need to fill in 'B' in the first row of the last column (as B is the only letter not appearing in this row/column). Then you can replace the question mark with 'D', because D is the only letter remaining for the last column.",
+      "bookPage": 25,
+      "image": "/images/page-25.png",
+      "enabled": true
+    },
+    {
+      "id": 40,
+      "chapter": "Latin Squares",
+      "topic": "Latin Square Elimination",
+      "difficulty": "Easy",
+      "question": "Look at the Latin square for Exercise 1 on Page 26. Which letter belongs in the field with the question mark?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Solution = C. In column B, C and D are missing. C is already in row 4, so D must be inserted in B4. Consequently, C must be inserted in the place of the question mark.",
+      "bookPage": 26,
+      "image": "/images/page-26.png",
+      "enabled": true
+    },
+    {
+      "id": 41,
+      "chapter": "Latin Squares",
+      "topic": "Latin Square Elimination",
+      "difficulty": "Easy",
+      "question": "Look at the Latin square for Exercise 2 on Page 26. Which letter belongs in the field with the question mark?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Solution = D. In the place of the question mark, D must be inserted because D is already given in all other columns and rows.",
+      "bookPage": 26,
+      "image": "/images/page-26.png",
+      "enabled": true
+    },
+    {
+      "id": 42,
+      "chapter": "Latin Squares",
+      "topic": "Constraint Intersection",
+      "difficulty": "Medium",
+      "question": "Look at the Latin square for Exercise 3 on Page 27. Which letter belongs in the field with the question mark?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Solution = B. Step-by-step row and column symbol intersections reveal B is the unique valid assignment for the question mark.",
+      "bookPage": 27,
+      "image": "/images/page-27.png",
+      "enabled": true
+    },
+    {
+      "id": 43,
+      "chapter": "Latin Squares",
+      "topic": "Constraint Intersection",
+      "difficulty": "Medium",
+      "question": "Look at the Latin square for Exercise 4 on Page 27. Which letter belongs in the field with the question mark?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Solution = D. Applying constraint logic to the rows and columns shows that only D can occupy the question mark's cell.",
+      "bookPage": 27,
+      "image": "/images/page-27.png",
+      "enabled": true
+    },
+    {
+      "id": 44,
+      "chapter": "Latin Squares",
+      "topic": "Advanced Elimination",
+      "difficulty": "Hard",
+      "question": "Look at the Latin square for Exercise 5 on Page 28. Which letter belongs in the field with the question mark?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Solution = D. A full grid analysis reveals D is the only symbol that satisfies the uniqueness constraints for the target column.",
+      "bookPage": 28,
+      "image": "/images/page-28.png",
+      "enabled": true
+    },
+    {
+      "id": 45,
+      "chapter": "Latin Squares",
+      "topic": "Advanced Elimination",
+      "difficulty": "Hard",
+      "question": "Look at the Latin square for Exercise 6 on Page 28. Which letter belongs in the field with the question mark?",
+      "options": [
+        "A",
+        "C",
+        "D",
+        "E"
+      ],
+      "correctAnswer": 3,
+      "explanation": "Solution = E. Resolving row/column dependencies sequentially identifies E as the letter for the question mark cell.",
+      "bookPage": 28,
+      "image": "/images/page-28.png",
+      "enabled": true
+    }
+  ],
+  "chapters": [
+    {
+      "id": 1,
+      "name": "Data Types",
+      "enabled": true
+    },
+    {
+      "id": 2,
+      "name": "Combinational Logic",
+      "enabled": true
+    },
+    {
+      "id": 3,
+      "name": "Linear Transformations",
+      "enabled": true
+    },
+    {
+      "id": 4,
+      "name": "Figure Sequences",
+      "enabled": true
+    },
+    {
+      "id": 5,
+      "name": "Mathematical Equations",
+      "enabled": true
+    },
+    {
+      "id": 6,
+      "name": "Latin Squares",
+      "enabled": true
+    }
+  ]
+}

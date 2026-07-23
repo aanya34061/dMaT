@@ -1,0 +1,1494 @@
+const fs = require('fs');
+const path = require('path');
+
+const topics = [
+  // CHAPTER 1: DATA TYPES
+  {
+    id: 1,
+    chapterId: 1,
+    chapter: "Data Types",
+    topic: "Primitive Data Types & Memory Allocation",
+    slug: "primitive-data-types-memory-allocation",
+    difficulty: "Easy",
+    readingTime: "8 min",
+    introduction: "In computer science and digital mathematics, data types define how memory is allocated, interpreted, and manipulated at the hardware level.",
+    theory: "### Understanding Data Types & Memory Architecture\nEvery computer program stores values in physical RAM using binary digits (bits). The choice of primitive data type directly governs the memory footprint (in bits or bytes) and the valid range of values.\n\n#### Key Primitive Data Types\n1. **Boolean**: Represents truth values (`true` or `false`). While conceptually requiring only **1 bit**, programming languages like Java store booleans in **8 bits (1 Byte)** for memory alignment efficiency.\n2. **Short**: A 16-bit signed integer storing values from $-32,768$ to $32,767$. Ideal for memory-constrained domain variables such as human age ($0–120$).\n3. **Integer (`int`)**: Standard 32-bit signed integer ranging from $-2^{31}$ to $2^{31}-1$.\n4. **Float**: Single-precision 32-bit IEEE 754 floating-point number. Allocated into 1 sign bit, 8 exponent bits, and 23 mantissa bits.\n5. **Double**: Double-precision 64-bit IEEE 754 floating-point number, offering high-precision scientific decimal storage.\n\n#### Memory Allocation Calculation Formula\nTo compute total memory requirement for $N$ variables of type $T$:\n$$\\text{Memory (Bits)} = N \\times \\text{BitsPerVariable}$$\n$$\\text{Memory (Bytes)} = \\frac{\\text{Memory (Bits)}}{8}$$\n\nFor example, allocating $1000$ `float` variables requires $1000 \\times 32 = 32,000\\text{ bits}$, which converts to $32,000 / 8 = 4,000\\text{ Bytes}$.",
+    definitions: [
+      { term: "Bit (Binary Digit)", definition: "The smallest unit of data in computing, taking a binary value of 0 or 1." },
+      { term: "Byte", definition: "A contiguous sequence of 8 bits used as the fundamental addressable storage unit in memory." },
+      { term: "Primitive Type", definition: "A basic data type provided by a programming language as a building block (e.g., short, int, float, boolean)." }
+    ],
+    importantConcepts: [
+      {
+        title: "Bit vs Byte Conversion",
+        content: "1 Byte always equals 8 bits. To convert bits to bytes, divide by 8. To convert bytes to bits, multiply by 8.",
+        formula: "Bytes = Bits / 8",
+        keyPoints: ["8 bits = 1 byte", "1000 float variables = 4000 bytes", "16-bit short = 2 bytes"]
+      }
+    ],
+    formulaBox: [
+      {
+        title: "Memory Allocation Formula",
+        formula: "Total Bytes = (N × Bits_per_Type) / 8",
+        explanation: "N is total number of variables; Bits_per_Type is 32 for float/int, 16 for short, 8 for byte/boolean, and 64 for double."
+      }
+    ],
+    notes: [
+      "Always pick the smallest primitive type that fits your expected value range to optimize memory overhead.",
+      "Short (16-bit) is ideal for age or calendar years, while Float (32-bit) is required for real-numbered measurements."
+    ],
+    diagrams: [
+      {
+        title: "IEEE 754 Single-Precision Float Layout (32-bit)",
+        type: "table",
+        content: "| Bit 31 | Bits 30 - 23 | Bits 22 - 0 |\n|---|---|---|\n| Sign (1 bit) | Exponent (8 bits) | Mantissa / Fraction (23 bits) |",
+        caption: "A 32-bit float consists of 1 sign bit, 8 exponent bits, and 23 mantissa bits."
+      }
+    ],
+    realWorldExamples: [
+      {
+        title: "User Profile Data Storage",
+        problem: "Choose the optimal data types for storing: married status, person age, and full name.",
+        solution: "married -> boolean (1 byte / 1 bit logical);\nage -> short (16-bit integer up to 32,767);\nname -> string (character sequence).",
+        code: "boolean married = true;\nshort age = 28;\nString name = \"Alex\";"
+      }
+    ],
+    examples: [
+      {
+        title: "Memory Requirement for 1000 Floats",
+        problem: "Calculate the exact memory needed in bits and bytes to store 1000 float variables.",
+        solution: "1 float = 32 bits.\n1000 floats = 1000 * 32 = 32,000 bits.\nIn bytes: 32,000 / 8 = 4,000 Bytes."
+      }
+    ],
+    importantPoints: [
+      "Float = 32 bits = 4 bytes.",
+      "Short = 16 bits = 2 bytes.",
+      "Double = 64 bits = 8 bytes.",
+      "Byte = 8 bits = 1 byte."
+    ],
+    commonMistakes: [
+      "Confusing bits with bytes (e.g. thinking 32000 bits equals 32000 bytes).",
+      "Assuming boolean takes 1 full byte of logic, but forgetting it only represents 1 bit conceptually."
+    ],
+    examTips: [
+      "When calculating memory for float variables, remember to multiply by 32 bits first before dividing by 8.",
+      "Short is 16-bit (2 bytes), int is 32-bit (4 bytes)."
+    ],
+    summary: "Primitive data types dictate memory allocation. Floats use 32 bits (4 bytes), shorts use 16 bits (2 bytes), and doubles use 64 bits (8 bytes). Memory calculations require multiplying variable count by bit size and dividing by 8.",
+    keyTakeaways: [
+      "1 Byte = 8 Bits",
+      "Float memory = 32 bits per variable",
+      "1000 Floats = 4000 Bytes",
+      "Short = 16 bits, ideal for small integer bounds"
+    ],
+    quickRevisionBox: [
+      "Float: 32 bits (4B)",
+      "Short: 16 bits (2B)",
+      "Double: 64 bits (8B)",
+      "Formula: Bytes = (N * bits) / 8"
+    ],
+    practiceQuestions: [1, 5]
+  },
+  {
+    id: 2,
+    chapterId: 1,
+    chapter: "Data Types",
+    topic: "Implicit & Explicit Type Conversion",
+    slug: "implicit-explicit-type-conversion",
+    difficulty: "Medium",
+    readingTime: "7 min",
+    introduction: "Type conversion defines how data of one primitive type is promoted or coerced into another during algebraic arithmetic.",
+    theory: "### Type Conversion Rules & Promotion\nWhen binary arithmetic operations take place, modern execution environments (such as Java or C runtimes) enforce implicit type promotion rules to ensure calculation precision and avoid register overflow.\n\n#### Key Rules for Numeric Expressions\n1. **Integer Promotion**: Any operation involving integer types smaller than `int` (such as `byte` or `short`) promotes both operands to `int` before performing the calculation.\n2. **Floating-Point Promotion**: If an operation involves any `float` variables, or if floating-point arithmetic is evaluated, the operands are implicitly promoted to `double` in standard evaluation pipelines, or evaluated in double precision.\n3. **Widening Conversion**: Small types automatically widen to larger types without data loss (`short` -> `int` -> `long` -> `float` -> `double`).\n\n#### Examples of Implicit Promotion\n- Adding two `float` variables: Both are promoted to `double` during computation.\n- Dividing two `short` variables: Both are promoted to `int` during calculation.",
+    definitions: [
+      { term: "Implicit Conversion", definition: "Automatic conversion performed by the compiler without programmer intervention." },
+      { term: "Explicit Casting", definition: "Manual coercion of a variable from one data type to another using parenthesis syntax (e.g. (int) 3.14)." },
+      { term: "Type Promotion", definition: "Promoting smaller data types to larger standard evaluation types (int or double) during arithmetic." }
+    ],
+    importantConcepts: [
+      {
+        title: "Standard Arithmetic Evaluation Types",
+        content: "In Java/C systems, intermediate computations occur ONLY in `int` or `double`. Short/byte operands promote to `int`. Float operands promote to `double`.",
+        keyPoints: ["short + short => int calculation", "float + float => double calculation"]
+      }
+    ],
+    formulaBox: [
+      {
+        title: "Type Promotion Cascade",
+        formula: "byte/short -> int -> long -> float -> double",
+        explanation: "Arithmetic operations widen to the highest precision operand present in the expression."
+      }
+    ],
+    notes: [
+      "Even if the target assignment variable is float, the binary addition of two floats is evaluated in double precision internally."
+    ],
+    diagrams: [
+      {
+        title: "Type Promotion Hierarchy",
+        type: "table",
+        content: "| Lower Precision | Promotes To | Higher Precision |\n|---|---|---|\n| short / byte | ---> | int |\n| float | ---> | double |",
+        caption: "Calculations widen automatically to int or double."
+      }
+    ],
+    realWorldExamples: [
+      {
+        title: "Floating Point Addition",
+        problem: "Two float variables a = 3.5f and b = 2.1f are added. What internal type carries out the calculation?",
+        solution: "Both floats are implicitly converted to `double` for the addition.",
+        code: "float a = 3.5f;\nfloat b = 2.1f;\n// Internal evaluation: (double)a + (double)b"
+      }
+    ],
+    examples: [
+      {
+        title: "Short Division",
+        problem: "Two short variables s1 = 10 and s2 = 2 are divided. In which type is the calculation performed?",
+        solution: "In Java/C, short variables are promoted to `int`. The division occurs in `int`."
+      }
+    ],
+    importantPoints: [
+      "Short division occurs in `int`.",
+      "Float addition occurs in `double`.",
+      "Implicit widening prevents hardware overflow during intermediate arithmetic."
+    ],
+    commonMistakes: [
+      "Assuming float + float stays in float precision during intermediate expression evaluation.",
+      "Expecting short / short to produce a short result directly without int promotion."
+    ],
+    examTips: [
+      "Remember: In Java arithmetic, calculations occur strictly in `int` or `double`."
+    ],
+    summary: "Intermediate binary arithmetic promotes smaller integer types (byte, short) to `int`, and floating point types (float) to `double`.",
+    keyTakeaways: [
+      "short + short -> calculated in int",
+      "float + float -> calculated in double",
+      "Arithmetic widening protects against register overflow"
+    ],
+    quickRevisionBox: [
+      "Short Division => int",
+      "Float Addition => double",
+      "Widening rule: byte/short -> int, float -> double"
+    ],
+    practiceQuestions: [2, 3]
+  },
+  {
+    id: 3,
+    chapterId: 1,
+    chapter: "Data Types",
+    topic: "Integer Division & Order of Operations",
+    slug: "integer-division-order-of-operations",
+    difficulty: "Hard",
+    readingTime: "9 min",
+    introduction: "Integer division truncates fractional components, while operator precedence governs the precise evaluation order of complex expressions.",
+    theory: "### Integer Division & Operator Precedence\nUnderstanding how expressions evaluate step-by-step is critical to avoiding logic bugs in software engineering.\n\n#### 1. Integer Division Floor Truncation\nWhen two integer types (e.g., `int` or promoted `short`) are divided using the `/` operator, the operation computes integer quotient truncation—the fractional decimal remainder is discarded entirely.\n$$\\text{Example: } 4 / 3 = 1 \\quad (\\text{fractional } .3333... \\text{ is dropped})$$\n\n#### 2. Precedence of Operators\nIn complex numeric expressions:\n1. Parentheses `()` are evaluated first.\n2. Unary operators (e.g., negation `-i`) are evaluated next.\n3. Multiplication `*`, Division `/`, and Modulo `%` take precedence over Addition `+` and Subtraction `-`.\n4. Type promotion happens at each operator node.\n\n#### Detailed Case Walkthrough 1\nConsider: `short s = 4; float x = 3 + s/3;`\n1. `s` (short value 4) is promoted to `int` for `s / 3`.\n2. `4 / 3` evaluates to `1` (integer division truncates $1.3333$).\n3. `3 + 1` evaluates to `4`.\n4. Assigning integer `4` to `float x` yields `4.0`.\n\n#### Detailed Case Walkthrough 2\nConsider: `int i = 2; double d = (-i)*(1/i) + 1f;`\n1. `(1/i)` -> `(1/2)` evaluates to `0` (integer division of 1 by 2).\n2. `(-i)` -> `-2`.\n3. `(-2) * 0` evaluates to `0`.\n4. `0 + 1f` evaluates to `1.0`.",
+    definitions: [
+      { term: "Integer Division", definition: "Division between two integer operands where fractional digits are truncated toward zero." },
+      { term: "Operator Precedence", definition: "The rule set defining the order in which operators in an expression are evaluated." }
+    ],
+    importantConcepts: [
+      {
+        title: "Truncation Rule",
+        content: "Integer division always drops the decimal remainder. 1/2 = 0, 4/3 = 1, 9/10 = 0.",
+        formula: "floor(a / b) for positive integers",
+        keyPoints: ["1/2 = 0", "4/3 = 1", "Truncation happens before floating-point assignment"]
+      }
+    ],
+    formulaBox: [
+      {
+        title: "Integer Truncation & Precedence Order",
+        formula: "1. () -> 2. Unary - -> 3. * / -> 4. + -",
+        explanation: "Operations inside parentheses evaluate first; integer division truncates fractions immediately."
+      }
+    ],
+    notes: [
+      "To preserve decimal values, at least one operand must be explicit floating point (e.g. 1.0 / i instead of 1 / i)."
+    ],
+    diagrams: [
+      {
+        title: "Step-by-step Evaluation of (-i)*(1/i)+1f",
+        type: "code",
+        content: "i = 2\nStep 1: (1 / 2)       => 0 (truncated integer division)\nStep 2: (-2) * 0      => 0\nStep 3: 0 + 1.0f      => 1.0 (float assignment to double)\nResult: d = 1.0",
+        caption: "Notice how (1/2) becomes 0 before multiplication."
+      }
+    ],
+    realWorldExamples: [
+      {
+        title: "Paging Calculation",
+        problem: "Calculate total full pages when displaying 25 items with 10 items per page.",
+        solution: "25 / 10 = 2 full pages (fractional 0.5 is truncated).",
+        code: "int items = 25;\nint pageSize = 10;\nint fullPages = items / pageSize; // 2"
+      }
+    ],
+    examples: [
+      {
+        title: "Evaluating 3 + s/3 for s=4",
+        problem: "Find x for: short s = 4; float x = 3 + s/3;",
+        solution: "s/3 = 4/3 = 1. 3 + 1 = 4. Result x = 4.0."
+      }
+    ],
+    importantPoints: [
+      "1/2 evaluates to 0 in integer math.",
+      "4/3 evaluates to 1 in integer math.",
+      "Multiplication and division precede addition and subtraction."
+    ],
+    commonMistakes: [
+      "Assuming 4/3 becomes 1.3333 when assigned to float x.",
+      "Thinking 1/2 becomes 0.5 inside (1/i) when i is an int."
+    ],
+    examTips: [
+      "Watch for integer division inside parentheses—it evaluates to 0 or integer floor before any floating-point addition occurs!"
+    ],
+    summary: "Integer division truncates decimals immediately. Operator precedence evaluates parentheses and multiplication/division prior to addition.",
+    keyTakeaways: [
+      "Integer / Integer = Integer (truncated)",
+      "1 / 2 = 0",
+      "4 / 3 = 1",
+      "Parentheses execute first"
+    ],
+    quickRevisionBox: [
+      "4/3 = 1",
+      "1/2 = 0",
+      "(-2)*(0) + 1 = 1",
+      "Precedence: () > * / > + -"
+    ],
+    practiceQuestions: [4, 6]
+  },
+
+  // CHAPTER 2: COMBINATIONAL LOGIC
+  {
+    id: 4,
+    chapterId: 2,
+    chapter: "Combinational Logic",
+    topic: "Truth Tables & Fundamental Boolean Logic",
+    slug: "truth-tables-fundamental-boolean-logic",
+    difficulty: "Easy",
+    readingTime: "8 min",
+    introduction: "Combinational logic forms the bedrock of digital processors, using primitive logic gates to execute binary decision-making.",
+    theory: "### Fundamental Logic Operations & Truth Tables\nCombinational logic systems compute outputs purely as a function of their current binary inputs ($0$ for False, $1$ for True).\n\n#### Primary Logic Operators\n1. **AND ($\land$)**: Output is $1$ if and only if **all** inputs are $1$.\n2. **OR ($\lor$)**: Output is $1$ if **at least one** input is $1$.\n3. **NOT ($\neg$)**: Inverts binary input ($0 \to 1, 1 \to 0$).\n4. **NAND ($\neg(A \land B)$)**: Output is $0$ only when all inputs are $1$.\n5. **NOR ($\neg(A \lor B)$)**: Output is $1$ only when all inputs are $0$.\n6. **XOR ($\oplus$)**: Output is $1$ when inputs differ.\n\n#### Constructing Truth Tables\nFor $N$ binary variables, a complete truth table contains $2^N$ input combinations.\n\n#### Real-World Logic Example: Burglar Alarm System\nConsider a security system with window sensors ($W$), door sensors ($D$), and showcase sensors ($S$). The alarm ($A$) must trigger if **any** sensor detects unusual activity.\n$$\\text{Alarm Expression: } A = W \\lor D \\lor S$$\nThis demonstrates a multi-input **OR** operation.",
+    definitions: [
+      { term: "Truth Table", definition: "A mathematical table enumerating all binary input combinations and corresponding logic outputs." },
+      { term: "Combinational Logic", definition: "Digital logic circuits whose output is determined solely by the present input state." },
+      { term: "NOR Gate", definition: "A logic gate giving output 1 only when all inputs are 0." }
+    ],
+    importantConcepts: [
+      {
+        title: "Burglar Alarm Logic",
+        content: "An alarm that triggers when ANY sensor activates represents an OR function. If ALL sensors were required, it would be an AND function.",
+        formula: "Alarm = S1 OR S2 OR S3 ... OR Sn",
+        keyPoints: ["OR triggers if any input is 1", "NOR is inverted OR", "2^N rows for N variables"]
+      }
+    ],
+    formulaBox: [
+      {
+        title: "Truth Table Size & OR Operator",
+        formula: "Rows = 2^N; OR Output = 1 if (A = 1 or B = 1)",
+        explanation: "N is the count of binary input signals."
+      }
+    ],
+    notes: [
+      "NOR truth table: Output X = 1 only for A=0, B=0."
+    ],
+    diagrams: [
+      {
+        title: "NOR Gate Truth Table (2 Inputs)",
+        type: "table",
+        content: "| A | B | X = NOR(A, B) |\n|---|---|---|\n| 0 | 0 | 1 |\n| 0 | 1 | 0 |\n| 1 | 0 | 0 |\n| 1 | 1 | 0 |",
+        caption: "Notice X = 1 only when both inputs are 0."
+      }
+    ],
+    realWorldExamples: [
+      {
+        title: "Jewelry Store Security System",
+        problem: "A store has sensors on doors, windows, and showcases. Alarm should sound if ANY sensor trips. Which Boolean operation is this?",
+        solution: "OR operation (or multi-input OR), because any single true input triggers the output.",
+        code: "boolean alarm = doorSensor || windowSensor || showcaseSensor;"
+      }
+    ],
+    examples: [
+      {
+        title: "Identifying Truth Table for NOR",
+        problem: "Inputs: (0,0)->1, (0,1)->0, (1,0)->0, (1,1)->0. Identify the function.",
+        solution: "This represents NOR (NOT-OR), as it is the exact negation of the OR function."
+      }
+    ],
+    importantPoints: [
+      "2 inputs => 4 rows in truth table.",
+      "OR gate = 1 if any input is 1.",
+      "NOR gate = 1 only when all inputs are 0.",
+      "Alarm activation on any sensor = OR operation."
+    ],
+    commonMistakes: [
+      "Confusing NOR with NAND output tables.",
+      "Assuming alarm systems use AND gates (which would require ALL windows/doors to break simultaneously)."
+    ],
+    examTips: [
+      "If output X is 1 ONLY when A=0 and B=0, the operation is NOR (or ~A ^ ~B)."
+    ],
+    summary: "Truth tables enumerate all 2^N states. OR gates output 1 if any input is 1 (ideal for alarms), while NOR outputs 1 only when all inputs are 0.",
+    keyTakeaways: [
+      "OR: 1 if any input is 1",
+      "NOR: 1 only if all inputs are 0",
+      "Alarm logic = OR gate",
+      "Table size = 2^N rows"
+    ],
+    quickRevisionBox: [
+      "A=0,B=0 => X=1 (NOR)",
+      "Alarm system = OR",
+      "Rows for N inputs = 2^N"
+    ],
+    practiceQuestions: [7, 8]
+  },
+  {
+    id: 5,
+    chapterId: 2,
+    chapter: "Combinational Logic",
+    topic: "Circuit Analysis & Logic Gate Combinations",
+    slug: "circuit-analysis-gate-combinations",
+    difficulty: "Medium",
+    readingTime: "10 min",
+    introduction: "Analyzing complex logic circuits requires evaluating compound Boolean expressions using order of precedence and De Morgan's Laws.",
+    theory: "### Circuit Evaluation & Compound Expressions\nReal digital circuits connect multiple logic gates in series and parallel. To evaluate the output $X$ for given inputs, analyze the Boolean expression step-by-step.\n\n#### Circuit Analysis Case Study 1: $X = (A \\lor B) \\land C$\nEvaluate output $X$ for specific input combinations:\n- **Row 3 ($A=0, B=1, C=1$)**: $(0 \\lor 1) \\land 1 = 1 \\land 1 = \\mathbf{1}$.\n- **Row 6 ($A=1, B=0, C=1$)**: $(1 \\lor 0) \\land 1 = 1 \\land 1 = \\mathbf{1}$.\n- **Row 7 ($A=1, B=1, C=0$)**: $(1 \\lor 1) \\land 0 = 1 \\land 0 = \\mathbf{0}$.\n\n#### Circuit Analysis Case Study 2: Negated Inputs\nInput $A$ is negated ($\neg A$), combined with $B$ via OR ($\neg A \\lor B$), and the entire result is negated:\n$$X = \\neg(\\neg A \\lor B)$$\nApplying De Morgan's Law $\\neg(P \\lor Q) = \\neg P \\land \\neg Q$:\n$$X = \\neg(\\neg A) \\land \\neg B = A \\land \\neg B$$\nThis simplifies to **$A \\land \\neg B$**.",
+    definitions: [
+      { term: "De Morgan's Laws", definition: "Transformation rules stating ~(A v B) = ~A ^ ~B and ~(A ^ B) = ~A v ~B." },
+      { term: "Combinatorial Circuit", definition: "An interconnected network of logic gates evaluating a compound Boolean function." }
+    ],
+    importantConcepts: [
+      {
+        title: "De Morgan Simplification",
+        content: "Negation of an OR expression becomes AND of negated inputs: ~(~A v B) = A ^ ~B.",
+        formula: "~(P v Q) = ~P ^ ~Q",
+        keyPoints: ["Double negation cancels: ~~A = A", "~(~A v B) simplifies to A ^ ~B"]
+      }
+    ],
+    formulaBox: [
+      {
+        title: "De Morgan's First Law",
+        formula: "~(A v B) = ~A ^ ~B",
+        explanation: "Break the bar, change the sign: NOR of inputs equals AND of negated inputs."
+      }
+    ],
+    notes: [
+      "Always evaluate parentheses before AND/OR operations in circuit equations."
+    ],
+    diagrams: [
+      {
+        title: "Circuit Output Table for X = (A v B) ^ C",
+        type: "table",
+        content: "| A | B | C | (A v B) | X = (A v B) ^ C |\n|---|---|---|---|---|\n| 0 | 1 | 1 | 1 | 1 |\n| 1 | 0 | 1 | 1 | 1 |\n| 1 | 1 | 0 | 1 | 0 |",
+        caption: "Evaluation of rows 3, 6, and 7."
+      }
+    ],
+    realWorldExamples: [
+      {
+        title: "Safety Interlock Circuit",
+        problem: "Machine operates if (Guard Closed OR Manual Override) AND Power On.",
+        solution: "X = (Guard v Override) ^ Power. If Power is OFF (C=0), machine cannot operate (X=0).",
+        code: "boolean output = (guardClosed || manualOverride) && powerOn;"
+      }
+    ],
+    examples: [
+      {
+        title: "Simplifying ~(~A v B)",
+        problem: "Negate A, OR with B, and negate the whole output. What is the simplified expression?",
+        solution: "~(~A v B) = ~~A ^ ~B = A ^ ~B."
+      }
+    ],
+    importantPoints: [
+      "X = (A v B) ^ C yields 0 whenever C = 0.",
+      "~(~A v B) simplifies to A ^ ~B.",
+      "De Morgan's laws reduce gate count in silicon layout."
+    ],
+    commonMistakes: [
+      "Forgetting to invert the OR symbol to AND when applying De Morgan's Law.",
+      "Evaluating AND before parentheses in expressions like (A v B) ^ C."
+    ],
+    examTips: [
+      "When C=0 in (A v B) ^ C, the output is automatically 0 regardless of A and B."
+    ],
+    summary: "Circuit analysis uses Boolean algebra and De Morgan's laws to simplify expressions and complete truth tables.",
+    keyTakeaways: [
+      "De Morgan: ~(~A v B) = A ^ ~B",
+      "(A v B) ^ C requires C=1 for output 1",
+      "Double negation cancels out"
+    ],
+    quickRevisionBox: [
+      "~( ~A v B ) = A ^ ~B",
+      "(0 v 1) ^ 1 = 1",
+      "(1 v 1) ^ 0 = 0"
+    ],
+    practiceQuestions: [9, 10, 13]
+  },
+  {
+    id: 6,
+    chapterId: 2,
+    chapter: "Combinational Logic",
+    topic: "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    slug: "cdnf-minterms",
+    difficulty: "Hard",
+    readingTime: "10 min",
+    introduction: "CDNF (Sum of Products) expresses any Boolean truth table as an OR combination of minterms representing True output rows.",
+    theory: "### Minterms & Canonical Disjunctive Normal Form (CDNF)\nAny digital logic function can be systematically represented in a standardized canonical form derived from its truth table.\n\n#### 1. Minterms\nA **minterm** is an AND ($\land$) combination of all input variables (in direct or negated form) that evaluates to **1 for exactly one row** of the truth table.\n- If variable $V = 1$, use unnegated literal $V$.\n- If variable $V = 0$, use negated literal $\\neg V$.\n\n*Example*: For 4 inputs $A=1, B=0, C=1, D=1$, the unique minterm is:\n$$m = A \\land \\neg B \\land C \\land D$$\n\n#### 2. Canonical Disjunctive Normal Form (CDNF)\nCDNF (also known as Sum of Products / SOP) is formed by taking the **OR ($\lor$) sum** of minterms for all rows where output $X = 1$.\n\n*Example*: Suppose $X = 1$ only for rows $(A=0, B=1)$ and $(A=1, B=1)$:\n- Minterm for $(0, 1)$: $\\neg A \\land B$\n- Minterm for $(1, 1)$: $A \\land B$\n- CDNF Expression: $X = (\\neg A \\land B) \\lor (A \\land B)$\n- Simplification: $(\\neg A \\lor A) \\land B = 1 \\land B = B$.",
+    definitions: [
+      { term: "Minterm", definition: "A product (AND) of literals in which each input variable appears exactly once." },
+      { term: "CDNF (Canonical Disjunctive Normal Form)", definition: "A Boolean expression consisting of an OR (disjunction) of minterms." }
+    ],
+    importantConcepts: [
+      {
+        title: "Minterm Formation Rule",
+        content: "If input bit is 1, use unnegated letter. If input bit is 0, use negated letter (~).",
+        formula: "m_i = L_1 ^ L_2 ^ ... ^ L_n",
+        keyPoints: ["A=1, B=0, C=1, D=1 => A ^ ~B ^ C ^ D", "CDNF ORs all active minterms"]
+      }
+    ],
+    formulaBox: [
+      {
+        title: "CDNF Formula",
+        formula: "CDNF = v (minterms where X = 1)",
+        explanation: "Sum of Products representation for Boolean logic."
+      }
+    ],
+    notes: [
+      "CDNF is uniquely determined by the truth table row outputs."
+    ],
+    diagrams: [
+      {
+        title: "Minterm Derivation Table",
+        type: "table",
+        content: "| A | B | C | D | Target X | Minterm |\n|---|---|---|---|---|---|\n| 1 | 0 | 1 | 1 | 1 | A ^ ~B ^ C ^ D |",
+        caption: "Notice B=0 yields ~B while A=1, C=1, D=1 yield unnegated literals."
+      }
+    ],
+    realWorldExamples: [
+      {
+        title: "PLA (Programmable Logic Array) Synthesis",
+        problem: "Synthesize hardware for a function active at inputs (0,1) and (1,1).",
+        solution: "Form CDNF: (~A ^ B) v (A ^ B), which simplifies directly to B.",
+        code: "boolean X = (!A && B) || (A && B); // simplifies to B"
+      }
+    ],
+    examples: [
+      {
+        title: "Minterm for A=1, B=0, C=1, D=1",
+        problem: "Find the minterm for state (1,0,1,1).",
+        solution: "A=1 -> A, B=0 -> ~B, C=1 -> C, D=1 -> D. Minterm = A ^ ~B ^ C ^ D."
+      }
+    ],
+    importantPoints: [
+      "Minterms use AND between all variables.",
+      "CDNF connects minterms with OR.",
+      "Input 0 corresponds to negated literal (~V).",
+      "Input 1 corresponds to direct literal (V)."
+    ],
+    commonMistakes: [
+      "Using OR inside a minterm instead of AND.",
+      "Negating variables that have value 1 instead of 0."
+    ],
+    examTips: [
+      "Check each input value: 1 -> Letter, 0 -> ~Letter. Combine with AND for minterm!"
+    ],
+    summary: "Minterms represent specific truth table rows using AND gates. CDNF combines active minterms using OR gates.",
+    keyTakeaways: [
+      "Input 1 = Unnegated literal",
+      "Input 0 = Negated literal (~)",
+      "Minterm = AND of literals",
+      "CDNF = OR of active minterms"
+    ],
+    quickRevisionBox: [
+      "(1,0,1,1) => A ^ ~B ^ C ^ D",
+      "CDNF = Sum of Products",
+      "(0,1) & (1,1) => (~A^B) v (A^B)"
+    ],
+    practiceQuestions: [11, 12]
+  },
+
+  // CHAPTER 3: LINEAR TRANSFORMATIONS
+  {
+    id: 7,
+    chapterId: 3,
+    chapter: "Linear Transformations",
+    topic: "Matrices, Linear Maps, & Matrix Rank",
+    slug: "matrices-linear-maps-matrix-rank",
+    difficulty: "Medium",
+    readingTime: "9 min",
+    introduction: "Linear transformations map vector spaces while preserving vector addition and scalar multiplication, represented via matrices.",
+    theory: "### Linear Maps & Matrix Rank\nA mapping $T: \\mathbb{R}^n \\to \\mathbb{R}^m$ is a **linear transformation** if for all vectors $u, v$ and scalar $c$:\n1. $T(u + v) = T(u) + T(v)$\n2. $T(c u) = c T(u)$\n\n#### Matrix Rank\nThe **rank** of a matrix $A$, denoted $\\text{rank}(A)$, is the maximum number of linearly independent rows or columns in $A$.\n\n*Example Matrix*:\n$$A = \\begin{pmatrix} 2 & 1 \\\\ 1 & 2 \\end{pmatrix}$$\nTo test linear independence of rows $r_1 = (2, 1)$ and $r_2 = (1, 2)$:\nCompute determinant $\\det(A) = (2)(2) - (1)(1) = 4 - 1 = 3 \\neq 0$.\nSince $\\det(A) \\neq 0$, the rows are linearly independent. Thus, **$\\text{rank}(A) = 2$** (full rank).\n\n#### Invertibility Criterion\nA square matrix $A \\in \\mathbb{R}^{n \\times n}$ is **invertible** (non-singular) if and only if:\n- $\\text{rank}(A) = n$ (Full Rank)\n- $\\det(A) \\neq 0$\n- Its column vectors $a_1, a_2, \\dots, a_n$ form a linearly independent set.",
+    definitions: [
+      { term: "Linear Map", definition: "A vector space transformation preserving addition and scalar multiplication." },
+      { term: "Matrix Rank", definition: "The dimension of the vector space spanned by a matrix's columns or rows." },
+      { term: "Invertible Matrix", definition: "A square matrix with non-zero determinant having an inverse A^(-1)." }
+    ],
+    importantConcepts: [
+      {
+        title: "Rank Determination",
+        content: "If determinant of 2x2 matrix is non-zero, rank is 2. If determinant is 0, rank is < 2.",
+        formula: "det(A) = ad - bc",
+        keyPoints: ["det([[2,1],[1,2]]) = 4-1 = 3 != 0 => Rank = 2", "Full rank square matrix is invertible"]
+      }
+    ],
+    formulaBox: [
+      {
+        title: "2x2 Determinant Formula",
+        formula: "det([[a, b], [c, d]]) = ad - bc",
+        explanation: "If det != 0, rank = 2 and matrix is invertible."
+      }
+    ],
+    notes: [
+      "Full rank means no column can be written as a linear combination of other columns."
+    ],
+    diagrams: [
+      {
+        title: "2x2 Matrix Structure",
+        type: "table",
+        content: "| Row 1 | 2 | 1 |\n| Row 2 | 1 | 2 |\n| Det | (2*2) - (1*1) = 3 | Rank = 2 |",
+        caption: "Determinant = 3, confirming Rank 2."
+      }
+    ],
+    realWorldExamples: [
+      {
+        title: "Graphic Rotation & Scaling",
+        problem: "Transform 2D game coordinates using matrix A = [[2,1],[1,2]]. Is information lost?",
+        solution: "No information is lost because rank(A) = 2 (invertible). Inverse A^(-1) restores original coordinates.",
+        code: "double det = 2*2 - 1*1; // 3 != 0 => Invertible"
+      }
+    ],
+    examples: [
+      {
+        title: "Rank of Matrix [[2,1],[1,2]]",
+        problem: "Find rank of A = [[2,1],[1,2]].",
+        solution: "det(A) = 4 - 1 = 3 != 0. Rank = 2."
+      }
+    ],
+    importantPoints: [
+      "det(A) = ad - bc for 2x2 matrix.",
+      "Rank = number of independent rows/columns.",
+      "Non-zero determinant => Full rank => Invertible."
+    ],
+    commonMistakes: [
+      "Assuming rank is equal to number of total elements.",
+      "Confusing matrix rank with matrix dimension."
+    ],
+    examTips: [
+      "For a 2x2 matrix, compute ad - bc. If non-zero, rank is 2!"
+    ],
+    summary: "Matrix rank measures independent dimensions. Non-zero determinant guarantees full rank and matrix invertibility.",
+    keyTakeaways: [
+      "Rank = Linearly independent rows",
+      "det([[2,1],[1,2]]) = 3",
+      "Rank of [[2,1],[1,2]] = 2",
+      "Invertible <=> det != 0"
+    ],
+    quickRevisionBox: [
+      "det = ad - bc",
+      "det != 0 => Rank 2",
+      "Full rank = Invertible"
+    ],
+    practiceQuestions: [14, 19]
+  },
+  {
+    id: 8,
+    chapterId: 3,
+    chapter: "Linear Transformations",
+    topic: "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    slug: "eigenvalues-eigenvectors-invertible-matrices",
+    difficulty: "Hard",
+    readingTime: "11 min",
+    introduction: "Eigenvalues dictate scalar scaling factors along invariant eigenvector directions during linear matrix transformations.",
+    theory: "### Eigenvalue Equation & Computation\nFor a square matrix $A$, a scalar $\\lambda$ is an **eigenvalue** if there exists a non-zero eigenvector $v$ such that:\n$$A v = \\lambda v$$\n\n#### Characteristic Equation\nTo solve for eigenvalues $\\lambda$, solve the characteristic polynomial:\n$$\\det(A - \\lambda I) = 0$$\n\n#### Step-by-Step Eigenvalue Calculation for $A = \\begin{pmatrix} 2 & 1 \\\\ 1 & 2 \\end{pmatrix}$\n1. Form matrix $(A - \\lambda I)$:\n$$A - \\lambda I = \\begin{pmatrix} 2 - \\lambda & 1 \\\\ 1 & 2 - \\lambda \\end{pmatrix}$$\n2. Compute determinant:\n$$\\det(A - \\lambda I) = (2 - \\lambda)^2 - (1)(1) = (2 - \\lambda)^2 - 1 = 0$$\n3. Solve for $\\lambda$:\n$$(2 - \\lambda)^2 = 1 \\implies 2 - \\lambda = \\pm 1$$\n- $\\lambda_1 = 2 + 1 = \\mathbf{3}$\n- $\\lambda_2 = 2 - 1 = \\mathbf{1}$\n\nThus, the eigenvalues of matrix $A$ are **$\\lambda_1 = 3$** and **$\\lambda_2 = 1$**.",
+    definitions: [
+      { term: "Eigenvalue (λ)", definition: "A scalar factor by which an eigenvector is stretched or shrunk during transformation." },
+      { term: "Characteristic Equation", definition: "Polynomial equation det(A - λI) = 0 used to calculate eigenvalues." },
+      { term: "Eigenvector", definition: "A non-zero vector whose direction does not change under transformation." }
+    ],
+    importantConcepts: [
+      {
+        title: "Eigenvalue Properties",
+        content: "Sum of eigenvalues equals Trace(A). Product of eigenvalues equals Det(A).",
+        formula: "det(A - λI) = 0",
+        keyPoints: ["Trace(A) = 2+2 = 4; λ1+λ2 = 3+1 = 4", "Det(A) = 3; λ1*λ2 = 3*1 = 3", "Eigenvalues for [[2,1],[1,2]] are 3 and 1"]
+      }
+    ],
+    formulaBox: [
+      {
+        title: "Characteristic Polynomial (2x2)",
+        formula: "λ^2 - Trace(A)λ + Det(A) = 0",
+        explanation: "Trace is sum of main diagonal; Det is ad - bc."
+      }
+    ],
+    notes: [
+      "Eigenvalues describe principal stretching axes in data transformations."
+    ],
+    diagrams: [
+      {
+        title: "Characteristic Equation Solution",
+        type: "code",
+        content: "(2 - λ)^2 - 1 = 0\n=> (2 - λ)^2 = 1\n=> 2 - λ = ±1\n=> λ = 3 or λ = 1",
+        caption: "Eigenvalues λ = 3, 1 for matrix [[2,1],[1,2]]."
+      }
+    ],
+    realWorldExamples: [
+      {
+        title: "Google PageRank & Structural Stress Analysis",
+        problem: "Compute main growth factors of a 2x2 network adjacency matrix [[2,1],[1,2]].",
+        solution: "Eigenvalues λ = 3 and 1 give the dominant scaling components.",
+        code: "// λ1 = 3, λ2 = 1"
+      }
+    ],
+    examples: [
+      {
+        title: "Eigenvalues of [[2,1],[1,2]]",
+        problem: "Find eigenvalues for matrix A = [[2,1],[1,2]].",
+        solution: "det(A - λI) = (2-λ)^2 - 1 = 0 => λ = 3, 1."
+      }
+    ],
+    importantPoints: [
+      "Eigenvalues of [[2,1],[1,2]] are 3 and 1.",
+      "det(A - λI) = 0 is characteristic equation.",
+      "Product of eigenvalues equals matrix determinant."
+    ],
+    commonMistakes: [
+      "Forgetting to subtract λ from main diagonal elements.",
+      "Miscalculating (2 - λ)^2 expansion."
+    ],
+    examTips: [
+      "Quick check: Sum of eigenvalues (3 + 1 = 4) must equal trace (2 + 2 = 4)!"
+    ],
+    summary: "Eigenvalues λ are solved via det(A - λI) = 0. For [[2,1],[1,2]], eigenvalues are 3 and 1.",
+    keyTakeaways: [
+      "det(A - λI) = 0",
+      "λ1 = 3, λ2 = 1",
+      "Sum = Trace = 4",
+      "Product = Det = 3"
+    ],
+    quickRevisionBox: [
+      "(2-λ)^2 - 1 = 0",
+      "λ1 = 3, λ2 = 1",
+      "Trace = 4, Det = 3"
+    ],
+    practiceQuestions: [15, 19]
+  },
+  {
+    id: 9,
+    chapterId: 3,
+    chapter: "Linear Transformations",
+    topic: "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    slug: "dimensionality-reduction-pca-lda-dot-products",
+    difficulty: "Hard",
+    readingTime: "11 min",
+    introduction: "Dimensionality reduction compresses high-dimensional data vectors using projection techniques such as PCA, LDA, and vector dot products.",
+    theory: "### Vector Dot Product & Feature Reduction\n\n#### 1. Vector Dot Product\nThe dot product of two vectors $u = [u_1, u_2, \\dots, u_n]$ and $v = [v_1, v_2, \\dots, v_n]$ is a scalar:\n$$u \\cdot v = \\sum_{i=1}^n u_i v_i$$\n\n*Example*: For $u = [1, 2, 3]$ and $v = [4, 5, 6]$:\n$$u \\cdot v = (1 \\times 4) + (2 \\times 5) + (3 \\times 6) = 4 + 10 + 18 = \\mathbf{32}$$\n\n#### 2. Principal Component Analysis (PCA)\nPCA performs unsupervised linear transformation by projecting data along orthogonal directions of maximum variance (principal components).\n- Keeping only the 1st principal component of a matrix transforms feature dimensions down to **$1$ dimension (1D projection)**.\n- Component selection heuristics: Retaining components explaining $\\ge 80\\%–90\\%$ cumulative variance or using scree plot elbows.\n\n#### 3. Linear Discriminant Analysis (LDA)\nLDA performs supervised dimensionality reduction maximizing class separability. For $C$ classes, LDA can project to at most **$C - 1$ dimensions**.\n- With **$C = 2$ classes**, LDA projects to at most $2 - 1 = \\mathbf{1}$ linear discriminant dimension.\n\n#### 4. Limitations of Linear Methods\nLinear methods (PCA, LDA) assume linear subspaces and fail to capture non-linear manifold structures (e.g. Swiss Roll dataset).",
+    definitions: [
+      { term: "Dot Product", definition: "Algebraic scalar operation summing the products of corresponding vector components." },
+      { term: "PCA (Principal Component Analysis)", definition: "Unsupervised linear feature reduction maximizing variance along principal axes." },
+      { term: "LDA (Linear Discriminant Analysis)", definition: "Supervised dimensionality reduction maximizing between-class variance relative to within-class variance." }
+    ],
+    importantConcepts: [
+      {
+        title: "LDA Maximum Dimension Bound",
+        content: "LDA produces at most C - 1 dimensions for C classes. 2 classes => 1 dimension.",
+        formula: "Max_LDA_Dim = C - 1",
+        keyPoints: ["u=[1,2,3], v=[4,5,6] => dot product = 32", "PCA 1st component => 1 dimension", "LDA with 2 classes => 1 dimension"]
+      }
+    ],
+    formulaBox: [
+      {
+        title: "Dot Product & LDA Formulas",
+        formula: "u · v = Σ (u_i * v_i); LDA Dim <= C - 1",
+        explanation: "Dot product sums component products; LDA bounds projection dimensions by class count minus one."
+      }
+    ],
+    notes: [
+      "PCA is unsupervised (ignores class labels); LDA is supervised (uses class labels)."
+    ],
+    diagrams: [
+      {
+        title: "Dot Product Computation Table",
+        type: "table",
+        content: "| Vector u | Vector v | Product u_i * v_i |\n|---|---|---|\n| 1 | 4 | 4 |\n| 2 | 5 | 10 |\n| 3 | 6 | 18 |\n| **Sum** | | **32** |",
+        caption: "Dot product u · v = 4 + 10 + 18 = 32."
+      }
+    ],
+    realWorldExamples: [
+      {
+        title: "Facial Recognition & Spam Detection",
+        problem: "Compute dot product of u=[1,2,3] and v=[4,5,6], and find LDA dimension for 2 classes.",
+        solution: "Dot product = 1*4 + 2*5 + 3*6 = 32. LDA dimension = 2 - 1 = 1.",
+        code: "int dot = 1*4 + 2*5 + 3*6; // 32\nint ldaDim = 2 - 1; // 1"
+      }
+    ],
+    examples: [
+      {
+        title: "Dot product of [1,2,3] and [4,5,6]",
+        problem: "Calculate u · v.",
+        solution: "1*4 + 2*5 + 3*6 = 32."
+      }
+    ],
+    importantPoints: [
+      "Dot product [1,2,3] · [4,5,6] = 32.",
+      "1st principal component of PCA reduces data to 1 dimension.",
+      "LDA for 2 classes yields 1 dimension (C - 1).",
+      "Linear methods cannot unroll non-linear manifolds."
+    ],
+    commonMistakes: [
+      "Adding vector entries instead of multiplying corresponding components first.",
+      "Thinking LDA for 2 classes gives 2 dimensions instead of C-1 = 1."
+    ],
+    examTips: [
+      "Remember: Dot product = 32 for [1,2,3] & [4,5,6]. LDA dimension = Classes - 1."
+    ],
+    summary: "Dot products aggregate vector similarity (32). PCA and LDA compress dimensions to 1D projection for first components/2 classes.",
+    keyTakeaways: [
+      "[1,2,3] · [4,5,6] = 32",
+      "PCA 1st component = 1D",
+      "LDA 2 classes = 1D (C-1)",
+      "PCA heuristic: scree plot variance cutoff"
+    ],
+    quickRevisionBox: [
+      "Dot product = 32",
+      "PCA 1st comp = 1D",
+      "LDA (2 classes) = 1D",
+      "Limitation = Non-linear manifold"
+    ],
+    practiceQuestions: [16, 17, 18, 20, 21, 22]
+  },
+
+  // CHAPTER 4: FIGURE SEQUENCES
+  {
+    id: 10,
+    chapterId: 4,
+    chapter: "Figure Sequences",
+    topic: "Spatial Patterns & Matrix Sequence Rules",
+    slug: "spatial-patterns-matrix-sequence-rules",
+    difficulty: "Easy",
+    readingTime: "8 min",
+    introduction: "Figure sequences evaluate visual pattern recognition, tracking spatial transformations across matrix grids.",
+    theory: "### Spatial Pattern Recognition & Grid Tracking\nSpatial reasoning tests present $3 \\times 3$ or $4 \\times 4$ matrix grids containing geometrical symbols that change position, color, or orientation according to deterministic rules.\n\n#### Core Sequence Rules\n1. **Linear Movement**: A symbol moves $N$ steps horizontally, vertically, or diagonally per step.\n2. **Cyclic Movement**: A symbol moves along grid borders clockwise or counter-clockwise.\n3. **Middle Field Rotation**: A symbol moves in a closed loop within the interior middle fields.\n\n#### Step-by-Step Sequence Tracking: Page 7 Example\nConsider a blue square moving clockwise inside the four middle fields of a grid:\n- State 1: Top-Left middle field.\n- State 2: Top-Right middle field.\n- State 3: Bottom-Right middle field.\n- State 4: Bottom-Left middle field.\n- **Image 1 (Next State)**: Top-Left middle field.\n- **Image 2 (Following State)**: Top-Right middle field.",
+    definitions: [
+      { term: "Spatial Sequence", definition: "A chronological series of graphical matrix states governed by positional transform rules." },
+      { term: "Cyclic Shift", definition: "A movement pattern where a symbol rotates through a closed set of grid positions." }
+    ],
+    importantConcepts: [
+      {
+        title: "Middle Field Clockwise Loop",
+        content: "Symbols moving inside 4 middle fields rotate in a 4-step period: TL -> TR -> BR -> BL -> TL.",
+        formula: "Position(t+1) = (Position(t) + 1) mod 4",
+        keyPoints: ["4 middle fields form a 4-step cycle", "Clockwise rotation shifts state by 1 step"]
+      }
+    ],
+    formulaBox: [
+      {
+        title: "Cyclic Sequence Period Formula",
+        formula: "State(t + k) = State(t + (k mod Period))",
+        explanation: "Determines future positions for periodic spatial sequences."
+      }
+    ],
+    notes: [
+      "Trace each symbol independently when analyzing multi-symbol grids."
+    ],
+    diagrams: [
+      {
+        title: "Middle Field Clockwise Trajectory",
+        type: "table",
+        content: "| Step 1 | Step 2 | Step 3 | Step 4 | Step 5 (Image 1) |\n|---|---|---|---|---|\n| Top-Left | Top-Right | Bottom-Right | Bottom-Left | Top-Left |",
+        caption: "Periodic 4-step clockwise cycle."
+      }
+    ],
+    realWorldExamples: [
+      {
+        title: "Radar & Industrial Conveyor Tracking",
+        problem: "A sensor rotates clockwise across 4 positions: P1, P2, P3, P4. What are states 5 and 6?",
+        solution: "State 5 = P1 (Image 1), State 6 = P2 (Image 2).",
+        code: "// Cycle: P1 -> P2 -> P3 -> P4 -> P1 -> P2"
+      }
+    ],
+    examples: [
+      {
+        title: "Clockwise Middle Loop (Page 7)",
+        problem: "Determine next two matrices for clockwise blue square in middle fields.",
+        solution: "Image 1 returns to starting Top-Left middle field; Image 2 moves to Top-Right."
+      }
+    ],
+    importantPoints: [
+      "Clockwise middle movement has period 4.",
+      "Grid tracking requires isolating individual symbol rules.",
+      "Check boundary limits when symbols reach grid edges."
+    ],
+    commonMistakes: [
+      "Confusing clockwise with counter-clockwise rotation.",
+      "Counting total grid fields instead of restricting attention to middle fields."
+    ],
+    examTips: [
+      "Number grid positions 1, 2, 3, 4 to track periodic motion without confusion!"
+    ],
+    summary: "Matrix sequences use periodic spatial movements. Clockwise loops in 4 middle fields repeat every 4 steps.",
+    keyTakeaways: [
+      "Period = 4 steps for middle fields",
+      "Clockwise = TL -> TR -> BR -> BL",
+      "Image 1 = Top-Left middle",
+      "Image 2 = Top-Right middle"
+    ],
+    quickRevisionBox: [
+      "Middle loop period = 4",
+      "Step 5 = Step 1",
+      "Step 6 = Step 2"
+    ],
+    practiceQuestions: [23, 24]
+  },
+  {
+    id: 11,
+    chapterId: 4,
+    chapter: "Figure Sequences",
+    topic: "Boundary Bouncing & Diagonal Symbol Movement",
+    slug: "boundary-bouncing-diagonal-symbol-movement",
+    difficulty: "Medium",
+    readingTime: "9 min",
+    introduction: "Diagonal symbol trajectories reflect off grid boundaries like light rays off mirrors.",
+    theory: "### Boundary Bouncing Dynamics\nWhen symbols move diagonally across grid boundaries, they execute a reflection (bounce) upon hitting an outer edge.\n\n#### Reflection Rules\n1. **Top Boundary Reflection**: Upward-Right vector $(+1, -1)$ reflects to Downward-Right vector $(+1, +1)$.\n2. **Bottom Boundary Reflection**: Downward-Right vector $(+1, +1)$ reflects to Upward-Right vector $(+1, -1)$.\n3. **Left/Right Reflection**: Horizontal direction component reverses upon contact.\n\n#### Step-by-Step Diagonal Analysis (Page 10 Exercise 2)\nSymbol $\\bullet$ starts at bottom-left and moves diagonally upwards to the right:\n1. Moves diagonally up-right until reaching the top boundary.\n2. Bounces off top boundary, moving diagonally down-right.\n3. Reaches bottom boundary, bounces off, and moves diagonally up-right back to starting trajectory.\n4. **Image 1** matches Matrix 3 state; **Image 2** matches Matrix 2 state.",
+    definitions: [
+      { term: "Boundary Bounce", definition: "Directional reflection of a trajectory vector upon contacting grid edge boundaries." },
+      { term: "Diagonal Trajectory", definition: "Equal simultaneous shift in both row and column indices per step." }
+    ],
+    importantConcepts: [
+      {
+        title: "Reflection Principle",
+        content: "Angle of incidence equals angle of reflection at grid boundaries.",
+        formula: "Vector_y_after = -Vector_y_before at vertical boundaries",
+        keyPoints: ["Up-Right reflects to Down-Right at top wall", "Down-Right reflects to Up-Right at bottom wall"]
+      }
+    ],
+    formulaBox: [
+      {
+        title: "Grid Reflection Vector",
+        formula: "(dx, dy) -> (dx, -dy) when y reaches boundary",
+        explanation: "Reverses vertical velocity component while maintaining horizontal velocity."
+      }
+    ],
+    notes: [
+      "Always verify both row and column index shifts when tracking diagonal motion."
+    ],
+    diagrams: [
+      {
+        title: "Top Boundary Reflection Trajectory",
+        type: "table",
+        content: "| Position | Vector (dx, dy) | Action |\n|---|---|---|\n| Start | (+1, -1) [Up-Right] | Moving toward top |\n| Edge Hit | (+1, -1) | Contacts top wall |\n| Reflection | (+1, +1) [Down-Right] | Bounces downward |",
+        caption: "Up-Right shifts to Down-Right at top edge."
+      }
+    ],
+    realWorldExamples: [
+      {
+        title: "Billiards & Ray Tracing Physics",
+        problem: "A ball moves diagonally up-right in a grid and hits the top boundary. What is its new vector?",
+        solution: "Downwards to the right.",
+        code: "if (y == 0) dy = -dy; // bounce off top"
+      }
+    ],
+    examples: [
+      {
+        title: "Diagonal Bounce (Page 10 Exercise 2)",
+        problem: "Determine Image 1 and Image 2 for symbol • bouncing off top/bottom boundaries.",
+        solution: "Image 1 corresponds to Matrix 3; Image 2 corresponds to Matrix 2."
+      }
+    ],
+    importantPoints: [
+      "Top boundary reflects Up-Right to Down-Right.",
+      "Bottom boundary reflects Down-Right to Up-Right.",
+      "Exercise 2 result: Image 1 = Matrix 3, Image 2 = Matrix 2."
+    ],
+    commonMistakes: [
+      "Continuing diagonal motion past the outer grid boundary instead of reflecting.",
+      "Reversing horizontal direction instead of vertical direction at a top boundary."
+    ],
+    examTips: [
+      "Think of grid edges as mirrors: hitting top wall reflects vector downward!"
+    ],
+    summary: "Diagonal symbols reflect velocity vectors at grid boundaries. Exercise 2 on Page 10 yields Matrix 3 (Image 1) and Matrix 2 (Image 2).",
+    keyTakeaways: [
+      "Top wall reflection = Down-Right",
+      "Bottom wall reflection = Up-Right",
+      "Image 1 = Matrix 3",
+      "Image 2 = Matrix 2"
+    ],
+    quickRevisionBox: [
+      "Up-Right -> Down-Right (Top wall)",
+      "Down-Right -> Up-Right (Bottom wall)",
+      "Ex 2: Matrix 3, Matrix 2"
+    ],
+    practiceQuestions: [25]
+  },
+  {
+    id: 12,
+    chapterId: 4,
+    chapter: "Figure Sequences",
+    topic: "Multi-Symbol Transformations & Progression Formulas",
+    slug: "multi-symbol-transformations-progression-formulas",
+    difficulty: "Hard",
+    readingTime: "11 min",
+    introduction: "Complex figure sequences combine multiple independent symbols governed by distinct spatial, rotational, and step-progression formulas ($x+1$).",
+    theory: "### Multi-Symbol Disambiguation & Progression Formulas\nAdvanced sequence problems place 2 to 4 distinct symbols in a single matrix grid. Each symbol obeys an independent rule.\n\n#### Common Transformation Types\n1. **$x+1$ Step Progression**: Step size increases incrementally each move ($1\\text{ step}, 2\\text{ steps}, 3\\text{ steps}, \\dots$).\n2. **Alternating Color / State**: Symbol toggles between black and pink or open and filled.\n3. **Rotational Shift**: Symbol rotates by $90^\\circ$ clockwise or counter-clockwise per step.\n\n#### Case Walkthroughs from Exercises\n- **Exercise 3 (Page 10)**:\n  - Symbol `{`: Moves clockwise along outer borders by 2 fields, alternating color.\n  - Symbol `1`: Rotates $90^\\circ$ right per step.\n  - Symbol `9`: Moves counter-clockwise 1 space per step.\n  - *Result*: Image 1 = Matrix 2, Image 2 = Matrix 2.\n- **Exercise 4 (Page 11)**:\n  - Symbol `D`: Moves 1 field horizontally in 4th row, rotating $90^\\circ$ right on bounce.\n  - Symbol `\\bullet`: Moves Left $\\to$ Up $\\to$ Right $\\to$ Down.\n  - *Result*: Image 1 = Matrix 1, Image 2 = Matrix 3.\n- **Exercise 5 (Page 11)**:\n  - Symbol `A`: Moves clockwise along outer border by $x+1$ fields.\n  - *Result*: Image 1 = Matrix 3, Image 2 = Matrix 3.\n- **Exercise 6 (Page 12)**:\n  - Symbol `\\rightarrow`: Moves diagonally, rotating $x+1$ times.\n  - *Result*: Image 1 = Matrix 2, Image 2 = Matrix 1.",
+    definitions: [
+      { term: "Multi-Symbol Rule", definition: "A sequence problem where multiple distinct graphical tokens transform independently inside a shared grid." },
+      { term: "x+1 Progression", definition: "A motion formula where step distance increases by 1 additional field on every iteration." }
+    ],
+    importantConcepts: [
+      {
+        title: "Disambiguation Strategy",
+        content: "Track one symbol at a time to eliminate invalid answer choices systematically.",
+        formula: "Step_distance(t) = t + 1",
+        keyPoints: ["Ex 3: Matrix 2, Matrix 2", "Ex 4: Matrix 1, Matrix 3", "Ex 5: Matrix 3, Matrix 3", "Ex 6: Matrix 2, Matrix 1"]
+      }
+    ],
+    formulaBox: [
+      {
+        title: "x+1 Step Distance Formula",
+        formula: "Distance(t) = t + 1; Position(t+1) = Position(t) + (t + 1)",
+        explanation: "Determines expanding step distance per iteration."
+      }
+    ],
+    notes: [
+      "Solving just 2 symbol rules is usually sufficient to identify the correct option."
+    ],
+    diagrams: [
+      {
+        title: "Exercise Results Summary Table",
+        type: "table",
+        content: "| Exercise | Page | Primary Rule | Image 1 | Image 2 |\n|---|---|---|---|---|\n| Exercise 3 | 10 | Multi-symbol (90° rot, color toggle) | Matrix 2 | Matrix 2 |\n| Exercise 4 | 11 | Horizontal bounce & direction loop | Matrix 1 | Matrix 3 |\n| Exercise 5 | 11 | x+1 outer border progression | Matrix 3 | Matrix 3 |\n| Exercise 6 | 12 | Diagonal move & x+1 rotation | Matrix 2 | Matrix 1 |",
+        caption: "Correct matrix pairs for Pages 10-12 exercises."
+      }
+    ],
+    realWorldExamples: [
+      {
+        title: "Multi-threaded Animation Engines",
+        problem: "Track 3 independent sprite behaviors (rotation, step progression, color flip).",
+        solution: "Each sprite updates via its own formula.",
+        code: "rot += 90;\nstepDist += 1;\ncolor = !color;"
+      }
+    ],
+    examples: [
+      {
+        title: "Exercise 5 Page 11 (x+1 Rule)",
+        problem: "Determine next matrices for symbol A moving x+1 fields.",
+        solution: "Image 1 is Matrix 3; Image 2 is Matrix 3."
+      }
+    ],
+    importantPoints: [
+      "Ex 3: Image 1 = Matrix 2, Image 2 = Matrix 2.",
+      "Ex 4: Image 1 = Matrix 1, Image 2 = Matrix 3.",
+      "Ex 5: Image 1 = Matrix 3, Image 2 = Matrix 3.",
+      "Ex 6: Image 1 = Matrix 2, Image 2 = Matrix 1."
+    ],
+    commonMistakes: [
+      "Applying the step progression rule of one symbol to a different symbol.",
+      "Forgetting to rotate symbol orientations during step moves."
+    ],
+    examTips: [
+      "Isolate the simplest symbol first (e.g. 90° rotation) to cross off wrong options immediately!"
+    ],
+    summary: "Multi-symbol sequences require tracking independent position, rotation, and x+1 progression rules for each symbol.",
+    keyTakeaways: [
+      "Track symbols independently",
+      "x+1 increases step size each move",
+      "Ex 3: (M2, M2)",
+      "Ex 4: (M1, M3)",
+      "Ex 5: (M3, M3)",
+      "Ex 6: (M2, M1)"
+    ],
+    quickRevisionBox: [
+      "Ex 3 -> M2, M2",
+      "Ex 4 -> M1, M3",
+      "Ex 5 -> M3, M3",
+      "Ex 6 -> M2, M1"
+    ],
+    practiceQuestions: [26, 27, 28, 29]
+  },
+
+  // CHAPTER 5: MATHEMATICAL EQUATIONS
+  {
+    id: 13,
+    chapterId: 5,
+    chapter: "Mathematical Equations",
+    topic: "Linear Equations & Single-Variable Systems",
+    slug: "linear-equations-single-variable-systems",
+    difficulty: "Easy",
+    readingTime: "7 min",
+    introduction: "Algebraic linear systems use direct variable substitution to solve for unknown quantities.",
+    theory: "### Basic Linear Equation Solving\nA single-variable linear equation expresses equality between algebraic terms. Isolating the variable yields the solution.\n\n#### Step-by-Step Algebraic Isolation\nConsider Example 1 (Page 17):\n1. Given Equation 1: $A + 2 = B$\n2. Given Equation 2: $B = 6$\n3. Substitute $B = 6$ into Equation 1:\n$$A + 2 = 6$$\n4. Subtract $2$ from both sides:\n$$A = 6 - 2 = \\mathbf{4}$$\n\nThus, variable $A$ corresponds to **$4$**.",
+    definitions: [
+      { term: "Linear Equation", definition: "An algebraic equation of degree 1 producing a straight line graph." },
+      { term: "Substitution", definition: "Replacing a variable with its known numeric value or equivalent algebraic expression." }
+    ],
+    importantConcepts: [
+      {
+        title: "Direct Value Substitution",
+        content: "If B = 6, substitute 6 directly wherever B appears.",
+        formula: "A + 2 = 6 => A = 4",
+        keyPoints: ["Substitute known values first", "Isolate target variable by performing inverse operations"]
+      }
+    ],
+    formulaBox: [
+      {
+        title: "Isolation Property",
+        formula: "If A + c = B, then A = B - c",
+        explanation: "Subtract constant c from both sides."
+      }
+    ],
+    notes: [
+      "Always double-check your result by plugging the answer back into the original equation."
+    ],
+    diagrams: [
+      {
+        title: "Substitution Flowchart",
+        type: "code",
+        content: "B = 6  -----> Substitute into (A + 2 = B)\n               A + 2 = 6\n               A = 6 - 2\n               A = 4",
+        caption: "Direct substitution step."
+      }
+    ],
+    realWorldExamples: [
+      {
+        title: "Financial Balance Equation",
+        problem: "Account balance + $2 fee = $6 total. What was the initial balance A?",
+        solution: "A + 2 = 6 => A = 4.",
+        code: "int B = 6;\nint A = B - 2; // 4"
+      }
+    ],
+    examples: [
+      {
+        title: "Example 1 (Page 17)",
+        problem: "Solve A + 2 = B when B = 6.",
+        solution: "A + 2 = 6 => A = 4."
+      }
+    ],
+    importantPoints: [
+      "B = 6 => A + 2 = 6 => A = 4.",
+      "Single substitution isolates A immediately."
+    ],
+    commonMistakes: [
+      "Adding 2 to 6 instead of subtracting 2.",
+      "Misidentifying which variable is given."
+    ],
+    examTips: [
+      "Look for equations with known constants first!"
+    ],
+    summary: "Basic linear equations are solved by substituting known constants and isolating target variables.",
+    keyTakeaways: [
+      "B = 6",
+      "A + 2 = 6",
+      "A = 4"
+    ],
+    quickRevisionBox: [
+      "A + 2 = 6 => A = 4"
+    ],
+    practiceQuestions: [30]
+  },
+  {
+    id: 14,
+    chapterId: 5,
+    chapter: "Mathematical Equations",
+    topic: "Substitution Methods & Multi-Variable Systems",
+    slug: "substitution-methods-multi-variable-systems",
+    difficulty: "Medium",
+    readingTime: "10 min",
+    introduction: "Multi-variable systems of linear equations are solved by substituting single-variable relationships into compound expressions.",
+    theory: "### Systems of 2 and 3 Linear Equations\nWhen multiple unknown variables ($A, B, C$) interact across simultaneous equations, use expression substitution to eliminate variables sequentially.\n\n#### Walkthrough 1: Example 2 (Page 17)\nGiven:\n1. $B = 2A$\n2. $B + A = 12$\n\n*Solution*:\nSubstitute $B = 2A$ into Equation 2:\n$$2A + A = 12 \\implies 3A = 12 \\implies A = 4$$\nSubstitute $A = 4$ into Equation 1:\n$$B = 2(4) = \\mathbf{8}$$\nResult: **$A = 4, B = 8$**.\n\n#### Walkthrough 2: 3-Variable System (Page 19 Q34)\nGiven:\n1. $3C = A$\n2. $A + C = 8$\n3. $2A + 2C = B$\n\n*Solution*:\n1. Substitute $A = 3C$ into Eq 2: $3C + C = 8 \\implies 4C = 8 \\implies \\mathbf{C = 2}$.\n2. Calculate $A$: $A = 3(2) = \\mathbf{6}$.\n3. Calculate $B$: $2(6) + 2(2) = 12 + 4 = \\mathbf{16}$.\nResult: **$A = 6, B = 16, C = 2$**.",
+    definitions: [
+      { term: "System of Linear Equations", definition: "A collection of two or more linear equations involving the same set of variables." },
+      { term: "Method of Substitution", definition: "Solving an equation for one variable and substituting that expression into other equations." }
+    ],
+    importantConcepts: [
+      {
+        title: "Substitution Steps",
+        content: "Express one variable in terms of another, substitute to get a 1-variable equation, solve, and back-substitute.",
+        formula: "B = 2A; 2A + A = 12 => 3A = 12 => A = 4, B = 8",
+        keyPoints: ["B = 2A, B+A=12 => A=4, B=8", "3C=A, A+C=8, 2A+2C=B => C=2, A=6, B=16"]
+      }
+    ],
+    formulaBox: [
+      {
+        title: "2-Variable System Substitution",
+        formula: "If B = k*A and B + A = S, then (k + 1)A = S",
+        explanation: "Enables direct calculation of A = S / (k + 1)."
+      }
+    ],
+    notes: [
+      "Always verify all calculated variable values across all equations in the system."
+    ],
+    diagrams: [
+      {
+        title: "3-Variable Substitution Flow",
+        type: "code",
+        content: "3C = A  ---> Substitute into (A + C = 8)\n             3C + C = 8 => 4C = 8 => C = 2\n             A = 3(2) = 6\n             B = 2(6) + 2(2) = 16",
+        caption: "Sequential variable resolution."
+      }
+    ],
+    realWorldExamples: [
+      {
+        title: "Inventory Costing",
+        problem: "Box B costs twice as much as Box A. Box B + Box A = $12. Find costs.",
+        solution: "A = $4, B = $8.",
+        code: "int A = 12 / 3; // 4\nint B = 2 * A;  // 8"
+      }
+    ],
+    examples: [
+      {
+        title: "Example 2 (Page 17)",
+        problem: "Solve B = 2A and B + A = 12.",
+        solution: "2A + A = 12 => 3A = 12 => A = 4, B = 8."
+      }
+    ],
+    importantPoints: [
+      "B = 2A, B + A = 12 => A = 4, B = 8.",
+      "7 + A = 14, B - 3 = A => A = 7, B = 10.",
+      "B / 2 = A, B - A = 8 => A = 8, B = 16.",
+      "3C = A, A + C = 8, 2A + 2C = B => A = 6, B = 16, C = 2."
+    ],
+    commonMistakes: [
+      "Confusing B = 2A with A = 2B.",
+      "Forgetting to multiply all terms when expanding parentheses."
+    ],
+    examTips: [
+      "Substitute the 1-variable relation immediately into the sum equation to solve for the first variable!"
+    ],
+    summary: "Systems of 2 and 3 linear equations are solved by substituting algebraic relations to reduce variable count.",
+    keyTakeaways: [
+      "B = 2A & B+A=12 => A=4, B=8",
+      "3C=A & A+C=8 => C=2, A=6",
+      "B=2A+2C => B=16"
+    ],
+    quickRevisionBox: [
+      "3A = 12 => A = 4",
+      "4C = 8 => C = 2",
+      "A = 6, B = 16, C = 2"
+    ],
+    practiceQuestions: [31, 32, 33, 34, 35]
+  },
+  {
+    id: 15,
+    chapterId: 5,
+    chapter: "Mathematical Equations",
+    topic: "Four-Variable Linear Systems & Simultaneous Elimination",
+    slug: "four-variable-linear-systems-simultaneous-elimination",
+    difficulty: "Hard",
+    readingTime: "12 min",
+    introduction: "Four-variable simultaneous linear systems are solved by parameterizing all variables in terms of a single variable.",
+    theory: "### Solving 4-Variable Systems via Parameterization\nSystems containing 4 unknown variables ($A, B, C, D$) can look daunting. However, if three variables are defined directly in terms of a fourth base variable (e.g., $B$), parameterizing the master equation solves the entire system effortlessly.\n\n#### Walkthrough 1: Page 20 Question 36\nGiven:\n1. $A - B + C - D = 2$\n2. $10B = C$\n3. $5B = A$\n4. $11 + B = D$\n\n*Solution*:\nExpress $A, C, D$ in terms of base variable $B$:\n- $A = 5B$\n- $C = 10B$\n- $D = B + 11$\n\nSubstitute into master Equation 1:\n$$(5B) - B + (10B) - (B + 11) = 2$$\nCombine like terms for $B$:\n$$(5B - B + 10B - B) - 11 = 2$$\n$$13B - 11 = 2 \\implies 13B = 13 \\implies \\mathbf{B = 1}$$\n\nNow back-substitute $B = 1$ to find all variables:\n- $A = 5(1) = \\mathbf{5}$\n- $C = 10(1) = \\mathbf{10}$\n- $D = 1 + 11 = \\mathbf{12}$\nResult: **$A = 5, B = 1, C = 10, D = 12$**.\n\n#### Walkthrough 2: Page 20 Question 37\nGiven:\n1. $C + D - A = 1$\n2. $5C = D$\n3. $13 - C = A$\n4. $3C - 1 = B$\n\n*Solution*:\nExpress $D, A, B$ in terms of base variable $C$:\n- $D = 5C$\n- $A = 13 - C$\n\nSubstitute into master Equation 1:\n$$C + (5C) - (13 - C) = 1 \\implies 7C - 13 = 1 \\implies 7C = 14 \\implies \\mathbf{C = 2}$$\nBack-substitute $C = 2$:\n- $D = 5(2) = \\mathbf{10}$\n- $A = 13 - 2 = \\mathbf{11}$\n- $B = 3(2) - 1 = \\mathbf{5}$\nResult: **$A = 11, B = 5, C = 2, D = 10$**.",
+    definitions: [
+      { term: "Single-Variable Parameterization", definition: "Expressing all unknown variables in a system in terms of a single selected parameter variable." },
+      { term: "Master Equation", definition: "The primary linear equation containing all system variables into which parameter expressions are substituted." }
+    ],
+    importantConcepts: [
+      {
+        title: "Parameterization Strategy",
+        content: "Identify the variable shared across the most equations (e.g. B or C) and express all other variables in terms of it.",
+        formula: "13B - 11 = 2 => B = 1; 7C - 13 = 1 => C = 2",
+        keyPoints: ["Q36: B=1 => A=5, C=10, D=12", "Q37: C=2 => A=11, B=5, D=10"]
+      }
+    ],
+    formulaBox: [
+      {
+        title: "4-Variable Single Parameter Master Equation",
+        formula: "Σ(k_i * B) + Constant = Target",
+        explanation: "Reduces 4 equations to 1 single-variable linear equation."
+      }
+    ],
+    notes: [
+      "Pay careful attention to negative signs when expanding expressions like -(B + 11) or -(13 - C)."
+    ],
+    diagrams: [
+      {
+        title: "Parameterization Substitution Tree (Q36)",
+        type: "code",
+        content: "Base Variable: B\nA = 5B\nC = 10B\nD = B + 11\n\nSubstitute into: A - B + C - D = 2\n=> 5B - B + 10B - (B + 11) = 2\n=> 13B = 13\n=> B = 1",
+        caption: "Expressing all variables in terms of B simplifies solving."
+      }
+    ],
+    realWorldExamples: [
+      {
+        title: "Resource Allocation Optimization",
+        problem: "Solve 4 interdependent server loads where A=5B, C=10B, D=B+11, A-B+C-D=2.",
+        solution: "B = 1 server, A = 5, C = 10, D = 12.",
+        code: "int B = (2 + 11) / 13; // 1\nint A = 5 * B; // 5\nint C = 10 * B; // 10\nint D = B + 11; // 12"
+      }
+    ],
+    examples: [
+      {
+        title: "Page 20 Q36 Solution",
+        problem: "Solve system A - B + C - D = 2 with 10B=C, 5B=A, 11+B=D.",
+        solution: "13B - 11 = 2 => B = 1. A = 5, C = 10, D = 12."
+      }
+    ],
+    importantPoints: [
+      "Q36: A = 5, B = 1, C = 10, D = 12.",
+      "Q37: A = 11, B = 5, C = 2, D = 10.",
+      "Distribute negative signs carefully across parentheses."
+    ],
+    commonMistakes: [
+      "Writing -(B + 11) as -B + 11 instead of -B - 11.",
+      "Writing -(13 - C) as -13 - C instead of -13 + C."
+    ],
+    examTips: [
+      "Watch sign flips when subtracting expressions with negative signs: -(13 - C) = -13 + C!"
+    ],
+    summary: "Express all 4 variables in terms of 1 common parameter variable, substitute into the master equation, and back-substitute.",
+    keyTakeaways: [
+      "Parameterize in terms of B or C",
+      "Q36: B=1, A=5, C=10, D=12",
+      "Q37: C=2, A=11, B=5, D=10",
+      "Watch out for -(x - y) = -x + y"
+    ],
+    quickRevisionBox: [
+      "13B - 11 = 2 => B = 1",
+      "7C - 13 = 1 => C = 2",
+      "Q36: (5, 1, 10, 12)",
+      "Q37: (11, 5, 2, 10)"
+    ],
+    practiceQuestions: [36, 37]
+  },
+
+  // CHAPTER 6: LATIN SQUARES
+  {
+    id: 16,
+    chapterId: 6,
+    chapter: "Latin Squares",
+    topic: "Latin Square Fundamentals & Row/Column Constraints",
+    slug: "latin-square-fundamentals-row-column-constraints",
+    difficulty: "Easy",
+    readingTime: "8 min",
+    introduction: "A Latin Square is an N x N grid filled with N distinct symbols such that each symbol appears exactly once in every row and column.",
+    theory: "### Latin Square Rules & Uniqueness Constraints\nA **Latin Square** of order $N$ is an $N \\times N$ array containing $N$ distinct symbols (e.g., letters $A, B, C, D, E$).\n\n#### Fundamental Rules\n1. **Row Uniqueness**: Every row must contain all $N$ symbols with zero duplicates.\n2. **Column Uniqueness**: Every column must contain all $N$ symbols with zero duplicates.\n\n#### Direct Single-Column Elimination (Page 25 Example 1)\nConsider a $5 \\times 5$ Latin square with symbols $\\{A, B, C, D, E\\}$.\nLook at the column containing the target cell `?`:\n- The column already contains symbols: **$D, A, C, E$**.\n- The missing symbol for this column is **$B$**.\n- Therefore, the question mark MUST be replaced by **$B$**.",
+    definitions: [
+      { term: "Latin Square", definition: "An N x N grid containing N distinct symbols where each symbol occurs once per row and column." },
+      { term: "Single Cell Elimination", definition: "Deducing a cell value when all N-1 other symbols are present in its row or column." }
+    ],
+    importantConcepts: [
+      {
+        title: "Column Elimination Rule",
+        content: "If a column of a 5x5 grid already has A, C, D, E, the 5th cell MUST be B.",
+        formula: "Cell = {Symbols} \\ {Existing Column Symbols}",
+        keyPoints: ["5x5 Latin square uses A, B, C, D, E", "Each symbol occurs exactly once per row and column", "Ex 1 Page 25 answer = B"]
+      }
+    ],
+    formulaBox: [
+      {
+        title: "Single Constraint Elimination",
+        formula: "Target = Full_Set - Existing_Row_Or_Column_Set",
+        explanation: "When N-1 elements are present, the remaining element is the unique solution."
+      }
+    ],
+    notes: [
+      "Always count the distinct symbols present in the target cell's row and column first."
+    ],
+    diagrams: [
+      {
+        title: "Single Column Elimination Example",
+        type: "table",
+        content: "| Target Column |\n|---|\n| D |\n| A |\n| C |\n| **? -> B** |\n| E |",
+        caption: "B is the only letter missing among {A, B, C, D, E}."
+      }
+    ],
+    realWorldExamples: [
+      {
+        title: "Sudoku Grids & Error-Correcting Codes",
+        problem: "In a 5x5 grid column with D, A, C, E, which symbol fills the empty cell?",
+        solution: "Symbol B.",
+        code: "Set symbols = {A,B,C,D,E} - {D,A,C,E}; // B"
+      }
+    ],
+    examples: [
+      {
+        title: "Page 25 Example 1",
+        problem: "Find letter for ? in column with D, A, C, E.",
+        solution: "Letter B."
+      }
+    ],
+    importantPoints: [
+      "5x5 Latin square has symbols A, B, C, D, E.",
+      "Each symbol appears once per row and column.",
+      "Page 25 Example 1 solution = B."
+    ],
+    commonMistakes: [
+      "Placing a symbol that already exists in the same row or column.",
+      "Forgetting one of the 5 symbols in the set."
+    ],
+    examTips: [
+      "Scan the target cell's column first! If 4 out of 5 letters are present, fill the 5th immediately."
+    ],
+    summary: "Latin squares require every symbol once per row and column. Single column elimination easily identifies missing symbols.",
+    keyTakeaways: [
+      "N x N grid with N symbols",
+      "1 instance per row & column",
+      "Page 25 Ex 1 = B",
+      "Single constraint elimination"
+    ],
+    quickRevisionBox: [
+      "Column has D,A,C,E => ? = B",
+      "Row/Col uniqueness = 100%"
+    ],
+    practiceQuestions: [38]
+  },
+  {
+    id: 17,
+    chapterId: 6,
+    chapter: "Latin Squares",
+    topic: "Single & Intermediary Cell Elimination Techniques",
+    slug: "single-intermediary-cell-elimination-techniques",
+    difficulty: "Medium",
+    readingTime: "9 min",
+    introduction: "Solving complex Latin Squares often requires filling an intermediary cell first to unlock the target question mark cell.",
+    theory: "### Multi-Step Intermediary Cell Resolution\nWhen the target cell's row and column do not initially have $N-1$ symbols, identify an **intermediary cell** that can be solved first.\n\n#### Walkthrough 1: Page 25 Example 2\nTarget cell `?` is at the bottom of the last column of a $5 \\times 5$ grid:\n1. The last column initially lacks two symbols ($B$ and $D$).\n2. Look at the top cell (Row 1, Last Column):\n   - Row 1 already contains $D, A, C, E$.\n   - Thus, Row 1, Last Column **must be $B$**.\n3. Now the last column has $B, A, C, E$ in its other cells.\n4. Therefore, the target cell `?` at the bottom of the last column **must be $D$**.\n\n#### Walkthrough 2: Exercises 1 & 2 (Page 26)\n- **Exercise 1 (Page 26)**: In column B, letters $C$ and $D$ are missing. Since $C$ already appears in row 4, $D$ goes to cell B4, forcing **`? = C`**.\n- **Exercise 2 (Page 26)**: Symbol $D$ is already present in all other columns and rows, forcing **`? = D`**.",
+    definitions: [
+      { term: "Intermediary Cell", definition: "A supporting cell in a Latin square that must be solved first to provide necessary constraints for the target cell." },
+      { term: "Forced Assignment", definition: "A scenario where only one valid symbol can occupy a cell due to intersecting row and column constraints." }
+    ],
+    importantConcepts: [
+      {
+        title: "Intermediary Resolution Strategy",
+        content: "If target cell has 2 missing options, find a cell in the same row/column that has 4 existing constraints.",
+        formula: "Cell_inter -> Cell_target",
+        keyPoints: ["Page 25 Ex 2: Fill top cell with B, then target ? = D", "Page 26 Ex 1: ? = C", "Page 26 Ex 2: ? = D"]
+      }
+    ],
+    formulaBox: [
+      {
+        title: "2-Step Intermediary Chain",
+        formula: "Step 1: Solve Intermediary Cell; Step 2: Solve Target Cell",
+        explanation: "Unlocks cascading eliminations across rows and columns."
+      }
+    ],
+    notes: [
+      "Always check if a missing symbol is blocked by an intersecting row before making a choice."
+    ],
+    diagrams: [
+      {
+        title: "Intermediary Resolution Sequence",
+        type: "code",
+        content: "Row 1 has (D, A, C, E) ---> Top Cell = B\nLast Column now has (B, A, C, E) ---> Bottom Target ? = D",
+        caption: "Solving the top cell unlocks the bottom target cell."
+      }
+    ],
+    realWorldExamples: [
+      {
+        title: "Sudoku Advanced Deduction",
+        problem: "In a 5x5 grid, target column needs B and D. Row 1 blocks D.",
+        solution: "Row 1 gets B; target cell gets D.",
+        code: "// Step 1: Row 1 gets B\n// Step 2: Target gets D"
+      }
+    ],
+    examples: [
+      {
+        title: "Page 25 Example 2",
+        problem: "Find ? in last column using intermediary top cell.",
+        solution: "Top cell = B, Target ? = D."
+      }
+    ],
+    importantPoints: [
+      "Page 25 Ex 2: ? = D.",
+      "Page 26 Ex 1: ? = C.",
+      "Page 26 Ex 2: ? = D.",
+      "Intermediary cells provide the missing 4th constraint."
+    ],
+    commonMistakes: [
+      "Guessing between two missing symbols without checking intermediary cells in other rows.",
+      "Overlooking horizontal row constraints."
+    ],
+    examTips: [
+      "If 2 symbols are missing in a column, look at the other empty cell in that column to see if a row blocks one of the symbols!"
+    ],
+    summary: "Intermediary cell elimination solves adjacent cells first to supply forced constraints for the target cell.",
+    keyTakeaways: [
+      "Solve intermediary cell first",
+      "Page 25 Ex 2 = D",
+      "Page 26 Ex 1 = C",
+      "Page 26 Ex 2 = D"
+    ],
+    quickRevisionBox: [
+      "Ex 2: Top=B => Target=D",
+      "Ex 1 => ? = C",
+      "Ex 2 => ? = D"
+    ],
+    practiceQuestions: [39, 40, 41]
+  },
+  {
+    id: 18,
+    chapterId: 6,
+    chapter: "Latin Squares",
+    topic: "Constraint Intersection & Advanced Elimination Strategies",
+    slug: "constraint-intersection-advanced-elimination-strategies",
+    difficulty: "Hard",
+    readingTime: "11 min",
+    introduction: "Advanced Latin Square solving uses simultaneous row-column constraint intersection and global symbol frequency counts.",
+    theory: "### Advanced Cross-Constraint Intersection & Global Counts\nFor highly empty Latin Squares, simple single-row or single-column inspection is insufficient. You must use **Cross-Constraint Intersection** and **Global Symbol Counts**.\n\n#### 1. Cross-Constraint Intersection\nFor a target cell at row $R$ and column $C$:\n$$\\text{Forbidden Symbols} = \\text{Symbols}(R) \\cup \\text{Symbols}(C)$$\n$$\\text{Allowed Symbols} = \\text{Full Symbol Set} \\setminus \\text{Forbidden Symbols}$$\nIf $\\text{Allowed Symbols}$ contains exactly **1 element**, that element is the unique solution.\n\n#### 2. Exercises Walkthroughs (Pages 27–28)\n- **Exercise 3 (Page 27)**: Intersecting row and column constraints eliminate $A, C, D, E$. Unique remaining valid symbol **`? = B`**.\n- **Exercise 4 (Page 27)**: Applying cross-grid elimination reveals **`? = D`**.\n- **Exercise 5 (Page 28)**: Full grid constraint analysis proves **`? = D`**.\n- **Exercise 6 (Page 28)**: Resolving row/column dependencies sequentially identifies **`? = E`**.",
+    definitions: [
+      { term: "Constraint Intersection", definition: "Taking the union of forbidden symbols from both row R and column C to isolate the unique valid candidate." },
+      { term: "Global Symbol Count", definition: "Counting existing instances of a symbol across all grid rows/columns to locate its final remaining position." }
+    ],
+    importantConcepts: [
+      {
+        title: "Cross-Intersection Formula",
+        content: "Union forbidden set from Row and Col. Valid candidate = Set difference.",
+        formula: "Allowed = {A,B,C,D,E} - ({Row} U {Col})",
+        keyPoints: ["Ex 3 Page 27: ? = B", "Ex 4 Page 27: ? = D", "Ex 5 Page 28: ? = D", "Ex 6 Page 28: ? = E"]
+      }
+    ],
+    formulaBox: [
+      {
+        title: "Constraint Union Formula",
+        formula: "Valid = Full_Set \\ (Row_Set ∪ Col_Set)",
+        explanation: "Eliminates all row and column duplicates simultaneously."
+      }
+    ],
+    notes: [
+      "When a symbol appears 4 times across a 5x5 grid, its 5th position is instantly forced."
+    ],
+    diagrams: [
+      {
+        title: "Exercise Solutions Matrix (Pages 27-28)",
+        type: "table",
+        content: "| Exercise | Page | Primary Technique | Solution |\n|---|---|---|---|\n| Exercise 3 | 27 | Constraint Intersection | **B** |\n| Exercise 4 | 27 | Row-Column Intersection | **D** |\n| Exercise 5 | 28 | Full Grid Analysis | **D** |\n| Exercise 6 | 28 | Sequential Dependency | **E** |",
+        caption: "Solutions for Pages 27-28 exercises."
+      }
+    ],
+    realWorldExamples: [
+      {
+        title: "Sudoku Hard Mode Solver",
+        problem: "Target cell row has {A,C}, column has {D,E}. Find value in {A,B,C,D,E}.",
+        solution: "Forbidden = {A,C,D,E}. Allowed = {B}.",
+        code: "Set forbidden = {A,C} U {D,E}; // {A,C,D,E}\nSet allowed = {A,B,C,D,E} - forbidden; // B"
+      }
+    ],
+    examples: [
+      {
+        title: "Exercise 3 Page 27",
+        problem: "Find ? using constraint intersection.",
+        solution: "Row + Col forbid A, C, D, E => ? = B."
+      }
+    ],
+    importantPoints: [
+      "Ex 3 (Page 27) = B.",
+      "Ex 4 (Page 27) = D.",
+      "Ex 5 (Page 28) = D.",
+      "Ex 6 (Page 28) = E.",
+      "Cross-intersection takes union of row and column forbidden sets."
+    ],
+    commonMistakes: [
+      "Checking only the row and forgetting the column constraints (or vice versa).",
+      "Overlooking global 4-count symbol instances."
+    ],
+    examTips: [
+      "Combine row and column forbidden sets: if {A,C} is in row and {D,E} is in column, target cell MUST be B!"
+    ],
+    summary: "Cross-constraint intersection combines row and column forbidden sets. Solutions for Ex 3-6: B, D, D, E.",
+    keyTakeaways: [
+      "Union row + col forbidden set",
+      "Ex 3 = B",
+      "Ex 4 = D",
+      "Ex 5 = D",
+      "Ex 6 = E"
+    ],
+    quickRevisionBox: [
+      "Ex 3 (p27) => B",
+      "Ex 4 (p27) => D",
+      "Ex 5 (p28) => D",
+      "Ex 6 (p28) => E"
+    ],
+    practiceQuestions: [42, 43, 44, 45]
+  }
+];
+
+fs.writeFileSync(path.join(__dirname, '..', 'src', 'data', 'topics.json'), JSON.stringify(topics, null, 2));
+console.log("Successfully created src/data/topics.json with " + topics.length + " complete topics!");
