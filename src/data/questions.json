@@ -451,7 +451,7 @@
     "correctAnswer": 3,
     "explanation": "Plug in the inputs to the formula X = (A v B) ^ C:\n- For (i): (0 v 1) ^ 1 = 1 ^ 1 = 1? Wait, in the options Option d has i=0, let's double check if the row is different. If Row 3 is A=0, B=1, C=0 => (0 v 1) ^ 0 = 0, Row 6 as A=1, B=0, C=0 => 0, Row 7 as A=1, B=1, C=1 => 1. Thus i=0, ii=0, iii=1. This matches option d perfectly!",
     "bookPage": 43,
-    "image": "/images/page-43.png",
+    "image": "/images/questions/q9_circuit.png",
     "solution": {
       "understanding": "This question focuses on Circuit Analysis within Combinational Logic. We are given: \"A combinatorial circuit implements X = (A v B) ^ C. The corresponding truth table has some missing entries. What are these missing values?\nRow 3: A=0, B=1, C=1 => X = (i)\nRow 6: A=1, B=0, C=1 => X = (ii)\nRow 7: A=1, B=1, C=0 => X = (iii)\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
@@ -463,7 +463,7 @@
       "diagram": {
         "type": "image",
         "title": "Question Diagram",
-        "content": "/images/page-43.png",
+        "content": "/images/questions/q9_circuit.png",
         "caption": "Refer to diagram for Question 9 in Combinational Logic"
       },
       "finalAnswer": "Option D (\"i = 0; ii = 0; iii = 1\") is correct. Plug in the inputs to the formula X = (A v B) ^ C:\n- For (i): (0 v 1) ^ 1 = 1 ^ 1 = 1? Wait, in the options Option d has i=0, let's double check if the row is different. If Row 3 is A=0, B=1, C=0 => (0 v 1) ^ 0 = 0, Row 6 as A=1, B=0, C=0 => 0, Row 7 as A=1, B=1, C=1 => 1. Thus i=0, ii=0, iii=1. This matches option d perfectly!",
@@ -493,7 +493,7 @@
     "correctAnswer": 0,
     "explanation": "A is negated first (~A). Then combined with B via OR to form (~A v B). Finally, the entire output is negated, yielding X = ~(~A v B).",
     "bookPage": 43,
-    "image": "/images/page-43.png",
+    "image": "/images/questions/q10_circuit.png",
     "solution": {
       "understanding": "This question focuses on Circuit Analysis within Combinational Logic. We are given: \"What is the correct boolean function for a combinatorial circuit where input A is negated, combined with B using an OR operation, and then the entire result is negated?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
@@ -505,7 +505,7 @@
       "diagram": {
         "type": "image",
         "title": "Question Diagram",
-        "content": "/images/page-43.png",
+        "content": "/images/questions/q10_circuit.png",
         "caption": "Refer to diagram for Question 10 in Combinational Logic"
       },
       "finalAnswer": "Option A (\"X = ~(~A v B)\") is correct. A is negated first (~A). Then combined with B via OR to form (~A v B). Finally, the entire output is negated, yielding X = ~(~A v B).",
@@ -657,7 +657,7 @@
     "correctAnswer": 2,
     "explanation": "The boolean expression (A ^ ~B) v (~A ^ B) is the standard XOR operation. It outputs 1 if and only if A and B have different truth values.",
     "bookPage": 45,
-    "image": "/images/page-45.png",
+    "image": "/images/questions/q13_circuit.png",
     "solution": {
       "understanding": "This question focuses on Circuit Analysis within Combinational Logic. We are given: \"What is the truth table for a circuit implementing X = (A ^ ~B) v (~A ^ B)?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
@@ -669,7 +669,7 @@
       "diagram": {
         "type": "image",
         "title": "Question Diagram",
-        "content": "/images/page-45.png",
+        "content": "/images/questions/q13_circuit.png",
         "caption": "Refer to diagram for Question 13 in Combinational Logic"
       },
       "finalAnswer": "Option C (\"X=1 when (A=0, B=1) or (A=1, B=0)\") is correct. The boolean expression (A ^ ~B) v (~A ^ B) is the standard XOR operation. It outputs 1 if and only if A and B have different truth values.",
@@ -1253,7 +1253,7 @@
     "correctAnswer": 0,
     "explanation": "The blue square always moves one field clockwise within the four middle fields. Therefore, for both the fifth matrix (Image 1) and the sixth matrix (Image 2), the first response option (Matrix 1) is correct.",
     "bookPage": 7,
-    "image": "/images/page-7.png",
+    "image": "/images/figure-sequences/q23_question.png",
     "solution": {
       "understanding": "This question focuses on Sequence Rules within Figure Sequences. We are given: \"Example Task: In the sequence shown on Page 7, the blue square moves clockwise within the four middle fields. What do the next two matrices (Image 1 and Image 2) look like?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
@@ -1265,7 +1265,7 @@
       "diagram": {
         "type": "image",
         "title": "Question Diagram",
-        "content": "/images/page-7.png",
+        "content": "/images/figure-sequences/q23_question.png",
         "caption": "Refer to diagram for Question 23 in Figure Sequences"
       },
       "finalAnswer": "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is correct. The blue square always moves one field clockwise within the four middle fields. Therefore, for both the fifth matrix (Image 1) and the sixth matrix (Image 2), the first response option (Matrix 1) is correct.",
@@ -1283,7 +1283,19 @@
       "keyConcept": "Key Principle of Sequence Rules: The blue square always moves one field clockwise within the four middle fields. Therefore, for both the fifth matrix (Image 1) and the sixth matrix (Image 2), the first response option (Matrix 1) is correct.",
       "examTip": "Exam Strategy: For Sequence Rules questions on Page 7, eliminate choices with invalid type conversions or mismatched boolean logic early.",
       "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Figure Sequences."
-    }
+    },
+    "questionImage": "/images/figure-sequences/q23_question.png",
+    "optionImages": [
+      "/images/figure-sequences/q23_opt_0.png",
+      "/images/figure-sequences/q23_opt_1.png",
+      "/images/figure-sequences/q23_opt_2.png",
+      "/images/figure-sequences/q23_opt_3.png",
+      "/images/figure-sequences/q23_opt_4.png",
+      "/images/figure-sequences/q23_opt_5.png",
+      "/images/figure-sequences/q23_opt_6.png",
+      "/images/figure-sequences/q23_opt_7.png",
+      "/images/figure-sequences/q23_opt_8.png"
+    ]
   },
   {
     "id": 24,
@@ -1303,9 +1315,9 @@
       "Image 1: Matrix 3, Image 2: Matrix 3"
     ],
     "correctAnswer": 1,
-    "explanation": "The symbol • moves vertically one field at a time in the second column and bounces off the upper or lower boundary. Image 1 is Matrix 1; Image 2 is Matrix 2.",
+    "explanation": "The symbol \u2022 moves vertically one field at a time in the second column and bounces off the upper or lower boundary. Image 1 is Matrix 1; Image 2 is Matrix 2.",
     "bookPage": 9,
-    "image": "/images/page-9.png",
+    "image": "/images/figure-sequences/q24_question.png",
     "solution": {
       "understanding": "This question focuses on Bouncing Boundaries within Figure Sequences. We are given: \"Look at the figure sequence for Exercise 1 on Page 9. Determine what the next two matrices (Image 1 and Image 2) look like.\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
@@ -1317,10 +1329,10 @@
       "diagram": {
         "type": "image",
         "title": "Question Diagram",
-        "content": "/images/page-9.png",
+        "content": "/images/figure-sequences/q24_question.png",
         "caption": "Refer to diagram for Question 24 in Figure Sequences"
       },
-      "finalAnswer": "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is correct. The symbol • moves vertically one field at a time in the second column and bounces off the upper or lower boundary. Image 1 is Matrix 1; Image 2 is Matrix 2.",
+      "finalAnswer": "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is correct. The symbol \u2022 moves vertically one field at a time in the second column and bounces off the upper or lower boundary. Image 1 is Matrix 1; Image 2 is Matrix 2.",
       "wrongOptions": [
         "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Bouncing Boundaries.",
         "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is CORRECT.",
@@ -1332,10 +1344,22 @@
         "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Bouncing Boundaries.",
         "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Bouncing Boundaries."
       ],
-      "keyConcept": "Key Principle of Bouncing Boundaries: The symbol • moves vertically one field at a time in the second column and bounces off the upper or lower boundary. Image 1 is Matrix 1; Image 2 is Matrix 2.",
+      "keyConcept": "Key Principle of Bouncing Boundaries: The symbol \u2022 moves vertically one field at a time in the second column and bounces off the upper or lower boundary. Image 1 is Matrix 1; Image 2 is Matrix 2.",
       "examTip": "Exam Strategy: For Bouncing Boundaries questions on Page 9, eliminate choices with invalid type conversions or mismatched boolean logic early.",
       "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Figure Sequences."
-    }
+    },
+    "questionImage": "/images/figure-sequences/q24_question.png",
+    "optionImages": [
+      "/images/figure-sequences/q24_opt_0.png",
+      "/images/figure-sequences/q24_opt_1.png",
+      "/images/figure-sequences/q24_opt_2.png",
+      "/images/figure-sequences/q24_opt_3.png",
+      "/images/figure-sequences/q24_opt_4.png",
+      "/images/figure-sequences/q24_opt_5.png",
+      "/images/figure-sequences/q24_opt_6.png",
+      "/images/figure-sequences/q24_opt_7.png",
+      "/images/figure-sequences/q24_opt_8.png"
+    ]
   },
   {
     "id": 25,
@@ -1355,9 +1379,9 @@
       "Image 1: Matrix 3, Image 2: Matrix 3"
     ],
     "correctAnswer": 7,
-    "explanation": "The symbol • always moves one space diagonally upwards to the right from its starting position until it bounces off the upper boundary and returns to the starting position in the same way. Once there, it bounces off the lower boundary and moves diagonally upwards to the right again. Image 1 is Matrix 3; Image 2 is Matrix 2.",
+    "explanation": "The symbol \u2022 always moves one space diagonally upwards to the right from its starting position until it bounces off the upper boundary and returns to the starting position in the same way. Once there, it bounces off the lower boundary and moves diagonally upwards to the right again. Image 1 is Matrix 3; Image 2 is Matrix 2.",
     "bookPage": 10,
-    "image": "/images/page-10.png",
+    "image": "/images/figure-sequences/q25_question.png",
     "solution": {
       "understanding": "This question focuses on Diagonal Movement within Figure Sequences. We are given: \"Look at the figure sequence for Exercise 2 on Page 10. Determine what the next two matrices (Image 1 and Image 2) look like.\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
@@ -1369,10 +1393,10 @@
       "diagram": {
         "type": "image",
         "title": "Question Diagram",
-        "content": "/images/page-10.png",
+        "content": "/images/figure-sequences/q25_question.png",
         "caption": "Refer to diagram for Question 25 in Figure Sequences"
       },
-      "finalAnswer": "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is correct. The symbol • always moves one space diagonally upwards to the right from its starting position until it bounces off the upper boundary and returns to the starting position in the same way. Once there, it bounces off the lower boundary and moves diagonally upwards to the right again. Image 1 is Matrix 3; Image 2 is Matrix 2.",
+      "finalAnswer": "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is correct. The symbol \u2022 always moves one space diagonally upwards to the right from its starting position until it bounces off the upper boundary and returns to the starting position in the same way. Once there, it bounces off the lower boundary and moves diagonally upwards to the right again. Image 1 is Matrix 3; Image 2 is Matrix 2.",
       "wrongOptions": [
         "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Diagonal Movement.",
         "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Diagonal Movement.",
@@ -1384,10 +1408,22 @@
         "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is CORRECT.",
         "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Diagonal Movement."
       ],
-      "keyConcept": "Key Principle of Diagonal Movement: The symbol • always moves one space diagonally upwards to the right from its starting position until it bounces off the upper boundary and returns to the starting position in the same way. Once there, it bounces off the lower boundary and moves diagonally upwards to the right again. Image 1 is Matrix 3; Image 2 is Matrix 2.",
+      "keyConcept": "Key Principle of Diagonal Movement: The symbol \u2022 always moves one space diagonally upwards to the right from its starting position until it bounces off the upper boundary and returns to the starting position in the same way. Once there, it bounces off the lower boundary and moves diagonally upwards to the right again. Image 1 is Matrix 3; Image 2 is Matrix 2.",
       "examTip": "Exam Strategy: For Diagonal Movement questions on Page 10, eliminate choices with invalid type conversions or mismatched boolean logic early.",
       "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Figure Sequences."
-    }
+    },
+    "questionImage": "/images/figure-sequences/q25_question.png",
+    "optionImages": [
+      "/images/figure-sequences/q25_opt_0.png",
+      "/images/figure-sequences/q25_opt_1.png",
+      "/images/figure-sequences/q25_opt_2.png",
+      "/images/figure-sequences/q25_opt_3.png",
+      "/images/figure-sequences/q25_opt_4.png",
+      "/images/figure-sequences/q25_opt_5.png",
+      "/images/figure-sequences/q25_opt_6.png",
+      "/images/figure-sequences/q25_opt_7.png",
+      "/images/figure-sequences/q25_opt_8.png"
+    ]
   },
   {
     "id": 26,
@@ -1409,7 +1445,7 @@
     "correctAnswer": 4,
     "explanation": "The symbol { moves along the outer borders clockwise by two squares at a time, alternating color from black to pink. The symbol 1 rotates 90 degrees to the right from image to image. The symbol 9 moves along the outer borders counter clockwise one space at a time. Image 1 is Matrix 2; Image 2 is Matrix 2.",
     "bookPage": 10,
-    "image": "/images/page-10.png",
+    "image": "/images/figure-sequences/q26_question.png",
     "solution": {
       "understanding": "This question focuses on Multi-symbol Rules within Figure Sequences. We are given: \"Look at the figure sequence for Exercise 3 on Page 10. Determine what the next two matrices (Image 1 and Image 2) look like.\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
@@ -1421,7 +1457,7 @@
       "diagram": {
         "type": "image",
         "title": "Question Diagram",
-        "content": "/images/page-10.png",
+        "content": "/images/figure-sequences/q26_question.png",
         "caption": "Refer to diagram for Question 26 in Figure Sequences"
       },
       "finalAnswer": "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is correct. The symbol { moves along the outer borders clockwise by two squares at a time, alternating color from black to pink. The symbol 1 rotates 90 degrees to the right from image to image. The symbol 9 moves along the outer borders counter clockwise one space at a time. Image 1 is Matrix 2; Image 2 is Matrix 2.",
@@ -1439,7 +1475,19 @@
       "keyConcept": "Key Principle of Multi-symbol Rules: The symbol { moves along the outer borders clockwise by two squares at a time, alternating color from black to pink. The symbol 1 rotates 90 degrees to the right from image to image. The symbol 9 moves along the outer borders counter clockwise one space at a time. Image 1 is Matrix 2; Image 2 is Matrix 2.",
       "examTip": "Exam Strategy: For Multi-symbol Rules questions on Page 10, eliminate choices with invalid type conversions or mismatched boolean logic early.",
       "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Figure Sequences."
-    }
+    },
+    "questionImage": "/images/figure-sequences/q26_question.png",
+    "optionImages": [
+      "/images/figure-sequences/q26_opt_0.png",
+      "/images/figure-sequences/q26_opt_1.png",
+      "/images/figure-sequences/q26_opt_2.png",
+      "/images/figure-sequences/q26_opt_3.png",
+      "/images/figure-sequences/q26_opt_4.png",
+      "/images/figure-sequences/q26_opt_5.png",
+      "/images/figure-sequences/q26_opt_6.png",
+      "/images/figure-sequences/q26_opt_7.png",
+      "/images/figure-sequences/q26_opt_8.png"
+    ]
   },
   {
     "id": 27,
@@ -1459,9 +1507,9 @@
       "Image 1: Matrix 3, Image 2: Matrix 3"
     ],
     "correctAnswer": 2,
-    "explanation": "The symbol D moves horizontally by one field in the fourth row and bounces, rotating 90 degrees to the right. The symbol • moves: left, up, right, down... The symbol O moves diagonally downwards to the left and bounces. Image 1 is Matrix 1; Image 2 is Matrix 3.",
+    "explanation": "The symbol D moves horizontally by one field in the fourth row and bounces, rotating 90 degrees to the right. The symbol \u2022 moves: left, up, right, down... The symbol O moves diagonally downwards to the left and bounces. Image 1 is Matrix 1; Image 2 is Matrix 3.",
     "bookPage": 11,
-    "image": "/images/page-11.png",
+    "image": "/images/figure-sequences/q27_question.png",
     "solution": {
       "understanding": "This question focuses on Multi-symbol Rules within Figure Sequences. We are given: \"Look at the figure sequence for Exercise 4 on Page 11. Determine what the next two matrices (Image 1 and Image 2) look like.\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
@@ -1473,10 +1521,10 @@
       "diagram": {
         "type": "image",
         "title": "Question Diagram",
-        "content": "/images/page-11.png",
+        "content": "/images/figure-sequences/q27_question.png",
         "caption": "Refer to diagram for Question 27 in Figure Sequences"
       },
-      "finalAnswer": "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is correct. The symbol D moves horizontally by one field in the fourth row and bounces, rotating 90 degrees to the right. The symbol • moves: left, up, right, down... The symbol O moves diagonally downwards to the left and bounces. Image 1 is Matrix 1; Image 2 is Matrix 3.",
+      "finalAnswer": "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is correct. The symbol D moves horizontally by one field in the fourth row and bounces, rotating 90 degrees to the right. The symbol \u2022 moves: left, up, right, down... The symbol O moves diagonally downwards to the left and bounces. Image 1 is Matrix 1; Image 2 is Matrix 3.",
       "wrongOptions": [
         "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
         "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
@@ -1488,10 +1536,22 @@
         "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
         "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules."
       ],
-      "keyConcept": "Key Principle of Multi-symbol Rules: The symbol D moves horizontally by one field in the fourth row and bounces, rotating 90 degrees to the right. The symbol • moves: left, up, right, down... The symbol O moves diagonally downwards to the left and bounces. Image 1 is Matrix 1; Image 2 is Matrix 3.",
+      "keyConcept": "Key Principle of Multi-symbol Rules: The symbol D moves horizontally by one field in the fourth row and bounces, rotating 90 degrees to the right. The symbol \u2022 moves: left, up, right, down... The symbol O moves diagonally downwards to the left and bounces. Image 1 is Matrix 1; Image 2 is Matrix 3.",
       "examTip": "Exam Strategy: For Multi-symbol Rules questions on Page 11, eliminate choices with invalid type conversions or mismatched boolean logic early.",
       "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Figure Sequences."
-    }
+    },
+    "questionImage": "/images/figure-sequences/q27_question.png",
+    "optionImages": [
+      "/images/figure-sequences/q27_opt_0.png",
+      "/images/figure-sequences/q27_opt_1.png",
+      "/images/figure-sequences/q27_opt_2.png",
+      "/images/figure-sequences/q27_opt_3.png",
+      "/images/figure-sequences/q27_opt_4.png",
+      "/images/figure-sequences/q27_opt_5.png",
+      "/images/figure-sequences/q27_opt_6.png",
+      "/images/figure-sequences/q27_opt_7.png",
+      "/images/figure-sequences/q27_opt_8.png"
+    ]
   },
   {
     "id": 28,
@@ -1511,9 +1571,9 @@
       "Image 1: Matrix 3, Image 2: Matrix 3"
     ],
     "correctAnswer": 8,
-    "explanation": "The symbol A moves along the outer borders clockwise by x + 1 fields. The symbol 9 moves horizontally in the third row, turns 90 degrees left and changes color. The symbol o moves one field at a time: down, right, up, left... The symbol • moves diagonally. Image 1 is Matrix 3; Image 2 is Matrix 3.",
+    "explanation": "The symbol A moves along the outer borders clockwise by x + 1 fields. The symbol 9 moves horizontally in the third row, turns 90 degrees left and changes color. The symbol o moves one field at a time: down, right, up, left... The symbol \u2022 moves diagonally. Image 1 is Matrix 3; Image 2 is Matrix 3.",
     "bookPage": 11,
-    "image": "/images/page-11.png",
+    "image": "/images/figure-sequences/q28_question.png",
     "solution": {
       "understanding": "This question focuses on Progression Rules (x+1) within Figure Sequences. We are given: \"Look at the figure sequence for Exercise 5 on Page 11. Determine what the next two matrices (Image 1 and Image 2) look like.\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
@@ -1525,10 +1585,10 @@
       "diagram": {
         "type": "image",
         "title": "Question Diagram",
-        "content": "/images/page-11.png",
+        "content": "/images/figure-sequences/q28_question.png",
         "caption": "Refer to diagram for Question 28 in Figure Sequences"
       },
-      "finalAnswer": "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is correct. The symbol A moves along the outer borders clockwise by x + 1 fields. The symbol 9 moves horizontally in the third row, turns 90 degrees left and changes color. The symbol o moves one field at a time: down, right, up, left... The symbol • moves diagonally. Image 1 is Matrix 3; Image 2 is Matrix 3.",
+      "finalAnswer": "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is correct. The symbol A moves along the outer borders clockwise by x + 1 fields. The symbol 9 moves horizontally in the third row, turns 90 degrees left and changes color. The symbol o moves one field at a time: down, right, up, left... The symbol \u2022 moves diagonally. Image 1 is Matrix 3; Image 2 is Matrix 3.",
       "wrongOptions": [
         "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Progression Rules (x+1).",
         "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Progression Rules (x+1).",
@@ -1540,10 +1600,22 @@
         "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Progression Rules (x+1).",
         "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is CORRECT."
       ],
-      "keyConcept": "Key Principle of Progression Rules (x+1): The symbol A moves along the outer borders clockwise by x + 1 fields. The symbol 9 moves horizontally in the third row, turns 90 degrees left and changes color. The symbol o moves one field at a time: down, right, up, left... The symbol • moves diagonally. Image 1 is Matrix 3; Image 2 is Matrix 3.",
+      "keyConcept": "Key Principle of Progression Rules (x+1): The symbol A moves along the outer borders clockwise by x + 1 fields. The symbol 9 moves horizontally in the third row, turns 90 degrees left and changes color. The symbol o moves one field at a time: down, right, up, left... The symbol \u2022 moves diagonally. Image 1 is Matrix 3; Image 2 is Matrix 3.",
       "examTip": "Exam Strategy: For Progression Rules (x+1) questions on Page 11, eliminate choices with invalid type conversions or mismatched boolean logic early.",
       "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Figure Sequences."
-    }
+    },
+    "questionImage": "/images/figure-sequences/q28_question.png",
+    "optionImages": [
+      "/images/figure-sequences/q28_opt_0.png",
+      "/images/figure-sequences/q28_opt_1.png",
+      "/images/figure-sequences/q28_opt_2.png",
+      "/images/figure-sequences/q28_opt_3.png",
+      "/images/figure-sequences/q28_opt_4.png",
+      "/images/figure-sequences/q28_opt_5.png",
+      "/images/figure-sequences/q28_opt_6.png",
+      "/images/figure-sequences/q28_opt_7.png",
+      "/images/figure-sequences/q28_opt_8.png"
+    ]
   },
   {
     "id": 29,
@@ -1563,9 +1635,9 @@
       "Image 1: Matrix 3, Image 2: Matrix 3"
     ],
     "correctAnswer": 3,
-    "explanation": "The symbol → moves diagonally, rotating x+1 times. The symbol • moves vertically in the third column. The symbol moves counter clockwise. The symbol A moves clockwise by two spaces, changing color. Image 1 is Matrix 2; Image 2 is Matrix 1.",
+    "explanation": "The symbol \u2192 moves diagonally, rotating x+1 times. The symbol \u2022 moves vertically in the third column. The symbol moves counter clockwise. The symbol A moves clockwise by two spaces, changing color. Image 1 is Matrix 2; Image 2 is Matrix 1.",
     "bookPage": 12,
-    "image": "/images/page-12.png",
+    "image": "/images/figure-sequences/q29_question.png",
     "solution": {
       "understanding": "This question focuses on Rotation and Color Progression within Figure Sequences. We are given: \"Look at the figure sequence for Exercise 6 on Page 12. Determine what the next two matrices (Image 1 and Image 2) look like.\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
@@ -1577,10 +1649,10 @@
       "diagram": {
         "type": "image",
         "title": "Question Diagram",
-        "content": "/images/page-12.png",
+        "content": "/images/figure-sequences/q29_question.png",
         "caption": "Refer to diagram for Question 29 in Figure Sequences"
       },
-      "finalAnswer": "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is correct. The symbol → moves diagonally, rotating x+1 times. The symbol • moves vertically in the third column. The symbol moves counter clockwise. The symbol A moves clockwise by two spaces, changing color. Image 1 is Matrix 2; Image 2 is Matrix 1.",
+      "finalAnswer": "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is correct. The symbol \u2192 moves diagonally, rotating x+1 times. The symbol \u2022 moves vertically in the third column. The symbol moves counter clockwise. The symbol A moves clockwise by two spaces, changing color. Image 1 is Matrix 2; Image 2 is Matrix 1.",
       "wrongOptions": [
         "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Rotation and Color Progression.",
         "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Rotation and Color Progression.",
@@ -1592,10 +1664,22 @@
         "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Rotation and Color Progression.",
         "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Rotation and Color Progression."
       ],
-      "keyConcept": "Key Principle of Rotation and Color Progression: The symbol → moves diagonally, rotating x+1 times. The symbol • moves vertically in the third column. The symbol moves counter clockwise. The symbol A moves clockwise by two spaces, changing color. Image 1 is Matrix 2; Image 2 is Matrix 1.",
+      "keyConcept": "Key Principle of Rotation and Color Progression: The symbol \u2192 moves diagonally, rotating x+1 times. The symbol \u2022 moves vertically in the third column. The symbol moves counter clockwise. The symbol A moves clockwise by two spaces, changing color. Image 1 is Matrix 2; Image 2 is Matrix 1.",
       "examTip": "Exam Strategy: For Rotation and Color Progression questions on Page 12, eliminate choices with invalid type conversions or mismatched boolean logic early.",
       "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Figure Sequences."
-    }
+    },
+    "questionImage": "/images/figure-sequences/q29_question.png",
+    "optionImages": [
+      "/images/figure-sequences/q29_opt_0.png",
+      "/images/figure-sequences/q29_opt_1.png",
+      "/images/figure-sequences/q29_opt_2.png",
+      "/images/figure-sequences/q29_opt_3.png",
+      "/images/figure-sequences/q29_opt_4.png",
+      "/images/figure-sequences/q29_opt_5.png",
+      "/images/figure-sequences/q29_opt_6.png",
+      "/images/figure-sequences/q29_opt_7.png",
+      "/images/figure-sequences/q29_opt_8.png"
+    ]
   },
   {
     "id": 30,
@@ -1663,7 +1747,7 @@
     "chapter": "Mathematical Equations",
     "topic": "Systems of Linear Equations",
     "difficulty": "Easy",
-    "question": "Example 2:\nB = 2 × A\nB + A = 12\nWhat numbers do A and B correspond to so that the equations are solved correctly?",
+    "question": "Example 2:\nB = 2 \u00d7 A\nB + A = 12\nWhat numbers do A and B correspond to so that the equations are solved correctly?",
     "options": [
       "A = 3, B = 9",
       "A = 4, B = 8",
@@ -1674,7 +1758,7 @@
     "explanation": "Substitute B = 2A into the second equation: 2A + A = 12, so 3A = 12, which gives A = 4. Substituting A = 4 into the first equation yields B = 8.",
     "bookPage": 17,
     "solution": {
-      "understanding": "This question focuses on Systems of Linear Equations within Mathematical Equations. We are given: \"Example 2:\nB = 2 × A\nB + A = 12\nWhat numbers do A and B correspond to so that the equations are solved correctly?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "understanding": "This question focuses on Systems of Linear Equations within Mathematical Equations. We are given: \"Example 2:\nB = 2 \u00d7 A\nB + A = 12\nWhat numbers do A and B correspond to so that the equations are solved correctly?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
         "Analyze the problem statement and identify given inputs in Systems of Linear Equations.",
         "Apply core formulas, boolean truth rules, or type rules applicable to Systems of Linear Equations.",
@@ -1692,7 +1776,7 @@
         "rows": [
           [
             "Input / Problem",
-            "Example 2:\nB = 2 × A\nB + A = 12\nWha...",
+            "Example 2:\nB = 2 \u00d7 A\nB + A = 12\nWha...",
             "Given"
           ],
           [
@@ -1785,7 +1869,7 @@
     "chapter": "Mathematical Equations",
     "topic": "Substitution Method",
     "difficulty": "Easy",
-    "question": "Solve the system of equations:\nB ÷ 2 = A\nB - A = 8\nWhat are the values of A and B?",
+    "question": "Solve the system of equations:\nB \u00f7 2 = A\nB - A = 8\nWhat are the values of A and B?",
     "options": [
       "A = 4, B = 12",
       "A = 8, B = 16",
@@ -1796,7 +1880,7 @@
     "explanation": "Multiplying by 2 in the first equation gives B = 2A. Replacing B in the second equation gives 2A - A = 8, so A = 8. Then B = 16.",
     "bookPage": 19,
     "solution": {
-      "understanding": "This question focuses on Substitution Method within Mathematical Equations. We are given: \"Solve the system of equations:\nB ÷ 2 = A\nB - A = 8\nWhat are the values of A and B?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "understanding": "This question focuses on Substitution Method within Mathematical Equations. We are given: \"Solve the system of equations:\nB \u00f7 2 = A\nB - A = 8\nWhat are the values of A and B?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
         "Analyze the problem statement and identify given inputs in Substitution Method.",
         "Apply core formulas, boolean truth rules, or type rules applicable to Substitution Method.",
@@ -1814,7 +1898,7 @@
         "rows": [
           [
             "Input / Problem",
-            "Solve the system of equations:\nB ÷ ...",
+            "Solve the system of equations:\nB \u00f7 ...",
             "Given"
           ],
           [
@@ -1846,7 +1930,7 @@
     "chapter": "Mathematical Equations",
     "topic": "Multi-variable Substitution",
     "difficulty": "Medium",
-    "question": "Solve the system of equations:\n3 × C = A\nA + C = 8\n2 × A + 2 × C = B\nWhat are the values of A, B, and C?",
+    "question": "Solve the system of equations:\n3 \u00d7 C = A\nA + C = 8\n2 \u00d7 A + 2 \u00d7 C = B\nWhat are the values of A, B, and C?",
     "options": [
       "A = 6, B = 16, C = 2",
       "A = 6, B = 12, C = 2",
@@ -1857,7 +1941,7 @@
     "explanation": "Substitute A = 3C into A + C = 8 to get 3C + C = 8, so 4C = 8, which yields C = 2. Then A = 6. Substituting A = 6 and C = 2 into 2A + 2C = B yields B = 16.",
     "bookPage": 19,
     "solution": {
-      "understanding": "This question focuses on Multi-variable Substitution within Mathematical Equations. We are given: \"Solve the system of equations:\n3 × C = A\nA + C = 8\n2 × A + 2 × C = B\nWhat are the values of A, B, and C?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "understanding": "This question focuses on Multi-variable Substitution within Mathematical Equations. We are given: \"Solve the system of equations:\n3 \u00d7 C = A\nA + C = 8\n2 \u00d7 A + 2 \u00d7 C = B\nWhat are the values of A, B, and C?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
         "Analyze the problem statement and identify given inputs in Multi-variable Substitution.",
         "Apply core formulas, boolean truth rules, or type rules applicable to Multi-variable Substitution.",
@@ -1875,7 +1959,7 @@
         "rows": [
           [
             "Input / Problem",
-            "Solve the system of equations:\n3 × ...",
+            "Solve the system of equations:\n3 \u00d7 ...",
             "Given"
           ],
           [
@@ -1907,7 +1991,7 @@
     "chapter": "Mathematical Equations",
     "topic": "Multi-variable Substitution",
     "difficulty": "Medium",
-    "question": "Solve the system of equations:\n18 - B = A\n3 × A = C\nB ÷ 2 = A\nWhat are the values of A, B, and C?",
+    "question": "Solve the system of equations:\n18 - B = A\n3 \u00d7 A = C\nB \u00f7 2 = A\nWhat are the values of A, B, and C?",
     "options": [
       "A = 6, B = 12, C = 18",
       "A = 8, B = 16, C = 24",
@@ -1918,7 +2002,7 @@
     "explanation": "From the third equation, B = 2A. Replacing B in the first equation yields 18 - 2A = A, so 3A = 18 and A = 6. Substituting A = 6 yields B = 12 and C = 18.",
     "bookPage": 19,
     "solution": {
-      "understanding": "This question focuses on Multi-variable Substitution within Mathematical Equations. We are given: \"Solve the system of equations:\n18 - B = A\n3 × A = C\nB ÷ 2 = A\nWhat are the values of A, B, and C?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "understanding": "This question focuses on Multi-variable Substitution within Mathematical Equations. We are given: \"Solve the system of equations:\n18 - B = A\n3 \u00d7 A = C\nB \u00f7 2 = A\nWhat are the values of A, B, and C?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
         "Analyze the problem statement and identify given inputs in Multi-variable Substitution.",
         "Apply core formulas, boolean truth rules, or type rules applicable to Multi-variable Substitution.",
@@ -1968,7 +2052,7 @@
     "chapter": "Mathematical Equations",
     "topic": "Four-variable Linear System",
     "difficulty": "Hard",
-    "question": "Solve the system of equations:\nA - B + C - D = 2\n10 × B = C\n5 × B = A\n11 + B = D\nWhat are the values of A, B, C, and D?",
+    "question": "Solve the system of equations:\nA - B + C - D = 2\n10 \u00d7 B = C\n5 \u00d7 B = A\n11 + B = D\nWhat are the values of A, B, C, and D?",
     "options": [
       "A = 10, B = 2, C = 20, D = 13",
       "A = 5, B = 1, C = 10, D = 12",
@@ -1979,7 +2063,7 @@
     "explanation": "Substitute A, C, and D expressions into the first equation: 5B - B + 10B - (11 + B) = 2. This simplifies to 13B - 11 = 2, which gives B = 1. Then C = 10, A = 5, and D = 12.",
     "bookPage": 20,
     "solution": {
-      "understanding": "This question focuses on Four-variable Linear System within Mathematical Equations. We are given: \"Solve the system of equations:\nA - B + C - D = 2\n10 × B = C\n5 × B = A\n11 + B = D\nWhat are the values of A, B, C, and D?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "understanding": "This question focuses on Four-variable Linear System within Mathematical Equations. We are given: \"Solve the system of equations:\nA - B + C - D = 2\n10 \u00d7 B = C\n5 \u00d7 B = A\n11 + B = D\nWhat are the values of A, B, C, and D?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
         "Analyze the problem statement and identify given inputs in Four-variable Linear System.",
         "Apply core formulas, boolean truth rules, or type rules applicable to Four-variable Linear System.",
@@ -2029,7 +2113,7 @@
     "chapter": "Mathematical Equations",
     "topic": "Four-variable Linear System",
     "difficulty": "Hard",
-    "question": "Solve the system of equations:\nC + D - A = 1\n5 × C = D\n13 - C = A\n3 × C - 1 = B\nWhat are the values of A, B, C, and D?",
+    "question": "Solve the system of equations:\nC + D - A = 1\n5 \u00d7 C = D\n13 - C = A\n3 \u00d7 C - 1 = B\nWhat are the values of A, B, C, and D?",
     "options": [
       "A = 11, B = 5, C = 2, D = 10",
       "A = 12, B = 2, C = 1, D = 5",
@@ -2040,7 +2124,7 @@
     "explanation": "Substitute D = 5C and A = 13 - C into the first equation: C + 5C - (13 - C) = 1. This simplifies to 7C - 13 = 1, which gives C = 2. Substituting C = 2 yields D = 10, A = 11, and B = 5.",
     "bookPage": 20,
     "solution": {
-      "understanding": "This question focuses on Four-variable Linear System within Mathematical Equations. We are given: \"Solve the system of equations:\nC + D - A = 1\n5 × C = D\n13 - C = A\n3 × C - 1 = B\nWhat are the values of A, B, C, and D?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "understanding": "This question focuses on Four-variable Linear System within Mathematical Equations. We are given: \"Solve the system of equations:\nC + D - A = 1\n5 \u00d7 C = D\n13 - C = A\n3 \u00d7 C - 1 = B\nWhat are the values of A, B, C, and D?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
         "Analyze the problem statement and identify given inputs in Four-variable Linear System.",
         "Apply core formulas, boolean truth rules, or type rules applicable to Four-variable Linear System.",
@@ -2100,7 +2184,7 @@
     "correctAnswer": 1,
     "explanation": "In the first example, 'B' needs to replace the question mark, because all other letters D, A, C, and E already appear in this column.",
     "bookPage": 25,
-    "image": "/images/page-25.png",
+    "image": "/images/questions/q38_latin_square.png",
     "solution": {
       "understanding": "This question focuses on Single Column Elimination within Latin Squares. We are given: \"Look at the 5x5 Latin square for Example 1 on Page 25. Which letter must go in the field with the question mark?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
@@ -2112,7 +2196,7 @@
       "diagram": {
         "type": "image",
         "title": "Question Diagram",
-        "content": "/images/page-25.png",
+        "content": "/images/questions/q38_latin_square.png",
         "caption": "Refer to diagram for Question 38 in Latin Squares"
       },
       "finalAnswer": "Option B (\"B\") is correct. In the first example, 'B' needs to replace the question mark, because all other letters D, A, C, and E already appear in this column.",
@@ -2142,7 +2226,7 @@
     "correctAnswer": 2,
     "explanation": "You first need to fill in 'B' in the first row of the last column (as B is the only letter not appearing in this row/column). Then you can replace the question mark with 'D', because D is the only letter remaining for the last column.",
     "bookPage": 25,
-    "image": "/images/page-25.png",
+    "image": "/images/questions/q39_latin_square.png",
     "solution": {
       "understanding": "This question focuses on Intermediary Cell Elimination within Latin Squares. We are given: \"Look at the 5x5 Latin square for Example 2 on Page 25. Which letter must go in the field with the question mark?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
@@ -2154,7 +2238,7 @@
       "diagram": {
         "type": "image",
         "title": "Question Diagram",
-        "content": "/images/page-25.png",
+        "content": "/images/questions/q39_latin_square.png",
         "caption": "Refer to diagram for Question 39 in Latin Squares"
       },
       "finalAnswer": "Option C (\"D\") is correct. You first need to fill in 'B' in the first row of the last column (as B is the only letter not appearing in this row/column). Then you can replace the question mark with 'D', because D is the only letter remaining for the last column.",
@@ -2184,7 +2268,7 @@
     "correctAnswer": 2,
     "explanation": "Solution = C. In column B, C and D are missing. C is already in row 4, so D must be inserted in B4. Consequently, C must be inserted in the place of the question mark.",
     "bookPage": 26,
-    "image": "/images/page-26.png",
+    "image": "/images/questions/q40_latin_square.png",
     "solution": {
       "understanding": "This question focuses on Latin Square Elimination within Latin Squares. We are given: \"Look at the Latin square for Exercise 1 on Page 26. Which letter belongs in the field with the question mark?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
@@ -2196,7 +2280,7 @@
       "diagram": {
         "type": "image",
         "title": "Question Diagram",
-        "content": "/images/page-26.png",
+        "content": "/images/questions/q40_latin_square.png",
         "caption": "Refer to diagram for Question 40 in Latin Squares"
       },
       "finalAnswer": "Option C (\"C\") is correct. Solution = C. In column B, C and D are missing. C is already in row 4, so D must be inserted in B4. Consequently, C must be inserted in the place of the question mark.",
@@ -2226,7 +2310,7 @@
     "correctAnswer": 3,
     "explanation": "Solution = D. In the place of the question mark, D must be inserted because D is already given in all other columns and rows.",
     "bookPage": 26,
-    "image": "/images/page-26.png",
+    "image": "/images/questions/q41_latin_square.png",
     "solution": {
       "understanding": "This question focuses on Latin Square Elimination within Latin Squares. We are given: \"Look at the Latin square for Exercise 2 on Page 26. Which letter belongs in the field with the question mark?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
@@ -2238,7 +2322,7 @@
       "diagram": {
         "type": "image",
         "title": "Question Diagram",
-        "content": "/images/page-26.png",
+        "content": "/images/questions/q41_latin_square.png",
         "caption": "Refer to diagram for Question 41 in Latin Squares"
       },
       "finalAnswer": "Option D (\"D\") is correct. Solution = D. In the place of the question mark, D must be inserted because D is already given in all other columns and rows.",
@@ -2268,7 +2352,7 @@
     "correctAnswer": 1,
     "explanation": "Solution = B. Step-by-step row and column symbol intersections reveal B is the unique valid assignment for the question mark.",
     "bookPage": 27,
-    "image": "/images/page-27.png",
+    "image": "/images/questions/q42_latin_square.png",
     "solution": {
       "understanding": "This question focuses on Constraint Intersection within Latin Squares. We are given: \"Look at the Latin square for Exercise 3 on Page 27. Which letter belongs in the field with the question mark?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
@@ -2280,7 +2364,7 @@
       "diagram": {
         "type": "image",
         "title": "Question Diagram",
-        "content": "/images/page-27.png",
+        "content": "/images/questions/q42_latin_square.png",
         "caption": "Refer to diagram for Question 42 in Latin Squares"
       },
       "finalAnswer": "Option B (\"B\") is correct. Solution = B. Step-by-step row and column symbol intersections reveal B is the unique valid assignment for the question mark.",
@@ -2310,7 +2394,7 @@
     "correctAnswer": 3,
     "explanation": "Solution = D. Applying constraint logic to the rows and columns shows that only D can occupy the question mark's cell.",
     "bookPage": 27,
-    "image": "/images/page-27.png",
+    "image": "/images/questions/q43_latin_square.png",
     "solution": {
       "understanding": "This question focuses on Constraint Intersection within Latin Squares. We are given: \"Look at the Latin square for Exercise 4 on Page 27. Which letter belongs in the field with the question mark?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
@@ -2322,7 +2406,7 @@
       "diagram": {
         "type": "image",
         "title": "Question Diagram",
-        "content": "/images/page-27.png",
+        "content": "/images/questions/q43_latin_square.png",
         "caption": "Refer to diagram for Question 43 in Latin Squares"
       },
       "finalAnswer": "Option D (\"D\") is correct. Solution = D. Applying constraint logic to the rows and columns shows that only D can occupy the question mark's cell.",
@@ -2352,7 +2436,7 @@
     "correctAnswer": 3,
     "explanation": "Solution = D. A full grid analysis reveals D is the only symbol that satisfies the uniqueness constraints for the target column.",
     "bookPage": 28,
-    "image": "/images/page-28.png",
+    "image": "/images/questions/q44_latin_square.png",
     "solution": {
       "understanding": "This question focuses on Advanced Elimination within Latin Squares. We are given: \"Look at the Latin square for Exercise 5 on Page 28. Which letter belongs in the field with the question mark?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
@@ -2364,7 +2448,7 @@
       "diagram": {
         "type": "image",
         "title": "Question Diagram",
-        "content": "/images/page-28.png",
+        "content": "/images/questions/q44_latin_square.png",
         "caption": "Refer to diagram for Question 44 in Latin Squares"
       },
       "finalAnswer": "Option D (\"D\") is correct. Solution = D. A full grid analysis reveals D is the only symbol that satisfies the uniqueness constraints for the target column.",
@@ -2394,7 +2478,7 @@
     "correctAnswer": 3,
     "explanation": "Solution = E. Resolving row/column dependencies sequentially identifies E as the letter for the question mark cell.",
     "bookPage": 28,
-    "image": "/images/page-28.png",
+    "image": "/images/questions/q45_latin_square.png",
     "solution": {
       "understanding": "This question focuses on Advanced Elimination within Latin Squares. We are given: \"Look at the Latin square for Exercise 6 on Page 28. Which letter belongs in the field with the question mark?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
@@ -2406,7 +2490,7 @@
       "diagram": {
         "type": "image",
         "title": "Question Diagram",
-        "content": "/images/page-28.png",
+        "content": "/images/questions/q45_latin_square.png",
         "caption": "Refer to diagram for Question 45 in Latin Squares"
       },
       "finalAnswer": "Option D (\"E\") is correct. Solution = E. Resolving row/column dependencies sequentially identifies E as the letter for the question mark cell.",

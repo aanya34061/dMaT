@@ -28,6 +28,8 @@ export interface Question {
   explanation: string;
   bookPage: number;
   image?: string;
+  questionImage?: string;
+  optionImages?: string[];
   solution?: QuestionSolution;
 }
 

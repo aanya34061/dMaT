@@ -4,13 +4,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 interface OptionCardProps {
-  index: number; // 0, 1, 2, 3
+  index: number; // 0, 1, 2, 3...
   text: string;
   isSelected: boolean;
   isRevealed: boolean;
   isCorrect: boolean;
   onClick: () => void;
   disabled: boolean;
+  imagePreviews?: { img1?: string; img2?: string };
 }
 
 export default function OptionCard({
@@ -21,8 +22,9 @@ export default function OptionCard({
   isCorrect,
   onClick,
   disabled,
+  imagePreviews,
 }: OptionCardProps) {
-  const letters = ['A', 'B', 'C', 'D'];
+  const letter = String.fromCharCode(65 + index);
   
   let cardClass = 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-blue-500 dark:hover:border-blue-400';
   let badgeClass = 'bg-slate-100 dark:bg-slate-800 text-slate-650 dark:text-slate-400';
@@ -50,14 +52,40 @@ export default function OptionCard({
       onClick={onClick}
       disabled={disabled}
       type="button"
-      className={`w-full text-left p-4 rounded-xl border-2 transition-all flex items-center gap-4 ${cardClass} focus:outline-none focus:ring-2 focus:ring-blue-500/20 disabled:cursor-not-allowed`}
+      className={`w-full text-left p-4 rounded-xl border-2 transition-all flex items-center justify-between gap-4 ${cardClass} focus:outline-none focus:ring-2 focus:ring-blue-500/20 disabled:cursor-not-allowed`}
     >
-      <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm shrink-0 transition-colors ${badgeClass}`}>
-        {letters[index]}
+      <div className="flex items-center gap-3.5 min-w-0">
+        <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm shrink-0 transition-colors ${badgeClass}`}>
+          {letter}
+        </div>
+        <span className="text-slate-800 dark:text-slate-200 font-medium text-sm leading-relaxed">
+          {text}
+        </span>
       </div>
-      <span className="text-slate-800 dark:text-slate-200 font-medium text-sm leading-relaxed">
-        {text}
-      </span>
+
+      {imagePreviews && (imagePreviews.img1 || imagePreviews.img2) && (
+        <div className="flex items-center gap-1.5 shrink-0 bg-white dark:bg-slate-950 p-1.5 rounded-lg border border-slate-200 dark:border-slate-800">
+          {imagePreviews.img1 && (
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img
+              src={imagePreviews.img1}
+              alt="Image 1 Matrix"
+              className="w-10 h-10 object-contain rounded border border-slate-100 dark:border-slate-800"
+            />
+          )}
+          {imagePreviews.img1 && imagePreviews.img2 && (
+            <span className="text-xs text-slate-400 font-bold px-0.5">+</span>
+          )}
+          {imagePreviews.img2 && (
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img
+              src={imagePreviews.img2}
+              alt="Image 2 Matrix"
+              className="w-10 h-10 object-contain rounded border border-slate-100 dark:border-slate-800"
+            />
+          )}
+        </div>
+      )}
     </motion.button>
   );
 }

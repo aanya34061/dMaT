@@ -5,6 +5,7 @@ import { Question } from '../types';
 import OptionCard from './OptionCard';
 import BookmarkButton from './BookmarkButton';
 import MathRenderer from './MathRenderer';
+import ImageZoomModal from './ImageZoomModal';
 import {
   ChevronLeft,
   ChevronRight,
@@ -15,7 +16,9 @@ import {
   BookOpen,
   AlertTriangle,
   Send,
-  HelpCircle
+  HelpCircle,
+  Maximize2,
+  ZoomIn
 } from 'lucide-react';
 
 interface QuestionCardProps {
@@ -55,6 +58,7 @@ export default function QuestionCard({
 }: QuestionCardProps) {
   const isFigureSequence = question.chapter === 'Figure Sequences';
 
+  const [zoomSrc, setZoomSrc] = useState<string | null>(null);
   const [img1Val, setImg1Val] = useState<number | null>(null);
   const [img2Val, setImg2Val] = useState<number | null>(null);
 
@@ -76,8 +80,19 @@ export default function QuestionCard({
 
   const isCorrect = selectedOption === question.correctAnswer;
 
+  const displayQuestionImage = question.questionImage || question.image;
+  const optionImagesList = question.optionImages || question.options.map((_, idx) => `/images/figure-sequences/q${question.id}_opt_${idx}.png`);
+
   return (
     <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-sm transition-all space-y-6">
+      {/* Zoom Modal */}
+      <ImageZoomModal
+        isOpen={zoomSrc !== null}
+        src={zoomSrc || ''}
+        alt="High Resolution Question Figure"
+        onClose={() => setZoomSrc(null)}
+      />
+
       {/* Top Header Row */}
       <div className="flex flex-wrap justify-between items-center gap-3 border-b border-slate-100 dark:border-slate-800 pb-4">
         <div className="space-y-1">
@@ -128,14 +143,30 @@ export default function QuestionCard({
         <MathRenderer content={question.question} />
       </div>
 
-      {/* Diagram / Image */}
-      {question.image && (
-        <div className="my-4 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white p-3 shadow-xs">
+      {/* Diagram / Image with Zoom Button */}
+      {displayQuestionImage && (
+        <div className="relative group my-5 overflow-hidden rounded-3xl border-2 border-slate-200 dark:border-slate-700/80 bg-white dark:bg-slate-950 p-4 sm:p-6 shadow-sm">
+          <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-100 dark:border-slate-800">
+            <span className="text-xs font-extrabold uppercase tracking-wider text-slate-600 dark:text-slate-400 flex items-center gap-1.5">
+              <BookOpen className="w-3.5 h-3.5 text-blue-500" />
+              Complete Figure Sequence
+            </span>
+            <button
+              onClick={() => setZoomSrc(displayQuestionImage)}
+              type="button"
+              className="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-blue-600 dark:bg-slate-800 dark:hover:bg-blue-600 text-white text-xs font-bold shadow-sm flex items-center gap-1.5 transition-all focus:outline-none focus:ring-2 focus:ring-blue-400"
+              title="Inspect Figure in High Resolution"
+            >
+              <ZoomIn className="w-3.5 h-3.5" />
+              <span>Zoom High-Res</span>
+            </button>
+          </div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={question.image}
+            src={displayQuestionImage}
             alt="Question Diagram"
-            className="w-full max-h-[350px] object-contain mx-auto"
+            className="w-full h-auto max-h-[600px] object-contain mx-auto transition-transform duration-200 group-hover:scale-[1.005]"
+            style={{ imageRendering: 'crisp-edges' }}
           />
         </div>
       )}
@@ -143,82 +174,206 @@ export default function QuestionCard({
       {/* Options List */}
       {isFigureSequence ? (
         <div className="space-y-6">
-          <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">
-              Select Matrix for Image 1 (5th Matrix in sequence)
-            </h4>
-            <div className="grid grid-cols-3 gap-3">
-              {[1, 2, 3].map((val) => {
-                const isSelected = img1Val === val;
-                const isCorrectVal = isRevealed && (Math.floor(question.correctAnswer / 3) + 1) === val;
-                const isWrongVal = isRevealed && isSelected && !isCorrectVal;
-                return (
-                  <button
-                    key={val}
-                    disabled={isRevealed}
-                    onClick={() => {
-                      setImg1Val(val);
-                      if (img2Val !== null) {
-                        onSelectOption((val - 1) * 3 + (img2Val - 1));
-                      }
-                    }}
-                    type="button"
-                    className={`p-4 rounded-xl border text-center font-bold text-sm transition-all ${
-                      isSelected
-                        ? 'bg-blue-600 text-white border-blue-600 shadow-sm'
-                        : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-850'
-                    } ${
-                      isRevealed && isCorrectVal
-                        ? 'bg-emerald-600 text-white border-emerald-600'
-                        : ''
-                    } ${
-                      isRevealed && isWrongVal
-                        ? 'bg-rose-600 text-white border-rose-600'
-                        : ''
-                    }`}
-                  >
-                    Matrix {val}
-                  </button>
-                );
-              })}
+          {/* 2-Step Matrix Figure Selector */}
+          <div className="bg-slate-50 dark:bg-slate-800/40 p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-700/60 space-y-5">
+            {/* Matrix for Image 1 */}
+            <div className="space-y-2.5">
+              <div className="flex justify-between items-center">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                  Step 1: Select Matrix for Image 1 (5th Matrix in sequence)
+                </h4>
+                {img1Val !== null && (
+                  <span className="text-xs font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/60 px-2 py-0.5 rounded-md">
+                    Selected: Matrix {img1Val}
+                  </span>
+                )}
+              </div>
+              <div className="grid grid-cols-3 gap-3">
+                {[1, 2, 3].map((val) => {
+                  const isSelected = img1Val === val;
+                  const isCorrectVal = isRevealed && (Math.floor(question.correctAnswer / 3) + 1) === val;
+                  const isWrongVal = isRevealed && isSelected && !isCorrectVal;
+                  const thumbPath = `/images/matrix_choices/q${question.id}_img1_m${val}.png`;
+                  return (
+                    <button
+                      key={val}
+                      disabled={isRevealed}
+                      onClick={() => {
+                        const targetImg2 = img2Val !== null ? img2Val : 1;
+                        setImg1Val(val);
+                        if (img2Val === null) setImg2Val(1);
+                        onSelectOption((val - 1) * 3 + (targetImg2 - 1));
+                      }}
+                      type="button"
+                      className={`p-3 rounded-xl border text-center font-bold text-xs sm:text-sm transition-all flex flex-col items-center justify-center gap-2 ${
+                        isSelected
+                          ? 'bg-blue-600 text-white border-blue-600 shadow-md ring-2 ring-blue-500/30'
+                          : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:bg-blue-50/50 dark:hover:bg-slate-800'
+                      } ${
+                        isRevealed && isCorrectVal
+                          ? 'bg-emerald-600 text-white border-emerald-600 ring-2 ring-emerald-500/30'
+                          : ''
+                      } ${
+                        isRevealed && isWrongVal
+                          ? 'bg-rose-600 text-white border-rose-600 ring-2 ring-rose-500/30'
+                          : ''
+                      }`}
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={thumbPath}
+                        alt={`Image 1 Matrix ${val}`}
+                        className="w-full h-16 sm:h-20 object-contain rounded-md bg-white p-1 border border-slate-100 dark:border-slate-800"
+                        style={{ imageRendering: 'crisp-edges' }}
+                      />
+                      <span>Matrix {val}</span>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
+
+            {/* Matrix for Image 2 */}
+            <div className="space-y-2.5">
+              <div className="flex justify-between items-center">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300">
+                  Step 2: Select Matrix for Image 2 (6th Matrix in sequence)
+                </h4>
+                {img2Val !== null && (
+                  <span className="text-xs font-semibold text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-950/60 px-2 py-0.5 rounded-md">
+                    Selected: Matrix {img2Val}
+                  </span>
+                )}
+              </div>
+              <div className="grid grid-cols-3 gap-3">
+                {[1, 2, 3].map((val) => {
+                  const isSelected = img2Val === val;
+                  const isCorrectVal = isRevealed && ((question.correctAnswer % 3) + 1) === val;
+                  const isWrongVal = isRevealed && isSelected && !isCorrectVal;
+                  const thumbPath = `/images/matrix_choices/q${question.id}_img2_m${val}.png`;
+                  return (
+                    <button
+                      key={val}
+                      disabled={isRevealed}
+                      onClick={() => {
+                        const targetImg1 = img1Val !== null ? img1Val : 1;
+                        setImg2Val(val);
+                        if (img1Val === null) setImg1Val(1);
+                        onSelectOption((targetImg1 - 1) * 3 + (val - 1));
+                      }}
+                      type="button"
+                      className={`p-3 rounded-xl border text-center font-bold text-xs sm:text-sm transition-all flex flex-col items-center justify-center gap-2 ${
+                        isSelected
+                          ? 'bg-blue-600 text-white border-blue-600 shadow-md ring-2 ring-blue-500/30'
+                          : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:bg-blue-50/50 dark:hover:bg-slate-800'
+                      } ${
+                        isRevealed && isCorrectVal
+                          ? 'bg-emerald-600 text-white border-emerald-600 ring-2 ring-emerald-500/30'
+                          : ''
+                      } ${
+                        isRevealed && isWrongVal
+                          ? 'bg-rose-600 text-white border-rose-600 ring-2 ring-rose-500/30'
+                          : ''
+                      }`}
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={thumbPath}
+                        alt={`Image 2 Matrix ${val}`}
+                        className="w-full h-16 sm:h-20 object-contain rounded-md bg-white p-1 border border-slate-100 dark:border-slate-800"
+                        style={{ imageRendering: 'crisp-edges' }}
+                      />
+                      <span>Matrix {val}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Selected Option Summary Badge */}
+            {selectedOption !== null && (
+              <div className="p-3.5 rounded-xl bg-blue-50/80 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800/60 text-xs sm:text-sm font-semibold text-blue-900 dark:text-blue-200 flex items-center justify-between">
+                <span>
+                  Selected Combination: <strong className="font-extrabold text-blue-700 dark:text-blue-300">Option {String.fromCharCode(65 + selectedOption)}</strong> ({question.options[selectedOption]})
+                </span>
+                <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400 shrink-0" />
+              </div>
+            )}
           </div>
 
+          {/* Clean 2-Column Grid of High-Resolution Image Option Cards */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">
-              Select Matrix for Image 2 (6th Matrix in sequence)
+              Answer Choice Cards (Official dMAT 2-Column Grid):
             </h4>
-            <div className="grid grid-cols-3 gap-3">
-              {[1, 2, 3].map((val) => {
-                const isSelected = img2Val === val;
-                const isCorrectVal = isRevealed && ((question.correctAnswer % 3) + 1) === val;
-                const isWrongVal = isRevealed && isSelected && !isCorrectVal;
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {question.options.map((_, index) => {
+                const optLetter = String.fromCharCode(65 + index);
+                const optImg = optionImagesList[index];
+                const isSelected = selectedOption === index;
+                const isCorrectOpt = isRevealed && question.correctAnswer === index;
+                const isWrongOpt = isRevealed && isSelected && !isCorrectOpt;
+
+                let cardBorder = 'border-slate-200 dark:border-slate-800 hover:border-blue-500 hover:shadow-md';
+                let cardBg = 'bg-white dark:bg-slate-900';
+                let badgeStyle = 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300';
+
+                if (isSelected) {
+                  cardBorder = 'border-blue-600 dark:border-blue-500 ring-2 ring-blue-500/30';
+                  cardBg = 'bg-blue-50/40 dark:bg-blue-950/30';
+                  badgeStyle = 'bg-blue-600 text-white';
+                }
+
+                if (isRevealed) {
+                  if (isCorrectOpt) {
+                    cardBorder = 'border-emerald-500 dark:border-emerald-600 ring-2 ring-emerald-500/30';
+                    cardBg = 'bg-emerald-50/40 dark:bg-emerald-950/20';
+                    badgeStyle = 'bg-emerald-600 text-white';
+                  } else if (isWrongOpt) {
+                    cardBorder = 'border-rose-500 dark:border-rose-600 ring-2 ring-rose-500/30';
+                    cardBg = 'bg-rose-50/40 dark:bg-rose-950/20';
+                    badgeStyle = 'bg-rose-600 text-white';
+                  }
+                }
+
                 return (
                   <button
-                    key={val}
+                    key={index}
                     disabled={isRevealed}
-                    onClick={() => {
-                      setImg2Val(val);
-                      if (img1Val !== null) {
-                        onSelectOption((img1Val - 1) * 3 + (val - 1));
-                      }
-                    }}
+                    onClick={() => onSelectOption(index)}
                     type="button"
-                    className={`p-4 rounded-xl border text-center font-bold text-sm transition-all ${
-                      isSelected
-                        ? 'bg-blue-600 text-white border-blue-600 shadow-sm'
-                        : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-850'
-                    } ${
-                      isRevealed && isCorrectVal
-                        ? 'bg-emerald-600 text-white border-emerald-600'
-                        : ''
-                    } ${
-                      isRevealed && isWrongVal
-                        ? 'bg-rose-600 text-white border-rose-600'
-                        : ''
-                    }`}
+                    className={`relative w-full p-4 rounded-2xl border-2 transition-all flex flex-col gap-3 text-left focus:outline-none focus:ring-2 focus:ring-blue-500/20 disabled:cursor-not-allowed ${cardBorder} ${cardBg}`}
                   >
-                    Matrix {val}
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <span className={`w-8 h-8 rounded-xl flex items-center justify-center font-extrabold text-sm shadow-xs ${badgeStyle}`}>
+                          {optLetter}
+                        </span>
+                        <span className="text-xs font-bold text-slate-700 dark:text-slate-300">
+                          Option {optLetter}
+                        </span>
+                      </div>
+                      {isSelected && !isRevealed && (
+                        <CheckCircle className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                      )}
+                      {isRevealed && isCorrectOpt && (
+                        <CheckCircle className="w-5 h-5 text-emerald-600" />
+                      )}
+                      {isRevealed && isWrongOpt && (
+                        <XCircle className="w-5 h-5 text-rose-600" />
+                      )}
+                    </div>
+
+                    {/* High-Resolution Option Image */}
+                    <div className="w-full bg-white dark:bg-slate-950 p-2 rounded-xl border border-slate-100 dark:border-slate-800/80 flex items-center justify-center min-h-[110px]">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={optImg}
+                        alt={`Option ${optLetter}`}
+                        className="w-full max-h-[140px] object-contain mx-auto"
+                        style={{ imageRendering: 'crisp-edges' }}
+                      />
+                    </div>
                   </button>
                 );
               })}
