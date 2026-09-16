@@ -1,0 +1,2639 @@
+[
+  {
+    "id": "lt-001",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "2x2 Matrix Rank Determination",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the 2×2 matrix A defined as:\n\n$$A = \\begin{pmatrix} 3 & 2 \\\\ 6 & 4 \\end{pmatrix}$$\n\nWhat is the exact algebraic rank of matrix A?",
+    "options": [
+      "Rank = 1 (rows are linearly dependent)",
+      "Rank = 2 (full rank)",
+      "Rank = 0 (null matrix)",
+      "Rank = 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Observe that Row 2 is exactly 2 × Row 1 (6 = 2×3, 4 = 2×2). The determinant is det(A) = (3)(4) - (2)(6) = 12 - 12 = 0. Since there is at least one non-zero entry but the rows are linearly dependent, the matrix rank is exactly 1. Option A is correct.",
+    "solutionSteps": [
+      "1. Calculate determinant: det(A) = (3)(4) - (2)(6) = 0.",
+      "2. Row 2 is a scalar multiple of Row 1 (R2 = 2 * R1).",
+      "3. The number of linearly independent rows is 1.",
+      "4. Rank(A) = 1, matching Option A."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-002",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "Rank-Nullity Theorem Application",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A linear transformation T: R^4 -> R^4 is represented by a 4×4 matrix with rank 4. According to the Rank-Nullity Theorem, what is the dimension of the null space (kernel) of T?",
+    "options": [
+      "Nullity = 1",
+      "Nullity (dim ker T) = 0",
+      "Nullity = 4",
+      "Nullity = 4 [Variant 1]"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Rank-Nullity Theorem states: dim(Domain) = Rank(T) + Nullity(T). Here dim(Domain) = 4 and Rank(T) = 4. Therefore, Nullity(T) = 4 - 4 = 0. Option B is correct.",
+    "solutionSteps": [
+      "1. State Rank-Nullity theorem: dim(V) = rank(T) + nullity(T).",
+      "2. Substitute known values: 4 = 4 + nullity(T).",
+      "3. Solve for nullity: nullity(T) = 4 - 4 = 0.",
+      "4. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-003",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "2x2 Determinant Calculation",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Calculate the determinant of the 2×2 matrix:\n\n$$M = \\begin{pmatrix} 5 & 3 \\\\ 1 & 7 \\end{pmatrix}$$",
+    "options": [
+      "det(M) = 38",
+      "det(M) = 34",
+      "det(M) = 32",
+      "det(M) = 29"
+    ],
+    "correctAnswer": 2,
+    "explanation": "For a 2×2 matrix [[a, b], [c, d]], det(M) = ad - bc. Substituting: (5)(7) - (3)(1) = 35 - 3 = 32. Option C is correct.",
+    "solutionSteps": [
+      "1. Apply 2x2 determinant formula: det = ad - bc.",
+      "2. Multiply main diagonal: 5 × 7 = 35.",
+      "3. Multiply anti-diagonal: 3 × 1 = 3.",
+      "4. Subtract: 35 - 3 = 32.",
+      "5. Option C is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-004",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "2x2 Matrix Rank Determination",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the 2×2 matrix A defined as:\n\n$$A = \\begin{pmatrix} 2 & 2 \\\\ 4 & 4 \\end{pmatrix}$$\n\nWhat is the exact algebraic rank of matrix A?",
+    "options": [
+      "Rank = 4",
+      "Rank = 2 (full rank)",
+      "Rank = 0 (null matrix)",
+      "Rank = 1 (rows are linearly dependent)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Observe that Row 2 is exactly 2 × Row 1 (4 = 2×2, 4 = 2×2). The determinant is det(A) = (2)(4) - (2)(4) = 8 - 8 = 0. Since there is at least one non-zero entry but the rows are linearly dependent, the matrix rank is exactly 1. Option D is correct.",
+    "solutionSteps": [
+      "1. Calculate determinant: det(A) = (2)(4) - (2)(4) = 0.",
+      "2. Row 2 is a scalar multiple of Row 1 (R2 = 2 * R1).",
+      "3. The number of linearly independent rows is 1.",
+      "4. Rank(A) = 1, matching Option D."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-005",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "Rank-Nullity Theorem Application",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A linear transformation T: R^4 -> R^4 is represented by a 4×4 matrix with rank 4. According to the Rank-Nullity Theorem, what is the dimension of the null space (kernel) of T?",
+    "options": [
+      "Nullity (dim ker T) = 0",
+      "Nullity = 1",
+      "Nullity = 4",
+      "Nullity = 4 [Variant 1]"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The Rank-Nullity Theorem states: dim(Domain) = Rank(T) + Nullity(T). Here dim(Domain) = 4 and Rank(T) = 4. Therefore, Nullity(T) = 4 - 4 = 0. Option A is correct.",
+    "solutionSteps": [
+      "1. State Rank-Nullity theorem: dim(V) = rank(T) + nullity(T).",
+      "2. Substitute known values: 4 = 4 + nullity(T).",
+      "3. Solve for nullity: nullity(T) = 4 - 4 = 0.",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-006",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "2x2 Determinant Calculation",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "Calculate the determinant of the 2×2 matrix:\n\n$$M = \\begin{pmatrix} 3 & 3 \\\\ 1 & 6 \\end{pmatrix}$$",
+    "options": [
+      "det(M) = 17",
+      "det(M) = 15",
+      "det(M) = 21",
+      "det(M) = 12"
+    ],
+    "correctAnswer": 1,
+    "explanation": "For a 2×2 matrix [[a, b], [c, d]], det(M) = ad - bc. Substituting: (3)(6) - (3)(1) = 18 - 3 = 15. Option B is correct.",
+    "solutionSteps": [
+      "1. Apply 2x2 determinant formula: det = ad - bc.",
+      "2. Multiply main diagonal: 3 × 6 = 18.",
+      "3. Multiply anti-diagonal: 3 × 1 = 3.",
+      "4. Subtract: 18 - 3 = 15.",
+      "5. Option B is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-007",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "2x2 Matrix Rank Determination",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the 2×2 matrix A defined as:\n\n$$A = \\begin{pmatrix} 5 & 2 \\\\ 10 & 4 \\end{pmatrix}$$\n\nWhat is the exact algebraic rank of matrix A?",
+    "options": [
+      "Rank = 0 (null matrix)",
+      "Rank = 2 (full rank)",
+      "Rank = 1 (rows are linearly dependent)",
+      "Rank = 4"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Observe that Row 2 is exactly 2 × Row 1 (10 = 2×5, 4 = 2×2). The determinant is det(A) = (5)(4) - (2)(10) = 20 - 20 = 0. Since there is at least one non-zero entry but the rows are linearly dependent, the matrix rank is exactly 1. Option C is correct.",
+    "solutionSteps": [
+      "1. Calculate determinant: det(A) = (5)(4) - (2)(10) = 0.",
+      "2. Row 2 is a scalar multiple of Row 1 (R2 = 2 * R1).",
+      "3. The number of linearly independent rows is 1.",
+      "4. Rank(A) = 1, matching Option C."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-008",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "Rank-Nullity Theorem Application",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A linear transformation T: R^4 -> R^4 is represented by a 4×4 matrix with rank 4. According to the Rank-Nullity Theorem, what is the dimension of the null space (kernel) of T?",
+    "options": [
+      "Nullity = 4 [Variant 1]",
+      "Nullity = 1",
+      "Nullity = 4",
+      "Nullity (dim ker T) = 0"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The Rank-Nullity Theorem states: dim(Domain) = Rank(T) + Nullity(T). Here dim(Domain) = 4 and Rank(T) = 4. Therefore, Nullity(T) = 4 - 4 = 0. Option D is correct.",
+    "solutionSteps": [
+      "1. State Rank-Nullity theorem: dim(V) = rank(T) + nullity(T).",
+      "2. Substitute known values: 4 = 4 + nullity(T).",
+      "3. Solve for nullity: nullity(T) = 4 - 4 = 0.",
+      "4. Option D matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-009",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "2x2 Determinant Calculation",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Calculate the determinant of the 2×2 matrix:\n\n$$M = \\begin{pmatrix} 6 & 3 \\\\ 1 & 5 \\end{pmatrix}$$",
+    "options": [
+      "det(M) = 27",
+      "det(M) = 29",
+      "det(M) = 33",
+      "det(M) = 24"
+    ],
+    "correctAnswer": 0,
+    "explanation": "For a 2×2 matrix [[a, b], [c, d]], det(M) = ad - bc. Substituting: (6)(5) - (3)(1) = 30 - 3 = 27. Option A is correct.",
+    "solutionSteps": [
+      "1. Apply 2x2 determinant formula: det = ad - bc.",
+      "2. Multiply main diagonal: 6 × 5 = 30.",
+      "3. Multiply anti-diagonal: 3 × 1 = 3.",
+      "4. Subtract: 30 - 3 = 27.",
+      "5. Option A is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-010",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "2x2 Matrix Rank Determination",
+    "difficulty": "Very Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the 2×2 matrix A defined as:\n\n$$A = \\begin{pmatrix} 4 & 2 \\\\ 8 & 4 \\end{pmatrix}$$\n\nWhat is the exact algebraic rank of matrix A?",
+    "options": [
+      "Rank = 2 (full rank)",
+      "Rank = 1 (rows are linearly dependent)",
+      "Rank = 0 (null matrix)",
+      "Rank = 4"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Observe that Row 2 is exactly 2 × Row 1 (8 = 2×4, 4 = 2×2). The determinant is det(A) = (4)(4) - (2)(8) = 16 - 16 = 0. Since there is at least one non-zero entry but the rows are linearly dependent, the matrix rank is exactly 1. Option B is correct.",
+    "solutionSteps": [
+      "1. Calculate determinant: det(A) = (4)(4) - (2)(8) = 0.",
+      "2. Row 2 is a scalar multiple of Row 1 (R2 = 2 * R1).",
+      "3. The number of linearly independent rows is 1.",
+      "4. Rank(A) = 1, matching Option B."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-011",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "Rank-Nullity Theorem Application",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "A linear transformation T: R^4 -> R^4 is represented by a 4×4 matrix with rank 4. According to the Rank-Nullity Theorem, what is the dimension of the null space (kernel) of T?",
+    "options": [
+      "Nullity = 4",
+      "Nullity = 1",
+      "Nullity (dim ker T) = 0",
+      "Nullity = 4 [Variant 1]"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Rank-Nullity Theorem states: dim(Domain) = Rank(T) + Nullity(T). Here dim(Domain) = 4 and Rank(T) = 4. Therefore, Nullity(T) = 4 - 4 = 0. Option C is correct.",
+    "solutionSteps": [
+      "1. State Rank-Nullity theorem: dim(V) = rank(T) + nullity(T).",
+      "2. Substitute known values: 4 = 4 + nullity(T).",
+      "3. Solve for nullity: nullity(T) = 4 - 4 = 0.",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-012",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "2x2 Determinant Calculation",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Calculate the determinant of the 2×2 matrix:\n\n$$M = \\begin{pmatrix} 4 & 3 \\\\ 1 & 4 \\end{pmatrix}$$",
+    "options": [
+      "det(M) = 10",
+      "det(M) = 15",
+      "det(M) = 19",
+      "det(M) = 13"
+    ],
+    "correctAnswer": 3,
+    "explanation": "For a 2×2 matrix [[a, b], [c, d]], det(M) = ad - bc. Substituting: (4)(4) - (3)(1) = 16 - 3 = 13. Option D is correct.",
+    "solutionSteps": [
+      "1. Apply 2x2 determinant formula: det = ad - bc.",
+      "2. Multiply main diagonal: 4 × 4 = 16.",
+      "3. Multiply anti-diagonal: 3 × 1 = 3.",
+      "4. Subtract: 16 - 3 = 13.",
+      "5. Option D is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-013",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "2x2 Matrix Rank Determination",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the 2×2 matrix A defined as:\n\n$$A = \\begin{pmatrix} 3 & 2 \\\\ 6 & 4 \\end{pmatrix}$$\n\nWhat is the exact algebraic rank of matrix A?",
+    "options": [
+      "Rank = 1 (rows are linearly dependent)",
+      "Rank = 2 (full rank)",
+      "Rank = 0 (null matrix)",
+      "Rank = 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Observe that Row 2 is exactly 2 × Row 1 (6 = 2×3, 4 = 2×2). The determinant is det(A) = (3)(4) - (2)(6) = 12 - 12 = 0. Since there is at least one non-zero entry but the rows are linearly dependent, the matrix rank is exactly 1. Option A is correct.",
+    "solutionSteps": [
+      "1. Calculate determinant: det(A) = (3)(4) - (2)(6) = 0.",
+      "2. Row 2 is a scalar multiple of Row 1 (R2 = 2 * R1).",
+      "3. The number of linearly independent rows is 1.",
+      "4. Rank(A) = 1, matching Option A."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-014",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "Rank-Nullity Theorem Application",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "A linear transformation T: R^4 -> R^4 is represented by a 4×4 matrix with rank 4. According to the Rank-Nullity Theorem, what is the dimension of the null space (kernel) of T?",
+    "options": [
+      "Nullity = 1",
+      "Nullity (dim ker T) = 0",
+      "Nullity = 4",
+      "Nullity = 4 [Variant 1]"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Rank-Nullity Theorem states: dim(Domain) = Rank(T) + Nullity(T). Here dim(Domain) = 4 and Rank(T) = 4. Therefore, Nullity(T) = 4 - 4 = 0. Option B is correct.",
+    "solutionSteps": [
+      "1. State Rank-Nullity theorem: dim(V) = rank(T) + nullity(T).",
+      "2. Substitute known values: 4 = 4 + nullity(T).",
+      "3. Solve for nullity: nullity(T) = 4 - 4 = 0.",
+      "4. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-015",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "2x2 Determinant Calculation",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Calculate the determinant of the 2×2 matrix:\n\n$$M = \\begin{pmatrix} 2 & 3 \\\\ 1 & 7 \\end{pmatrix}$$",
+    "options": [
+      "det(M) = 17",
+      "det(M) = 13",
+      "det(M) = 11",
+      "det(M) = 8"
+    ],
+    "correctAnswer": 2,
+    "explanation": "For a 2×2 matrix [[a, b], [c, d]], det(M) = ad - bc. Substituting: (2)(7) - (3)(1) = 14 - 3 = 11. Option C is correct.",
+    "solutionSteps": [
+      "1. Apply 2x2 determinant formula: det = ad - bc.",
+      "2. Multiply main diagonal: 2 × 7 = 14.",
+      "3. Multiply anti-diagonal: 3 × 1 = 3.",
+      "4. Subtract: 14 - 3 = 11.",
+      "5. Option C is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-016",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "2x2 Matrix Rank Determination",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the 2×2 matrix A defined as:\n\n$$A = \\begin{pmatrix} 2 & 2 \\\\ 4 & 4 \\end{pmatrix}$$\n\nWhat is the exact algebraic rank of matrix A?",
+    "options": [
+      "Rank = 4",
+      "Rank = 2 (full rank)",
+      "Rank = 0 (null matrix)",
+      "Rank = 1 (rows are linearly dependent)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Observe that Row 2 is exactly 2 × Row 1 (4 = 2×2, 4 = 2×2). The determinant is det(A) = (2)(4) - (2)(4) = 8 - 8 = 0. Since there is at least one non-zero entry but the rows are linearly dependent, the matrix rank is exactly 1. Option D is correct.",
+    "solutionSteps": [
+      "1. Calculate determinant: det(A) = (2)(4) - (2)(4) = 0.",
+      "2. Row 2 is a scalar multiple of Row 1 (R2 = 2 * R1).",
+      "3. The number of linearly independent rows is 1.",
+      "4. Rank(A) = 1, matching Option D."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-017",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "Rank-Nullity Theorem Application",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A linear transformation T: R^4 -> R^4 is represented by a 4×4 matrix with rank 4. According to the Rank-Nullity Theorem, what is the dimension of the null space (kernel) of T?",
+    "options": [
+      "Nullity (dim ker T) = 0",
+      "Nullity = 1",
+      "Nullity = 4",
+      "Nullity = 4 [Variant 1]"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The Rank-Nullity Theorem states: dim(Domain) = Rank(T) + Nullity(T). Here dim(Domain) = 4 and Rank(T) = 4. Therefore, Nullity(T) = 4 - 4 = 0. Option A is correct.",
+    "solutionSteps": [
+      "1. State Rank-Nullity theorem: dim(V) = rank(T) + nullity(T).",
+      "2. Substitute known values: 4 = 4 + nullity(T).",
+      "3. Solve for nullity: nullity(T) = 4 - 4 = 0.",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-018",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "2x2 Determinant Calculation",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Calculate the determinant of the 2×2 matrix:\n\n$$M = \\begin{pmatrix} 5 & 3 \\\\ 1 & 6 \\end{pmatrix}$$",
+    "options": [
+      "det(M) = 29",
+      "det(M) = 27",
+      "det(M) = 33",
+      "det(M) = 24"
+    ],
+    "correctAnswer": 1,
+    "explanation": "For a 2×2 matrix [[a, b], [c, d]], det(M) = ad - bc. Substituting: (5)(6) - (3)(1) = 30 - 3 = 27. Option B is correct.",
+    "solutionSteps": [
+      "1. Apply 2x2 determinant formula: det = ad - bc.",
+      "2. Multiply main diagonal: 5 × 6 = 30.",
+      "3. Multiply anti-diagonal: 3 × 1 = 3.",
+      "4. Subtract: 30 - 3 = 27.",
+      "5. Option B is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-019",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "2x2 Matrix Rank Determination",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the 2×2 matrix A defined as:\n\n$$A = \\begin{pmatrix} 5 & 2 \\\\ 10 & 4 \\end{pmatrix}$$\n\nWhat is the exact algebraic rank of matrix A?",
+    "options": [
+      "Rank = 0 (null matrix)",
+      "Rank = 2 (full rank)",
+      "Rank = 1 (rows are linearly dependent)",
+      "Rank = 4"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Observe that Row 2 is exactly 2 × Row 1 (10 = 2×5, 4 = 2×2). The determinant is det(A) = (5)(4) - (2)(10) = 20 - 20 = 0. Since there is at least one non-zero entry but the rows are linearly dependent, the matrix rank is exactly 1. Option C is correct.",
+    "solutionSteps": [
+      "1. Calculate determinant: det(A) = (5)(4) - (2)(10) = 0.",
+      "2. Row 2 is a scalar multiple of Row 1 (R2 = 2 * R1).",
+      "3. The number of linearly independent rows is 1.",
+      "4. Rank(A) = 1, matching Option C."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-020",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "Rank-Nullity Theorem Application",
+    "difficulty": "Very Hard",
+    "questionType": "multiple_choice",
+    "questionText": "A linear transformation T: R^4 -> R^4 is represented by a 4×4 matrix with rank 4. According to the Rank-Nullity Theorem, what is the dimension of the null space (kernel) of T?",
+    "options": [
+      "Nullity = 4 [Variant 1]",
+      "Nullity = 1",
+      "Nullity = 4",
+      "Nullity (dim ker T) = 0"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The Rank-Nullity Theorem states: dim(Domain) = Rank(T) + Nullity(T). Here dim(Domain) = 4 and Rank(T) = 4. Therefore, Nullity(T) = 4 - 4 = 0. Option D is correct.",
+    "solutionSteps": [
+      "1. State Rank-Nullity theorem: dim(V) = rank(T) + nullity(T).",
+      "2. Substitute known values: 4 = 4 + nullity(T).",
+      "3. Solve for nullity: nullity(T) = 4 - 4 = 0.",
+      "4. Option D matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-021",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "2x2 Determinant Calculation",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "Calculate the determinant of the 2×2 matrix:\n\n$$M = \\begin{pmatrix} 3 & 3 \\\\ 1 & 5 \\end{pmatrix}$$",
+    "options": [
+      "det(M) = 12",
+      "det(M) = 14",
+      "det(M) = 18",
+      "det(M) = 9"
+    ],
+    "correctAnswer": 0,
+    "explanation": "For a 2×2 matrix [[a, b], [c, d]], det(M) = ad - bc. Substituting: (3)(5) - (3)(1) = 15 - 3 = 12. Option A is correct.",
+    "solutionSteps": [
+      "1. Apply 2x2 determinant formula: det = ad - bc.",
+      "2. Multiply main diagonal: 3 × 5 = 15.",
+      "3. Multiply anti-diagonal: 3 × 1 = 3.",
+      "4. Subtract: 15 - 3 = 12.",
+      "5. Option A is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-022",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "2x2 Matrix Rank Determination",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the 2×2 matrix A defined as:\n\n$$A = \\begin{pmatrix} 4 & 2 \\\\ 8 & 4 \\end{pmatrix}$$\n\nWhat is the exact algebraic rank of matrix A?",
+    "options": [
+      "Rank = 2 (full rank)",
+      "Rank = 1 (rows are linearly dependent)",
+      "Rank = 0 (null matrix)",
+      "Rank = 4"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Observe that Row 2 is exactly 2 × Row 1 (8 = 2×4, 4 = 2×2). The determinant is det(A) = (4)(4) - (2)(8) = 16 - 16 = 0. Since there is at least one non-zero entry but the rows are linearly dependent, the matrix rank is exactly 1. Option B is correct.",
+    "solutionSteps": [
+      "1. Calculate determinant: det(A) = (4)(4) - (2)(8) = 0.",
+      "2. Row 2 is a scalar multiple of Row 1 (R2 = 2 * R1).",
+      "3. The number of linearly independent rows is 1.",
+      "4. Rank(A) = 1, matching Option B."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-023",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "Rank-Nullity Theorem Application",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A linear transformation T: R^4 -> R^4 is represented by a 4×4 matrix with rank 4. According to the Rank-Nullity Theorem, what is the dimension of the null space (kernel) of T?",
+    "options": [
+      "Nullity = 4",
+      "Nullity = 1",
+      "Nullity (dim ker T) = 0",
+      "Nullity = 4 [Variant 1]"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Rank-Nullity Theorem states: dim(Domain) = Rank(T) + Nullity(T). Here dim(Domain) = 4 and Rank(T) = 4. Therefore, Nullity(T) = 4 - 4 = 0. Option C is correct.",
+    "solutionSteps": [
+      "1. State Rank-Nullity theorem: dim(V) = rank(T) + nullity(T).",
+      "2. Substitute known values: 4 = 4 + nullity(T).",
+      "3. Solve for nullity: nullity(T) = 4 - 4 = 0.",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-024",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "2x2 Determinant Calculation",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Calculate the determinant of the 2×2 matrix:\n\n$$M = \\begin{pmatrix} 6 & 3 \\\\ 1 & 4 \\end{pmatrix}$$",
+    "options": [
+      "det(M) = 18",
+      "det(M) = 23",
+      "det(M) = 27",
+      "det(M) = 21"
+    ],
+    "correctAnswer": 3,
+    "explanation": "For a 2×2 matrix [[a, b], [c, d]], det(M) = ad - bc. Substituting: (6)(4) - (3)(1) = 24 - 3 = 21. Option D is correct.",
+    "solutionSteps": [
+      "1. Apply 2x2 determinant formula: det = ad - bc.",
+      "2. Multiply main diagonal: 6 × 4 = 24.",
+      "3. Multiply anti-diagonal: 3 × 1 = 3.",
+      "4. Subtract: 24 - 3 = 21.",
+      "5. Option D is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-025",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Matrices, Linear Maps, & Matrix Rank",
+    "subtopic": "2x2 Matrix Rank Determination",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the 2×2 matrix A defined as:\n\n$$A = \\begin{pmatrix} 3 & 2 \\\\ 6 & 4 \\end{pmatrix}$$\n\nWhat is the exact algebraic rank of matrix A?",
+    "options": [
+      "Rank = 1 (rows are linearly dependent)",
+      "Rank = 2 (full rank)",
+      "Rank = 0 (null matrix)",
+      "Rank = 4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Observe that Row 2 is exactly 2 × Row 1 (6 = 2×3, 4 = 2×2). The determinant is det(A) = (3)(4) - (2)(6) = 12 - 12 = 0. Since there is at least one non-zero entry but the rows are linearly dependent, the matrix rank is exactly 1. Option A is correct.",
+    "solutionSteps": [
+      "1. Calculate determinant: det(A) = (3)(4) - (2)(6) = 0.",
+      "2. Row 2 is a scalar multiple of Row 1 (R2 = 2 * R1).",
+      "3. The number of linearly independent rows is 1.",
+      "4. Rank(A) = 1, matching Option A."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-026",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Eigenvalue Spectrum Determination",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the real symmetric matrix:\n\n$$A = \\begin{pmatrix} 3 & 1 \\\\ 1 & 3 \\end{pmatrix}$$\n\nWhat are the exact eigenvalues λ of matrix A?",
+    "options": [
+      "λ₁ = 6, λ₂ = 0",
+      "λ₁ = 4, λ₂ = 2",
+      "λ₁ = 5, λ₂ = 1",
+      "λ₁ = 3, λ₂ = 3"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The characteristic equation is det(A - λI) = (3 - λ)² - (1)² = 0. Solving: (3 - λ)² = 1 => 3 - λ = ±1 => λ = 3 ± 1. Thus the eigenvalues are λ₁ = 4 and λ₂ = 2. Option B is correct.",
+    "solutionSteps": [
+      "1. Set up characteristic polynomial: det(A - λI) = 0.",
+      "2. Expand: (3 - λ)² - 1 = 0.",
+      "3. Factor: (3 - λ - 1)(3 - λ + 1) = (4 - λ)(2 - λ) = 0.",
+      "4. Roots are λ₁ = 4, λ₂ = 2.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-027",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Matrix Invertibility Equivalence",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Which of the following is a necessary and sufficient condition for an n×n square matrix A to be invertible (non-singular)?",
+    "options": [
+      "All matrix elements a_ij must be strictly non-zero",
+      "The trace of A must be strictly positive (tr(A) > 0)",
+      "The determinant of A is non-zero (det(A) ≠ 0), and all eigenvalues are non-zero",
+      "Matrix A must be symmetric (A = A^T)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A square matrix A is invertible if and only if det(A) ≠ 0. Since det(A) equals the product of all its eigenvalues (det(A) = ∏ λ_i), det(A) ≠ 0 is equivalent to having zero not in the eigenvalue spectrum (λ_i ≠ 0 for all i). Option C is correct.",
+    "solutionSteps": [
+      "1. Recall fundamental invertibility theorem for square matrices.",
+      "2. det(A) ≠ 0 is equivalent to full rank and non-zero eigenvalues.",
+      "3. Trace, symmetry, and non-zero entries are neither necessary nor sufficient.",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-028",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Eigenvalue Spectrum Determination",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the real symmetric matrix:\n\n$$A = \\begin{pmatrix} 2 & 1 \\\\ 1 & 2 \\end{pmatrix}$$\n\nWhat are the exact eigenvalues λ of matrix A?",
+    "options": [
+      "λ₁ = 2, λ₂ = 2",
+      "λ₁ = 4, λ₂ = 0",
+      "λ₁ = 4, λ₂ = 0 [Variant 1]",
+      "λ₁ = 3, λ₂ = 1"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The characteristic equation is det(A - λI) = (2 - λ)² - (1)² = 0. Solving: (2 - λ)² = 1 => 2 - λ = ±1 => λ = 2 ± 1. Thus the eigenvalues are λ₁ = 3 and λ₂ = 1. Option D is correct.",
+    "solutionSteps": [
+      "1. Set up characteristic polynomial: det(A - λI) = 0.",
+      "2. Expand: (2 - λ)² - 1 = 0.",
+      "3. Factor: (2 - λ - 1)(2 - λ + 1) = (3 - λ)(1 - λ) = 0.",
+      "4. Roots are λ₁ = 3, λ₂ = 1.",
+      "5. Confirm Option D."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-029",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Matrix Invertibility Equivalence",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Which of the following is a necessary and sufficient condition for an n×n square matrix A to be invertible (non-singular)?",
+    "options": [
+      "The determinant of A is non-zero (det(A) ≠ 0), and all eigenvalues are non-zero",
+      "The trace of A must be strictly positive (tr(A) > 0)",
+      "All matrix elements a_ij must be strictly non-zero",
+      "Matrix A must be symmetric (A = A^T)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A square matrix A is invertible if and only if det(A) ≠ 0. Since det(A) equals the product of all its eigenvalues (det(A) = ∏ λ_i), det(A) ≠ 0 is equivalent to having zero not in the eigenvalue spectrum (λ_i ≠ 0 for all i). Option A is correct.",
+    "solutionSteps": [
+      "1. Recall fundamental invertibility theorem for square matrices.",
+      "2. det(A) ≠ 0 is equivalent to full rank and non-zero eigenvalues.",
+      "3. Trace, symmetry, and non-zero entries are neither necessary nor sufficient.",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-030",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Eigenvalue Spectrum Determination",
+    "difficulty": "Very Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the real symmetric matrix:\n\n$$A = \\begin{pmatrix} 4 & 1 \\\\ 1 & 4 \\end{pmatrix}$$\n\nWhat are the exact eigenvalues λ of matrix A?",
+    "options": [
+      "λ₁ = 8, λ₂ = 0",
+      "λ₁ = 5, λ₂ = 3",
+      "λ₁ = 6, λ₂ = 2",
+      "λ₁ = 4, λ₂ = 4"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The characteristic equation is det(A - λI) = (4 - λ)² - (1)² = 0. Solving: (4 - λ)² = 1 => 4 - λ = ±1 => λ = 4 ± 1. Thus the eigenvalues are λ₁ = 5 and λ₂ = 3. Option B is correct.",
+    "solutionSteps": [
+      "1. Set up characteristic polynomial: det(A - λI) = 0.",
+      "2. Expand: (4 - λ)² - 1 = 0.",
+      "3. Factor: (4 - λ - 1)(4 - λ + 1) = (5 - λ)(3 - λ) = 0.",
+      "4. Roots are λ₁ = 5, λ₂ = 3.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-031",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Matrix Invertibility Equivalence",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "Which of the following is a necessary and sufficient condition for an n×n square matrix A to be invertible (non-singular)?",
+    "options": [
+      "All matrix elements a_ij must be strictly non-zero",
+      "The trace of A must be strictly positive (tr(A) > 0)",
+      "The determinant of A is non-zero (det(A) ≠ 0), and all eigenvalues are non-zero",
+      "Matrix A must be symmetric (A = A^T)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A square matrix A is invertible if and only if det(A) ≠ 0. Since det(A) equals the product of all its eigenvalues (det(A) = ∏ λ_i), det(A) ≠ 0 is equivalent to having zero not in the eigenvalue spectrum (λ_i ≠ 0 for all i). Option C is correct.",
+    "solutionSteps": [
+      "1. Recall fundamental invertibility theorem for square matrices.",
+      "2. det(A) ≠ 0 is equivalent to full rank and non-zero eigenvalues.",
+      "3. Trace, symmetry, and non-zero entries are neither necessary nor sufficient.",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-032",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Eigenvalue Spectrum Determination",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the real symmetric matrix:\n\n$$A = \\begin{pmatrix} 3 & 1 \\\\ 1 & 3 \\end{pmatrix}$$\n\nWhat are the exact eigenvalues λ of matrix A?",
+    "options": [
+      "λ₁ = 3, λ₂ = 3",
+      "λ₁ = 6, λ₂ = 0",
+      "λ₁ = 5, λ₂ = 1",
+      "λ₁ = 4, λ₂ = 2"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The characteristic equation is det(A - λI) = (3 - λ)² - (1)² = 0. Solving: (3 - λ)² = 1 => 3 - λ = ±1 => λ = 3 ± 1. Thus the eigenvalues are λ₁ = 4 and λ₂ = 2. Option D is correct.",
+    "solutionSteps": [
+      "1. Set up characteristic polynomial: det(A - λI) = 0.",
+      "2. Expand: (3 - λ)² - 1 = 0.",
+      "3. Factor: (3 - λ - 1)(3 - λ + 1) = (4 - λ)(2 - λ) = 0.",
+      "4. Roots are λ₁ = 4, λ₂ = 2.",
+      "5. Confirm Option D."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-033",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Matrix Invertibility Equivalence",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Which of the following is a necessary and sufficient condition for an n×n square matrix A to be invertible (non-singular)?",
+    "options": [
+      "The determinant of A is non-zero (det(A) ≠ 0), and all eigenvalues are non-zero",
+      "The trace of A must be strictly positive (tr(A) > 0)",
+      "All matrix elements a_ij must be strictly non-zero",
+      "Matrix A must be symmetric (A = A^T)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A square matrix A is invertible if and only if det(A) ≠ 0. Since det(A) equals the product of all its eigenvalues (det(A) = ∏ λ_i), det(A) ≠ 0 is equivalent to having zero not in the eigenvalue spectrum (λ_i ≠ 0 for all i). Option A is correct.",
+    "solutionSteps": [
+      "1. Recall fundamental invertibility theorem for square matrices.",
+      "2. det(A) ≠ 0 is equivalent to full rank and non-zero eigenvalues.",
+      "3. Trace, symmetry, and non-zero entries are neither necessary nor sufficient.",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-034",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Eigenvalue Spectrum Determination",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the real symmetric matrix:\n\n$$A = \\begin{pmatrix} 2 & 1 \\\\ 1 & 2 \\end{pmatrix}$$\n\nWhat are the exact eigenvalues λ of matrix A?",
+    "options": [
+      "λ₁ = 4, λ₂ = 0",
+      "λ₁ = 3, λ₂ = 1",
+      "λ₁ = 4, λ₂ = 0 [Variant 1]",
+      "λ₁ = 2, λ₂ = 2"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The characteristic equation is det(A - λI) = (2 - λ)² - (1)² = 0. Solving: (2 - λ)² = 1 => 2 - λ = ±1 => λ = 2 ± 1. Thus the eigenvalues are λ₁ = 3 and λ₂ = 1. Option B is correct.",
+    "solutionSteps": [
+      "1. Set up characteristic polynomial: det(A - λI) = 0.",
+      "2. Expand: (2 - λ)² - 1 = 0.",
+      "3. Factor: (2 - λ - 1)(2 - λ + 1) = (3 - λ)(1 - λ) = 0.",
+      "4. Roots are λ₁ = 3, λ₂ = 1.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-035",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Matrix Invertibility Equivalence",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Which of the following is a necessary and sufficient condition for an n×n square matrix A to be invertible (non-singular)?",
+    "options": [
+      "All matrix elements a_ij must be strictly non-zero",
+      "The trace of A must be strictly positive (tr(A) > 0)",
+      "The determinant of A is non-zero (det(A) ≠ 0), and all eigenvalues are non-zero",
+      "Matrix A must be symmetric (A = A^T)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A square matrix A is invertible if and only if det(A) ≠ 0. Since det(A) equals the product of all its eigenvalues (det(A) = ∏ λ_i), det(A) ≠ 0 is equivalent to having zero not in the eigenvalue spectrum (λ_i ≠ 0 for all i). Option C is correct.",
+    "solutionSteps": [
+      "1. Recall fundamental invertibility theorem for square matrices.",
+      "2. det(A) ≠ 0 is equivalent to full rank and non-zero eigenvalues.",
+      "3. Trace, symmetry, and non-zero entries are neither necessary nor sufficient.",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-036",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Eigenvalue Spectrum Determination",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the real symmetric matrix:\n\n$$A = \\begin{pmatrix} 4 & 1 \\\\ 1 & 4 \\end{pmatrix}$$\n\nWhat are the exact eigenvalues λ of matrix A?",
+    "options": [
+      "λ₁ = 4, λ₂ = 4",
+      "λ₁ = 8, λ₂ = 0",
+      "λ₁ = 6, λ₂ = 2",
+      "λ₁ = 5, λ₂ = 3"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The characteristic equation is det(A - λI) = (4 - λ)² - (1)² = 0. Solving: (4 - λ)² = 1 => 4 - λ = ±1 => λ = 4 ± 1. Thus the eigenvalues are λ₁ = 5 and λ₂ = 3. Option D is correct.",
+    "solutionSteps": [
+      "1. Set up characteristic polynomial: det(A - λI) = 0.",
+      "2. Expand: (4 - λ)² - 1 = 0.",
+      "3. Factor: (4 - λ - 1)(4 - λ + 1) = (5 - λ)(3 - λ) = 0.",
+      "4. Roots are λ₁ = 5, λ₂ = 3.",
+      "5. Confirm Option D."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-037",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Matrix Invertibility Equivalence",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Which of the following is a necessary and sufficient condition for an n×n square matrix A to be invertible (non-singular)?",
+    "options": [
+      "The determinant of A is non-zero (det(A) ≠ 0), and all eigenvalues are non-zero",
+      "The trace of A must be strictly positive (tr(A) > 0)",
+      "All matrix elements a_ij must be strictly non-zero",
+      "Matrix A must be symmetric (A = A^T)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A square matrix A is invertible if and only if det(A) ≠ 0. Since det(A) equals the product of all its eigenvalues (det(A) = ∏ λ_i), det(A) ≠ 0 is equivalent to having zero not in the eigenvalue spectrum (λ_i ≠ 0 for all i). Option A is correct.",
+    "solutionSteps": [
+      "1. Recall fundamental invertibility theorem for square matrices.",
+      "2. det(A) ≠ 0 is equivalent to full rank and non-zero eigenvalues.",
+      "3. Trace, symmetry, and non-zero entries are neither necessary nor sufficient.",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-038",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Eigenvalue Spectrum Determination",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the real symmetric matrix:\n\n$$A = \\begin{pmatrix} 3 & 1 \\\\ 1 & 3 \\end{pmatrix}$$\n\nWhat are the exact eigenvalues λ of matrix A?",
+    "options": [
+      "λ₁ = 6, λ₂ = 0",
+      "λ₁ = 4, λ₂ = 2",
+      "λ₁ = 5, λ₂ = 1",
+      "λ₁ = 3, λ₂ = 3"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The characteristic equation is det(A - λI) = (3 - λ)² - (1)² = 0. Solving: (3 - λ)² = 1 => 3 - λ = ±1 => λ = 3 ± 1. Thus the eigenvalues are λ₁ = 4 and λ₂ = 2. Option B is correct.",
+    "solutionSteps": [
+      "1. Set up characteristic polynomial: det(A - λI) = 0.",
+      "2. Expand: (3 - λ)² - 1 = 0.",
+      "3. Factor: (3 - λ - 1)(3 - λ + 1) = (4 - λ)(2 - λ) = 0.",
+      "4. Roots are λ₁ = 4, λ₂ = 2.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-039",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Matrix Invertibility Equivalence",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Which of the following is a necessary and sufficient condition for an n×n square matrix A to be invertible (non-singular)?",
+    "options": [
+      "All matrix elements a_ij must be strictly non-zero",
+      "The trace of A must be strictly positive (tr(A) > 0)",
+      "The determinant of A is non-zero (det(A) ≠ 0), and all eigenvalues are non-zero",
+      "Matrix A must be symmetric (A = A^T)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A square matrix A is invertible if and only if det(A) ≠ 0. Since det(A) equals the product of all its eigenvalues (det(A) = ∏ λ_i), det(A) ≠ 0 is equivalent to having zero not in the eigenvalue spectrum (λ_i ≠ 0 for all i). Option C is correct.",
+    "solutionSteps": [
+      "1. Recall fundamental invertibility theorem for square matrices.",
+      "2. det(A) ≠ 0 is equivalent to full rank and non-zero eigenvalues.",
+      "3. Trace, symmetry, and non-zero entries are neither necessary nor sufficient.",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-040",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Eigenvalue Spectrum Determination",
+    "difficulty": "Very Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the real symmetric matrix:\n\n$$A = \\begin{pmatrix} 2 & 1 \\\\ 1 & 2 \\end{pmatrix}$$\n\nWhat are the exact eigenvalues λ of matrix A?",
+    "options": [
+      "λ₁ = 2, λ₂ = 2",
+      "λ₁ = 4, λ₂ = 0",
+      "λ₁ = 4, λ₂ = 0 [Variant 1]",
+      "λ₁ = 3, λ₂ = 1"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The characteristic equation is det(A - λI) = (2 - λ)² - (1)² = 0. Solving: (2 - λ)² = 1 => 2 - λ = ±1 => λ = 2 ± 1. Thus the eigenvalues are λ₁ = 3 and λ₂ = 1. Option D is correct.",
+    "solutionSteps": [
+      "1. Set up characteristic polynomial: det(A - λI) = 0.",
+      "2. Expand: (2 - λ)² - 1 = 0.",
+      "3. Factor: (2 - λ - 1)(2 - λ + 1) = (3 - λ)(1 - λ) = 0.",
+      "4. Roots are λ₁ = 3, λ₂ = 1.",
+      "5. Confirm Option D."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-041",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Matrix Invertibility Equivalence",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "Which of the following is a necessary and sufficient condition for an n×n square matrix A to be invertible (non-singular)?",
+    "options": [
+      "The determinant of A is non-zero (det(A) ≠ 0), and all eigenvalues are non-zero",
+      "The trace of A must be strictly positive (tr(A) > 0)",
+      "All matrix elements a_ij must be strictly non-zero",
+      "Matrix A must be symmetric (A = A^T)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A square matrix A is invertible if and only if det(A) ≠ 0. Since det(A) equals the product of all its eigenvalues (det(A) = ∏ λ_i), det(A) ≠ 0 is equivalent to having zero not in the eigenvalue spectrum (λ_i ≠ 0 for all i). Option A is correct.",
+    "solutionSteps": [
+      "1. Recall fundamental invertibility theorem for square matrices.",
+      "2. det(A) ≠ 0 is equivalent to full rank and non-zero eigenvalues.",
+      "3. Trace, symmetry, and non-zero entries are neither necessary nor sufficient.",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-042",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Eigenvalue Spectrum Determination",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the real symmetric matrix:\n\n$$A = \\begin{pmatrix} 4 & 1 \\\\ 1 & 4 \\end{pmatrix}$$\n\nWhat are the exact eigenvalues λ of matrix A?",
+    "options": [
+      "λ₁ = 8, λ₂ = 0",
+      "λ₁ = 5, λ₂ = 3",
+      "λ₁ = 6, λ₂ = 2",
+      "λ₁ = 4, λ₂ = 4"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The characteristic equation is det(A - λI) = (4 - λ)² - (1)² = 0. Solving: (4 - λ)² = 1 => 4 - λ = ±1 => λ = 4 ± 1. Thus the eigenvalues are λ₁ = 5 and λ₂ = 3. Option B is correct.",
+    "solutionSteps": [
+      "1. Set up characteristic polynomial: det(A - λI) = 0.",
+      "2. Expand: (4 - λ)² - 1 = 0.",
+      "3. Factor: (4 - λ - 1)(4 - λ + 1) = (5 - λ)(3 - λ) = 0.",
+      "4. Roots are λ₁ = 5, λ₂ = 3.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-043",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Matrix Invertibility Equivalence",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Which of the following is a necessary and sufficient condition for an n×n square matrix A to be invertible (non-singular)?",
+    "options": [
+      "All matrix elements a_ij must be strictly non-zero",
+      "The trace of A must be strictly positive (tr(A) > 0)",
+      "The determinant of A is non-zero (det(A) ≠ 0), and all eigenvalues are non-zero",
+      "Matrix A must be symmetric (A = A^T)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A square matrix A is invertible if and only if det(A) ≠ 0. Since det(A) equals the product of all its eigenvalues (det(A) = ∏ λ_i), det(A) ≠ 0 is equivalent to having zero not in the eigenvalue spectrum (λ_i ≠ 0 for all i). Option C is correct.",
+    "solutionSteps": [
+      "1. Recall fundamental invertibility theorem for square matrices.",
+      "2. det(A) ≠ 0 is equivalent to full rank and non-zero eigenvalues.",
+      "3. Trace, symmetry, and non-zero entries are neither necessary nor sufficient.",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-044",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Eigenvalue Spectrum Determination",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the real symmetric matrix:\n\n$$A = \\begin{pmatrix} 3 & 1 \\\\ 1 & 3 \\end{pmatrix}$$\n\nWhat are the exact eigenvalues λ of matrix A?",
+    "options": [
+      "λ₁ = 3, λ₂ = 3",
+      "λ₁ = 6, λ₂ = 0",
+      "λ₁ = 5, λ₂ = 1",
+      "λ₁ = 4, λ₂ = 2"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The characteristic equation is det(A - λI) = (3 - λ)² - (1)² = 0. Solving: (3 - λ)² = 1 => 3 - λ = ±1 => λ = 3 ± 1. Thus the eigenvalues are λ₁ = 4 and λ₂ = 2. Option D is correct.",
+    "solutionSteps": [
+      "1. Set up characteristic polynomial: det(A - λI) = 0.",
+      "2. Expand: (3 - λ)² - 1 = 0.",
+      "3. Factor: (3 - λ - 1)(3 - λ + 1) = (4 - λ)(2 - λ) = 0.",
+      "4. Roots are λ₁ = 4, λ₂ = 2.",
+      "5. Confirm Option D."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-045",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Matrix Invertibility Equivalence",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Which of the following is a necessary and sufficient condition for an n×n square matrix A to be invertible (non-singular)?",
+    "options": [
+      "The determinant of A is non-zero (det(A) ≠ 0), and all eigenvalues are non-zero",
+      "The trace of A must be strictly positive (tr(A) > 0)",
+      "All matrix elements a_ij must be strictly non-zero",
+      "Matrix A must be symmetric (A = A^T)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A square matrix A is invertible if and only if det(A) ≠ 0. Since det(A) equals the product of all its eigenvalues (det(A) = ∏ λ_i), det(A) ≠ 0 is equivalent to having zero not in the eigenvalue spectrum (λ_i ≠ 0 for all i). Option A is correct.",
+    "solutionSteps": [
+      "1. Recall fundamental invertibility theorem for square matrices.",
+      "2. det(A) ≠ 0 is equivalent to full rank and non-zero eigenvalues.",
+      "3. Trace, symmetry, and non-zero entries are neither necessary nor sufficient.",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-046",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Eigenvalue Spectrum Determination",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the real symmetric matrix:\n\n$$A = \\begin{pmatrix} 2 & 1 \\\\ 1 & 2 \\end{pmatrix}$$\n\nWhat are the exact eigenvalues λ of matrix A?",
+    "options": [
+      "λ₁ = 4, λ₂ = 0",
+      "λ₁ = 3, λ₂ = 1",
+      "λ₁ = 4, λ₂ = 0 [Variant 1]",
+      "λ₁ = 2, λ₂ = 2"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The characteristic equation is det(A - λI) = (2 - λ)² - (1)² = 0. Solving: (2 - λ)² = 1 => 2 - λ = ±1 => λ = 2 ± 1. Thus the eigenvalues are λ₁ = 3 and λ₂ = 1. Option B is correct.",
+    "solutionSteps": [
+      "1. Set up characteristic polynomial: det(A - λI) = 0.",
+      "2. Expand: (2 - λ)² - 1 = 0.",
+      "3. Factor: (2 - λ - 1)(2 - λ + 1) = (3 - λ)(1 - λ) = 0.",
+      "4. Roots are λ₁ = 3, λ₂ = 1.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-047",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Matrix Invertibility Equivalence",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Which of the following is a necessary and sufficient condition for an n×n square matrix A to be invertible (non-singular)?",
+    "options": [
+      "All matrix elements a_ij must be strictly non-zero",
+      "The trace of A must be strictly positive (tr(A) > 0)",
+      "The determinant of A is non-zero (det(A) ≠ 0), and all eigenvalues are non-zero",
+      "Matrix A must be symmetric (A = A^T)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A square matrix A is invertible if and only if det(A) ≠ 0. Since det(A) equals the product of all its eigenvalues (det(A) = ∏ λ_i), det(A) ≠ 0 is equivalent to having zero not in the eigenvalue spectrum (λ_i ≠ 0 for all i). Option C is correct.",
+    "solutionSteps": [
+      "1. Recall fundamental invertibility theorem for square matrices.",
+      "2. det(A) ≠ 0 is equivalent to full rank and non-zero eigenvalues.",
+      "3. Trace, symmetry, and non-zero entries are neither necessary nor sufficient.",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-048",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Eigenvalue Spectrum Determination",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the real symmetric matrix:\n\n$$A = \\begin{pmatrix} 4 & 1 \\\\ 1 & 4 \\end{pmatrix}$$\n\nWhat are the exact eigenvalues λ of matrix A?",
+    "options": [
+      "λ₁ = 4, λ₂ = 4",
+      "λ₁ = 8, λ₂ = 0",
+      "λ₁ = 6, λ₂ = 2",
+      "λ₁ = 5, λ₂ = 3"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The characteristic equation is det(A - λI) = (4 - λ)² - (1)² = 0. Solving: (4 - λ)² = 1 => 4 - λ = ±1 => λ = 4 ± 1. Thus the eigenvalues are λ₁ = 5 and λ₂ = 3. Option D is correct.",
+    "solutionSteps": [
+      "1. Set up characteristic polynomial: det(A - λI) = 0.",
+      "2. Expand: (4 - λ)² - 1 = 0.",
+      "3. Factor: (4 - λ - 1)(4 - λ + 1) = (5 - λ)(3 - λ) = 0.",
+      "4. Roots are λ₁ = 5, λ₂ = 3.",
+      "5. Confirm Option D."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-049",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Matrix Invertibility Equivalence",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Which of the following is a necessary and sufficient condition for an n×n square matrix A to be invertible (non-singular)?",
+    "options": [
+      "The determinant of A is non-zero (det(A) ≠ 0), and all eigenvalues are non-zero",
+      "The trace of A must be strictly positive (tr(A) > 0)",
+      "All matrix elements a_ij must be strictly non-zero",
+      "Matrix A must be symmetric (A = A^T)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A square matrix A is invertible if and only if det(A) ≠ 0. Since det(A) equals the product of all its eigenvalues (det(A) = ∏ λ_i), det(A) ≠ 0 is equivalent to having zero not in the eigenvalue spectrum (λ_i ≠ 0 for all i). Option A is correct.",
+    "solutionSteps": [
+      "1. Recall fundamental invertibility theorem for square matrices.",
+      "2. det(A) ≠ 0 is equivalent to full rank and non-zero eigenvalues.",
+      "3. Trace, symmetry, and non-zero entries are neither necessary nor sufficient.",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-050",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Eigenvalues, Eigenvectors, & Invertible Matrices",
+    "subtopic": "Eigenvalue Spectrum Determination",
+    "difficulty": "Very Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the real symmetric matrix:\n\n$$A = \\begin{pmatrix} 3 & 1 \\\\ 1 & 3 \\end{pmatrix}$$\n\nWhat are the exact eigenvalues λ of matrix A?",
+    "options": [
+      "λ₁ = 6, λ₂ = 0",
+      "λ₁ = 4, λ₂ = 2",
+      "λ₁ = 5, λ₂ = 1",
+      "λ₁ = 3, λ₂ = 3"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The characteristic equation is det(A - λI) = (3 - λ)² - (1)² = 0. Solving: (3 - λ)² = 1 => 3 - λ = ±1 => λ = 3 ± 1. Thus the eigenvalues are λ₁ = 4 and λ₂ = 2. Option B is correct.",
+    "solutionSteps": [
+      "1. Set up characteristic polynomial: det(A - λI) = 0.",
+      "2. Expand: (3 - λ)² - 1 = 0.",
+      "3. Factor: (3 - λ - 1)(3 - λ + 1) = (4 - λ)(2 - λ) = 0.",
+      "4. Roots are λ₁ = 4, λ₂ = 2.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-051",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "Orthogonal Vector Dot Product",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "Given vectors u = [2, 2, 3] and v = [2, 2, 4] in R^3, what is their Euclidean dot product u · v?",
+    "options": [
+      "u · v = 16",
+      "u · v = 23",
+      "u · v = 20",
+      "u · v = 192"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The dot product is computed as: u · v = (u₁ × v₁) + (u₂ × v₂) + (u₃ × v₃) = (2×2) + (2×2) + (3×4) = 4 + 4 + 12 = 20. Option C is correct.",
+    "solutionSteps": [
+      "1. Multiply corresponding components: 2×2 = 4, 2×2 = 4, 3×4 = 12.",
+      "2. Sum the products: 4 + 4 + 12 = 20.",
+      "3. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-052",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "PCA Principal Component Direction",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "In Principal Component Analysis (PCA), along which direction does the first principal component (PC1) lie?",
+    "options": [
+      "Perpendicular to the hyperplane that minimizes total residual scatter",
+      "Along the eigenvector corresponding to the smallest eigenvalue",
+      "Parallel to the coordinate axis with the smallest variance",
+      "Along the eigenvector of the data covariance matrix corresponding to the largest eigenvalue"
+    ],
+    "correctAnswer": 3,
+    "explanation": "PCA seeks the projection direction that maximizes data variance. Mathematically, this direction is given by the eigenvector of the sample covariance matrix that corresponds to its largest eigenvalue. Option D is correct.",
+    "solutionSteps": [
+      "1. PCA objective: maximize captured variance in low-dimensional projection.",
+      "2. Rayleigh quotient maximization yields covariance matrix eigenvectors.",
+      "3. The first principal component corresponds to the maximum eigenvalue.",
+      "4. Option D is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-053",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "LDA Maximum Dimensionality Bound",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Linear Discriminant Analysis (LDA) is applied to a classification dataset with C = 6 distinct classes in a D-dimensional feature space (where D > 6). What is the maximum theoretical number of discriminant dimensions that LDA can extract?",
+    "options": [
+      "Maximum 5 dimensions (C - 1)",
+      "Maximum 6 dimensions (C)",
+      "Maximum 7 dimensions (C + 1)",
+      "Unlimited dimensions up to D"
+    ],
+    "correctAnswer": 0,
+    "explanation": "In LDA, the between-class scatter matrix S_B is constructed from C class mean vectors in R^D. Since the sum of differences of C means from the overall mean is zero, the rank of S_B is at most C - 1. Thus, LDA can project onto at most C - 1 dimensions. For C = 6, maximum dimensions = 5. Option A is correct.",
+    "solutionSteps": [
+      "1. Number of classes C = 6.",
+      "2. Between-class scatter matrix S_B has rank at most C - 1.",
+      "3. Maximum number of non-zero discriminant eigenvalues is C - 1 = 6 - 1 = 5.",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-054",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "Orthogonal Vector Dot Product",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Given vectors u = [1, 2, 3] and v = [2, 2, 4] in R^3, what is their Euclidean dot product u · v?",
+    "options": [
+      "u · v = 21",
+      "u · v = 18",
+      "u · v = 14",
+      "u · v = 96"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The dot product is computed as: u · v = (u₁ × v₁) + (u₂ × v₂) + (u₃ × v₃) = (1×2) + (2×2) + (3×4) = 2 + 4 + 12 = 18. Option B is correct.",
+    "solutionSteps": [
+      "1. Multiply corresponding components: 1×2 = 2, 2×2 = 4, 3×4 = 12.",
+      "2. Sum the products: 2 + 4 + 12 = 18.",
+      "3. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-055",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "PCA Principal Component Direction",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "In Principal Component Analysis (PCA), along which direction does the first principal component (PC1) lie?",
+    "options": [
+      "Parallel to the coordinate axis with the smallest variance",
+      "Along the eigenvector corresponding to the smallest eigenvalue",
+      "Along the eigenvector of the data covariance matrix corresponding to the largest eigenvalue",
+      "Perpendicular to the hyperplane that minimizes total residual scatter"
+    ],
+    "correctAnswer": 2,
+    "explanation": "PCA seeks the projection direction that maximizes data variance. Mathematically, this direction is given by the eigenvector of the sample covariance matrix that corresponds to its largest eigenvalue. Option C is correct.",
+    "solutionSteps": [
+      "1. PCA objective: maximize captured variance in low-dimensional projection.",
+      "2. Rayleigh quotient maximization yields covariance matrix eigenvectors.",
+      "3. The first principal component corresponds to the maximum eigenvalue.",
+      "4. Option C is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-056",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "LDA Maximum Dimensionality Bound",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "Linear Discriminant Analysis (LDA) is applied to a classification dataset with C = 5 distinct classes in a D-dimensional feature space (where D > 5). What is the maximum theoretical number of discriminant dimensions that LDA can extract?",
+    "options": [
+      "Unlimited dimensions up to D",
+      "Maximum 5 dimensions (C)",
+      "Maximum 6 dimensions (C + 1)",
+      "Maximum 4 dimensions (C - 1)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "In LDA, the between-class scatter matrix S_B is constructed from C class mean vectors in R^D. Since the sum of differences of C means from the overall mean is zero, the rank of S_B is at most C - 1. Thus, LDA can project onto at most C - 1 dimensions. For C = 5, maximum dimensions = 4. Option D is correct.",
+    "solutionSteps": [
+      "1. Number of classes C = 5.",
+      "2. Between-class scatter matrix S_B has rank at most C - 1.",
+      "3. Maximum number of non-zero discriminant eigenvalues is C - 1 = 5 - 1 = 4.",
+      "4. Option D matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-057",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "Orthogonal Vector Dot Product",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Given vectors u = [4, 2, 3] and v = [2, 2, 4] in R^3, what is their Euclidean dot product u · v?",
+    "options": [
+      "u · v = 24",
+      "u · v = 27",
+      "u · v = 20",
+      "u · v = 384"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The dot product is computed as: u · v = (u₁ × v₁) + (u₂ × v₂) + (u₃ × v₃) = (4×2) + (2×2) + (3×4) = 8 + 4 + 12 = 24. Option A is correct.",
+    "solutionSteps": [
+      "1. Multiply corresponding components: 4×2 = 8, 2×2 = 4, 3×4 = 12.",
+      "2. Sum the products: 8 + 4 + 12 = 24.",
+      "3. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-058",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "PCA Principal Component Direction",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "In Principal Component Analysis (PCA), along which direction does the first principal component (PC1) lie?",
+    "options": [
+      "Along the eigenvector corresponding to the smallest eigenvalue",
+      "Along the eigenvector of the data covariance matrix corresponding to the largest eigenvalue",
+      "Parallel to the coordinate axis with the smallest variance",
+      "Perpendicular to the hyperplane that minimizes total residual scatter"
+    ],
+    "correctAnswer": 1,
+    "explanation": "PCA seeks the projection direction that maximizes data variance. Mathematically, this direction is given by the eigenvector of the sample covariance matrix that corresponds to its largest eigenvalue. Option B is correct.",
+    "solutionSteps": [
+      "1. PCA objective: maximize captured variance in low-dimensional projection.",
+      "2. Rayleigh quotient maximization yields covariance matrix eigenvectors.",
+      "3. The first principal component corresponds to the maximum eigenvalue.",
+      "4. Option B is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-059",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "LDA Maximum Dimensionality Bound",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Linear Discriminant Analysis (LDA) is applied to a classification dataset with C = 4 distinct classes in a D-dimensional feature space (where D > 4). What is the maximum theoretical number of discriminant dimensions that LDA can extract?",
+    "options": [
+      "Maximum 5 dimensions (C + 1)",
+      "Maximum 4 dimensions (C)",
+      "Maximum 3 dimensions (C - 1)",
+      "Unlimited dimensions up to D"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In LDA, the between-class scatter matrix S_B is constructed from C class mean vectors in R^D. Since the sum of differences of C means from the overall mean is zero, the rank of S_B is at most C - 1. Thus, LDA can project onto at most C - 1 dimensions. For C = 4, maximum dimensions = 3. Option C is correct.",
+    "solutionSteps": [
+      "1. Number of classes C = 4.",
+      "2. Between-class scatter matrix S_B has rank at most C - 1.",
+      "3. Maximum number of non-zero discriminant eigenvalues is C - 1 = 4 - 1 = 3.",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-060",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "Orthogonal Vector Dot Product",
+    "difficulty": "Very Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Given vectors u = [3, 2, 3] and v = [2, 2, 4] in R^3, what is their Euclidean dot product u · v?",
+    "options": [
+      "u · v = 288",
+      "u · v = 25",
+      "u · v = 18",
+      "u · v = 22"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The dot product is computed as: u · v = (u₁ × v₁) + (u₂ × v₂) + (u₃ × v₃) = (3×2) + (2×2) + (3×4) = 6 + 4 + 12 = 22. Option D is correct.",
+    "solutionSteps": [
+      "1. Multiply corresponding components: 3×2 = 6, 2×2 = 4, 3×4 = 12.",
+      "2. Sum the products: 6 + 4 + 12 = 22.",
+      "3. Option D matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-061",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "PCA Principal Component Direction",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "In Principal Component Analysis (PCA), along which direction does the first principal component (PC1) lie?",
+    "options": [
+      "Along the eigenvector of the data covariance matrix corresponding to the largest eigenvalue",
+      "Along the eigenvector corresponding to the smallest eigenvalue",
+      "Parallel to the coordinate axis with the smallest variance",
+      "Perpendicular to the hyperplane that minimizes total residual scatter"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PCA seeks the projection direction that maximizes data variance. Mathematically, this direction is given by the eigenvector of the sample covariance matrix that corresponds to its largest eigenvalue. Option A is correct.",
+    "solutionSteps": [
+      "1. PCA objective: maximize captured variance in low-dimensional projection.",
+      "2. Rayleigh quotient maximization yields covariance matrix eigenvectors.",
+      "3. The first principal component corresponds to the maximum eigenvalue.",
+      "4. Option A is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-062",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "LDA Maximum Dimensionality Bound",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Linear Discriminant Analysis (LDA) is applied to a classification dataset with C = 3 distinct classes in a D-dimensional feature space (where D > 3). What is the maximum theoretical number of discriminant dimensions that LDA can extract?",
+    "options": [
+      "Maximum 3 dimensions (C)",
+      "Maximum 2 dimensions (C - 1)",
+      "Maximum 4 dimensions (C + 1)",
+      "Unlimited dimensions up to D"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In LDA, the between-class scatter matrix S_B is constructed from C class mean vectors in R^D. Since the sum of differences of C means from the overall mean is zero, the rank of S_B is at most C - 1. Thus, LDA can project onto at most C - 1 dimensions. For C = 3, maximum dimensions = 2. Option B is correct.",
+    "solutionSteps": [
+      "1. Number of classes C = 3.",
+      "2. Between-class scatter matrix S_B has rank at most C - 1.",
+      "3. Maximum number of non-zero discriminant eigenvalues is C - 1 = 3 - 1 = 2.",
+      "4. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-063",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "Orthogonal Vector Dot Product",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Given vectors u = [2, 2, 3] and v = [2, 2, 4] in R^3, what is their Euclidean dot product u · v?",
+    "options": [
+      "u · v = 16",
+      "u · v = 23",
+      "u · v = 20",
+      "u · v = 192"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The dot product is computed as: u · v = (u₁ × v₁) + (u₂ × v₂) + (u₃ × v₃) = (2×2) + (2×2) + (3×4) = 4 + 4 + 12 = 20. Option C is correct.",
+    "solutionSteps": [
+      "1. Multiply corresponding components: 2×2 = 4, 2×2 = 4, 3×4 = 12.",
+      "2. Sum the products: 4 + 4 + 12 = 20.",
+      "3. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-064",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "PCA Principal Component Direction",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "In Principal Component Analysis (PCA), along which direction does the first principal component (PC1) lie?",
+    "options": [
+      "Perpendicular to the hyperplane that minimizes total residual scatter",
+      "Along the eigenvector corresponding to the smallest eigenvalue",
+      "Parallel to the coordinate axis with the smallest variance",
+      "Along the eigenvector of the data covariance matrix corresponding to the largest eigenvalue"
+    ],
+    "correctAnswer": 3,
+    "explanation": "PCA seeks the projection direction that maximizes data variance. Mathematically, this direction is given by the eigenvector of the sample covariance matrix that corresponds to its largest eigenvalue. Option D is correct.",
+    "solutionSteps": [
+      "1. PCA objective: maximize captured variance in low-dimensional projection.",
+      "2. Rayleigh quotient maximization yields covariance matrix eigenvectors.",
+      "3. The first principal component corresponds to the maximum eigenvalue.",
+      "4. Option D is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-065",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "LDA Maximum Dimensionality Bound",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Linear Discriminant Analysis (LDA) is applied to a classification dataset with C = 6 distinct classes in a D-dimensional feature space (where D > 6). What is the maximum theoretical number of discriminant dimensions that LDA can extract?",
+    "options": [
+      "Maximum 5 dimensions (C - 1)",
+      "Maximum 6 dimensions (C)",
+      "Maximum 7 dimensions (C + 1)",
+      "Unlimited dimensions up to D"
+    ],
+    "correctAnswer": 0,
+    "explanation": "In LDA, the between-class scatter matrix S_B is constructed from C class mean vectors in R^D. Since the sum of differences of C means from the overall mean is zero, the rank of S_B is at most C - 1. Thus, LDA can project onto at most C - 1 dimensions. For C = 6, maximum dimensions = 5. Option A is correct.",
+    "solutionSteps": [
+      "1. Number of classes C = 6.",
+      "2. Between-class scatter matrix S_B has rank at most C - 1.",
+      "3. Maximum number of non-zero discriminant eigenvalues is C - 1 = 6 - 1 = 5.",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-066",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "Orthogonal Vector Dot Product",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "Given vectors u = [1, 2, 3] and v = [2, 2, 4] in R^3, what is their Euclidean dot product u · v?",
+    "options": [
+      "u · v = 21",
+      "u · v = 18",
+      "u · v = 14",
+      "u · v = 96"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The dot product is computed as: u · v = (u₁ × v₁) + (u₂ × v₂) + (u₃ × v₃) = (1×2) + (2×2) + (3×4) = 2 + 4 + 12 = 18. Option B is correct.",
+    "solutionSteps": [
+      "1. Multiply corresponding components: 1×2 = 2, 2×2 = 4, 3×4 = 12.",
+      "2. Sum the products: 2 + 4 + 12 = 18.",
+      "3. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-067",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "PCA Principal Component Direction",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "In Principal Component Analysis (PCA), along which direction does the first principal component (PC1) lie?",
+    "options": [
+      "Parallel to the coordinate axis with the smallest variance",
+      "Along the eigenvector corresponding to the smallest eigenvalue",
+      "Along the eigenvector of the data covariance matrix corresponding to the largest eigenvalue",
+      "Perpendicular to the hyperplane that minimizes total residual scatter"
+    ],
+    "correctAnswer": 2,
+    "explanation": "PCA seeks the projection direction that maximizes data variance. Mathematically, this direction is given by the eigenvector of the sample covariance matrix that corresponds to its largest eigenvalue. Option C is correct.",
+    "solutionSteps": [
+      "1. PCA objective: maximize captured variance in low-dimensional projection.",
+      "2. Rayleigh quotient maximization yields covariance matrix eigenvectors.",
+      "3. The first principal component corresponds to the maximum eigenvalue.",
+      "4. Option C is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-068",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "LDA Maximum Dimensionality Bound",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Linear Discriminant Analysis (LDA) is applied to a classification dataset with C = 5 distinct classes in a D-dimensional feature space (where D > 5). What is the maximum theoretical number of discriminant dimensions that LDA can extract?",
+    "options": [
+      "Unlimited dimensions up to D",
+      "Maximum 5 dimensions (C)",
+      "Maximum 6 dimensions (C + 1)",
+      "Maximum 4 dimensions (C - 1)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "In LDA, the between-class scatter matrix S_B is constructed from C class mean vectors in R^D. Since the sum of differences of C means from the overall mean is zero, the rank of S_B is at most C - 1. Thus, LDA can project onto at most C - 1 dimensions. For C = 5, maximum dimensions = 4. Option D is correct.",
+    "solutionSteps": [
+      "1. Number of classes C = 5.",
+      "2. Between-class scatter matrix S_B has rank at most C - 1.",
+      "3. Maximum number of non-zero discriminant eigenvalues is C - 1 = 5 - 1 = 4.",
+      "4. Option D matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-069",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "Orthogonal Vector Dot Product",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Given vectors u = [4, 2, 3] and v = [2, 2, 4] in R^3, what is their Euclidean dot product u · v?",
+    "options": [
+      "u · v = 24",
+      "u · v = 27",
+      "u · v = 20",
+      "u · v = 384"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The dot product is computed as: u · v = (u₁ × v₁) + (u₂ × v₂) + (u₃ × v₃) = (4×2) + (2×2) + (3×4) = 8 + 4 + 12 = 24. Option A is correct.",
+    "solutionSteps": [
+      "1. Multiply corresponding components: 4×2 = 8, 2×2 = 4, 3×4 = 12.",
+      "2. Sum the products: 8 + 4 + 12 = 24.",
+      "3. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-070",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "PCA Principal Component Direction",
+    "difficulty": "Very Hard",
+    "questionType": "multiple_choice",
+    "questionText": "In Principal Component Analysis (PCA), along which direction does the first principal component (PC1) lie?",
+    "options": [
+      "Along the eigenvector corresponding to the smallest eigenvalue",
+      "Along the eigenvector of the data covariance matrix corresponding to the largest eigenvalue",
+      "Parallel to the coordinate axis with the smallest variance",
+      "Perpendicular to the hyperplane that minimizes total residual scatter"
+    ],
+    "correctAnswer": 1,
+    "explanation": "PCA seeks the projection direction that maximizes data variance. Mathematically, this direction is given by the eigenvector of the sample covariance matrix that corresponds to its largest eigenvalue. Option B is correct.",
+    "solutionSteps": [
+      "1. PCA objective: maximize captured variance in low-dimensional projection.",
+      "2. Rayleigh quotient maximization yields covariance matrix eigenvectors.",
+      "3. The first principal component corresponds to the maximum eigenvalue.",
+      "4. Option B is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-071",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "LDA Maximum Dimensionality Bound",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "Linear Discriminant Analysis (LDA) is applied to a classification dataset with C = 4 distinct classes in a D-dimensional feature space (where D > 4). What is the maximum theoretical number of discriminant dimensions that LDA can extract?",
+    "options": [
+      "Maximum 5 dimensions (C + 1)",
+      "Maximum 4 dimensions (C)",
+      "Maximum 3 dimensions (C - 1)",
+      "Unlimited dimensions up to D"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In LDA, the between-class scatter matrix S_B is constructed from C class mean vectors in R^D. Since the sum of differences of C means from the overall mean is zero, the rank of S_B is at most C - 1. Thus, LDA can project onto at most C - 1 dimensions. For C = 4, maximum dimensions = 3. Option C is correct.",
+    "solutionSteps": [
+      "1. Number of classes C = 4.",
+      "2. Between-class scatter matrix S_B has rank at most C - 1.",
+      "3. Maximum number of non-zero discriminant eigenvalues is C - 1 = 4 - 1 = 3.",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-072",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "Orthogonal Vector Dot Product",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Given vectors u = [3, 2, 3] and v = [2, 2, 4] in R^3, what is their Euclidean dot product u · v?",
+    "options": [
+      "u · v = 288",
+      "u · v = 25",
+      "u · v = 18",
+      "u · v = 22"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The dot product is computed as: u · v = (u₁ × v₁) + (u₂ × v₂) + (u₃ × v₃) = (3×2) + (2×2) + (3×4) = 6 + 4 + 12 = 22. Option D is correct.",
+    "solutionSteps": [
+      "1. Multiply corresponding components: 3×2 = 6, 2×2 = 4, 3×4 = 12.",
+      "2. Sum the products: 6 + 4 + 12 = 22.",
+      "3. Option D matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-073",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "PCA Principal Component Direction",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "In Principal Component Analysis (PCA), along which direction does the first principal component (PC1) lie?",
+    "options": [
+      "Along the eigenvector of the data covariance matrix corresponding to the largest eigenvalue",
+      "Along the eigenvector corresponding to the smallest eigenvalue",
+      "Parallel to the coordinate axis with the smallest variance",
+      "Perpendicular to the hyperplane that minimizes total residual scatter"
+    ],
+    "correctAnswer": 0,
+    "explanation": "PCA seeks the projection direction that maximizes data variance. Mathematically, this direction is given by the eigenvector of the sample covariance matrix that corresponds to its largest eigenvalue. Option A is correct.",
+    "solutionSteps": [
+      "1. PCA objective: maximize captured variance in low-dimensional projection.",
+      "2. Rayleigh quotient maximization yields covariance matrix eigenvectors.",
+      "3. The first principal component corresponds to the maximum eigenvalue.",
+      "4. Option A is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-074",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "LDA Maximum Dimensionality Bound",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Linear Discriminant Analysis (LDA) is applied to a classification dataset with C = 3 distinct classes in a D-dimensional feature space (where D > 3). What is the maximum theoretical number of discriminant dimensions that LDA can extract?",
+    "options": [
+      "Maximum 3 dimensions (C)",
+      "Maximum 2 dimensions (C - 1)",
+      "Maximum 4 dimensions (C + 1)",
+      "Unlimited dimensions up to D"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In LDA, the between-class scatter matrix S_B is constructed from C class mean vectors in R^D. Since the sum of differences of C means from the overall mean is zero, the rank of S_B is at most C - 1. Thus, LDA can project onto at most C - 1 dimensions. For C = 3, maximum dimensions = 2. Option B is correct.",
+    "solutionSteps": [
+      "1. Number of classes C = 3.",
+      "2. Between-class scatter matrix S_B has rank at most C - 1.",
+      "3. Maximum number of non-zero discriminant eigenvalues is C - 1 = 3 - 1 = 2.",
+      "4. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "lt-075",
+    "module": "core",
+    "section": "Linear Transformations",
+    "topic": "Dimensionality Reduction: PCA, LDA, & Dot Products",
+    "subtopic": "Orthogonal Vector Dot Product",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Given vectors u = [2, 2, 3] and v = [2, 2, 4] in R^3, what is their Euclidean dot product u · v?",
+    "options": [
+      "u · v = 16",
+      "u · v = 23",
+      "u · v = 20",
+      "u · v = 192"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The dot product is computed as: u · v = (u₁ × v₁) + (u₂ × v₂) + (u₃ × v₃) = (2×2) + (2×2) + (3×4) = 4 + 4 + 12 = 20. Option C is correct.",
+    "solutionSteps": [
+      "1. Multiply corresponding components: 2×2 = 4, 2×2 = 4, 3×4 = 12.",
+      "2. Sum the products: 4 + 4 + 12 = 20.",
+      "3. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Linear Transformations problem",
+    "tags": [
+      "linear_transformations",
+      "matrices",
+      "eigenvalues",
+      "pca",
+      "core_module"
+    ],
+    "enabled": true
+  }
+]

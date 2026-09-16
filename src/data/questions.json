@@ -1236,9 +1236,9 @@
   {
     "id": 23,
     "chapter": "Figure Sequences",
-    "topic": "Sequence Rules",
-    "difficulty": "Medium",
-    "question": "Example Task: In the sequence shown on Page 7, the blue square moves clockwise within the four middle fields. What do the next two matrices (Image 1 and Image 2) look like?",
+    "topic": "Central Clockwise Cycles",
+    "difficulty": "Easy",
+    "question": "In the 4×4 matrix sequence shown below, a blue square moves across the grid following a strict spatial pattern. Analyze the first 4 matrices to determine the movement rule, then identify which matrices correctly complete the sequence for **Image 1** (Step 5) and **Image 2** (Step 6).",
     "options": [
       "Image 1: Matrix 1, Image 2: Matrix 1",
       "Image 1: Matrix 1, Image 2: Matrix 2",
@@ -1251,39 +1251,9 @@
       "Image 1: Matrix 3, Image 2: Matrix 3"
     ],
     "correctAnswer": 0,
-    "explanation": "The blue square always moves one field clockwise within the four middle fields. Therefore, for both the fifth matrix (Image 1) and the sixth matrix (Image 2), the first response option (Matrix 1) is correct.",
+    "explanation": "The blue square moves exactly 1 space clockwise around the four central fields of the matrix. Following Step 4 (bottom-right center), Step 5 (Image 1) moves left to the bottom-left center (Matrix 1), and Step 6 (Image 2) moves up to the top-left center (Matrix 1).",
     "bookPage": 7,
     "image": "/images/figure-sequences/q23_question.png",
-    "solution": {
-      "understanding": "This question focuses on Sequence Rules within Figure Sequences. We are given: \"Example Task: In the sequence shown on Page 7, the blue square moves clockwise within the four middle fields. What do the next two matrices (Image 1 and Image 2) look like?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
-      "steps": [
-        "Analyze the problem statement and identify given inputs in Sequence Rules.",
-        "Apply core formulas, boolean truth rules, or type rules applicable to Sequence Rules.",
-        "Evaluate the expressions step-by-step to arrive at result: \"Image 1: Matrix 1, Image 2: Matrix 1\".",
-        "Verify that Option A matches the derived solution precisely."
-      ],
-      "diagram": {
-        "type": "image",
-        "title": "Question Diagram",
-        "content": "/images/figure-sequences/q23_question.png",
-        "caption": "Refer to diagram for Question 23 in Figure Sequences"
-      },
-      "finalAnswer": "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is correct. The blue square always moves one field clockwise within the four middle fields. Therefore, for both the fifth matrix (Image 1) and the sixth matrix (Image 2), the first response option (Matrix 1) is correct.",
-      "wrongOptions": [
-        "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is CORRECT.",
-        "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Sequence Rules.",
-        "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Sequence Rules.",
-        "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Sequence Rules.",
-        "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Sequence Rules.",
-        "Option F (\"Image 1: Matrix 2, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Sequence Rules.",
-        "Option G (\"Image 1: Matrix 3, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Sequence Rules.",
-        "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Sequence Rules.",
-        "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Sequence Rules."
-      ],
-      "keyConcept": "Key Principle of Sequence Rules: The blue square always moves one field clockwise within the four middle fields. Therefore, for both the fifth matrix (Image 1) and the sixth matrix (Image 2), the first response option (Matrix 1) is correct.",
-      "examTip": "Exam Strategy: For Sequence Rules questions on Page 7, eliminate choices with invalid type conversions or mismatched boolean logic early.",
-      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Figure Sequences."
-    },
     "questionImage": "/images/figure-sequences/q23_question.png",
     "optionImages": [
       "/images/figure-sequences/q23_opt_0.png",
@@ -1295,14 +1265,45 @@
       "/images/figure-sequences/q23_opt_6.png",
       "/images/figure-sequences/q23_opt_7.png",
       "/images/figure-sequences/q23_opt_8.png"
-    ]
+    ],
+    "solution": {
+      "understanding": "In this introductory Figure Sequence task, we analyze the movement of a single blue square inside a 4×4 grid across consecutive steps. We must identify its movement trajectory, step size, and directional rules to predict its position at Step 5 (Image 1) and Step 6 (Image 2).",
+      "steps": [
+        "**Step 1 — Identify the Track and Active Region**: Observe the four middle fields of the 4×4 matrix: (Row 2, Col 2), (Row 2, Col 3), (Row 3, Col 3), and (Row 3, Col 2). The blue square never leaves this 2×2 central subgrid.",
+        "**Step 2 — Trace the Movement Direction (Clockwise Rotation)**:\n• In Matrix 1 (Step 1): The blue square is at bottom-left center (Row 3, Col 2).\n• In Matrix 2 (Step 2): It moves 1 field up to top-left center (Row 2, Col 2).\n• In Matrix 3 (Step 3): It moves 1 field right to top-right center (Row 2, Col 3).\n• In Matrix 4 (Step 4): It moves 1 field down to bottom-right center (Row 3, Col 3).",
+        "**Step 3 — Predict Step 5 (Image 1)**: Continuing the clockwise cycle, from bottom-right center (Row 3, Col 3) it moves 1 field left to bottom-left center (Row 3, Col 2). Inspecting candidate choices for Image 1: **Matrix 1** has the square at (Row 3, Col 2). Matrix 2 places it incorrectly at (Row 2, Col 2). Matrix 3 places it outside the center track. Therefore, Image 1 is **Matrix 1**.",
+        "**Step 4 — Predict Step 6 (Image 2)**: From bottom-left center (Row 3, Col 2), the next clockwise move is 1 field up to top-left center (Row 2, Col 2). Inspecting candidate choices for Image 2: **Matrix 1** has the square at (Row 2, Col 2). Matrix 2 incorrectly places it at (Row 3, Col 3). Matrix 3 incorrectly places it at (Row 2, Col 3). Therefore, Image 2 is **Matrix 1**.",
+        "**Step 5 — Combine Findings**: Image 1 = Matrix 1 and Image 2 = Matrix 1, which corresponds to **Option A**."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Complete 6-Step Solved Sequence",
+        "content": "/images/figure-sequences/q23_solved_sequence.png",
+        "caption": "Step-by-step visual progression showing the initial 4 matrices and the correctly identified 5th and 6th matrices."
+      },
+      "finalAnswer": "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is the correct answer. The blue square moves 1 field clockwise within the 4 central fields on each step, placing it at the bottom-left center in Matrix 1 for Image 1, and at the top-left center in Matrix 1 for Image 2.",
+      "wrongOptions": [
+        "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is CORRECT. Both Image 1 and Image 2 correctly place the blue square along the central clockwise track.",
+        "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT. Image 1 is correct (Matrix 1), but Image 2 (Matrix 2) places the square at the bottom-right instead of moving up to top-left.",
+        "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is INCORRECT. Image 1 is correct (Matrix 1), but Image 2 (Matrix 3) places the square at top-right, skipping a step in the clockwise sequence.",
+        "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is INCORRECT. Image 1 (Matrix 2) places the square at top-left, which is the position for Step 6 rather than Step 5.",
+        "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is INCORRECT. Both matrices are wrong; Matrix 2 for Image 1 has the Step 6 position, and Matrix 2 for Image 2 has the Step 4 position.",
+        "Option F (\"Image 1: Matrix 2, Image 2: Matrix 3\") is INCORRECT. Image 1 (Matrix 2) is prematurely placed at top-left.",
+        "Option G (\"Image 1: Matrix 3, Image 2: Matrix 1\") is INCORRECT. Image 1 (Matrix 3) places the element outside the middle clockwise track.",
+        "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT. Neither Image 1 nor Image 2 follows the 4-center-square clockwise progression.",
+        "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT. Matrix 3 for both steps violates the central clockwise trajectory."
+      ],
+      "keyConcept": "Central Cyclic Trajectories: A common dMAT pattern where elements orbit around a fixed sub-track (e.g. the 4 middle fields). Track length is 4 fields, repeating every 4 steps.",
+      "examTip": "Whenever an element stays within a 2×2 subgrid, count the cycle length (4 steps). Since Step 5 is Step 1 + 4, it must return to the exact same position as Step 1!",
+      "commonMistakes": "Assuming the square wraps around the entire 4×4 perimeter rather than being constrained exclusively to the four center cells."
+    }
   },
   {
     "id": 24,
     "chapter": "Figure Sequences",
-    "topic": "Bouncing Boundaries",
+    "topic": "Linear Bouncing Movement",
     "difficulty": "Easy",
-    "question": "Look at the figure sequence for Exercise 1 on Page 9. Determine what the next two matrices (Image 1 and Image 2) look like.",
+    "question": "In the 4×4 matrix sequence below, a green diamond moves along a single column. Determine its movement rule across the first 4 matrices, and find which matrices correctly represent **Image 1** (Step 5) and **Image 2** (Step 6).",
     "options": [
       "Image 1: Matrix 1, Image 2: Matrix 1",
       "Image 1: Matrix 1, Image 2: Matrix 2",
@@ -1315,39 +1316,9 @@
       "Image 1: Matrix 3, Image 2: Matrix 3"
     ],
     "correctAnswer": 1,
-    "explanation": "The symbol \u2022 moves vertically one field at a time in the second column and bounces off the upper or lower boundary. Image 1 is Matrix 1; Image 2 is Matrix 2.",
+    "explanation": "The green diamond moves vertically 1 field at a time in the second column and reflects (bounces) whenever it reaches a boundary. At Step 4 it is at (Row 3, Col 2) moving downward; at Step 5 (Image 1) it reaches the bottom boundary (Row 4, Col 2, Matrix 1); and at Step 6 (Image 2) it bounces upward to (Row 3, Col 2, Matrix 2).",
     "bookPage": 9,
     "image": "/images/figure-sequences/q24_question.png",
-    "solution": {
-      "understanding": "This question focuses on Bouncing Boundaries within Figure Sequences. We are given: \"Look at the figure sequence for Exercise 1 on Page 9. Determine what the next two matrices (Image 1 and Image 2) look like.\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
-      "steps": [
-        "Analyze the problem statement and identify given inputs in Bouncing Boundaries.",
-        "Apply core formulas, boolean truth rules, or type rules applicable to Bouncing Boundaries.",
-        "Evaluate the expressions step-by-step to arrive at result: \"Image 1: Matrix 1, Image 2: Matrix 2\".",
-        "Verify that Option B matches the derived solution precisely."
-      ],
-      "diagram": {
-        "type": "image",
-        "title": "Question Diagram",
-        "content": "/images/figure-sequences/q24_question.png",
-        "caption": "Refer to diagram for Question 24 in Figure Sequences"
-      },
-      "finalAnswer": "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is correct. The symbol \u2022 moves vertically one field at a time in the second column and bounces off the upper or lower boundary. Image 1 is Matrix 1; Image 2 is Matrix 2.",
-      "wrongOptions": [
-        "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Bouncing Boundaries.",
-        "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is CORRECT.",
-        "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Bouncing Boundaries.",
-        "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Bouncing Boundaries.",
-        "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Bouncing Boundaries.",
-        "Option F (\"Image 1: Matrix 2, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Bouncing Boundaries.",
-        "Option G (\"Image 1: Matrix 3, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Bouncing Boundaries.",
-        "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Bouncing Boundaries.",
-        "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Bouncing Boundaries."
-      ],
-      "keyConcept": "Key Principle of Bouncing Boundaries: The symbol \u2022 moves vertically one field at a time in the second column and bounces off the upper or lower boundary. Image 1 is Matrix 1; Image 2 is Matrix 2.",
-      "examTip": "Exam Strategy: For Bouncing Boundaries questions on Page 9, eliminate choices with invalid type conversions or mismatched boolean logic early.",
-      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Figure Sequences."
-    },
     "questionImage": "/images/figure-sequences/q24_question.png",
     "optionImages": [
       "/images/figure-sequences/q24_opt_0.png",
@@ -1359,14 +1330,45 @@
       "/images/figure-sequences/q24_opt_6.png",
       "/images/figure-sequences/q24_opt_7.png",
       "/images/figure-sequences/q24_opt_8.png"
-    ]
+    ],
+    "solution": {
+      "understanding": "This question tests the boundary reflection (bouncing) rule in Figure Sequences. We observe the green diamond in Column 2 across steps 1 to 4 to establish its direction and reflection behavior.",
+      "steps": [
+        "**Step 1 — Identify the Active Column**: In all matrices, the diamond remains strictly in Column 2 (second column from left). Its horizontal coordinate never changes.",
+        "**Step 2 — Trace the Vertical Path and Bounce Behavior**:\n• Matrix 1 (Step 1): Diamond is at (Row 2, Col 2), heading upward.\n• Matrix 2 (Step 2): Diamond moves 1 step up to (Row 1, Col 2), reaching the top boundary.\n• Matrix 3 (Step 3): Reaching the edge causes it to bounce (reverse direction) downward to (Row 2, Col 2).\n• Matrix 4 (Step 4): Continues downward 1 step to (Row 3, Col 2).",
+        "**Step 3 — Determine Step 5 (Image 1)**: Continuing downward by 1 step from (Row 3, Col 2), the diamond arrives at the bottom boundary: (Row 4, Col 2). Among the choices for Image 1: **Matrix 1** has the diamond at (Row 4, Col 2). Matrix 2 has it at row 3 (has not moved). Matrix 3 has it at row 1 (incorrect jump). Thus, Image 1 MUST be **Matrix 1**.",
+        "**Step 4 — Determine Step 6 (Image 2)**: Having reached the bottom boundary at (Row 4, Col 2), the diamond must bounce and reverse direction, moving 1 step upward to (Row 3, Col 2). Among the choices for Image 2: **Matrix 2** places the diamond at (Row 3, Col 2). Matrix 1 keeps it stuck at the bottom (Row 4, Col 2). Matrix 3 places it at row 2 (moved 2 steps instead of 1). Thus, Image 2 MUST be **Matrix 2**.",
+        "**Step 5 — Conclusion**: Image 1 = Matrix 1 and Image 2 = Matrix 2, corresponding to **Option B**."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Complete 6-Step Solved Sequence",
+        "content": "/images/figure-sequences/q24_solved_sequence.png",
+        "caption": "Step-by-step visual progression showing the linear bounce along Column 2."
+      },
+      "finalAnswer": "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is correct. The diamond moves along Column 2 and bounces off the top and bottom borders, arriving at Row 4 (Matrix 1) on Step 5 and bouncing back to Row 3 (Matrix 2) on Step 6.",
+      "wrongOptions": [
+        "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT. Image 1 is correct (Matrix 1), but Image 2 (Matrix 1) leaves the diamond stationary at the bottom border instead of bouncing upward.",
+        "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is CORRECT. Image 1 reaches Row 4 and Image 2 bounces upward to Row 3.",
+        "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is INCORRECT. Image 1 is correct, but Image 2 (Matrix 3) places the diamond at Row 2, which would require an illegal 2-step jump.",
+        "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is INCORRECT. Image 1 (Matrix 2) places the diamond at Row 3, which fails to advance from Step 4.",
+        "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is INCORRECT. Neither step reflects the proper advancement along Column 2.",
+        "Option F (\"Image 1: Matrix 2, Image 2: Matrix 3\") is INCORRECT. Image 1 (Matrix 2) is stationary at Row 3.",
+        "Option G (\"Image 1: Matrix 3, Image 2: Matrix 1\") is INCORRECT. Image 1 (Matrix 3) erroneously teleports the diamond to Row 1.",
+        "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT. Image 1 (Matrix 3) is wrong as the diamond must reach the bottom boundary before bouncing.",
+        "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT. Both candidate selections are invalid."
+      ],
+      "keyConcept": "Bouncing Boundaries vs Toroidal Wrapping: In dMAT figure sequences, symbols hitting an edge reflect back along their path unless specifically defined as wrapping. Step size remains constant (1 field per step).",
+      "examTip": "Check boundary behavior immediately. Here, Step 1 (Row 2) -> Step 2 (Row 1) -> Step 3 (Row 2) clearly shows a bounce at the boundary rather than wrapping to the bottom.",
+      "commonMistakes": "Thinking the element wraps around from the top edge to the bottom edge, which would predict Row 4 at Step 3 instead of Row 2."
+    }
   },
   {
     "id": 25,
     "chapter": "Figure Sequences",
-    "topic": "Diagonal Movement",
-    "difficulty": "Easy",
-    "question": "Look at the figure sequence for Exercise 2 on Page 10. Determine what the next two matrices (Image 1 and Image 2) look like.",
+    "topic": "Diagonal Bouncing Reflection",
+    "difficulty": "Medium",
+    "question": "In the 4×4 matrix sequence below, a yellow square moves along a diagonal path across the grid. Determine its reflection behavior off the matrix borders, and identify which candidate matrices correctly represent **Image 1** (Step 5) and **Image 2** (Step 6).",
     "options": [
       "Image 1: Matrix 1, Image 2: Matrix 1",
       "Image 1: Matrix 1, Image 2: Matrix 2",
@@ -1379,39 +1381,9 @@
       "Image 1: Matrix 3, Image 2: Matrix 3"
     ],
     "correctAnswer": 7,
-    "explanation": "The symbol \u2022 always moves one space diagonally upwards to the right from its starting position until it bounces off the upper boundary and returns to the starting position in the same way. Once there, it bounces off the lower boundary and moves diagonally upwards to the right again. Image 1 is Matrix 3; Image 2 is Matrix 2.",
+    "explanation": "The yellow square moves diagonally upwards to the right 1 space at a time until it bounces off the top boundary, then retraces its path diagonally downwards to the left. At Step 4 it is at (Row 2, Col 2); at Step 5 (Image 1) it reaches (Row 3, Col 1, Matrix 3); at Step 6 (Image 2) it bounces off the bottom-left border and moves back to (Row 2, Col 2, Matrix 2).",
     "bookPage": 10,
     "image": "/images/figure-sequences/q25_question.png",
-    "solution": {
-      "understanding": "This question focuses on Diagonal Movement within Figure Sequences. We are given: \"Look at the figure sequence for Exercise 2 on Page 10. Determine what the next two matrices (Image 1 and Image 2) look like.\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
-      "steps": [
-        "Analyze the problem statement and identify given inputs in Diagonal Movement.",
-        "Apply core formulas, boolean truth rules, or type rules applicable to Diagonal Movement.",
-        "Evaluate the expressions step-by-step to arrive at result: \"Image 1: Matrix 3, Image 2: Matrix 2\".",
-        "Verify that Option H matches the derived solution precisely."
-      ],
-      "diagram": {
-        "type": "image",
-        "title": "Question Diagram",
-        "content": "/images/figure-sequences/q25_question.png",
-        "caption": "Refer to diagram for Question 25 in Figure Sequences"
-      },
-      "finalAnswer": "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is correct. The symbol \u2022 always moves one space diagonally upwards to the right from its starting position until it bounces off the upper boundary and returns to the starting position in the same way. Once there, it bounces off the lower boundary and moves diagonally upwards to the right again. Image 1 is Matrix 3; Image 2 is Matrix 2.",
-      "wrongOptions": [
-        "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Diagonal Movement.",
-        "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Diagonal Movement.",
-        "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Diagonal Movement.",
-        "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Diagonal Movement.",
-        "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Diagonal Movement.",
-        "Option F (\"Image 1: Matrix 2, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Diagonal Movement.",
-        "Option G (\"Image 1: Matrix 3, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Diagonal Movement.",
-        "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is CORRECT.",
-        "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Diagonal Movement."
-      ],
-      "keyConcept": "Key Principle of Diagonal Movement: The symbol \u2022 always moves one space diagonally upwards to the right from its starting position until it bounces off the upper boundary and returns to the starting position in the same way. Once there, it bounces off the lower boundary and moves diagonally upwards to the right again. Image 1 is Matrix 3; Image 2 is Matrix 2.",
-      "examTip": "Exam Strategy: For Diagonal Movement questions on Page 10, eliminate choices with invalid type conversions or mismatched boolean logic early.",
-      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Figure Sequences."
-    },
     "questionImage": "/images/figure-sequences/q25_question.png",
     "optionImages": [
       "/images/figure-sequences/q25_opt_0.png",
@@ -1423,14 +1395,45 @@
       "/images/figure-sequences/q25_opt_6.png",
       "/images/figure-sequences/q25_opt_7.png",
       "/images/figure-sequences/q25_opt_8.png"
-    ]
+    ],
+    "solution": {
+      "understanding": "This problem evaluates diagonal translation and boundary reflection. A single yellow square moves along a fixed diagonal trajectory (bottom-left to top-right and back).",
+      "steps": [
+        "**Step 1 — Identify the Diagonal Line**: The coordinates of the square across steps are:\n• Matrix 1 (Step 1): (Row 3, Col 1).\n• Matrix 2 (Step 2): (Row 2, Col 2) — moves 1 space diagonally up-right.\n• Matrix 3 (Step 3): (Row 1, Col 3) — moves 1 space diagonally up-right, reaching the top row.",
+        "**Step 2 — Identify the Reflection Rule**: In Matrix 4 (Step 4), the square bounces off the top edge and returns along the exact same diagonal path: (Row 2, Col 2).",
+        "**Step 3 — Determine Step 5 (Image 1)**: Continuing diagonally down-left from (Row 2, Col 2), the square reaches (Row 3, Col 1). Checking Image 1 choices: **Matrix 3** has the square at (Row 3, Col 1). Matrix 1 has it at (Row 1, Col 1). Matrix 2 has it at (Row 2, Col 2). Therefore, Image 1 MUST be **Matrix 3**.",
+        "**Step 4 — Determine Step 6 (Image 2)**: Reaching (Row 3, Col 1) at the bottom-left boundary, the square bounces again and reverses direction, traveling diagonally up-right to (Row 2, Col 2). Checking Image 2 choices: **Matrix 2** has the square at (Row 2, Col 2). Matrix 1 has it at (Row 1, Col 3). Matrix 3 has it at (Row 3, Col 1). Therefore, Image 2 MUST be **Matrix 2**.",
+        "**Step 5 — Conclusion**: Image 1 = Matrix 3 and Image 2 = Matrix 2, which corresponds to **Option H**."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Complete 6-Step Solved Sequence",
+        "content": "/images/figure-sequences/q25_solved_sequence.png",
+        "caption": "Step-by-step visual progression of the diagonal bouncing pattern."
+      },
+      "finalAnswer": "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is the correct answer. The square reflects between (Row 1, Col 3) and (Row 3, Col 1), arriving at (Row 3, Col 1) in Matrix 3 on Step 5, and rebounding to (Row 2, Col 2) in Matrix 2 on Step 6.",
+      "wrongOptions": [
+        "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT. Image 1 (Matrix 1) places the square in the top-left corner off its diagonal line.",
+        "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT. Image 1 (Matrix 1) is in an invalid location.",
+        "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is INCORRECT. Image 1 is completely off-track.",
+        "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is INCORRECT. Image 1 (Matrix 2) repeats Step 4 without moving.",
+        "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is INCORRECT. Matrix 2 fails to advance to Row 3 for Step 5.",
+        "Option F (\"Image 1: Matrix 2, Image 2: Matrix 3\") is INCORRECT. Image 1 is wrong.",
+        "Option G (\"Image 1: Matrix 3, Image 2: Matrix 1\") is INCORRECT. Image 1 is correct (Matrix 3), but Image 2 (Matrix 1) places the square at (Row 1, Col 3) which skips ahead 2 steps instead of moving to (Row 2, Col 2).",
+        "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is CORRECT. Both matrices accurately capture the rebound trajectory.",
+        "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT. Image 1 is correct, but Image 2 leaves the square stationary at the corner rather than rebounding."
+      ],
+      "keyConcept": "Diagonal Boundary Reflection: Diagonal paths in a 4×4 grid follow straight lines with constant slope. Upon reaching a terminal edge or corner, the symbol reverses along the line of incidence.",
+      "examTip": "Check the coordinates: Step 1 (3,1), Step 2 (2,2), Step 3 (1,3), Step 4 (2,2). This is a symmetrical oscillating cycle: 1 -> 2 -> 3 -> 2 -> 1 -> 2!",
+      "commonMistakes": "Assuming the square deflects at 90° like a billiard ball off the top wall into another column, rather than bouncing back along its diagonal track."
+    }
   },
   {
     "id": 26,
     "chapter": "Figure Sequences",
-    "topic": "Multi-symbol Rules",
+    "topic": "Multi-Symbol Independent Rules",
     "difficulty": "Medium",
-    "question": "Look at the figure sequence for Exercise 3 on Page 10. Determine what the next two matrices (Image 1 and Image 2) look like.",
+    "question": "In the 4×4 matrix sequence below, three independent symbols interact: an Arrow along the border, a Flag rotating in place, and a Hexagon moving along the edge. Determine the rules for all three symbols to identify **Image 1** (Step 5) and **Image 2** (Step 6).",
     "options": [
       "Image 1: Matrix 1, Image 2: Matrix 1",
       "Image 1: Matrix 1, Image 2: Matrix 2",
@@ -1443,39 +1446,9 @@
       "Image 1: Matrix 3, Image 2: Matrix 3"
     ],
     "correctAnswer": 4,
-    "explanation": "The symbol { moves along the outer borders clockwise by two squares at a time, alternating color from black to pink. The symbol 1 rotates 90 degrees to the right from image to image. The symbol 9 moves along the outer borders counter clockwise one space at a time. Image 1 is Matrix 2; Image 2 is Matrix 2.",
+    "explanation": "The Arrow moves clockwise along the border by 2 fields per step, alternating black and pink (black at Step 5, pink at Step 6). The Flag stays in the center-left cell and rotates 90° clockwise per step. The Hexagon moves counter-clockwise along the border by 1 field per step. Both Step 5 (Image 1) and Step 6 (Image 2) match Matrix 2.",
     "bookPage": 10,
     "image": "/images/figure-sequences/q26_question.png",
-    "solution": {
-      "understanding": "This question focuses on Multi-symbol Rules within Figure Sequences. We are given: \"Look at the figure sequence for Exercise 3 on Page 10. Determine what the next two matrices (Image 1 and Image 2) look like.\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
-      "steps": [
-        "Analyze the problem statement and identify given inputs in Multi-symbol Rules.",
-        "Apply core formulas, boolean truth rules, or type rules applicable to Multi-symbol Rules.",
-        "Evaluate the expressions step-by-step to arrive at result: \"Image 1: Matrix 2, Image 2: Matrix 2\".",
-        "Verify that Option E matches the derived solution precisely."
-      ],
-      "diagram": {
-        "type": "image",
-        "title": "Question Diagram",
-        "content": "/images/figure-sequences/q26_question.png",
-        "caption": "Refer to diagram for Question 26 in Figure Sequences"
-      },
-      "finalAnswer": "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is correct. The symbol { moves along the outer borders clockwise by two squares at a time, alternating color from black to pink. The symbol 1 rotates 90 degrees to the right from image to image. The symbol 9 moves along the outer borders counter clockwise one space at a time. Image 1 is Matrix 2; Image 2 is Matrix 2.",
-      "wrongOptions": [
-        "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
-        "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
-        "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
-        "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
-        "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is CORRECT.",
-        "Option F (\"Image 1: Matrix 2, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
-        "Option G (\"Image 1: Matrix 3, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
-        "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
-        "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules."
-      ],
-      "keyConcept": "Key Principle of Multi-symbol Rules: The symbol { moves along the outer borders clockwise by two squares at a time, alternating color from black to pink. The symbol 1 rotates 90 degrees to the right from image to image. The symbol 9 moves along the outer borders counter clockwise one space at a time. Image 1 is Matrix 2; Image 2 is Matrix 2.",
-      "examTip": "Exam Strategy: For Multi-symbol Rules questions on Page 10, eliminate choices with invalid type conversions or mismatched boolean logic early.",
-      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Figure Sequences."
-    },
     "questionImage": "/images/figure-sequences/q26_question.png",
     "optionImages": [
       "/images/figure-sequences/q26_opt_0.png",
@@ -1487,14 +1460,45 @@
       "/images/figure-sequences/q26_opt_6.png",
       "/images/figure-sequences/q26_opt_7.png",
       "/images/figure-sequences/q26_opt_8.png"
-    ]
+    ],
+    "solution": {
+      "understanding": "This question requires isolating three distinct symbols and analyzing their individual spatial, rotational, and color-shift rules independently.",
+      "steps": [
+        "**Step 1 — Analyze Symbol 1: The Outer Arrow**:\n• Movement: Travels along the matrix perimeter clockwise by 2 fields per step.\n• Orientation: Always points in the direction of travel.\n• Color: Alternates Black ↔ Pink.\n• Step 1: (Row 2, Col 1), Black.\n• Step 2: Moves 2 fields CW to (Row 1, Col 2), Pink.\n• Step 3: Moves 2 fields CW to (Row 1, Col 4), Black.\n• Step 4: Moves 2 fields CW to (Row 3, Col 4), Pink.\n• Step 5 (Image 1): Moves 2 fields CW to (Row 4, Col 3), Black.\n• Step 6 (Image 2): Moves 2 fields CW to (Row 4, Col 1), Pink.",
+        "**Step 2 — Analyze Symbol 2: The Flag / Angle**:\n• Position: Remains stationary in the center-left field at (Row 3, Col 2).\n• Rotation: Rotates 90° clockwise (to the right) at each step.\n• Step 1: Pointing right-down.\n• Step 2: Pointing right-up.\n• Step 3: Pointing left-up.\n• Step 4: Pointing left-down.\n• Step 5 (Image 1): Rotates 90° CW to point right-down (Matrix 2).\n• Step 6 (Image 2): Rotates 90° CW to point right-up (Matrix 2).",
+        "**Step 3 — Analyze Symbol 3: The Yellow Hexagon**:\n• Movement: Moves counter-clockwise along the outer border by exactly 1 field per step.\n• Step 1: (Row 2, Col 4).\n• Step 2: (Row 1, Col 4).\n• Step 3: (Row 1, Col 3).\n• Step 4: (Row 1, Col 2).\n• Step 5 (Image 1): (Row 1, Col 1) — top-left corner (Matrix 2).\n• Step 6 (Image 2): (Row 2, Col 1) — left column (Matrix 2).",
+        "**Step 4 — Evaluate Candidate Matrices**:\n• For Image 1 (Step 5): Matrix 2 has Arrow at (Row 4, Col 3, Black), Flag at right-down, Hexagon at (Row 1, Col 1). Matrix 1 has wrong Arrow color; Matrix 3 has wrong Flag orientation. Image 1 = **Matrix 2**.\n• For Image 2 (Step 6): Matrix 2 has Arrow at (Row 4, Col 1, Pink), Flag at right-up, Hexagon at (Row 2, Col 1). Image 2 = **Matrix 2**.",
+        "**Step 5 — Conclusion**: Image 1 = Matrix 2 and Image 2 = Matrix 2, corresponding to **Option E**."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Complete 6-Step Solved Sequence",
+        "content": "/images/figure-sequences/q26_solved_sequence.png",
+        "caption": "Step-by-step visual progression showing the 3 independent rules."
+      },
+      "finalAnswer": "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is correct. Both Step 5 and Step 6 are represented by Matrix 2 across all three geometric symbols.",
+      "wrongOptions": [
+        "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT. Matrix 1 has incorrect arrow color and wrong flag rotation.",
+        "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT. Image 1 (Matrix 1) fails on arrow color and position.",
+        "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is INCORRECT. Both Image 1 and Image 2 candidate choices are flawed.",
+        "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is INCORRECT. Image 1 is correct (Matrix 2), but Image 2 (Matrix 1) has the wrong flag orientation.",
+        "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is CORRECT. All three elements match official dMAT rules.",
+        "Option F (\"Image 1: Matrix 2, Image 2: Matrix 3\") is INCORRECT. Image 2 (Matrix 3) places the hexagon in the wrong cell.",
+        "Option G (\"Image 1: Matrix 3, Image 2: Matrix 1\") is INCORRECT. Image 1 (Matrix 3) has an invalid flag rotation.",
+        "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT. Image 1 is invalid.",
+        "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT. Both candidate selections are wrong."
+      ],
+      "keyConcept": "Principle of Superposition: In multi-symbol questions, decouple the symbols completely. Solve the easiest element first (e.g. stationary rotating flag) to eliminate 2 out of 3 choices instantly.",
+      "examTip": "Use the color alternation rule as an instant filter! The Arrow alternates Black (odd steps 1, 3, 5) and Pink (even steps 2, 4, 6). Any candidate for Step 5 that is pink can be discarded immediately.",
+      "commonMistakes": "Trying to track all 3 symbols simultaneously rather than verifying them one by one."
+    }
   },
   {
     "id": 27,
     "chapter": "Figure Sequences",
-    "topic": "Multi-symbol Rules",
-    "difficulty": "Medium",
-    "question": "Look at the figure sequence for Exercise 4 on Page 11. Determine what the next two matrices (Image 1 and Image 2) look like.",
+    "topic": "Horizontal Bouncing & Central Cycles",
+    "difficulty": "Hard",
+    "question": "In the 4×4 matrix sequence below, three symbols move simultaneously: a Green Trapezoid moving horizontally along the bottom row, a Pink Square cycling through the center fields, and a White Hexagon traveling diagonally. Determine the correct candidate matrices for **Image 1** (Step 5) and **Image 2** (Step 6).",
     "options": [
       "Image 1: Matrix 1, Image 2: Matrix 1",
       "Image 1: Matrix 1, Image 2: Matrix 2",
@@ -1507,39 +1511,9 @@
       "Image 1: Matrix 3, Image 2: Matrix 3"
     ],
     "correctAnswer": 2,
-    "explanation": "The symbol D moves horizontally by one field in the fourth row and bounces, rotating 90 degrees to the right. The symbol \u2022 moves: left, up, right, down... The symbol O moves diagonally downwards to the left and bounces. Image 1 is Matrix 1; Image 2 is Matrix 3.",
+    "explanation": "The Green Trapezoid moves 1 field along Row 4, bouncing off the left/right walls and rotating 90° clockwise. The Pink Square moves 1 field clockwise around the 4 middle fields. The White Hexagon moves diagonally between corners. Image 1 is Matrix 1 and Image 2 is Matrix 3.",
     "bookPage": 11,
     "image": "/images/figure-sequences/q27_question.png",
-    "solution": {
-      "understanding": "This question focuses on Multi-symbol Rules within Figure Sequences. We are given: \"Look at the figure sequence for Exercise 4 on Page 11. Determine what the next two matrices (Image 1 and Image 2) look like.\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
-      "steps": [
-        "Analyze the problem statement and identify given inputs in Multi-symbol Rules.",
-        "Apply core formulas, boolean truth rules, or type rules applicable to Multi-symbol Rules.",
-        "Evaluate the expressions step-by-step to arrive at result: \"Image 1: Matrix 1, Image 2: Matrix 3\".",
-        "Verify that Option C matches the derived solution precisely."
-      ],
-      "diagram": {
-        "type": "image",
-        "title": "Question Diagram",
-        "content": "/images/figure-sequences/q27_question.png",
-        "caption": "Refer to diagram for Question 27 in Figure Sequences"
-      },
-      "finalAnswer": "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is correct. The symbol D moves horizontally by one field in the fourth row and bounces, rotating 90 degrees to the right. The symbol \u2022 moves: left, up, right, down... The symbol O moves diagonally downwards to the left and bounces. Image 1 is Matrix 1; Image 2 is Matrix 3.",
-      "wrongOptions": [
-        "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
-        "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
-        "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is CORRECT.",
-        "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
-        "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
-        "Option F (\"Image 1: Matrix 2, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
-        "Option G (\"Image 1: Matrix 3, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
-        "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules.",
-        "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Multi-symbol Rules."
-      ],
-      "keyConcept": "Key Principle of Multi-symbol Rules: The symbol D moves horizontally by one field in the fourth row and bounces, rotating 90 degrees to the right. The symbol \u2022 moves: left, up, right, down... The symbol O moves diagonally downwards to the left and bounces. Image 1 is Matrix 1; Image 2 is Matrix 3.",
-      "examTip": "Exam Strategy: For Multi-symbol Rules questions on Page 11, eliminate choices with invalid type conversions or mismatched boolean logic early.",
-      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Figure Sequences."
-    },
     "questionImage": "/images/figure-sequences/q27_question.png",
     "optionImages": [
       "/images/figure-sequences/q27_opt_0.png",
@@ -1551,14 +1525,45 @@
       "/images/figure-sequences/q27_opt_6.png",
       "/images/figure-sequences/q27_opt_7.png",
       "/images/figure-sequences/q27_opt_8.png"
-    ]
+    ],
+    "solution": {
+      "understanding": "A multi-symbol problem combining horizontal linear bouncing with rotation, a 4-field center cycle, and a diagonal corner bounce.",
+      "steps": [
+        "**Step 1 — Green Trapezoid (Bottom Row Bounce & Rotate)**:\n• Movement: Stays in Row 4, moves 1 field horizontally per step and bounces off borders.\n• Rotation: Rotates 90° clockwise at every step.\n• Step 1: (Row 4, Col 2), pointing right.\n• Step 2: (Row 4, Col 3), pointing down.\n• Step 3: (Row 4, Col 4), pointing left — hits right wall!\n• Step 4: Bounces left to (Row 4, Col 3), pointing up.\n• Step 5 (Image 1): Moves left to (Row 4, Col 2), pointing right.\n• Step 6 (Image 2): Moves left to (Row 4, Col 1), pointing down.",
+        "**Step 2 — Pink Square (Middle 4-Field Orbit)**:\n• Orbit sequence: Left, Up, Right, Down around the four center cells.\n• Step 1: (Row 3, Col 3).\n• Step 2: Moves left to (Row 3, Col 2).\n• Step 3: Moves up to (Row 2, Col 2).\n• Step 4: Moves right to (Row 2, Col 3).\n• Step 5 (Image 1): Moves down to (Row 3, Col 3).\n• Step 6 (Image 2): Moves left to (Row 3, Col 2).",
+        "**Step 3 — White Hexagon (Diagonal Corner Reflection)**:\n• Movement: Moves diagonally down-left from (Row 1, Col 4) until hitting the bottom-left corner at (Row 4, Col 1), then bounces back up-right.\n• Step 1: (Row 1, Col 4).\n• Step 2: (Row 2, Col 3).\n• Step 3: (Row 3, Col 2).\n• Step 4: (Row 4, Col 1) — hits corner!\n• Step 5 (Image 1): Bounces back to (Row 3, Col 2).\n• Step 6 (Image 2): Continues diagonally up-right to (Row 2, Col 3).",
+        "**Step 4 — Match Candidate Choices**:\n• For Image 1 (Step 5): Trapezoid at (Row 4, Col 2, right), Pink Square at (Row 3, Col 3), Hexagon at (Row 3, Col 2). Matches **Matrix 1**.\n• For Image 2 (Step 6): Trapezoid at (Row 4, Col 1, down), Pink Square at (Row 3, Col 2), Hexagon at (Row 2, Col 3). Matches **Matrix 3**.",
+        "**Step 5 — Conclusion**: Image 1 = Matrix 1 and Image 2 = Matrix 3, corresponding to **Option C**."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Complete 6-Step Solved Sequence",
+        "content": "/images/figure-sequences/q27_solved_sequence.png",
+        "caption": "Step-by-step visual progression showing the 3 rules for Exercise 4."
+      },
+      "finalAnswer": "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is correct. Matrix 1 satisfies all 3 symbol positions for Step 5, and Matrix 3 satisfies all 3 symbol positions for Step 6.",
+      "wrongOptions": [
+        "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT. Image 1 is correct (Matrix 1), but Image 2 (Matrix 1) leaves the hexagon and square in their Step 5 positions.",
+        "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT. Image 2 (Matrix 2) has the trapezoid pointing the wrong direction.",
+        "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is CORRECT. Both matrices accurately satisfy all three symbol rules.",
+        "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is INCORRECT. Image 1 (Matrix 2) has the pink square in the wrong position.",
+        "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is INCORRECT. Both matrices contain errors in symbol rotation and placement.",
+        "Option F (\"Image 1: Matrix 2, Image 2: Matrix 3\") is INCORRECT. Image 1 (Matrix 2) fails the pink square rule.",
+        "Option G (\"Image 1: Matrix 3, Image 2: Matrix 1\") is INCORRECT. Image 1 (Matrix 3) is actually the solution for Step 6, not Step 5.",
+        "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT. Image 1 is prematurely advanced.",
+        "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT. Matrix 3 cannot be used for both Step 5 and Step 6."
+      ],
+      "keyConcept": "Dual Dynamic Properties: Many dMAT elements combine translation (moving to a new field) with rotation (changing orientation angle by 90°). Both must be verified independently.",
+      "examTip": "Look at the Trapezoid: it points Right -> Down -> Left -> Up -> Right -> Down. That simple 4-step rotational cycle immediately isolates the correct orientation!",
+      "commonMistakes": "Forgetting that the Trapezoid bounces at Col 4 and heads back towards Col 1, rather than wrapping around to the other side of Row 4."
+    }
   },
   {
     "id": 28,
     "chapter": "Figure Sequences",
-    "topic": "Progression Rules (x+1)",
+    "topic": "Arithmetic Progression (x+1) Rules",
     "difficulty": "Hard",
-    "question": "Look at the figure sequence for Exercise 5 on Page 11. Determine what the next two matrices (Image 1 and Image 2) look like.",
+    "question": "In the 4×4 matrix sequence below, four symbols evolve across the steps, including an outer Yellow Triangle that follows an arithmetic progression (+1$ step size). Determine the rules for all symbols and identify **Image 1** (Step 5) and **Image 2** (Step 6).",
     "options": [
       "Image 1: Matrix 1, Image 2: Matrix 1",
       "Image 1: Matrix 1, Image 2: Matrix 2",
@@ -1571,39 +1576,9 @@
       "Image 1: Matrix 3, Image 2: Matrix 3"
     ],
     "correctAnswer": 8,
-    "explanation": "The symbol A moves along the outer borders clockwise by x + 1 fields. The symbol 9 moves horizontally in the third row, turns 90 degrees left and changes color. The symbol o moves one field at a time: down, right, up, left... The symbol \u2022 moves diagonally. Image 1 is Matrix 3; Image 2 is Matrix 3.",
+    "explanation": "The Yellow Triangle moves clockwise along the border by x+1 steps (1, 2, 3, 4, 5 fields). The Flag moves along Row 3, bouncing and turning 90° CCW while changing colors (white, pink, yellow). The Arc moves around the top cells, rotating 90° CCW and alternating orange/black. The Hexagon bounces diagonally. Both Step 5 (Image 1) and Step 6 (Image 2) match Matrix 3.",
     "bookPage": 11,
     "image": "/images/figure-sequences/q28_question.png",
-    "solution": {
-      "understanding": "This question focuses on Progression Rules (x+1) within Figure Sequences. We are given: \"Look at the figure sequence for Exercise 5 on Page 11. Determine what the next two matrices (Image 1 and Image 2) look like.\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
-      "steps": [
-        "Analyze the problem statement and identify given inputs in Progression Rules (x+1).",
-        "Apply core formulas, boolean truth rules, or type rules applicable to Progression Rules (x+1).",
-        "Evaluate the expressions step-by-step to arrive at result: \"Image 1: Matrix 3, Image 2: Matrix 3\".",
-        "Verify that Option I matches the derived solution precisely."
-      ],
-      "diagram": {
-        "type": "image",
-        "title": "Question Diagram",
-        "content": "/images/figure-sequences/q28_question.png",
-        "caption": "Refer to diagram for Question 28 in Figure Sequences"
-      },
-      "finalAnswer": "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is correct. The symbol A moves along the outer borders clockwise by x + 1 fields. The symbol 9 moves horizontally in the third row, turns 90 degrees left and changes color. The symbol o moves one field at a time: down, right, up, left... The symbol \u2022 moves diagonally. Image 1 is Matrix 3; Image 2 is Matrix 3.",
-      "wrongOptions": [
-        "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Progression Rules (x+1).",
-        "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Progression Rules (x+1).",
-        "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Progression Rules (x+1).",
-        "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Progression Rules (x+1).",
-        "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Progression Rules (x+1).",
-        "Option F (\"Image 1: Matrix 2, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Progression Rules (x+1).",
-        "Option G (\"Image 1: Matrix 3, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Progression Rules (x+1).",
-        "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Progression Rules (x+1).",
-        "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is CORRECT."
-      ],
-      "keyConcept": "Key Principle of Progression Rules (x+1): The symbol A moves along the outer borders clockwise by x + 1 fields. The symbol 9 moves horizontally in the third row, turns 90 degrees left and changes color. The symbol o moves one field at a time: down, right, up, left... The symbol \u2022 moves diagonally. Image 1 is Matrix 3; Image 2 is Matrix 3.",
-      "examTip": "Exam Strategy: For Progression Rules (x+1) questions on Page 11, eliminate choices with invalid type conversions or mismatched boolean logic early.",
-      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Figure Sequences."
-    },
     "questionImage": "/images/figure-sequences/q28_question.png",
     "optionImages": [
       "/images/figure-sequences/q28_opt_0.png",
@@ -1615,14 +1590,45 @@
       "/images/figure-sequences/q28_opt_6.png",
       "/images/figure-sequences/q28_opt_7.png",
       "/images/figure-sequences/q28_opt_8.png"
-    ]
+    ],
+    "solution": {
+      "understanding": "This advanced question introduces non-constant step sizes: an arithmetic progression rule (+1$) where step distance increases by 1 each turn, alongside color cycling and rotational patterns.",
+      "steps": [
+        "**Step 1 — Yellow Triangle ( + 1$ Perimeter Progression)**:\n• Rule: Moves clockwise along the outer perimeter fields by +1$ spaces:\n  - Matrix 1 to 2: Moves 1 space (from (Row 4, Col 4) to (Row 4, Col 3)).\n  - Matrix 2 to 3: Moves 2 spaces (to (Row 4, Col 1)).\n  - Matrix 3 to 4: Moves 3 spaces (to (Row 1, Col 1)).\n  - Matrix 4 to 5 (Image 1): Moves 4 spaces along top & right border: (Row 1, Col 2) -> (Row 1, Col 3) -> (Row 1, Col 4) -> (Row 2, Col 4). Position: (Row 2, Col 4) [Matrix 3].\n  - Matrix 5 to 6 (Image 2): Moves 5 spaces: (Row 3, Col 4) -> (Row 4, Col 4) -> (Row 4, Col 3) -> (Row 4, Col 2) -> (Row 4, Col 1). Position: (Row 4, Col 1) [Matrix 3].",
+        "**Step 2 — Flag / Angle Symbol (Row 3 Bounce & Tri-Color Cycle)**:\n• Movement: Moves horizontally in Row 3, bouncing off borders.\n• Rotation: Turns 90° counter-clockwise from image to image.\n• Color Cycle: White -> Pink -> Yellow -> White -> Pink -> Yellow.\n• Step 1: (Row 3, Col 1), White, right-down.\n• Step 2: (Row 3, Col 2), Pink, up-right.\n• Step 3: (Row 3, Col 3), Yellow, up-left.\n• Step 4: (Row 3, Col 4), White, down-left — hits right border!\n• Step 5 (Image 1): Bounces left to (Row 3, Col 3), Pink, pointing right-down [Matrix 3].\n• Step 6 (Image 2): Continues left to (Row 3, Col 2), Yellow, pointing up-right [Matrix 3].",
+        "**Step 3 — Arc / Semicircle (Cycle, Rotation & Bi-Color)**:\n• Movement: Down, Right, Up, Left around upper middle cells. Turns 90° CCW and alternates Orange ↔ Black.\n• Step 4: (Row 1, Col 3), Black, open left.\n• Step 5 (Image 1): Moves left to (Row 1, Col 2), Orange, open down [Matrix 3].\n• Step 6 (Image 2): Moves down to (Row 2, Col 2), Black, open right [Matrix 3].",
+        "**Step 4 — White Hexagon (Diagonal Bounce)**:\n• Bounces along the diagonal: (Row 4, Col 2) -> (Row 3, Col 3) -> (Row 2, Col 4) -> (Row 3, Col 3).\n• Step 5 (Image 1): Returns to (Row 4, Col 2) [Matrix 3].\n• Step 6 (Image 2): Rebounds back to (Row 3, Col 3) [Matrix 3].",
+        "**Step 5 — Conclusion**: Both Step 5 (Image 1) and Step 6 (Image 2) correspond to Matrix 3, which is **Option I**."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Complete 6-Step Solved Sequence",
+        "content": "/images/figure-sequences/q28_solved_sequence.png",
+        "caption": "Step-by-step visual progression of the x+1 arithmetic progression."
+      },
+      "finalAnswer": "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is correct. All four elements match Matrix 3 for Step 5, and Matrix 3 for Step 6.",
+      "wrongOptions": [
+        "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT. Neither matrix has the correct position for the triangle under the x+1 rule.",
+        "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT. Image 1 (Matrix 1) has the wrong triangle position and flag color.",
+        "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is INCORRECT. Image 1 is invalid.",
+        "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is INCORRECT. Image 1 (Matrix 2) incorrectly moves the triangle by 3 steps instead of 4.",
+        "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is INCORRECT. Both matrices miscalculate the arithmetic progression.",
+        "Option F (\"Image 1: Matrix 2, Image 2: Matrix 3\") is INCORRECT. Image 1 (Matrix 2) fails on the triangle rule.",
+        "Option G (\"Image 1: Matrix 3, Image 2: Matrix 1\") is INCORRECT. Image 1 is correct (Matrix 3), but Image 2 (Matrix 1) fails the 5-step triangle movement.",
+        "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT. Image 1 is correct (Matrix 3), but Image 2 (Matrix 2) has the wrong flag color (pink instead of yellow).",
+        "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is CORRECT. Both steps are accurately represented by Matrix 3."
+      ],
+      "keyConcept": "Variable Progression Rates (x+1): Always calculate step increments between successive frames: +1, +2, +3, +4, +5. Perimeter movement must be counted cell by cell along corners.",
+      "examTip": "Focus on the Triangle first: +1 space (Step 2), +2 spaces (Step 3), +3 spaces (Step 4). The next must be +4 spaces, landing at (Row 2, Col 4). Only Matrix 3 has the triangle in this position for Image 1!",
+      "commonMistakes": "Miscounting corners as single cells or assuming the triangle continues moving by a fixed step size."
+    }
   },
   {
     "id": 29,
     "chapter": "Figure Sequences",
-    "topic": "Rotation and Color Progression",
+    "topic": "Rotational Speed Progression & Color Cycles",
     "difficulty": "Hard",
-    "question": "Look at the figure sequence for Exercise 6 on Page 12. Determine what the next two matrices (Image 1 and Image 2) look like.",
+    "question": "In the 4×4 matrix sequence below, four symbols interact with rotation, diagonal bouncing, and color cycling: a Star Diamond that accelerates its rotation by +1$ times 90°, a Brown Arrow bouncing vertically, a Triangle changing colors, and a Corner Flag. Determine which candidate matrices correctly complete **Image 1** (Step 5) and **Image 2** (Step 6).",
     "options": [
       "Image 1: Matrix 1, Image 2: Matrix 1",
       "Image 1: Matrix 1, Image 2: Matrix 2",
@@ -1635,39 +1641,9 @@
       "Image 1: Matrix 3, Image 2: Matrix 3"
     ],
     "correctAnswer": 3,
-    "explanation": "The symbol \u2192 moves diagonally, rotating x+1 times. The symbol \u2022 moves vertically in the third column. The symbol moves counter clockwise. The symbol A moves clockwise by two spaces, changing color. Image 1 is Matrix 2; Image 2 is Matrix 1.",
+    "explanation": "The Star Diamond bounces diagonally and rotates by (x+1) × 90° to the right. The Brown Arrow moves vertically in Column 2/3, bouncing and turning 90° left. The Triangle moves clockwise by 2 spaces, cycling colors (Yellow -> Green -> Orange). Image 1 is Matrix 2 and Image 2 is Matrix 1.",
     "bookPage": 12,
     "image": "/images/figure-sequences/q29_question.png",
-    "solution": {
-      "understanding": "This question focuses on Rotation and Color Progression within Figure Sequences. We are given: \"Look at the figure sequence for Exercise 6 on Page 12. Determine what the next two matrices (Image 1 and Image 2) look like.\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
-      "steps": [
-        "Analyze the problem statement and identify given inputs in Rotation and Color Progression.",
-        "Apply core formulas, boolean truth rules, or type rules applicable to Rotation and Color Progression.",
-        "Evaluate the expressions step-by-step to arrive at result: \"Image 1: Matrix 2, Image 2: Matrix 1\".",
-        "Verify that Option D matches the derived solution precisely."
-      ],
-      "diagram": {
-        "type": "image",
-        "title": "Question Diagram",
-        "content": "/images/figure-sequences/q29_question.png",
-        "caption": "Refer to diagram for Question 29 in Figure Sequences"
-      },
-      "finalAnswer": "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is correct. The symbol \u2192 moves diagonally, rotating x+1 times. The symbol \u2022 moves vertically in the third column. The symbol moves counter clockwise. The symbol A moves clockwise by two spaces, changing color. Image 1 is Matrix 2; Image 2 is Matrix 1.",
-      "wrongOptions": [
-        "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Rotation and Color Progression.",
-        "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Rotation and Color Progression.",
-        "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Rotation and Color Progression.",
-        "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is CORRECT.",
-        "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Rotation and Color Progression.",
-        "Option F (\"Image 1: Matrix 2, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Rotation and Color Progression.",
-        "Option G (\"Image 1: Matrix 3, Image 2: Matrix 1\") is INCORRECT because it does not satisfy the requirements of Rotation and Color Progression.",
-        "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT because it does not satisfy the requirements of Rotation and Color Progression.",
-        "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT because it does not satisfy the requirements of Rotation and Color Progression."
-      ],
-      "keyConcept": "Key Principle of Rotation and Color Progression: The symbol \u2192 moves diagonally, rotating x+1 times. The symbol \u2022 moves vertically in the third column. The symbol moves counter clockwise. The symbol A moves clockwise by two spaces, changing color. Image 1 is Matrix 2; Image 2 is Matrix 1.",
-      "examTip": "Exam Strategy: For Rotation and Color Progression questions on Page 12, eliminate choices with invalid type conversions or mismatched boolean logic early.",
-      "commonMistakes": "Typical Pitfall: Misreading operator precedence, forgetting integer truncation, or misinterpreting matrix sequence rules in Figure Sequences."
-    },
     "questionImage": "/images/figure-sequences/q29_question.png",
     "optionImages": [
       "/images/figure-sequences/q29_opt_0.png",
@@ -1679,7 +1655,38 @@
       "/images/figure-sequences/q29_opt_6.png",
       "/images/figure-sequences/q29_opt_7.png",
       "/images/figure-sequences/q29_opt_8.png"
-    ]
+    ],
+    "solution": {
+      "understanding": "A complex mastery question featuring angular acceleration (rotational turns increment by +1$), vertical reflection, 3-color cyclic changes, and corner translations.",
+      "steps": [
+        "**Step 1 — Star in Diamond (Diagonal Bounce & (x+1) × 90° Rotation)**:\n• Movement: Bounces diagonally along the path: (Row 3, Col 4) -> (Row 2, Col 4) -> (Row 1, Col 4) -> (Row 1, Col 3).\n• Step 5 (Image 1): Continues to (Row 1, Col 2) [Matrix 2].\n• Step 6 (Image 2): Reaches (Row 1, Col 1) [Matrix 1].\n• Rotation: Turns x+1 times 90° to the right (Step 1->2: 1 turn; Step 2->3: 2 turns; Step 3->4: 3 turns; Step 4->5: 4 turns [360°, unchanged]).",
+        "**Step 2 — Triangle (Perimeter 2-Field Hop & 3-Color Loop)**:\n• Movement: Moves clockwise along the border by 2 spaces each step.\n• Color cycle: Yellow -> Green -> Orange -> Yellow -> Green -> Orange.\n• Step 1: (Row 4, Col 4), Yellow.\n• Step 2: (Row 4, Col 2), Green.\n• Step 3: (Row 3, Col 1), Orange.\n• Step 4: (Row 1, Col 1), Yellow.\n• Step 5 (Image 1): (Row 1, Col 3), Green [Matrix 2].\n• Step 6 (Image 2): (Row 2, Col 4), Orange [Matrix 1].",
+        "**Step 3 — Brown Arrow (Vertical Bounce & 90° Left Rotation)**:\n• Movement: Bounces vertically between upper and lower boundaries in the center column.\n• Rotation: Turns 90° counter-clockwise (to the left) at each step.\n• Step 4: (Row 3, Col 2), pointing left.\n• Step 5 (Image 1): (Row 2, Col 1), pointing left [Matrix 2].\n• Step 6 (Image 2): (Row 3, Col 2), pointing up [Matrix 1].",
+        "**Step 4 — Match Candidate Choices**:\n• For Image 1 (Step 5): Triangle at (Row 1, Col 3, Green), Star at (Row 1, Col 2), Arrow at (Row 2, Col 1, left). Matches **Matrix 2**.\n• For Image 2 (Step 6): Triangle at (Row 2, Col 4, Orange), Star at (Row 1, Col 1), Arrow at (Row 3, Col 2, up). Matches **Matrix 1**.",
+        "**Step 5 — Conclusion**: Image 1 = Matrix 2 and Image 2 = Matrix 1, corresponding to **Option D**."
+      ],
+      "diagram": {
+        "type": "image",
+        "title": "Complete 6-Step Solved Sequence",
+        "content": "/images/figure-sequences/q29_solved_sequence.png",
+        "caption": "Step-by-step visual progression of the complex rotational and color cycle rules."
+      },
+      "finalAnswer": "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is correct. Matrix 2 correctly fulfills all Step 5 conditions, and Matrix 1 correctly fulfills all Step 6 conditions.",
+      "wrongOptions": [
+        "Option A (\"Image 1: Matrix 1, Image 2: Matrix 1\") is INCORRECT. Matrix 1 for Image 1 has the wrong triangle color (orange instead of green).",
+        "Option B (\"Image 1: Matrix 1, Image 2: Matrix 2\") is INCORRECT. Image 1 is wrong and Image 2 (Matrix 2) has the wrong arrow orientation.",
+        "Option C (\"Image 1: Matrix 1, Image 2: Matrix 3\") is INCORRECT. Image 1 (Matrix 1) is invalid.",
+        "Option D (\"Image 1: Matrix 2, Image 2: Matrix 1\") is CORRECT. Satisfies all four geometric and color rules.",
+        "Option E (\"Image 1: Matrix 2, Image 2: Matrix 2\") is INCORRECT. Image 2 (Matrix 2) fails on the triangle position and color.",
+        "Option F (\"Image 1: Matrix 2, Image 2: Matrix 3\") is INCORRECT. Image 2 (Matrix 3) has an invalid star placement.",
+        "Option G (\"Image 1: Matrix 3, Image 2: Matrix 1\") is INCORRECT. Image 1 (Matrix 3) places the triangle in the wrong cell.",
+        "Option H (\"Image 1: Matrix 3, Image 2: Matrix 2\") is INCORRECT. Both matrices contain position and color errors.",
+        "Option I (\"Image 1: Matrix 3, Image 2: Matrix 3\") is INCORRECT. Neither candidate choice is correct."
+      ],
+      "keyConcept": "Color Cyclicity and Angular Multipliers: Complex dMAT tasks often couple spatial movement with a 3-phase color sequence and rotation speedups. Track one attribute at a time.",
+      "examTip": "Check Triangle color: Step 1 (Yellow), Step 2 (Green), Step 3 (Orange), Step 4 (Yellow). Step 5 MUST be Green, and Step 6 MUST be Orange. Only Matrix 2 has a Green triangle for Image 1, and only Matrix 1 has an Orange triangle for Image 2!",
+      "commonMistakes": "Confusing the color sequence order (Yellow -> Orange -> Green instead of Yellow -> Green -> Orange)."
+    }
   },
   {
     "id": 30,
@@ -1747,7 +1754,7 @@
     "chapter": "Mathematical Equations",
     "topic": "Systems of Linear Equations",
     "difficulty": "Easy",
-    "question": "Example 2:\nB = 2 \u00d7 A\nB + A = 12\nWhat numbers do A and B correspond to so that the equations are solved correctly?",
+    "question": "Example 2:\nB = 2 × A\nB + A = 12\nWhat numbers do A and B correspond to so that the equations are solved correctly?",
     "options": [
       "A = 3, B = 9",
       "A = 4, B = 8",
@@ -1758,7 +1765,7 @@
     "explanation": "Substitute B = 2A into the second equation: 2A + A = 12, so 3A = 12, which gives A = 4. Substituting A = 4 into the first equation yields B = 8.",
     "bookPage": 17,
     "solution": {
-      "understanding": "This question focuses on Systems of Linear Equations within Mathematical Equations. We are given: \"Example 2:\nB = 2 \u00d7 A\nB + A = 12\nWhat numbers do A and B correspond to so that the equations are solved correctly?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "understanding": "This question focuses on Systems of Linear Equations within Mathematical Equations. We are given: \"Example 2:\nB = 2 × A\nB + A = 12\nWhat numbers do A and B correspond to so that the equations are solved correctly?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
         "Analyze the problem statement and identify given inputs in Systems of Linear Equations.",
         "Apply core formulas, boolean truth rules, or type rules applicable to Systems of Linear Equations.",
@@ -1776,7 +1783,7 @@
         "rows": [
           [
             "Input / Problem",
-            "Example 2:\nB = 2 \u00d7 A\nB + A = 12\nWha...",
+            "Example 2:\nB = 2 × A\nB + A = 12\nWha...",
             "Given"
           ],
           [
@@ -1869,7 +1876,7 @@
     "chapter": "Mathematical Equations",
     "topic": "Substitution Method",
     "difficulty": "Easy",
-    "question": "Solve the system of equations:\nB \u00f7 2 = A\nB - A = 8\nWhat are the values of A and B?",
+    "question": "Solve the system of equations:\nB ÷ 2 = A\nB - A = 8\nWhat are the values of A and B?",
     "options": [
       "A = 4, B = 12",
       "A = 8, B = 16",
@@ -1880,7 +1887,7 @@
     "explanation": "Multiplying by 2 in the first equation gives B = 2A. Replacing B in the second equation gives 2A - A = 8, so A = 8. Then B = 16.",
     "bookPage": 19,
     "solution": {
-      "understanding": "This question focuses on Substitution Method within Mathematical Equations. We are given: \"Solve the system of equations:\nB \u00f7 2 = A\nB - A = 8\nWhat are the values of A and B?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "understanding": "This question focuses on Substitution Method within Mathematical Equations. We are given: \"Solve the system of equations:\nB ÷ 2 = A\nB - A = 8\nWhat are the values of A and B?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
         "Analyze the problem statement and identify given inputs in Substitution Method.",
         "Apply core formulas, boolean truth rules, or type rules applicable to Substitution Method.",
@@ -1898,7 +1905,7 @@
         "rows": [
           [
             "Input / Problem",
-            "Solve the system of equations:\nB \u00f7 ...",
+            "Solve the system of equations:\nB ÷ ...",
             "Given"
           ],
           [
@@ -1930,7 +1937,7 @@
     "chapter": "Mathematical Equations",
     "topic": "Multi-variable Substitution",
     "difficulty": "Medium",
-    "question": "Solve the system of equations:\n3 \u00d7 C = A\nA + C = 8\n2 \u00d7 A + 2 \u00d7 C = B\nWhat are the values of A, B, and C?",
+    "question": "Solve the system of equations:\n3 × C = A\nA + C = 8\n2 × A + 2 × C = B\nWhat are the values of A, B, and C?",
     "options": [
       "A = 6, B = 16, C = 2",
       "A = 6, B = 12, C = 2",
@@ -1941,7 +1948,7 @@
     "explanation": "Substitute A = 3C into A + C = 8 to get 3C + C = 8, so 4C = 8, which yields C = 2. Then A = 6. Substituting A = 6 and C = 2 into 2A + 2C = B yields B = 16.",
     "bookPage": 19,
     "solution": {
-      "understanding": "This question focuses on Multi-variable Substitution within Mathematical Equations. We are given: \"Solve the system of equations:\n3 \u00d7 C = A\nA + C = 8\n2 \u00d7 A + 2 \u00d7 C = B\nWhat are the values of A, B, and C?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "understanding": "This question focuses on Multi-variable Substitution within Mathematical Equations. We are given: \"Solve the system of equations:\n3 × C = A\nA + C = 8\n2 × A + 2 × C = B\nWhat are the values of A, B, and C?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
         "Analyze the problem statement and identify given inputs in Multi-variable Substitution.",
         "Apply core formulas, boolean truth rules, or type rules applicable to Multi-variable Substitution.",
@@ -1959,7 +1966,7 @@
         "rows": [
           [
             "Input / Problem",
-            "Solve the system of equations:\n3 \u00d7 ...",
+            "Solve the system of equations:\n3 × ...",
             "Given"
           ],
           [
@@ -1991,7 +1998,7 @@
     "chapter": "Mathematical Equations",
     "topic": "Multi-variable Substitution",
     "difficulty": "Medium",
-    "question": "Solve the system of equations:\n18 - B = A\n3 \u00d7 A = C\nB \u00f7 2 = A\nWhat are the values of A, B, and C?",
+    "question": "Solve the system of equations:\n18 - B = A\n3 × A = C\nB ÷ 2 = A\nWhat are the values of A, B, and C?",
     "options": [
       "A = 6, B = 12, C = 18",
       "A = 8, B = 16, C = 24",
@@ -2002,7 +2009,7 @@
     "explanation": "From the third equation, B = 2A. Replacing B in the first equation yields 18 - 2A = A, so 3A = 18 and A = 6. Substituting A = 6 yields B = 12 and C = 18.",
     "bookPage": 19,
     "solution": {
-      "understanding": "This question focuses on Multi-variable Substitution within Mathematical Equations. We are given: \"Solve the system of equations:\n18 - B = A\n3 \u00d7 A = C\nB \u00f7 2 = A\nWhat are the values of A, B, and C?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "understanding": "This question focuses on Multi-variable Substitution within Mathematical Equations. We are given: \"Solve the system of equations:\n18 - B = A\n3 × A = C\nB ÷ 2 = A\nWhat are the values of A, B, and C?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
         "Analyze the problem statement and identify given inputs in Multi-variable Substitution.",
         "Apply core formulas, boolean truth rules, or type rules applicable to Multi-variable Substitution.",
@@ -2052,7 +2059,7 @@
     "chapter": "Mathematical Equations",
     "topic": "Four-variable Linear System",
     "difficulty": "Hard",
-    "question": "Solve the system of equations:\nA - B + C - D = 2\n10 \u00d7 B = C\n5 \u00d7 B = A\n11 + B = D\nWhat are the values of A, B, C, and D?",
+    "question": "Solve the system of equations:\nA - B + C - D = 2\n10 × B = C\n5 × B = A\n11 + B = D\nWhat are the values of A, B, C, and D?",
     "options": [
       "A = 10, B = 2, C = 20, D = 13",
       "A = 5, B = 1, C = 10, D = 12",
@@ -2063,7 +2070,7 @@
     "explanation": "Substitute A, C, and D expressions into the first equation: 5B - B + 10B - (11 + B) = 2. This simplifies to 13B - 11 = 2, which gives B = 1. Then C = 10, A = 5, and D = 12.",
     "bookPage": 20,
     "solution": {
-      "understanding": "This question focuses on Four-variable Linear System within Mathematical Equations. We are given: \"Solve the system of equations:\nA - B + C - D = 2\n10 \u00d7 B = C\n5 \u00d7 B = A\n11 + B = D\nWhat are the values of A, B, C, and D?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "understanding": "This question focuses on Four-variable Linear System within Mathematical Equations. We are given: \"Solve the system of equations:\nA - B + C - D = 2\n10 × B = C\n5 × B = A\n11 + B = D\nWhat are the values of A, B, C, and D?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
         "Analyze the problem statement and identify given inputs in Four-variable Linear System.",
         "Apply core formulas, boolean truth rules, or type rules applicable to Four-variable Linear System.",
@@ -2113,7 +2120,7 @@
     "chapter": "Mathematical Equations",
     "topic": "Four-variable Linear System",
     "difficulty": "Hard",
-    "question": "Solve the system of equations:\nC + D - A = 1\n5 \u00d7 C = D\n13 - C = A\n3 \u00d7 C - 1 = B\nWhat are the values of A, B, C, and D?",
+    "question": "Solve the system of equations:\nC + D - A = 1\n5 × C = D\n13 - C = A\n3 × C - 1 = B\nWhat are the values of A, B, C, and D?",
     "options": [
       "A = 11, B = 5, C = 2, D = 10",
       "A = 12, B = 2, C = 1, D = 5",
@@ -2124,7 +2131,7 @@
     "explanation": "Substitute D = 5C and A = 13 - C into the first equation: C + 5C - (13 - C) = 1. This simplifies to 7C - 13 = 1, which gives C = 2. Substituting C = 2 yields D = 10, A = 11, and B = 5.",
     "bookPage": 20,
     "solution": {
-      "understanding": "This question focuses on Four-variable Linear System within Mathematical Equations. We are given: \"Solve the system of equations:\nC + D - A = 1\n5 \u00d7 C = D\n13 - C = A\n3 \u00d7 C - 1 = B\nWhat are the values of A, B, C, and D?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
+      "understanding": "This question focuses on Four-variable Linear System within Mathematical Equations. We are given: \"Solve the system of equations:\nC + D - A = 1\n5 × C = D\n13 - C = A\n3 × C - 1 = B\nWhat are the values of A, B, C, and D?\" and need to evaluate the exact logical or mathematical outcome among the 4 choices.",
       "steps": [
         "Analyze the problem statement and identify given inputs in Four-variable Linear System.",
         "Apply core formulas, boolean truth rules, or type rules applicable to Four-variable Linear System.",

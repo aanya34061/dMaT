@@ -131,6 +131,21 @@ export function VisualExplanationRenderer({ diagram }: { diagram: string | Visua
       }
     }
 
+    // Check if string is an image path
+    if (diagram.startsWith('/') || /\.(png|jpg|jpeg|svg|webp)$/i.test(diagram)) {
+      return (
+        <div className="my-4 overflow-hidden rounded-2xl border-2 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-3 shadow-xs">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={diagram}
+            alt="Visual Explanation Diagram"
+            className="w-full h-auto max-h-[480px] object-contain mx-auto"
+            style={{ imageRendering: 'crisp-edges' }}
+          />
+        </div>
+      );
+    }
+
     // Default string math or text diagram
     return (
       <div className="my-3 p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
@@ -194,6 +209,16 @@ export function VisualExplanationRenderer({ diagram }: { diagram: string | Visua
               )}
             </div>
           </div>
+        </div>
+      ) : type === 'image' ? (
+        <div className="my-3 overflow-hidden rounded-2xl border-2 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-3 shadow-xs">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={content}
+            alt={title || "Diagram"}
+            className="w-full h-auto max-h-[480px] object-contain mx-auto"
+            style={{ imageRendering: 'crisp-edges' }}
+          />
         </div>
       ) : (
         <div className="bg-slate-900 text-emerald-400 p-4 rounded-xl font-mono text-xs overflow-x-auto leading-relaxed border border-slate-800">

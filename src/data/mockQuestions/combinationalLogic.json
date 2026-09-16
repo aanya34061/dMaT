@@ -1,0 +1,2603 @@
+[
+  {
+    "id": "cl-001",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Truth Table Function Identification",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "A 2-input Boolean truth table specifies output X = 1 ONLY when input A = 0 and input B = 0. For all other combinations (A=0, B=1; A=1, B=0; A=1, B=1), the output is X = 0. Which Boolean function represents this circuit?",
+    "options": [
+      "X = ~A ^ ~B (NOR operation)",
+      "X = ~A ^ B",
+      "X = A ^ ~B",
+      "X = A v B"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Since X = 1 only when A=0 and B=0, both A must be negated (~A) AND B must be negated (~B). This is equivalent to X = ~(A v B) = ~A ^ ~B (NOR gate). Option A is correct.",
+    "solutionSteps": [
+      "1. Check conditions where output X = 1: (A = 0, B = 0).",
+      "2. Formulate corresponding product term: (~A ^ ~B).",
+      "3. Verify that for any other input (e.g. A=1, B=0), (~A ^ ~B) = 0.",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-002",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Security Sensor Boolean Logic",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A high-security laboratory facility has 4 environmental hazard detectors: fire sensor (F), gas leak sensor (G), radiation sensor (R), and thermal overrun sensor (T). An emergency evacuation siren must activate if AT LEAST ONE of the 4 sensors detects danger. Which Boolean expression correctly models the siren trigger logic?",
+    "options": [
+      "Siren = F ^ G ^ R ^ T (Logical AND)",
+      "Siren = F v G v R v T (Logical OR)",
+      "Siren = ~(F v G v R v T)",
+      "Siren = (F ^ G) v (R ^ T) only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An alarm system that sounds when *any* single sensor detects danger requires a disjunctive (OR) combination of all sensor variables. If any of F, G, R, or T is 1, the siren output is 1. Option B is correct.",
+    "solutionSteps": [
+      "1. 'At least one' condition corresponds to inclusive OR (disjunction).",
+      "2. Expression: Siren = F v G v R v T.",
+      "3. Option B is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-003",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Majority Voting Circuit Logic",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A spacecraft flight computer employs Triple Modular Redundancy (TMR) with three independent sensor channels A, B, and C. The majority voting unit outputs X = 1 if at least two of the three channels report 1. Which Boolean equation specifies this majority function?",
+    "options": [
+      "X = A ^ B ^ C",
+      "X = (A v B) ^ (B v C) ^ (A v C)",
+      "X = (A ^ B) v (B ^ C) v (A ^ C)",
+      "X = A v B v C"
+    ],
+    "correctAnswer": 2,
+    "explanation": "At least two of {A, B, C} being 1 means either (A and B are 1) OR (B and C are 1) OR (A and C are 1). This yields X = (A ^ B) v (B ^ C) v (A ^ C). Option C is correct.",
+    "solutionSteps": [
+      "1. List input pairs where 2 or more are 1: {A,B}, {B,C}, {A,C}.",
+      "2. Formulate sum of product pairs: (A ^ B) v (B ^ C) v (A ^ C).",
+      "3. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-004",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Truth Table Function Identification",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "A 2-input Boolean truth table specifies output X = 1 ONLY when input A = 0 and input B = 0. For all other combinations (A=0, B=1; A=1, B=0; A=1, B=1), the output is X = 0. Which Boolean function represents this circuit?",
+    "options": [
+      "X = A v B",
+      "X = ~A ^ B",
+      "X = A ^ ~B",
+      "X = ~A ^ ~B (NOR operation)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Since X = 1 only when A=0 and B=0, both A must be negated (~A) AND B must be negated (~B). This is equivalent to X = ~(A v B) = ~A ^ ~B (NOR gate). Option D is correct.",
+    "solutionSteps": [
+      "1. Check conditions where output X = 1: (A = 0, B = 0).",
+      "2. Formulate corresponding product term: (~A ^ ~B).",
+      "3. Verify that for any other input (e.g. A=1, B=0), (~A ^ ~B) = 0.",
+      "4. Option D matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-005",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Security Sensor Boolean Logic",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A high-security laboratory facility has 4 environmental hazard detectors: fire sensor (F), gas leak sensor (G), radiation sensor (R), and thermal overrun sensor (T). An emergency evacuation siren must activate if AT LEAST ONE of the 4 sensors detects danger. Which Boolean expression correctly models the siren trigger logic?",
+    "options": [
+      "Siren = F v G v R v T (Logical OR)",
+      "Siren = F ^ G ^ R ^ T (Logical AND)",
+      "Siren = ~(F v G v R v T)",
+      "Siren = (F ^ G) v (R ^ T) only"
+    ],
+    "correctAnswer": 0,
+    "explanation": "An alarm system that sounds when *any* single sensor detects danger requires a disjunctive (OR) combination of all sensor variables. If any of F, G, R, or T is 1, the siren output is 1. Option A is correct.",
+    "solutionSteps": [
+      "1. 'At least one' condition corresponds to inclusive OR (disjunction).",
+      "2. Expression: Siren = F v G v R v T.",
+      "3. Option A is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-006",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Majority Voting Circuit Logic",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "A spacecraft flight computer employs Triple Modular Redundancy (TMR) with three independent sensor channels A, B, and C. The majority voting unit outputs X = 1 if at least two of the three channels report 1. Which Boolean equation specifies this majority function?",
+    "options": [
+      "X = (A v B) ^ (B v C) ^ (A v C)",
+      "X = (A ^ B) v (B ^ C) v (A ^ C)",
+      "X = A ^ B ^ C",
+      "X = A v B v C"
+    ],
+    "correctAnswer": 1,
+    "explanation": "At least two of {A, B, C} being 1 means either (A and B are 1) OR (B and C are 1) OR (A and C are 1). This yields X = (A ^ B) v (B ^ C) v (A ^ C). Option B is correct.",
+    "solutionSteps": [
+      "1. List input pairs where 2 or more are 1: {A,B}, {B,C}, {A,C}.",
+      "2. Formulate sum of product pairs: (A ^ B) v (B ^ C) v (A ^ C).",
+      "3. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-007",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Truth Table Function Identification",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A 2-input Boolean truth table specifies output X = 1 ONLY when input A = 0 and input B = 0. For all other combinations (A=0, B=1; A=1, B=0; A=1, B=1), the output is X = 0. Which Boolean function represents this circuit?",
+    "options": [
+      "X = A ^ ~B",
+      "X = ~A ^ B",
+      "X = ~A ^ ~B (NOR operation)",
+      "X = A v B"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Since X = 1 only when A=0 and B=0, both A must be negated (~A) AND B must be negated (~B). This is equivalent to X = ~(A v B) = ~A ^ ~B (NOR gate). Option C is correct.",
+    "solutionSteps": [
+      "1. Check conditions where output X = 1: (A = 0, B = 0).",
+      "2. Formulate corresponding product term: (~A ^ ~B).",
+      "3. Verify that for any other input (e.g. A=1, B=0), (~A ^ ~B) = 0.",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-008",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Security Sensor Boolean Logic",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A high-security laboratory facility has 4 environmental hazard detectors: fire sensor (F), gas leak sensor (G), radiation sensor (R), and thermal overrun sensor (T). An emergency evacuation siren must activate if AT LEAST ONE of the 4 sensors detects danger. Which Boolean expression correctly models the siren trigger logic?",
+    "options": [
+      "Siren = (F ^ G) v (R ^ T) only",
+      "Siren = F ^ G ^ R ^ T (Logical AND)",
+      "Siren = ~(F v G v R v T)",
+      "Siren = F v G v R v T (Logical OR)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "An alarm system that sounds when *any* single sensor detects danger requires a disjunctive (OR) combination of all sensor variables. If any of F, G, R, or T is 1, the siren output is 1. Option D is correct.",
+    "solutionSteps": [
+      "1. 'At least one' condition corresponds to inclusive OR (disjunction).",
+      "2. Expression: Siren = F v G v R v T.",
+      "3. Option D is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-009",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Majority Voting Circuit Logic",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "A spacecraft flight computer employs Triple Modular Redundancy (TMR) with three independent sensor channels A, B, and C. The majority voting unit outputs X = 1 if at least two of the three channels report 1. Which Boolean equation specifies this majority function?",
+    "options": [
+      "X = (A ^ B) v (B ^ C) v (A ^ C)",
+      "X = (A v B) ^ (B v C) ^ (A v C)",
+      "X = A ^ B ^ C",
+      "X = A v B v C"
+    ],
+    "correctAnswer": 0,
+    "explanation": "At least two of {A, B, C} being 1 means either (A and B are 1) OR (B and C are 1) OR (A and C are 1). This yields X = (A ^ B) v (B ^ C) v (A ^ C). Option A is correct.",
+    "solutionSteps": [
+      "1. List input pairs where 2 or more are 1: {A,B}, {B,C}, {A,C}.",
+      "2. Formulate sum of product pairs: (A ^ B) v (B ^ C) v (A ^ C).",
+      "3. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-010",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Truth Table Function Identification",
+    "difficulty": "Very Hard",
+    "questionType": "multiple_choice",
+    "questionText": "A 2-input Boolean truth table specifies output X = 1 ONLY when input A = 0 and input B = 0. For all other combinations (A=0, B=1; A=1, B=0; A=1, B=1), the output is X = 0. Which Boolean function represents this circuit?",
+    "options": [
+      "X = ~A ^ B",
+      "X = ~A ^ ~B (NOR operation)",
+      "X = A ^ ~B",
+      "X = A v B"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Since X = 1 only when A=0 and B=0, both A must be negated (~A) AND B must be negated (~B). This is equivalent to X = ~(A v B) = ~A ^ ~B (NOR gate). Option B is correct.",
+    "solutionSteps": [
+      "1. Check conditions where output X = 1: (A = 0, B = 0).",
+      "2. Formulate corresponding product term: (~A ^ ~B).",
+      "3. Verify that for any other input (e.g. A=1, B=0), (~A ^ ~B) = 0.",
+      "4. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-011",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Security Sensor Boolean Logic",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "A high-security laboratory facility has 4 environmental hazard detectors: fire sensor (F), gas leak sensor (G), radiation sensor (R), and thermal overrun sensor (T). An emergency evacuation siren must activate if AT LEAST ONE of the 4 sensors detects danger. Which Boolean expression correctly models the siren trigger logic?",
+    "options": [
+      "Siren = ~(F v G v R v T)",
+      "Siren = F ^ G ^ R ^ T (Logical AND)",
+      "Siren = F v G v R v T (Logical OR)",
+      "Siren = (F ^ G) v (R ^ T) only"
+    ],
+    "correctAnswer": 2,
+    "explanation": "An alarm system that sounds when *any* single sensor detects danger requires a disjunctive (OR) combination of all sensor variables. If any of F, G, R, or T is 1, the siren output is 1. Option C is correct.",
+    "solutionSteps": [
+      "1. 'At least one' condition corresponds to inclusive OR (disjunction).",
+      "2. Expression: Siren = F v G v R v T.",
+      "3. Option C is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-012",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Majority Voting Circuit Logic",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A spacecraft flight computer employs Triple Modular Redundancy (TMR) with three independent sensor channels A, B, and C. The majority voting unit outputs X = 1 if at least two of the three channels report 1. Which Boolean equation specifies this majority function?",
+    "options": [
+      "X = A v B v C",
+      "X = (A v B) ^ (B v C) ^ (A v C)",
+      "X = A ^ B ^ C",
+      "X = (A ^ B) v (B ^ C) v (A ^ C)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "At least two of {A, B, C} being 1 means either (A and B are 1) OR (B and C are 1) OR (A and C are 1). This yields X = (A ^ B) v (B ^ C) v (A ^ C). Option D is correct.",
+    "solutionSteps": [
+      "1. List input pairs where 2 or more are 1: {A,B}, {B,C}, {A,C}.",
+      "2. Formulate sum of product pairs: (A ^ B) v (B ^ C) v (A ^ C).",
+      "3. Option D matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-013",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Truth Table Function Identification",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A 2-input Boolean truth table specifies output X = 1 ONLY when input A = 0 and input B = 0. For all other combinations (A=0, B=1; A=1, B=0; A=1, B=1), the output is X = 0. Which Boolean function represents this circuit?",
+    "options": [
+      "X = ~A ^ ~B (NOR operation)",
+      "X = ~A ^ B",
+      "X = A ^ ~B",
+      "X = A v B"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Since X = 1 only when A=0 and B=0, both A must be negated (~A) AND B must be negated (~B). This is equivalent to X = ~(A v B) = ~A ^ ~B (NOR gate). Option A is correct.",
+    "solutionSteps": [
+      "1. Check conditions where output X = 1: (A = 0, B = 0).",
+      "2. Formulate corresponding product term: (~A ^ ~B).",
+      "3. Verify that for any other input (e.g. A=1, B=0), (~A ^ ~B) = 0.",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-014",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Security Sensor Boolean Logic",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "A high-security laboratory facility has 4 environmental hazard detectors: fire sensor (F), gas leak sensor (G), radiation sensor (R), and thermal overrun sensor (T). An emergency evacuation siren must activate if AT LEAST ONE of the 4 sensors detects danger. Which Boolean expression correctly models the siren trigger logic?",
+    "options": [
+      "Siren = F ^ G ^ R ^ T (Logical AND)",
+      "Siren = F v G v R v T (Logical OR)",
+      "Siren = ~(F v G v R v T)",
+      "Siren = (F ^ G) v (R ^ T) only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An alarm system that sounds when *any* single sensor detects danger requires a disjunctive (OR) combination of all sensor variables. If any of F, G, R, or T is 1, the siren output is 1. Option B is correct.",
+    "solutionSteps": [
+      "1. 'At least one' condition corresponds to inclusive OR (disjunction).",
+      "2. Expression: Siren = F v G v R v T.",
+      "3. Option B is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-015",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Majority Voting Circuit Logic",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A spacecraft flight computer employs Triple Modular Redundancy (TMR) with three independent sensor channels A, B, and C. The majority voting unit outputs X = 1 if at least two of the three channels report 1. Which Boolean equation specifies this majority function?",
+    "options": [
+      "X = A ^ B ^ C",
+      "X = (A v B) ^ (B v C) ^ (A v C)",
+      "X = (A ^ B) v (B ^ C) v (A ^ C)",
+      "X = A v B v C"
+    ],
+    "correctAnswer": 2,
+    "explanation": "At least two of {A, B, C} being 1 means either (A and B are 1) OR (B and C are 1) OR (A and C are 1). This yields X = (A ^ B) v (B ^ C) v (A ^ C). Option C is correct.",
+    "solutionSteps": [
+      "1. List input pairs where 2 or more are 1: {A,B}, {B,C}, {A,C}.",
+      "2. Formulate sum of product pairs: (A ^ B) v (B ^ C) v (A ^ C).",
+      "3. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-016",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Truth Table Function Identification",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "A 2-input Boolean truth table specifies output X = 1 ONLY when input A = 0 and input B = 0. For all other combinations (A=0, B=1; A=1, B=0; A=1, B=1), the output is X = 0. Which Boolean function represents this circuit?",
+    "options": [
+      "X = A v B",
+      "X = ~A ^ B",
+      "X = A ^ ~B",
+      "X = ~A ^ ~B (NOR operation)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Since X = 1 only when A=0 and B=0, both A must be negated (~A) AND B must be negated (~B). This is equivalent to X = ~(A v B) = ~A ^ ~B (NOR gate). Option D is correct.",
+    "solutionSteps": [
+      "1. Check conditions where output X = 1: (A = 0, B = 0).",
+      "2. Formulate corresponding product term: (~A ^ ~B).",
+      "3. Verify that for any other input (e.g. A=1, B=0), (~A ^ ~B) = 0.",
+      "4. Option D matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-017",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Security Sensor Boolean Logic",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A high-security laboratory facility has 4 environmental hazard detectors: fire sensor (F), gas leak sensor (G), radiation sensor (R), and thermal overrun sensor (T). An emergency evacuation siren must activate if AT LEAST ONE of the 4 sensors detects danger. Which Boolean expression correctly models the siren trigger logic?",
+    "options": [
+      "Siren = F v G v R v T (Logical OR)",
+      "Siren = F ^ G ^ R ^ T (Logical AND)",
+      "Siren = ~(F v G v R v T)",
+      "Siren = (F ^ G) v (R ^ T) only"
+    ],
+    "correctAnswer": 0,
+    "explanation": "An alarm system that sounds when *any* single sensor detects danger requires a disjunctive (OR) combination of all sensor variables. If any of F, G, R, or T is 1, the siren output is 1. Option A is correct.",
+    "solutionSteps": [
+      "1. 'At least one' condition corresponds to inclusive OR (disjunction).",
+      "2. Expression: Siren = F v G v R v T.",
+      "3. Option A is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-018",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Majority Voting Circuit Logic",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A spacecraft flight computer employs Triple Modular Redundancy (TMR) with three independent sensor channels A, B, and C. The majority voting unit outputs X = 1 if at least two of the three channels report 1. Which Boolean equation specifies this majority function?",
+    "options": [
+      "X = (A v B) ^ (B v C) ^ (A v C)",
+      "X = (A ^ B) v (B ^ C) v (A ^ C)",
+      "X = A ^ B ^ C",
+      "X = A v B v C"
+    ],
+    "correctAnswer": 1,
+    "explanation": "At least two of {A, B, C} being 1 means either (A and B are 1) OR (B and C are 1) OR (A and C are 1). This yields X = (A ^ B) v (B ^ C) v (A ^ C). Option B is correct.",
+    "solutionSteps": [
+      "1. List input pairs where 2 or more are 1: {A,B}, {B,C}, {A,C}.",
+      "2. Formulate sum of product pairs: (A ^ B) v (B ^ C) v (A ^ C).",
+      "3. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-019",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Truth Table Function Identification",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "A 2-input Boolean truth table specifies output X = 1 ONLY when input A = 0 and input B = 0. For all other combinations (A=0, B=1; A=1, B=0; A=1, B=1), the output is X = 0. Which Boolean function represents this circuit?",
+    "options": [
+      "X = A ^ ~B",
+      "X = ~A ^ B",
+      "X = ~A ^ ~B (NOR operation)",
+      "X = A v B"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Since X = 1 only when A=0 and B=0, both A must be negated (~A) AND B must be negated (~B). This is equivalent to X = ~(A v B) = ~A ^ ~B (NOR gate). Option C is correct.",
+    "solutionSteps": [
+      "1. Check conditions where output X = 1: (A = 0, B = 0).",
+      "2. Formulate corresponding product term: (~A ^ ~B).",
+      "3. Verify that for any other input (e.g. A=1, B=0), (~A ^ ~B) = 0.",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-020",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Security Sensor Boolean Logic",
+    "difficulty": "Very Hard",
+    "questionType": "multiple_choice",
+    "questionText": "A high-security laboratory facility has 4 environmental hazard detectors: fire sensor (F), gas leak sensor (G), radiation sensor (R), and thermal overrun sensor (T). An emergency evacuation siren must activate if AT LEAST ONE of the 4 sensors detects danger. Which Boolean expression correctly models the siren trigger logic?",
+    "options": [
+      "Siren = (F ^ G) v (R ^ T) only",
+      "Siren = F ^ G ^ R ^ T (Logical AND)",
+      "Siren = ~(F v G v R v T)",
+      "Siren = F v G v R v T (Logical OR)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "An alarm system that sounds when *any* single sensor detects danger requires a disjunctive (OR) combination of all sensor variables. If any of F, G, R, or T is 1, the siren output is 1. Option D is correct.",
+    "solutionSteps": [
+      "1. 'At least one' condition corresponds to inclusive OR (disjunction).",
+      "2. Expression: Siren = F v G v R v T.",
+      "3. Option D is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-021",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Majority Voting Circuit Logic",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "A spacecraft flight computer employs Triple Modular Redundancy (TMR) with three independent sensor channels A, B, and C. The majority voting unit outputs X = 1 if at least two of the three channels report 1. Which Boolean equation specifies this majority function?",
+    "options": [
+      "X = (A ^ B) v (B ^ C) v (A ^ C)",
+      "X = (A v B) ^ (B v C) ^ (A v C)",
+      "X = A ^ B ^ C",
+      "X = A v B v C"
+    ],
+    "correctAnswer": 0,
+    "explanation": "At least two of {A, B, C} being 1 means either (A and B are 1) OR (B and C are 1) OR (A and C are 1). This yields X = (A ^ B) v (B ^ C) v (A ^ C). Option A is correct.",
+    "solutionSteps": [
+      "1. List input pairs where 2 or more are 1: {A,B}, {B,C}, {A,C}.",
+      "2. Formulate sum of product pairs: (A ^ B) v (B ^ C) v (A ^ C).",
+      "3. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-022",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Truth Table Function Identification",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A 2-input Boolean truth table specifies output X = 1 ONLY when input A = 0 and input B = 0. For all other combinations (A=0, B=1; A=1, B=0; A=1, B=1), the output is X = 0. Which Boolean function represents this circuit?",
+    "options": [
+      "X = ~A ^ B",
+      "X = ~A ^ ~B (NOR operation)",
+      "X = A ^ ~B",
+      "X = A v B"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Since X = 1 only when A=0 and B=0, both A must be negated (~A) AND B must be negated (~B). This is equivalent to X = ~(A v B) = ~A ^ ~B (NOR gate). Option B is correct.",
+    "solutionSteps": [
+      "1. Check conditions where output X = 1: (A = 0, B = 0).",
+      "2. Formulate corresponding product term: (~A ^ ~B).",
+      "3. Verify that for any other input (e.g. A=1, B=0), (~A ^ ~B) = 0.",
+      "4. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-023",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Security Sensor Boolean Logic",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A high-security laboratory facility has 4 environmental hazard detectors: fire sensor (F), gas leak sensor (G), radiation sensor (R), and thermal overrun sensor (T). An emergency evacuation siren must activate if AT LEAST ONE of the 4 sensors detects danger. Which Boolean expression correctly models the siren trigger logic?",
+    "options": [
+      "Siren = ~(F v G v R v T)",
+      "Siren = F ^ G ^ R ^ T (Logical AND)",
+      "Siren = F v G v R v T (Logical OR)",
+      "Siren = (F ^ G) v (R ^ T) only"
+    ],
+    "correctAnswer": 2,
+    "explanation": "An alarm system that sounds when *any* single sensor detects danger requires a disjunctive (OR) combination of all sensor variables. If any of F, G, R, or T is 1, the siren output is 1. Option C is correct.",
+    "solutionSteps": [
+      "1. 'At least one' condition corresponds to inclusive OR (disjunction).",
+      "2. Expression: Siren = F v G v R v T.",
+      "3. Option C is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-024",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Majority Voting Circuit Logic",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "A spacecraft flight computer employs Triple Modular Redundancy (TMR) with three independent sensor channels A, B, and C. The majority voting unit outputs X = 1 if at least two of the three channels report 1. Which Boolean equation specifies this majority function?",
+    "options": [
+      "X = A v B v C",
+      "X = (A v B) ^ (B v C) ^ (A v C)",
+      "X = A ^ B ^ C",
+      "X = (A ^ B) v (B ^ C) v (A ^ C)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "At least two of {A, B, C} being 1 means either (A and B are 1) OR (B and C are 1) OR (A and C are 1). This yields X = (A ^ B) v (B ^ C) v (A ^ C). Option D is correct.",
+    "solutionSteps": [
+      "1. List input pairs where 2 or more are 1: {A,B}, {B,C}, {A,C}.",
+      "2. Formulate sum of product pairs: (A ^ B) v (B ^ C) v (A ^ C).",
+      "3. Option D matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-025",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Truth Tables & Fundamental Boolean Logic",
+    "subtopic": "Truth Table Function Identification",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A 2-input Boolean truth table specifies output X = 1 ONLY when input A = 0 and input B = 0. For all other combinations (A=0, B=1; A=1, B=0; A=1, B=1), the output is X = 0. Which Boolean function represents this circuit?",
+    "options": [
+      "X = ~A ^ ~B (NOR operation)",
+      "X = ~A ^ B",
+      "X = A ^ ~B",
+      "X = A v B"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Since X = 1 only when A=0 and B=0, both A must be negated (~A) AND B must be negated (~B). This is equivalent to X = ~(A v B) = ~A ^ ~B (NOR gate). Option A is correct.",
+    "solutionSteps": [
+      "1. Check conditions where output X = 1: (A = 0, B = 0).",
+      "2. Formulate corresponding product term: (~A ^ ~B).",
+      "3. Verify that for any other input (e.g. A=1, B=0), (~A ^ ~B) = 0.",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-026",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "Cascaded Gate Output Evaluation",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "A combinational logic circuit computes the function: X = (A v B) ^ ~C. For which of the following input tuples (A, B, C) does the circuit evaluate to output X = 1?",
+    "options": [
+      "(A = 0, B = 0, C = 0)",
+      "(A = 1, B = 0, C = 0)",
+      "(A = 1, B = 1, C = 1)",
+      "(A = 0, B = 1, C = 1)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "For X = (A v B) ^ ~C to be 1, we must have (A v B) = 1 AND ~C = 1 (which means C = 0). Evaluating the options, (A=1, B=0, C=0) gives (1 v 0) ^ ~0 = 1 ^ 1 = 1. For any case where C=1, ~C=0 making X=0. For A=0, B=0, (A v B)=0 making X=0. Option B is correct.",
+    "solutionSteps": [
+      "1. Condition for ~C to be 1: C must be 0.",
+      "2. Condition for (A v B) to be 1: at least one of A or B must be 1.",
+      "3. Testing (1, 0, 0): (1 v 0) ^ 1 = 1 ^ 1 = 1.",
+      "4. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-027",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "De Morgan's Theorem Equivalences",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Applying De Morgan's Law to the negated conjunction ~(A ^ B ^ C), which of the following is an algebraically equivalent Boolean expression?",
+    "options": [
+      "~(A v B v C)",
+      "~A ^ ~B ^ ~C",
+      "~A v ~B v ~C",
+      "A ^ B ^ ~C"
+    ],
+    "correctAnswer": 2,
+    "explanation": "De Morgan's Law states that the negation of a conjunction is the disjunction of the negations: ~(X ^ Y) = ~X v ~Y. Extended to 3 variables, ~(A ^ B ^ C) = ~A v ~B v ~C. Option C is correct.",
+    "solutionSteps": [
+      "1. State De Morgan's theorem: ~(X ^ Y) = ~X v ~Y.",
+      "2. Apply to 3 inputs: ~(A ^ B ^ C) = ~A v ~B v ~C.",
+      "3. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-028",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "Universal NAND Gate Synthesis",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "How can a fundamental 2-input OR gate (A v B) be implemented using exclusively 2-input NAND gates?",
+    "options": [
+      "NAND gates cannot synthesize an OR gate without auxiliary diodes",
+      "Feed A and B into a NAND gate, then invert the output with an inverter",
+      "Connect inputs in parallel to a single 4-input NAND gate",
+      "Invert A and B with NAND gates, then feed results into a third NAND gate: ~(~A ^ ~B)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "By De Morgan's Law, A v B = ~(~A ^ ~B). Thus, inverting A using a NAND gate (~A), inverting B using a second NAND gate (~B), and feeding both into a third NAND gate computes ~(~A ^ ~B) = A v B. Option D is correct.",
+    "solutionSteps": [
+      "1. Apply double negation to OR: A v B = ~(~(A v B)).",
+      "2. Apply De Morgan: ~(A v B) = ~A ^ ~B, so A v B = ~(~A ^ ~B).",
+      "3. This requires exactly 3 NAND gates: 2 for input inversions, 1 for final combination.",
+      "4. Option D is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-029",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "Cascaded Gate Output Evaluation",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "A combinational logic circuit computes the function: X = (A v B) ^ ~C. For which of the following input tuples (A, B, C) does the circuit evaluate to output X = 1?",
+    "options": [
+      "(A = 1, B = 0, C = 0)",
+      "(A = 0, B = 0, C = 0)",
+      "(A = 1, B = 1, C = 1)",
+      "(A = 0, B = 1, C = 1)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "For X = (A v B) ^ ~C to be 1, we must have (A v B) = 1 AND ~C = 1 (which means C = 0). Evaluating the options, (A=1, B=0, C=0) gives (1 v 0) ^ ~0 = 1 ^ 1 = 1. For any case where C=1, ~C=0 making X=0. For A=0, B=0, (A v B)=0 making X=0. Option A is correct.",
+    "solutionSteps": [
+      "1. Condition for ~C to be 1: C must be 0.",
+      "2. Condition for (A v B) to be 1: at least one of A or B must be 1.",
+      "3. Testing (1, 0, 0): (1 v 0) ^ 1 = 1 ^ 1 = 1.",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-030",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "De Morgan's Theorem Equivalences",
+    "difficulty": "Very Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Applying De Morgan's Law to the negated conjunction ~(A ^ B ^ C), which of the following is an algebraically equivalent Boolean expression?",
+    "options": [
+      "~A ^ ~B ^ ~C",
+      "~A v ~B v ~C",
+      "~(A v B v C)",
+      "A ^ B ^ ~C"
+    ],
+    "correctAnswer": 1,
+    "explanation": "De Morgan's Law states that the negation of a conjunction is the disjunction of the negations: ~(X ^ Y) = ~X v ~Y. Extended to 3 variables, ~(A ^ B ^ C) = ~A v ~B v ~C. Option B is correct.",
+    "solutionSteps": [
+      "1. State De Morgan's theorem: ~(X ^ Y) = ~X v ~Y.",
+      "2. Apply to 3 inputs: ~(A ^ B ^ C) = ~A v ~B v ~C.",
+      "3. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-031",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "Universal NAND Gate Synthesis",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "How can a fundamental 2-input OR gate (A v B) be implemented using exclusively 2-input NAND gates?",
+    "options": [
+      "Connect inputs in parallel to a single 4-input NAND gate",
+      "Feed A and B into a NAND gate, then invert the output with an inverter",
+      "Invert A and B with NAND gates, then feed results into a third NAND gate: ~(~A ^ ~B)",
+      "NAND gates cannot synthesize an OR gate without auxiliary diodes"
+    ],
+    "correctAnswer": 2,
+    "explanation": "By De Morgan's Law, A v B = ~(~A ^ ~B). Thus, inverting A using a NAND gate (~A), inverting B using a second NAND gate (~B), and feeding both into a third NAND gate computes ~(~A ^ ~B) = A v B. Option C is correct.",
+    "solutionSteps": [
+      "1. Apply double negation to OR: A v B = ~(~(A v B)).",
+      "2. Apply De Morgan: ~(A v B) = ~A ^ ~B, so A v B = ~(~A ^ ~B).",
+      "3. This requires exactly 3 NAND gates: 2 for input inversions, 1 for final combination.",
+      "4. Option C is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-032",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "Cascaded Gate Output Evaluation",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A combinational logic circuit computes the function: X = (A v B) ^ ~C. For which of the following input tuples (A, B, C) does the circuit evaluate to output X = 1?",
+    "options": [
+      "(A = 0, B = 1, C = 1)",
+      "(A = 0, B = 0, C = 0)",
+      "(A = 1, B = 1, C = 1)",
+      "(A = 1, B = 0, C = 0)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "For X = (A v B) ^ ~C to be 1, we must have (A v B) = 1 AND ~C = 1 (which means C = 0). Evaluating the options, (A=1, B=0, C=0) gives (1 v 0) ^ ~0 = 1 ^ 1 = 1. For any case where C=1, ~C=0 making X=0. For A=0, B=0, (A v B)=0 making X=0. Option D is correct.",
+    "solutionSteps": [
+      "1. Condition for ~C to be 1: C must be 0.",
+      "2. Condition for (A v B) to be 1: at least one of A or B must be 1.",
+      "3. Testing (1, 0, 0): (1 v 0) ^ 1 = 1 ^ 1 = 1.",
+      "4. Option D matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-033",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "De Morgan's Theorem Equivalences",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Applying De Morgan's Law to the negated conjunction ~(A ^ B ^ C), which of the following is an algebraically equivalent Boolean expression?",
+    "options": [
+      "~A v ~B v ~C",
+      "~A ^ ~B ^ ~C",
+      "~(A v B v C)",
+      "A ^ B ^ ~C"
+    ],
+    "correctAnswer": 0,
+    "explanation": "De Morgan's Law states that the negation of a conjunction is the disjunction of the negations: ~(X ^ Y) = ~X v ~Y. Extended to 3 variables, ~(A ^ B ^ C) = ~A v ~B v ~C. Option A is correct.",
+    "solutionSteps": [
+      "1. State De Morgan's theorem: ~(X ^ Y) = ~X v ~Y.",
+      "2. Apply to 3 inputs: ~(A ^ B ^ C) = ~A v ~B v ~C.",
+      "3. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-034",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "Universal NAND Gate Synthesis",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "How can a fundamental 2-input OR gate (A v B) be implemented using exclusively 2-input NAND gates?",
+    "options": [
+      "Feed A and B into a NAND gate, then invert the output with an inverter",
+      "Invert A and B with NAND gates, then feed results into a third NAND gate: ~(~A ^ ~B)",
+      "Connect inputs in parallel to a single 4-input NAND gate",
+      "NAND gates cannot synthesize an OR gate without auxiliary diodes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "By De Morgan's Law, A v B = ~(~A ^ ~B). Thus, inverting A using a NAND gate (~A), inverting B using a second NAND gate (~B), and feeding both into a third NAND gate computes ~(~A ^ ~B) = A v B. Option B is correct.",
+    "solutionSteps": [
+      "1. Apply double negation to OR: A v B = ~(~(A v B)).",
+      "2. Apply De Morgan: ~(A v B) = ~A ^ ~B, so A v B = ~(~A ^ ~B).",
+      "3. This requires exactly 3 NAND gates: 2 for input inversions, 1 for final combination.",
+      "4. Option B is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-035",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "Cascaded Gate Output Evaluation",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A combinational logic circuit computes the function: X = (A v B) ^ ~C. For which of the following input tuples (A, B, C) does the circuit evaluate to output X = 1?",
+    "options": [
+      "(A = 1, B = 1, C = 1)",
+      "(A = 0, B = 0, C = 0)",
+      "(A = 1, B = 0, C = 0)",
+      "(A = 0, B = 1, C = 1)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "For X = (A v B) ^ ~C to be 1, we must have (A v B) = 1 AND ~C = 1 (which means C = 0). Evaluating the options, (A=1, B=0, C=0) gives (1 v 0) ^ ~0 = 1 ^ 1 = 1. For any case where C=1, ~C=0 making X=0. For A=0, B=0, (A v B)=0 making X=0. Option C is correct.",
+    "solutionSteps": [
+      "1. Condition for ~C to be 1: C must be 0.",
+      "2. Condition for (A v B) to be 1: at least one of A or B must be 1.",
+      "3. Testing (1, 0, 0): (1 v 0) ^ 1 = 1 ^ 1 = 1.",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-036",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "De Morgan's Theorem Equivalences",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "Applying De Morgan's Law to the negated conjunction ~(A ^ B ^ C), which of the following is an algebraically equivalent Boolean expression?",
+    "options": [
+      "A ^ B ^ ~C",
+      "~A ^ ~B ^ ~C",
+      "~(A v B v C)",
+      "~A v ~B v ~C"
+    ],
+    "correctAnswer": 3,
+    "explanation": "De Morgan's Law states that the negation of a conjunction is the disjunction of the negations: ~(X ^ Y) = ~X v ~Y. Extended to 3 variables, ~(A ^ B ^ C) = ~A v ~B v ~C. Option D is correct.",
+    "solutionSteps": [
+      "1. State De Morgan's theorem: ~(X ^ Y) = ~X v ~Y.",
+      "2. Apply to 3 inputs: ~(A ^ B ^ C) = ~A v ~B v ~C.",
+      "3. Option D matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-037",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "Universal NAND Gate Synthesis",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "How can a fundamental 2-input OR gate (A v B) be implemented using exclusively 2-input NAND gates?",
+    "options": [
+      "Invert A and B with NAND gates, then feed results into a third NAND gate: ~(~A ^ ~B)",
+      "Feed A and B into a NAND gate, then invert the output with an inverter",
+      "Connect inputs in parallel to a single 4-input NAND gate",
+      "NAND gates cannot synthesize an OR gate without auxiliary diodes"
+    ],
+    "correctAnswer": 0,
+    "explanation": "By De Morgan's Law, A v B = ~(~A ^ ~B). Thus, inverting A using a NAND gate (~A), inverting B using a second NAND gate (~B), and feeding both into a third NAND gate computes ~(~A ^ ~B) = A v B. Option A is correct.",
+    "solutionSteps": [
+      "1. Apply double negation to OR: A v B = ~(~(A v B)).",
+      "2. Apply De Morgan: ~(A v B) = ~A ^ ~B, so A v B = ~(~A ^ ~B).",
+      "3. This requires exactly 3 NAND gates: 2 for input inversions, 1 for final combination.",
+      "4. Option A is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-038",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "Cascaded Gate Output Evaluation",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A combinational logic circuit computes the function: X = (A v B) ^ ~C. For which of the following input tuples (A, B, C) does the circuit evaluate to output X = 1?",
+    "options": [
+      "(A = 0, B = 0, C = 0)",
+      "(A = 1, B = 0, C = 0)",
+      "(A = 1, B = 1, C = 1)",
+      "(A = 0, B = 1, C = 1)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "For X = (A v B) ^ ~C to be 1, we must have (A v B) = 1 AND ~C = 1 (which means C = 0). Evaluating the options, (A=1, B=0, C=0) gives (1 v 0) ^ ~0 = 1 ^ 1 = 1. For any case where C=1, ~C=0 making X=0. For A=0, B=0, (A v B)=0 making X=0. Option B is correct.",
+    "solutionSteps": [
+      "1. Condition for ~C to be 1: C must be 0.",
+      "2. Condition for (A v B) to be 1: at least one of A or B must be 1.",
+      "3. Testing (1, 0, 0): (1 v 0) ^ 1 = 1 ^ 1 = 1.",
+      "4. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-039",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "De Morgan's Theorem Equivalences",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Applying De Morgan's Law to the negated conjunction ~(A ^ B ^ C), which of the following is an algebraically equivalent Boolean expression?",
+    "options": [
+      "~(A v B v C)",
+      "~A ^ ~B ^ ~C",
+      "~A v ~B v ~C",
+      "A ^ B ^ ~C"
+    ],
+    "correctAnswer": 2,
+    "explanation": "De Morgan's Law states that the negation of a conjunction is the disjunction of the negations: ~(X ^ Y) = ~X v ~Y. Extended to 3 variables, ~(A ^ B ^ C) = ~A v ~B v ~C. Option C is correct.",
+    "solutionSteps": [
+      "1. State De Morgan's theorem: ~(X ^ Y) = ~X v ~Y.",
+      "2. Apply to 3 inputs: ~(A ^ B ^ C) = ~A v ~B v ~C.",
+      "3. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-040",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "Universal NAND Gate Synthesis",
+    "difficulty": "Very Hard",
+    "questionType": "multiple_choice",
+    "questionText": "How can a fundamental 2-input OR gate (A v B) be implemented using exclusively 2-input NAND gates?",
+    "options": [
+      "NAND gates cannot synthesize an OR gate without auxiliary diodes",
+      "Feed A and B into a NAND gate, then invert the output with an inverter",
+      "Connect inputs in parallel to a single 4-input NAND gate",
+      "Invert A and B with NAND gates, then feed results into a third NAND gate: ~(~A ^ ~B)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "By De Morgan's Law, A v B = ~(~A ^ ~B). Thus, inverting A using a NAND gate (~A), inverting B using a second NAND gate (~B), and feeding both into a third NAND gate computes ~(~A ^ ~B) = A v B. Option D is correct.",
+    "solutionSteps": [
+      "1. Apply double negation to OR: A v B = ~(~(A v B)).",
+      "2. Apply De Morgan: ~(A v B) = ~A ^ ~B, so A v B = ~(~A ^ ~B).",
+      "3. This requires exactly 3 NAND gates: 2 for input inversions, 1 for final combination.",
+      "4. Option D is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-041",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "Cascaded Gate Output Evaluation",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "A combinational logic circuit computes the function: X = (A v B) ^ ~C. For which of the following input tuples (A, B, C) does the circuit evaluate to output X = 1?",
+    "options": [
+      "(A = 1, B = 0, C = 0)",
+      "(A = 0, B = 0, C = 0)",
+      "(A = 1, B = 1, C = 1)",
+      "(A = 0, B = 1, C = 1)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "For X = (A v B) ^ ~C to be 1, we must have (A v B) = 1 AND ~C = 1 (which means C = 0). Evaluating the options, (A=1, B=0, C=0) gives (1 v 0) ^ ~0 = 1 ^ 1 = 1. For any case where C=1, ~C=0 making X=0. For A=0, B=0, (A v B)=0 making X=0. Option A is correct.",
+    "solutionSteps": [
+      "1. Condition for ~C to be 1: C must be 0.",
+      "2. Condition for (A v B) to be 1: at least one of A or B must be 1.",
+      "3. Testing (1, 0, 0): (1 v 0) ^ 1 = 1 ^ 1 = 1.",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-042",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "De Morgan's Theorem Equivalences",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Applying De Morgan's Law to the negated conjunction ~(A ^ B ^ C), which of the following is an algebraically equivalent Boolean expression?",
+    "options": [
+      "~A ^ ~B ^ ~C",
+      "~A v ~B v ~C",
+      "~(A v B v C)",
+      "A ^ B ^ ~C"
+    ],
+    "correctAnswer": 1,
+    "explanation": "De Morgan's Law states that the negation of a conjunction is the disjunction of the negations: ~(X ^ Y) = ~X v ~Y. Extended to 3 variables, ~(A ^ B ^ C) = ~A v ~B v ~C. Option B is correct.",
+    "solutionSteps": [
+      "1. State De Morgan's theorem: ~(X ^ Y) = ~X v ~Y.",
+      "2. Apply to 3 inputs: ~(A ^ B ^ C) = ~A v ~B v ~C.",
+      "3. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-043",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "Universal NAND Gate Synthesis",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "How can a fundamental 2-input OR gate (A v B) be implemented using exclusively 2-input NAND gates?",
+    "options": [
+      "Connect inputs in parallel to a single 4-input NAND gate",
+      "Feed A and B into a NAND gate, then invert the output with an inverter",
+      "Invert A and B with NAND gates, then feed results into a third NAND gate: ~(~A ^ ~B)",
+      "NAND gates cannot synthesize an OR gate without auxiliary diodes"
+    ],
+    "correctAnswer": 2,
+    "explanation": "By De Morgan's Law, A v B = ~(~A ^ ~B). Thus, inverting A using a NAND gate (~A), inverting B using a second NAND gate (~B), and feeding both into a third NAND gate computes ~(~A ^ ~B) = A v B. Option C is correct.",
+    "solutionSteps": [
+      "1. Apply double negation to OR: A v B = ~(~(A v B)).",
+      "2. Apply De Morgan: ~(A v B) = ~A ^ ~B, so A v B = ~(~A ^ ~B).",
+      "3. This requires exactly 3 NAND gates: 2 for input inversions, 1 for final combination.",
+      "4. Option C is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-044",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "Cascaded Gate Output Evaluation",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "A combinational logic circuit computes the function: X = (A v B) ^ ~C. For which of the following input tuples (A, B, C) does the circuit evaluate to output X = 1?",
+    "options": [
+      "(A = 0, B = 1, C = 1)",
+      "(A = 0, B = 0, C = 0)",
+      "(A = 1, B = 1, C = 1)",
+      "(A = 1, B = 0, C = 0)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "For X = (A v B) ^ ~C to be 1, we must have (A v B) = 1 AND ~C = 1 (which means C = 0). Evaluating the options, (A=1, B=0, C=0) gives (1 v 0) ^ ~0 = 1 ^ 1 = 1. For any case where C=1, ~C=0 making X=0. For A=0, B=0, (A v B)=0 making X=0. Option D is correct.",
+    "solutionSteps": [
+      "1. Condition for ~C to be 1: C must be 0.",
+      "2. Condition for (A v B) to be 1: at least one of A or B must be 1.",
+      "3. Testing (1, 0, 0): (1 v 0) ^ 1 = 1 ^ 1 = 1.",
+      "4. Option D matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-045",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "De Morgan's Theorem Equivalences",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Applying De Morgan's Law to the negated conjunction ~(A ^ B ^ C), which of the following is an algebraically equivalent Boolean expression?",
+    "options": [
+      "~A v ~B v ~C",
+      "~A ^ ~B ^ ~C",
+      "~(A v B v C)",
+      "A ^ B ^ ~C"
+    ],
+    "correctAnswer": 0,
+    "explanation": "De Morgan's Law states that the negation of a conjunction is the disjunction of the negations: ~(X ^ Y) = ~X v ~Y. Extended to 3 variables, ~(A ^ B ^ C) = ~A v ~B v ~C. Option A is correct.",
+    "solutionSteps": [
+      "1. State De Morgan's theorem: ~(X ^ Y) = ~X v ~Y.",
+      "2. Apply to 3 inputs: ~(A ^ B ^ C) = ~A v ~B v ~C.",
+      "3. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-046",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "Universal NAND Gate Synthesis",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "How can a fundamental 2-input OR gate (A v B) be implemented using exclusively 2-input NAND gates?",
+    "options": [
+      "Feed A and B into a NAND gate, then invert the output with an inverter",
+      "Invert A and B with NAND gates, then feed results into a third NAND gate: ~(~A ^ ~B)",
+      "Connect inputs in parallel to a single 4-input NAND gate",
+      "NAND gates cannot synthesize an OR gate without auxiliary diodes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "By De Morgan's Law, A v B = ~(~A ^ ~B). Thus, inverting A using a NAND gate (~A), inverting B using a second NAND gate (~B), and feeding both into a third NAND gate computes ~(~A ^ ~B) = A v B. Option B is correct.",
+    "solutionSteps": [
+      "1. Apply double negation to OR: A v B = ~(~(A v B)).",
+      "2. Apply De Morgan: ~(A v B) = ~A ^ ~B, so A v B = ~(~A ^ ~B).",
+      "3. This requires exactly 3 NAND gates: 2 for input inversions, 1 for final combination.",
+      "4. Option B is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-047",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "Cascaded Gate Output Evaluation",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A combinational logic circuit computes the function: X = (A v B) ^ ~C. For which of the following input tuples (A, B, C) does the circuit evaluate to output X = 1?",
+    "options": [
+      "(A = 1, B = 1, C = 1)",
+      "(A = 0, B = 0, C = 0)",
+      "(A = 1, B = 0, C = 0)",
+      "(A = 0, B = 1, C = 1)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "For X = (A v B) ^ ~C to be 1, we must have (A v B) = 1 AND ~C = 1 (which means C = 0). Evaluating the options, (A=1, B=0, C=0) gives (1 v 0) ^ ~0 = 1 ^ 1 = 1. For any case where C=1, ~C=0 making X=0. For A=0, B=0, (A v B)=0 making X=0. Option C is correct.",
+    "solutionSteps": [
+      "1. Condition for ~C to be 1: C must be 0.",
+      "2. Condition for (A v B) to be 1: at least one of A or B must be 1.",
+      "3. Testing (1, 0, 0): (1 v 0) ^ 1 = 1 ^ 1 = 1.",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-048",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "De Morgan's Theorem Equivalences",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Applying De Morgan's Law to the negated conjunction ~(A ^ B ^ C), which of the following is an algebraically equivalent Boolean expression?",
+    "options": [
+      "A ^ B ^ ~C",
+      "~A ^ ~B ^ ~C",
+      "~(A v B v C)",
+      "~A v ~B v ~C"
+    ],
+    "correctAnswer": 3,
+    "explanation": "De Morgan's Law states that the negation of a conjunction is the disjunction of the negations: ~(X ^ Y) = ~X v ~Y. Extended to 3 variables, ~(A ^ B ^ C) = ~A v ~B v ~C. Option D is correct.",
+    "solutionSteps": [
+      "1. State De Morgan's theorem: ~(X ^ Y) = ~X v ~Y.",
+      "2. Apply to 3 inputs: ~(A ^ B ^ C) = ~A v ~B v ~C.",
+      "3. Option D matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-049",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "Universal NAND Gate Synthesis",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "How can a fundamental 2-input OR gate (A v B) be implemented using exclusively 2-input NAND gates?",
+    "options": [
+      "Invert A and B with NAND gates, then feed results into a third NAND gate: ~(~A ^ ~B)",
+      "Feed A and B into a NAND gate, then invert the output with an inverter",
+      "Connect inputs in parallel to a single 4-input NAND gate",
+      "NAND gates cannot synthesize an OR gate without auxiliary diodes"
+    ],
+    "correctAnswer": 0,
+    "explanation": "By De Morgan's Law, A v B = ~(~A ^ ~B). Thus, inverting A using a NAND gate (~A), inverting B using a second NAND gate (~B), and feeding both into a third NAND gate computes ~(~A ^ ~B) = A v B. Option A is correct.",
+    "solutionSteps": [
+      "1. Apply double negation to OR: A v B = ~(~(A v B)).",
+      "2. Apply De Morgan: ~(A v B) = ~A ^ ~B, so A v B = ~(~A ^ ~B).",
+      "3. This requires exactly 3 NAND gates: 2 for input inversions, 1 for final combination.",
+      "4. Option A is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-050",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Circuit Analysis & Logic Gate Combinations",
+    "subtopic": "Cascaded Gate Output Evaluation",
+    "difficulty": "Very Hard",
+    "questionType": "multiple_choice",
+    "questionText": "A combinational logic circuit computes the function: X = (A v B) ^ ~C. For which of the following input tuples (A, B, C) does the circuit evaluate to output X = 1?",
+    "options": [
+      "(A = 0, B = 0, C = 0)",
+      "(A = 1, B = 0, C = 0)",
+      "(A = 1, B = 1, C = 1)",
+      "(A = 0, B = 1, C = 1)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "For X = (A v B) ^ ~C to be 1, we must have (A v B) = 1 AND ~C = 1 (which means C = 0). Evaluating the options, (A=1, B=0, C=0) gives (1 v 0) ^ ~0 = 1 ^ 1 = 1. For any case where C=1, ~C=0 making X=0. For A=0, B=0, (A v B)=0 making X=0. Option B is correct.",
+    "solutionSteps": [
+      "1. Condition for ~C to be 1: C must be 0.",
+      "2. Condition for (A v B) to be 1: at least one of A or B must be 1.",
+      "3. Testing (1, 0, 0): (1 v 0) ^ 1 = 1 ^ 1 = 1.",
+      "4. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-051",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "CDNF Derivation from Truth Table",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "A 3-variable Boolean function f(A, B, C) outputs 1 only for minterms m1 (0, 0, 1) and m5 (1, 0, 1). What is the exact Canonical Disjunctive Normal Form (CDNF) for this function?",
+    "options": [
+      "f = (~A v ~B v C) ^ (A v ~B v C)",
+      "f = (A ^ B ^ ~C) v (~A ^ B ^ ~C)",
+      "f = (~A ^ ~B ^ C) v (A ^ ~B ^ C)",
+      "f = (~A ^ B ^ C) v (A ^ B ^ C)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Each minterm corresponds to a conjunction where an input of 0 is negated and an input of 1 is unnegated. For m1 (A=0, B=0, C=1), minterm is (~A ^ ~B ^ C). For m5 (A=1, B=0, C=1), minterm is (A ^ ~B ^ C). The CDNF is the disjunction of these minterms: (~A ^ ~B ^ C) v (A ^ ~B ^ C). Option C is correct.",
+    "solutionSteps": [
+      "1. Express m1 (0,0,1) as a product term: ~A ^ ~B ^ C.",
+      "2. Express m5 (1,0,1) as a product term: A ^ ~B ^ C.",
+      "3. Take the OR of both terms: (~A ^ ~B ^ C) v (A ^ ~B ^ C).",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-052",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "Minterm Simplification",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the Boolean function defined by the CDNF: f(A, B) = (~A ^ B) v (A ^ B). What is the minimal Boolean expression after simplification?",
+    "options": [
+      "f = A ^ B",
+      "f = A",
+      "f = ~A v B",
+      "f = B"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Applying the distributive law: (~A ^ B) v (A ^ B) = (~A v A) ^ B. Since (~A v A) = 1 (tautology), 1 ^ B = B. Option D is correct.",
+    "solutionSteps": [
+      "1. Factor out common variable B: (~A v A) ^ B.",
+      "2. Recognize tautology: (~A v A) = 1.",
+      "3. Simplify: 1 ^ B = B.",
+      "4. Option D is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-053",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "CDNF Derivation from Truth Table",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A 3-variable Boolean function f(A, B, C) outputs 1 only for minterms m1 (0, 0, 1) and m5 (1, 0, 1). What is the exact Canonical Disjunctive Normal Form (CDNF) for this function?",
+    "options": [
+      "f = (~A ^ ~B ^ C) v (A ^ ~B ^ C)",
+      "f = (A ^ B ^ ~C) v (~A ^ B ^ ~C)",
+      "f = (~A v ~B v C) ^ (A v ~B v C)",
+      "f = (~A ^ B ^ C) v (A ^ B ^ C)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each minterm corresponds to a conjunction where an input of 0 is negated and an input of 1 is unnegated. For m1 (A=0, B=0, C=1), minterm is (~A ^ ~B ^ C). For m5 (A=1, B=0, C=1), minterm is (A ^ ~B ^ C). The CDNF is the disjunction of these minterms: (~A ^ ~B ^ C) v (A ^ ~B ^ C). Option A is correct.",
+    "solutionSteps": [
+      "1. Express m1 (0,0,1) as a product term: ~A ^ ~B ^ C.",
+      "2. Express m5 (1,0,1) as a product term: A ^ ~B ^ C.",
+      "3. Take the OR of both terms: (~A ^ ~B ^ C) v (A ^ ~B ^ C).",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-054",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "Minterm Simplification",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the Boolean function defined by the CDNF: f(A, B) = (~A ^ B) v (A ^ B). What is the minimal Boolean expression after simplification?",
+    "options": [
+      "f = A",
+      "f = B",
+      "f = ~A v B",
+      "f = A ^ B"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Applying the distributive law: (~A ^ B) v (A ^ B) = (~A v A) ^ B. Since (~A v A) = 1 (tautology), 1 ^ B = B. Option B is correct.",
+    "solutionSteps": [
+      "1. Factor out common variable B: (~A v A) ^ B.",
+      "2. Recognize tautology: (~A v A) = 1.",
+      "3. Simplify: 1 ^ B = B.",
+      "4. Option B is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-055",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "CDNF Derivation from Truth Table",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A 3-variable Boolean function f(A, B, C) outputs 1 only for minterms m1 (0, 0, 1) and m5 (1, 0, 1). What is the exact Canonical Disjunctive Normal Form (CDNF) for this function?",
+    "options": [
+      "f = (~A v ~B v C) ^ (A v ~B v C)",
+      "f = (A ^ B ^ ~C) v (~A ^ B ^ ~C)",
+      "f = (~A ^ ~B ^ C) v (A ^ ~B ^ C)",
+      "f = (~A ^ B ^ C) v (A ^ B ^ C)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Each minterm corresponds to a conjunction where an input of 0 is negated and an input of 1 is unnegated. For m1 (A=0, B=0, C=1), minterm is (~A ^ ~B ^ C). For m5 (A=1, B=0, C=1), minterm is (A ^ ~B ^ C). The CDNF is the disjunction of these minterms: (~A ^ ~B ^ C) v (A ^ ~B ^ C). Option C is correct.",
+    "solutionSteps": [
+      "1. Express m1 (0,0,1) as a product term: ~A ^ ~B ^ C.",
+      "2. Express m5 (1,0,1) as a product term: A ^ ~B ^ C.",
+      "3. Take the OR of both terms: (~A ^ ~B ^ C) v (A ^ ~B ^ C).",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-056",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "Minterm Simplification",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the Boolean function defined by the CDNF: f(A, B) = (~A ^ B) v (A ^ B). What is the minimal Boolean expression after simplification?",
+    "options": [
+      "f = A ^ B",
+      "f = A",
+      "f = ~A v B",
+      "f = B"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Applying the distributive law: (~A ^ B) v (A ^ B) = (~A v A) ^ B. Since (~A v A) = 1 (tautology), 1 ^ B = B. Option D is correct.",
+    "solutionSteps": [
+      "1. Factor out common variable B: (~A v A) ^ B.",
+      "2. Recognize tautology: (~A v A) = 1.",
+      "3. Simplify: 1 ^ B = B.",
+      "4. Option D is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-057",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "CDNF Derivation from Truth Table",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A 3-variable Boolean function f(A, B, C) outputs 1 only for minterms m1 (0, 0, 1) and m5 (1, 0, 1). What is the exact Canonical Disjunctive Normal Form (CDNF) for this function?",
+    "options": [
+      "f = (~A ^ ~B ^ C) v (A ^ ~B ^ C)",
+      "f = (A ^ B ^ ~C) v (~A ^ B ^ ~C)",
+      "f = (~A v ~B v C) ^ (A v ~B v C)",
+      "f = (~A ^ B ^ C) v (A ^ B ^ C)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each minterm corresponds to a conjunction where an input of 0 is negated and an input of 1 is unnegated. For m1 (A=0, B=0, C=1), minterm is (~A ^ ~B ^ C). For m5 (A=1, B=0, C=1), minterm is (A ^ ~B ^ C). The CDNF is the disjunction of these minterms: (~A ^ ~B ^ C) v (A ^ ~B ^ C). Option A is correct.",
+    "solutionSteps": [
+      "1. Express m1 (0,0,1) as a product term: ~A ^ ~B ^ C.",
+      "2. Express m5 (1,0,1) as a product term: A ^ ~B ^ C.",
+      "3. Take the OR of both terms: (~A ^ ~B ^ C) v (A ^ ~B ^ C).",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-058",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "Minterm Simplification",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the Boolean function defined by the CDNF: f(A, B) = (~A ^ B) v (A ^ B). What is the minimal Boolean expression after simplification?",
+    "options": [
+      "f = A",
+      "f = B",
+      "f = ~A v B",
+      "f = A ^ B"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Applying the distributive law: (~A ^ B) v (A ^ B) = (~A v A) ^ B. Since (~A v A) = 1 (tautology), 1 ^ B = B. Option B is correct.",
+    "solutionSteps": [
+      "1. Factor out common variable B: (~A v A) ^ B.",
+      "2. Recognize tautology: (~A v A) = 1.",
+      "3. Simplify: 1 ^ B = B.",
+      "4. Option B is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-059",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "CDNF Derivation from Truth Table",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "A 3-variable Boolean function f(A, B, C) outputs 1 only for minterms m1 (0, 0, 1) and m5 (1, 0, 1). What is the exact Canonical Disjunctive Normal Form (CDNF) for this function?",
+    "options": [
+      "f = (~A v ~B v C) ^ (A v ~B v C)",
+      "f = (A ^ B ^ ~C) v (~A ^ B ^ ~C)",
+      "f = (~A ^ ~B ^ C) v (A ^ ~B ^ C)",
+      "f = (~A ^ B ^ C) v (A ^ B ^ C)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Each minterm corresponds to a conjunction where an input of 0 is negated and an input of 1 is unnegated. For m1 (A=0, B=0, C=1), minterm is (~A ^ ~B ^ C). For m5 (A=1, B=0, C=1), minterm is (A ^ ~B ^ C). The CDNF is the disjunction of these minterms: (~A ^ ~B ^ C) v (A ^ ~B ^ C). Option C is correct.",
+    "solutionSteps": [
+      "1. Express m1 (0,0,1) as a product term: ~A ^ ~B ^ C.",
+      "2. Express m5 (1,0,1) as a product term: A ^ ~B ^ C.",
+      "3. Take the OR of both terms: (~A ^ ~B ^ C) v (A ^ ~B ^ C).",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-060",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "Minterm Simplification",
+    "difficulty": "Very Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the Boolean function defined by the CDNF: f(A, B) = (~A ^ B) v (A ^ B). What is the minimal Boolean expression after simplification?",
+    "options": [
+      "f = A ^ B",
+      "f = A",
+      "f = ~A v B",
+      "f = B"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Applying the distributive law: (~A ^ B) v (A ^ B) = (~A v A) ^ B. Since (~A v A) = 1 (tautology), 1 ^ B = B. Option D is correct.",
+    "solutionSteps": [
+      "1. Factor out common variable B: (~A v A) ^ B.",
+      "2. Recognize tautology: (~A v A) = 1.",
+      "3. Simplify: 1 ^ B = B.",
+      "4. Option D is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-061",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "CDNF Derivation from Truth Table",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "A 3-variable Boolean function f(A, B, C) outputs 1 only for minterms m1 (0, 0, 1) and m5 (1, 0, 1). What is the exact Canonical Disjunctive Normal Form (CDNF) for this function?",
+    "options": [
+      "f = (~A ^ ~B ^ C) v (A ^ ~B ^ C)",
+      "f = (A ^ B ^ ~C) v (~A ^ B ^ ~C)",
+      "f = (~A v ~B v C) ^ (A v ~B v C)",
+      "f = (~A ^ B ^ C) v (A ^ B ^ C)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each minterm corresponds to a conjunction where an input of 0 is negated and an input of 1 is unnegated. For m1 (A=0, B=0, C=1), minterm is (~A ^ ~B ^ C). For m5 (A=1, B=0, C=1), minterm is (A ^ ~B ^ C). The CDNF is the disjunction of these minterms: (~A ^ ~B ^ C) v (A ^ ~B ^ C). Option A is correct.",
+    "solutionSteps": [
+      "1. Express m1 (0,0,1) as a product term: ~A ^ ~B ^ C.",
+      "2. Express m5 (1,0,1) as a product term: A ^ ~B ^ C.",
+      "3. Take the OR of both terms: (~A ^ ~B ^ C) v (A ^ ~B ^ C).",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-062",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "Minterm Simplification",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the Boolean function defined by the CDNF: f(A, B) = (~A ^ B) v (A ^ B). What is the minimal Boolean expression after simplification?",
+    "options": [
+      "f = A",
+      "f = B",
+      "f = ~A v B",
+      "f = A ^ B"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Applying the distributive law: (~A ^ B) v (A ^ B) = (~A v A) ^ B. Since (~A v A) = 1 (tautology), 1 ^ B = B. Option B is correct.",
+    "solutionSteps": [
+      "1. Factor out common variable B: (~A v A) ^ B.",
+      "2. Recognize tautology: (~A v A) = 1.",
+      "3. Simplify: 1 ^ B = B.",
+      "4. Option B is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-063",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "CDNF Derivation from Truth Table",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A 3-variable Boolean function f(A, B, C) outputs 1 only for minterms m1 (0, 0, 1) and m5 (1, 0, 1). What is the exact Canonical Disjunctive Normal Form (CDNF) for this function?",
+    "options": [
+      "f = (~A v ~B v C) ^ (A v ~B v C)",
+      "f = (A ^ B ^ ~C) v (~A ^ B ^ ~C)",
+      "f = (~A ^ ~B ^ C) v (A ^ ~B ^ C)",
+      "f = (~A ^ B ^ C) v (A ^ B ^ C)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Each minterm corresponds to a conjunction where an input of 0 is negated and an input of 1 is unnegated. For m1 (A=0, B=0, C=1), minterm is (~A ^ ~B ^ C). For m5 (A=1, B=0, C=1), minterm is (A ^ ~B ^ C). The CDNF is the disjunction of these minterms: (~A ^ ~B ^ C) v (A ^ ~B ^ C). Option C is correct.",
+    "solutionSteps": [
+      "1. Express m1 (0,0,1) as a product term: ~A ^ ~B ^ C.",
+      "2. Express m5 (1,0,1) as a product term: A ^ ~B ^ C.",
+      "3. Take the OR of both terms: (~A ^ ~B ^ C) v (A ^ ~B ^ C).",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-064",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "Minterm Simplification",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the Boolean function defined by the CDNF: f(A, B) = (~A ^ B) v (A ^ B). What is the minimal Boolean expression after simplification?",
+    "options": [
+      "f = A ^ B",
+      "f = A",
+      "f = ~A v B",
+      "f = B"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Applying the distributive law: (~A ^ B) v (A ^ B) = (~A v A) ^ B. Since (~A v A) = 1 (tautology), 1 ^ B = B. Option D is correct.",
+    "solutionSteps": [
+      "1. Factor out common variable B: (~A v A) ^ B.",
+      "2. Recognize tautology: (~A v A) = 1.",
+      "3. Simplify: 1 ^ B = B.",
+      "4. Option D is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-065",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "CDNF Derivation from Truth Table",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A 3-variable Boolean function f(A, B, C) outputs 1 only for minterms m1 (0, 0, 1) and m5 (1, 0, 1). What is the exact Canonical Disjunctive Normal Form (CDNF) for this function?",
+    "options": [
+      "f = (~A ^ ~B ^ C) v (A ^ ~B ^ C)",
+      "f = (A ^ B ^ ~C) v (~A ^ B ^ ~C)",
+      "f = (~A v ~B v C) ^ (A v ~B v C)",
+      "f = (~A ^ B ^ C) v (A ^ B ^ C)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each minterm corresponds to a conjunction where an input of 0 is negated and an input of 1 is unnegated. For m1 (A=0, B=0, C=1), minterm is (~A ^ ~B ^ C). For m5 (A=1, B=0, C=1), minterm is (A ^ ~B ^ C). The CDNF is the disjunction of these minterms: (~A ^ ~B ^ C) v (A ^ ~B ^ C). Option A is correct.",
+    "solutionSteps": [
+      "1. Express m1 (0,0,1) as a product term: ~A ^ ~B ^ C.",
+      "2. Express m5 (1,0,1) as a product term: A ^ ~B ^ C.",
+      "3. Take the OR of both terms: (~A ^ ~B ^ C) v (A ^ ~B ^ C).",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-066",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "Minterm Simplification",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the Boolean function defined by the CDNF: f(A, B) = (~A ^ B) v (A ^ B). What is the minimal Boolean expression after simplification?",
+    "options": [
+      "f = A",
+      "f = B",
+      "f = ~A v B",
+      "f = A ^ B"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Applying the distributive law: (~A ^ B) v (A ^ B) = (~A v A) ^ B. Since (~A v A) = 1 (tautology), 1 ^ B = B. Option B is correct.",
+    "solutionSteps": [
+      "1. Factor out common variable B: (~A v A) ^ B.",
+      "2. Recognize tautology: (~A v A) = 1.",
+      "3. Simplify: 1 ^ B = B.",
+      "4. Option B is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-067",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "CDNF Derivation from Truth Table",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A 3-variable Boolean function f(A, B, C) outputs 1 only for minterms m1 (0, 0, 1) and m5 (1, 0, 1). What is the exact Canonical Disjunctive Normal Form (CDNF) for this function?",
+    "options": [
+      "f = (~A v ~B v C) ^ (A v ~B v C)",
+      "f = (A ^ B ^ ~C) v (~A ^ B ^ ~C)",
+      "f = (~A ^ ~B ^ C) v (A ^ ~B ^ C)",
+      "f = (~A ^ B ^ C) v (A ^ B ^ C)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Each minterm corresponds to a conjunction where an input of 0 is negated and an input of 1 is unnegated. For m1 (A=0, B=0, C=1), minterm is (~A ^ ~B ^ C). For m5 (A=1, B=0, C=1), minterm is (A ^ ~B ^ C). The CDNF is the disjunction of these minterms: (~A ^ ~B ^ C) v (A ^ ~B ^ C). Option C is correct.",
+    "solutionSteps": [
+      "1. Express m1 (0,0,1) as a product term: ~A ^ ~B ^ C.",
+      "2. Express m5 (1,0,1) as a product term: A ^ ~B ^ C.",
+      "3. Take the OR of both terms: (~A ^ ~B ^ C) v (A ^ ~B ^ C).",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-068",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "Minterm Simplification",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the Boolean function defined by the CDNF: f(A, B) = (~A ^ B) v (A ^ B). What is the minimal Boolean expression after simplification?",
+    "options": [
+      "f = A ^ B",
+      "f = A",
+      "f = ~A v B",
+      "f = B"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Applying the distributive law: (~A ^ B) v (A ^ B) = (~A v A) ^ B. Since (~A v A) = 1 (tautology), 1 ^ B = B. Option D is correct.",
+    "solutionSteps": [
+      "1. Factor out common variable B: (~A v A) ^ B.",
+      "2. Recognize tautology: (~A v A) = 1.",
+      "3. Simplify: 1 ^ B = B.",
+      "4. Option D is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-069",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "CDNF Derivation from Truth Table",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "A 3-variable Boolean function f(A, B, C) outputs 1 only for minterms m1 (0, 0, 1) and m5 (1, 0, 1). What is the exact Canonical Disjunctive Normal Form (CDNF) for this function?",
+    "options": [
+      "f = (~A ^ ~B ^ C) v (A ^ ~B ^ C)",
+      "f = (A ^ B ^ ~C) v (~A ^ B ^ ~C)",
+      "f = (~A v ~B v C) ^ (A v ~B v C)",
+      "f = (~A ^ B ^ C) v (A ^ B ^ C)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each minterm corresponds to a conjunction where an input of 0 is negated and an input of 1 is unnegated. For m1 (A=0, B=0, C=1), minterm is (~A ^ ~B ^ C). For m5 (A=1, B=0, C=1), minterm is (A ^ ~B ^ C). The CDNF is the disjunction of these minterms: (~A ^ ~B ^ C) v (A ^ ~B ^ C). Option A is correct.",
+    "solutionSteps": [
+      "1. Express m1 (0,0,1) as a product term: ~A ^ ~B ^ C.",
+      "2. Express m5 (1,0,1) as a product term: A ^ ~B ^ C.",
+      "3. Take the OR of both terms: (~A ^ ~B ^ C) v (A ^ ~B ^ C).",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-070",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "Minterm Simplification",
+    "difficulty": "Very Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the Boolean function defined by the CDNF: f(A, B) = (~A ^ B) v (A ^ B). What is the minimal Boolean expression after simplification?",
+    "options": [
+      "f = A",
+      "f = B",
+      "f = ~A v B",
+      "f = A ^ B"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Applying the distributive law: (~A ^ B) v (A ^ B) = (~A v A) ^ B. Since (~A v A) = 1 (tautology), 1 ^ B = B. Option B is correct.",
+    "solutionSteps": [
+      "1. Factor out common variable B: (~A v A) ^ B.",
+      "2. Recognize tautology: (~A v A) = 1.",
+      "3. Simplify: 1 ^ B = B.",
+      "4. Option B is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-071",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "CDNF Derivation from Truth Table",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "A 3-variable Boolean function f(A, B, C) outputs 1 only for minterms m1 (0, 0, 1) and m5 (1, 0, 1). What is the exact Canonical Disjunctive Normal Form (CDNF) for this function?",
+    "options": [
+      "f = (~A v ~B v C) ^ (A v ~B v C)",
+      "f = (A ^ B ^ ~C) v (~A ^ B ^ ~C)",
+      "f = (~A ^ ~B ^ C) v (A ^ ~B ^ C)",
+      "f = (~A ^ B ^ C) v (A ^ B ^ C)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Each minterm corresponds to a conjunction where an input of 0 is negated and an input of 1 is unnegated. For m1 (A=0, B=0, C=1), minterm is (~A ^ ~B ^ C). For m5 (A=1, B=0, C=1), minterm is (A ^ ~B ^ C). The CDNF is the disjunction of these minterms: (~A ^ ~B ^ C) v (A ^ ~B ^ C). Option C is correct.",
+    "solutionSteps": [
+      "1. Express m1 (0,0,1) as a product term: ~A ^ ~B ^ C.",
+      "2. Express m5 (1,0,1) as a product term: A ^ ~B ^ C.",
+      "3. Take the OR of both terms: (~A ^ ~B ^ C) v (A ^ ~B ^ C).",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-072",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "Minterm Simplification",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the Boolean function defined by the CDNF: f(A, B) = (~A ^ B) v (A ^ B). What is the minimal Boolean expression after simplification?",
+    "options": [
+      "f = A ^ B",
+      "f = A",
+      "f = ~A v B",
+      "f = B"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Applying the distributive law: (~A ^ B) v (A ^ B) = (~A v A) ^ B. Since (~A v A) = 1 (tautology), 1 ^ B = B. Option D is correct.",
+    "solutionSteps": [
+      "1. Factor out common variable B: (~A v A) ^ B.",
+      "2. Recognize tautology: (~A v A) = 1.",
+      "3. Simplify: 1 ^ B = B.",
+      "4. Option D is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-073",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "CDNF Derivation from Truth Table",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A 3-variable Boolean function f(A, B, C) outputs 1 only for minterms m1 (0, 0, 1) and m5 (1, 0, 1). What is the exact Canonical Disjunctive Normal Form (CDNF) for this function?",
+    "options": [
+      "f = (~A ^ ~B ^ C) v (A ^ ~B ^ C)",
+      "f = (A ^ B ^ ~C) v (~A ^ B ^ ~C)",
+      "f = (~A v ~B v C) ^ (A v ~B v C)",
+      "f = (~A ^ B ^ C) v (A ^ B ^ C)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each minterm corresponds to a conjunction where an input of 0 is negated and an input of 1 is unnegated. For m1 (A=0, B=0, C=1), minterm is (~A ^ ~B ^ C). For m5 (A=1, B=0, C=1), minterm is (A ^ ~B ^ C). The CDNF is the disjunction of these minterms: (~A ^ ~B ^ C) v (A ^ ~B ^ C). Option A is correct.",
+    "solutionSteps": [
+      "1. Express m1 (0,0,1) as a product term: ~A ^ ~B ^ C.",
+      "2. Express m5 (1,0,1) as a product term: A ^ ~B ^ C.",
+      "3. Take the OR of both terms: (~A ^ ~B ^ C) v (A ^ ~B ^ C).",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-074",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "Minterm Simplification",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the Boolean function defined by the CDNF: f(A, B) = (~A ^ B) v (A ^ B). What is the minimal Boolean expression after simplification?",
+    "options": [
+      "f = A",
+      "f = B",
+      "f = ~A v B",
+      "f = A ^ B"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Applying the distributive law: (~A ^ B) v (A ^ B) = (~A v A) ^ B. Since (~A v A) = 1 (tautology), 1 ^ B = B. Option B is correct.",
+    "solutionSteps": [
+      "1. Factor out common variable B: (~A v A) ^ B.",
+      "2. Recognize tautology: (~A v A) = 1.",
+      "3. Simplify: 1 ^ B = B.",
+      "4. Option B is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "cl-075",
+    "module": "core",
+    "section": "Combinational Logic",
+    "topic": "Canonical Disjunctive Normal Form (CDNF) & Minterms",
+    "subtopic": "CDNF Derivation from Truth Table",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "A 3-variable Boolean function f(A, B, C) outputs 1 only for minterms m1 (0, 0, 1) and m5 (1, 0, 1). What is the exact Canonical Disjunctive Normal Form (CDNF) for this function?",
+    "options": [
+      "f = (~A v ~B v C) ^ (A v ~B v C)",
+      "f = (A ^ B ^ ~C) v (~A ^ B ^ ~C)",
+      "f = (~A ^ ~B ^ C) v (A ^ ~B ^ C)",
+      "f = (~A ^ B ^ C) v (A ^ B ^ C)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Each minterm corresponds to a conjunction where an input of 0 is negated and an input of 1 is unnegated. For m1 (A=0, B=0, C=1), minterm is (~A ^ ~B ^ C). For m5 (A=1, B=0, C=1), minterm is (A ^ ~B ^ C). The CDNF is the disjunction of these minterms: (~A ^ ~B ^ C) v (A ^ ~B ^ C). Option C is correct.",
+    "solutionSteps": [
+      "1. Express m1 (0,0,1) as a product term: ~A ^ ~B ^ C.",
+      "2. Express m5 (1,0,1) as a product term: A ^ ~B ^ C.",
+      "3. Take the OR of both terms: (~A ^ ~B ^ C) v (A ^ ~B ^ C).",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Combinational Logic problem",
+    "tags": [
+      "combinational_logic",
+      "boolean",
+      "truth_tables",
+      "cdnf",
+      "core_module"
+    ],
+    "enabled": true
+  }
+]

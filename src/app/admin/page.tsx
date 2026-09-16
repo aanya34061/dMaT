@@ -31,8 +31,9 @@ import {
   Sparkles,
   Layers,
   HelpCircle,
-  AlertTriangle,
   FileText,
+  Upload,
+  FileJson,
 } from 'lucide-react';
 import BrandLogo from '@/components/BrandLogo';
 import { AdminStats, SubscriberRecord, AnalyticsData } from '@/types/auth';
@@ -50,7 +51,7 @@ import {
 
 export default function AdminDashboardPage() {
   const router = useRouter();
-  const [activeTab, setActiveTab] = useState<'users' | 'overview' | 'subscribers' | 'analytics' | 'questions'>('users');
+  const [activeTab, setActiveTab] = useState<'users' | 'overview' | 'subscribers' | 'analytics' | 'questions' | 'mock-questions'>('users');
 
   // Auth / Loading states
   const [loading, setLoading] = useState(true);
@@ -70,6 +71,28 @@ export default function AdminDashboardPage() {
   const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);
   const [questions, setQuestions] = useState<any[]>([]);
   const [chapters, setChapters] = useState<any[]>([]);
+
+  // Mock Questions Data State
+  const [mockQuestions, setMockQuestions] = useState<any[]>([]);
+  const [mockSectionFilter, setMockSectionFilter] = useState('ALL');
+  const [mockDiffFilter, setMockDiffFilter] = useState('ALL');
+  const [mockSearch, setMockSearch] = useState('');
+  const [showMockImportModal, setShowMockImportModal] = useState(false);
+  const [mockImportJson, setMockImportJson] = useState('');
+  const [showMockQuestionModal, setShowMockQuestionModal] = useState(false);
+  const [editingMockQuestion, setEditingMockQuestion] = useState<any | null>(null);
+
+  // Mock Question Form State
+  const [mqSection, setMqSection] = useState('Figure Sequences');
+  const [mqTopic, setMqTopic] = useState('');
+  const [mqDiff, setMqDiff] = useState('Medium');
+  const [mqText, setMqText] = useState('');
+  const [mqOpt0, setMqOpt0] = useState('');
+  const [mqOpt1, setMqOpt1] = useState('');
+  const [mqOpt2, setMqOpt2] = useState('');
+  const [mqOpt3, setMqOpt3] = useState('');
+  const [mqCorrect, setMqCorrect] = useState(0);
+  const [mqExp, setMqExp] = useState('');
 
   // Modals
   const [selectedUserModal, setSelectedUserModal] = useState<any | null>(null);
@@ -182,6 +205,15 @@ export default function AdminDashboardPage() {
     } catch (_) {}
   }, [token, authHeaders]);
 
+  const fetchMockQuestions = useCallback(async () => {
+    if (!token) return;
+    try {
+      const res = await fetch('/api/admin/mock-questions', { headers: authHeaders() });
+      const data = await res.json();
+      if (data.success) setMockQuestions(data.questions);
+    } catch (_) {}
+  }, [token, authHeaders]);
+
   // Load data when tab or token changes
   useEffect(() => {
     if (!token) return;
@@ -192,8 +224,9 @@ export default function AdminDashboardPage() {
       fetchSubscribers(),
       fetchAnalytics(),
       fetchQuestionsAndChapters(),
+      fetchMockQuestions(),
     ]).finally(() => setLoading(false));
-  }, [token, fetchStats, fetchUsers, fetchSubscribers, fetchAnalytics, fetchQuestionsAndChapters]);
+  }, [token, fetchStats, fetchUsers, fetchSubscribers, fetchAnalytics, fetchQuestionsAndChapters, fetchMockQuestions]);
 
   // User Actions
   const handleUserAction = async (userId: string, action: 'toggleStatus' | 'togglePlan' | 'delete') => {
@@ -325,6 +358,114 @@ export default function AdminDashboardPage() {
     setShowQuestionModal(true);
   };
 
+  const handleSaveMockQuestion = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const payload = {
+      id: editingMockQuestion ? editingMockQuestion.id : undefined,
+      section: mqSection,
+      topic: mqTopic,
+      difficulty: mqDiff,
+      questionText: mqText,
+      options: [mqOpt0, mqOpt1, mqOpt2, mqOpt3],
+      correctAnswer: mqCorrect,
+      explanation: mqExp,
+    };
+
+    const method = editingMockQuestion ? 'PUT' : 'POST';
+    const res = await fetch('/api/admin/mock-questions', {
+      method,
+      headers: authHeaders(),
+      body: JSON.stringify(payload),
+    });
+
+    if (res.ok) {
+      notify(editingMockQuestion ? 'Mock question updated!' : 'New mock question added!');
+      setShowMockQuestionModal(false);
+      setEditingMockQuestion(null);
+      fetchMockQuestions();
+    }
+  };
+
+  const handleToggleMockQuestionStatus = async (q: any) => {
+    const res = await fetch('/api/admin/mock-questions', {
+      method: 'PUT',
+      headers: authHeaders(),
+      body: JSON.stringify({ id: q.id, enabled: q.enabled === false ? true : false }),
+    });
+    if (res.ok) {
+      notify('Mock question status updated');
+      fetchMockQuestions();
+    }
+  };
+
+  const handleDeleteMockQuestion = async (id: string) => {
+    if (!confirm('Permanently delete this mock question?')) return;
+    const res = await fetch(`/api/admin/mock-questions?id=${id}`, {
+      method: 'DELETE',
+      headers: authHeaders(),
+    });
+    if (res.ok) {
+      notify('Mock question deleted');
+      fetchMockQuestions();
+    }
+  };
+
+  const handleBulkImportMockQuestions = async () => {
+    try {
+      const parsed = JSON.parse(mockImportJson);
+      if (!Array.isArray(parsed)) {
+        alert('Import data must be a JSON array of questions');
+        return;
+      }
+      const res = await fetch('/api/admin/mock-questions', {
+        method: 'POST',
+        headers: authHeaders(),
+        body: JSON.stringify(parsed),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        notify(data.message || 'Questions successfully imported!');
+        setShowMockImportModal(false);
+        setMockImportJson('');
+        fetchMockQuestions();
+      } else {
+        alert(data.error || 'Failed to import questions');
+      }
+    } catch (err: any) {
+      alert('Invalid JSON: ' + err.message);
+    }
+  };
+
+  const openNewMockQuestionModal = () => {
+    setEditingMockQuestion(null);
+    setMqSection('Figure Sequences');
+    setMqTopic('');
+    setMqDiff('Medium');
+    setMqText('');
+    setMqOpt0('');
+    setMqOpt1('');
+    setMqOpt2('');
+    setMqOpt3('');
+    setMqCorrect(0);
+    setMqExp('');
+    setShowMockQuestionModal(true);
+  };
+
+  const openEditMockQuestionModal = (q: any) => {
+    setEditingMockQuestion(q);
+    setMqSection(q.section || 'Figure Sequences');
+    setMqTopic(q.topic || '');
+    setMqDiff(q.difficulty || 'Medium');
+    setMqText(q.questionText || '');
+    setMqOpt0(q.options?.[0] || '');
+    setMqOpt1(q.options?.[1] || '');
+    setMqOpt2(q.options?.[2] || '');
+    setMqOpt3(q.options?.[3] || '');
+    setMqCorrect(q.correctAnswer ?? 0);
+    setMqExp(q.explanation || '');
+    setShowMockQuestionModal(true);
+  };
+
   const handleLogout = () => {
     if (typeof window !== 'undefined') {
       localStorage.removeItem('dmat_admin_token');
@@ -409,7 +550,17 @@ export default function AdminDashboardPage() {
               }`}
             >
               <BookOpen className="w-4 h-4" />
-              Question Bank
+              Practice Questions
+            </button>
+
+            <button
+              onClick={() => setActiveTab('mock-questions')}
+              className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all ${
+                activeTab === 'mock-questions' ? 'bg-blue-600 text-white shadow-md' : 'text-slate-400 hover:text-white hover:bg-slate-800'
+              }`}
+            >
+              <Sparkles className="w-4 h-4 text-amber-400" />
+              Mock Question Bank
             </button>
           </nav>
         </div>
@@ -943,6 +1094,151 @@ export default function AdminDashboardPage() {
                 </div>
               </div>
             )}
+
+            {/* MOCK QUESTIONS TAB */}
+            {activeTab === 'mock-questions' && (
+              <div className="space-y-6">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-slate-900 p-4 rounded-2xl border border-slate-800">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="text-xs text-slate-400">
+                      Total Mock Items: <strong className="text-white">{mockQuestions.length}</strong>
+                    </span>
+
+                    <select
+                      value={mockSectionFilter}
+                      onChange={(e) => setMockSectionFilter(e.target.value)}
+                      className="bg-slate-950 border border-slate-800 text-xs text-white rounded-xl px-3 py-2"
+                    >
+                      <option value="ALL">All Sections</option>
+                      <option value="Data Types">Data Types</option>
+                      <option value="Combinational Logic">Combinational Logic</option>
+                      <option value="Linear Transformations">Linear Transformations</option>
+                      <option value="Figure Sequences">Figure Sequences</option>
+                      <option value="Mathematical Equations">Mathematical Equations</option>
+                      <option value="Latin Squares">Latin Squares</option>
+                      <option value="General Academic">General Academic</option>
+                    </select>
+
+                    <select
+                      value={mockDiffFilter}
+                      onChange={(e) => setMockDiffFilter(e.target.value)}
+                      className="bg-slate-950 border border-slate-800 text-xs text-white rounded-xl px-3 py-2"
+                    >
+                      <option value="ALL">All Difficulties</option>
+                      <option value="Easy">Easy</option>
+                      <option value="Medium">Medium</option>
+                      <option value="Hard">Hard</option>
+                      <option value="Very Hard">Very Hard</option>
+                    </select>
+
+                    <input
+                      type="text"
+                      placeholder="Search questions..."
+                      value={mockSearch}
+                      onChange={(e) => setMockSearch(e.target.value)}
+                      className="bg-slate-950 border border-slate-800 text-xs text-white rounded-xl px-3 py-2 w-44"
+                    />
+                  </div>
+
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => setShowMockImportModal(true)}
+                      className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs rounded-xl border border-slate-700 flex items-center gap-1.5 shadow-sm"
+                    >
+                      <Upload className="w-3.5 h-3.5" />
+                      Bulk Import JSON
+                    </button>
+                    <button
+                      onClick={openNewMockQuestionModal}
+                      className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-xl flex items-center gap-1.5 shadow"
+                    >
+                      <Plus className="w-3.5 h-3.5" />
+                      Add Question
+                    </button>
+                  </div>
+                </div>
+
+                <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-md">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left border-collapse">
+                      <thead>
+                        <tr className="bg-slate-950 border-b border-slate-800 text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+                          <th className="py-3.5 px-4">ID</th>
+                          <th className="py-3.5 px-4">Section</th>
+                          <th className="py-3.5 px-4">Topic</th>
+                          <th className="py-3.5 px-4">Question Text</th>
+                          <th className="py-3.5 px-4">Difficulty</th>
+                          <th className="py-3.5 px-4">Status</th>
+                          <th className="py-3.5 px-4 text-right">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-slate-800/60 text-xs">
+                        {mockQuestions
+                          .filter((q) => {
+                            if (mockSectionFilter !== 'ALL' && q.section !== mockSectionFilter) return false;
+                            if (mockDiffFilter !== 'ALL' && q.difficulty !== mockDiffFilter) return false;
+                            if (mockSearch) {
+                              const s = mockSearch.toLowerCase();
+                              return (
+                                q.questionText?.toLowerCase().includes(s) ||
+                                q.topic?.toLowerCase().includes(s) ||
+                                q.id?.toLowerCase().includes(s)
+                              );
+                            }
+                            return true;
+                          })
+                          .slice(0, 100)
+                          .map((q) => (
+                            <tr key={q.id} className="hover:bg-slate-850/40 transition-colors">
+                              <td className="py-3.5 px-4 font-mono text-slate-400">{q.id}</td>
+                              <td className="py-3.5 px-4 text-blue-400 font-bold">{q.section}</td>
+                              <td className="py-3.5 px-4 text-slate-300">{q.topic}</td>
+                              <td className="py-3.5 px-4 max-w-xs text-white truncate font-medium">
+                                {q.questionText}
+                              </td>
+                              <td className="py-3.5 px-4">
+                                <span className="px-2 py-0.5 bg-slate-800 font-bold rounded-full text-[10px] text-slate-300">
+                                  {q.difficulty || 'Medium'}
+                                </span>
+                              </td>
+                              <td className="py-3.5 px-4">
+                                <button
+                                  onClick={() => handleToggleMockQuestionStatus(q)}
+                                  className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
+                                    q.enabled !== false
+                                      ? 'bg-emerald-950 text-emerald-400 border border-emerald-800'
+                                      : 'bg-rose-950 text-rose-400 border border-rose-800'
+                                  }`}
+                                >
+                                  {q.enabled !== false ? 'Enabled' : 'Disabled'}
+                                </button>
+                              </td>
+                              <td className="py-3.5 px-4 text-right">
+                                <div className="flex items-center justify-end gap-1">
+                                  <button
+                                    onClick={() => openEditMockQuestionModal(q)}
+                                    className="p-1.5 rounded-lg hover:bg-slate-800 text-blue-400"
+                                    title="Edit Question"
+                                  >
+                                    <Edit className="w-4 h-4" />
+                                  </button>
+                                  <button
+                                    onClick={() => handleDeleteMockQuestion(q.id)}
+                                    className="p-1.5 rounded-lg hover:bg-rose-950 text-rose-400"
+                                    title="Delete Question"
+                                  >
+                                    <Trash2 className="w-4 h-4" />
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                          ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            )}
           </>
         )}
       </main>
@@ -1145,6 +1441,198 @@ export default function AdminDashboardPage() {
                 </button>
                 <button type="submit" className="flex-1 py-2 text-xs font-bold bg-blue-600 text-white rounded-xl">
                   Add Chapter
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Bulk Import Mock Questions Modal */}
+      {showMockImportModal && (
+        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-slate-900 border border-slate-800 rounded-3xl max-w-lg w-full p-6 space-y-4 shadow-2xl">
+            <div className="flex justify-between items-center border-b border-slate-800 pb-3">
+              <div className="flex items-center gap-2">
+                <Upload className="w-5 h-5 text-blue-500" />
+                <h3 className="font-bold text-white text-base">Bulk Import Mock Questions</h3>
+              </div>
+              <button
+                onClick={() => setShowMockImportModal(false)}
+                className="text-slate-400 hover:text-white text-sm"
+              >
+                ✕
+              </button>
+            </div>
+
+            <p className="text-xs text-slate-400 leading-relaxed">
+              Paste a JSON array of questions conforming to the schema:
+              <br />
+              <code className="text-[11px] font-mono text-blue-400">
+                [&#123; &quot;section&quot;: &quot;...&quot;, &quot;topic&quot;: &quot;...&quot;, &quot;difficulty&quot;: &quot;Medium&quot;, &quot;questionText&quot;: &quot;...&quot;, &quot;options&quot;: [&quot;A&quot;, &quot;B&quot;, &quot;C&quot;, &quot;D&quot;], &quot;correctAnswer&quot;: 0, &quot;explanation&quot;: &quot;...&quot; &#125;]
+              </code>
+            </p>
+
+            <textarea
+              rows={8}
+              value={mockImportJson}
+              onChange={(e) => setMockImportJson(e.target.value)}
+              placeholder="Paste JSON array here..."
+              className="w-full p-3 bg-slate-950 border border-slate-800 rounded-xl font-mono text-xs text-white"
+            />
+
+            <div className="flex gap-2 pt-2">
+              <button
+                type="button"
+                onClick={() => setShowMockImportModal(false)}
+                className="flex-1 py-2 text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={handleBulkImportMockQuestions}
+                className="flex-1 py-2 text-xs font-bold bg-blue-600 hover:bg-blue-500 text-white rounded-xl shadow"
+              >
+                Import Questions
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Add / Edit Mock Question Modal */}
+      {showMockQuestionModal && (
+        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-slate-900 border border-slate-800 rounded-3xl max-w-xl w-full p-6 space-y-4 shadow-2xl max-h-[90vh] overflow-y-auto">
+            <div className="flex justify-between items-center border-b border-slate-800 pb-3">
+              <h3 className="font-bold text-white text-base">
+                {editingMockQuestion ? 'Edit Mock Question' : 'Add New Mock Question'}
+              </h3>
+              <button
+                onClick={() => setShowMockQuestionModal(false)}
+                className="text-slate-400 hover:text-white text-sm"
+              >
+                ✕
+              </button>
+            </div>
+
+            <form onSubmit={handleSaveMockQuestion} className="space-y-4 text-xs">
+              <div className="grid grid-cols-3 gap-3">
+                <div>
+                  <label className="block text-slate-400 font-bold mb-1">Section</label>
+                  <select
+                    value={mqSection}
+                    onChange={(e) => setMqSection(e.target.value)}
+                    className="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-xl text-white font-semibold"
+                  >
+                    <option value="Data Types">Data Types</option>
+                    <option value="Combinational Logic">Combinational Logic</option>
+                    <option value="Linear Transformations">Linear Transformations</option>
+                    <option value="Figure Sequences">Figure Sequences</option>
+                    <option value="Mathematical Equations">Mathematical Equations</option>
+                    <option value="Latin Squares">Latin Squares</option>
+                    <option value="General Academic">General Academic</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-slate-400 font-bold mb-1">Topic</label>
+                  <input
+                    type="text"
+                    required
+                    value={mqTopic}
+                    onChange={(e) => setMqTopic(e.target.value)}
+                    placeholder="e.g. Mental Rotation"
+                    className="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-xl text-white font-semibold"
+                  />
+                </div>
+                <div>
+                  <label className="block text-slate-400 font-bold mb-1">Difficulty</label>
+                  <select
+                    value={mqDiff}
+                    onChange={(e) => setMqDiff(e.target.value)}
+                    className="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-xl text-white font-semibold"
+                  >
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                    <option value="Very Hard">Very Hard</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-slate-400 font-bold mb-1">Question Prompt</label>
+                <textarea
+                  required
+                  rows={3}
+                  value={mqText}
+                  onChange={(e) => setMqText(e.target.value)}
+                  placeholder="Enter the complete question text..."
+                  className="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-xl text-white leading-relaxed"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label className="block text-slate-400 font-bold">Options (A, B, C, D)</label>
+                {[mqOpt0, mqOpt1, mqOpt2, mqOpt3].map((opt, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <span className="w-6 font-bold text-center text-slate-400">
+                      {String.fromCharCode(65 + i)}
+                    </span>
+                    <input
+                      type="text"
+                      required
+                      value={i === 0 ? mqOpt0 : i === 1 ? mqOpt1 : i === 2 ? mqOpt2 : mqOpt3}
+                      onChange={(e) => {
+                        const val = e.target.value;
+                        if (i === 0) setMqOpt0(val);
+                        else if (i === 1) setMqOpt1(val);
+                        else if (i === 2) setMqOpt2(val);
+                        else setMqOpt3(val);
+                      }}
+                      placeholder={`Option ${String.fromCharCode(65 + i)}`}
+                      className="flex-1 p-2 bg-slate-950 border border-slate-800 rounded-xl text-white"
+                    />
+                    <label className="flex items-center gap-1 text-[11px] font-bold text-slate-400 cursor-pointer">
+                      <input
+                        type="radio"
+                        name="correctOpt"
+                        checked={mqCorrect === i}
+                        onChange={() => setMqCorrect(i)}
+                        className="accent-blue-600"
+                      />
+                      Correct
+                    </label>
+                  </div>
+                ))}
+              </div>
+
+              <div>
+                <label className="block text-slate-400 font-bold mb-1">Detailed Explanation</label>
+                <textarea
+                  required
+                  rows={3}
+                  value={mqExp}
+                  onChange={(e) => setMqExp(e.target.value)}
+                  placeholder="Explain why the answer is correct..."
+                  className="w-full p-2.5 bg-slate-950 border border-slate-800 rounded-xl text-white leading-relaxed"
+                />
+              </div>
+
+              <div className="flex gap-2 pt-2">
+                <button
+                  type="button"
+                  onClick={() => setShowMockQuestionModal(false)}
+                  className="flex-1 py-2 text-xs font-bold bg-slate-800 text-slate-300 rounded-xl"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="flex-1 py-2 text-xs font-bold bg-blue-600 hover:bg-blue-500 text-white rounded-xl shadow"
+                >
+                  Save Question
                 </button>
               </div>
             </form>

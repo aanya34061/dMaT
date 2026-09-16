@@ -2,13 +2,21 @@ import fs from 'fs';
 import path from 'path';
 import bcrypt from 'bcryptjs';
 
-const DATA_DIR = path.join(process.cwd(), 'data_store');
-const DB_FILE = path.join(DATA_DIR, 'db.json');
+const isVercel = Boolean(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME);
+const BUNDLED_DB_FILE = path.join(process.cwd(), 'data_store', 'db.json');
+const DATA_DIR = isVercel ? '/tmp/data_store' : path.join(process.cwd(), 'data_store');
+const DB_FILE = isVercel ? path.join('/tmp/data_store', 'db.json') : BUNDLED_DB_FILE;
 
-// Ensure data_store directory exists
-if (!fs.existsSync(DATA_DIR)) {
-  fs.mkdirSync(DATA_DIR, { recursive: true });
+function ensureDataDir() {
+  try {
+    if (!fs.existsSync(DATA_DIR)) {
+      fs.mkdirSync(DATA_DIR, { recursive: true });
+    }
+  } catch (err) {
+    console.error('Failed to create data directory:', err);
+  }
 }
+ensureDataDir();
 
 export interface DbSchema {
   users: Array<{
@@ -81,6 +89,8 @@ export interface DbSchema {
     iconName?: string;
     enabled: boolean;
   }>;
+  mockQuestions?: any[];
+  mockResults?: any[];
 }
 
 function getInitialDb(): DbSchema {
@@ -147,9 +157,20 @@ function getInitialDb(): DbSchema {
 
 export function readDb(): DbSchema {
   try {
+    if (isVercel && !fs.existsSync(DB_FILE) && fs.existsSync(BUNDLED_DB_FILE)) {
+      ensureDataDir();
+      fs.copyFileSync(BUNDLED_DB_FILE, DB_FILE);
+    }
     if (!fs.existsSync(DB_FILE)) {
+      if (fs.existsSync(BUNDLED_DB_FILE)) {
+        const content = fs.readFileSync(BUNDLED_DB_FILE, 'utf8');
+        return JSON.parse(content);
+      }
       const initData = getInitialDb();
-      fs.writeFileSync(DB_FILE, JSON.stringify(initData, null, 2), 'utf8');
+      try {
+        ensureDataDir();
+        fs.writeFileSync(DB_FILE, JSON.stringify(initData, null, 2), 'utf8');
+      } catch (_) {}
       return initData;
     }
     const content = fs.readFileSync(DB_FILE, 'utf8');
@@ -161,6 +182,7 @@ export function readDb(): DbSchema {
 
 export function writeDb(data: DbSchema): void {
   try {
+    ensureDataDir();
     fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2), 'utf8');
   } catch (err) {
     console.error('Failed to write database file:', err);

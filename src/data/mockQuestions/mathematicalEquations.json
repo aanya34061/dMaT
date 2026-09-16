@@ -1,0 +1,4517 @@
+[
+  {
+    "id": "mat-001",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 15 \\\\ 2\\,\\lozenge + \\bigstar &= 12 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "18",
+      "19",
+      "21",
+      "24"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 27 \\implies \\lozenge + \\bigstar = 9$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 18 \\implies \\bigstar = 6$.\nSubstituting gives $\\lozenge = 3$.\nThus, $\\lozenge \\times \\bigstar = 3 \\times 6 = 18$. Option A is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 9.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 18 ⇒ 3★ = 18 ⇒ ★ = 6.",
+      "3. Substitute to find ◊ = 3.",
+      "4. Calculate product: 3 × 6 = 18.",
+      "5. Confirm Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-002",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 22 \\\\ 2\\,\\lozenge + \\bigstar &= 17 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "26",
+      "36",
+      "40",
+      "45"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 39 \\implies \\lozenge + \\bigstar = 13$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 27 \\implies \\bigstar = 9$.\nSubstituting gives $\\lozenge = 4$.\nThus, $\\lozenge \\times \\bigstar = 4 \\times 9 = 36$. Option B is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 13.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 27 ⇒ 3★ = 27 ⇒ ★ = 9.",
+      "3. Substitute to find ◊ = 4.",
+      "4. Calculate product: 4 × 9 = 36.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-003",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 13 \\\\ 2\\,\\lozenge + \\bigstar &= 14 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "25",
+      "18",
+      "20",
+      "24"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 27 \\implies \\lozenge + \\bigstar = 9$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 12 \\implies \\bigstar = 4$.\nSubstituting gives $\\lozenge = 5$.\nThus, $\\lozenge \\times \\bigstar = 5 \\times 4 = 20$. Option C is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 9.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 12 ⇒ 3★ = 12 ⇒ ★ = 4.",
+      "3. Substitute to find ◊ = 5.",
+      "4. Calculate product: 5 × 4 = 20.",
+      "5. Confirm Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-004",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 20 \\\\ 2\\,\\lozenge + \\bigstar &= 19 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "49",
+      "26",
+      "48",
+      "42"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 39 \\implies \\lozenge + \\bigstar = 13$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 21 \\implies \\bigstar = 7$.\nSubstituting gives $\\lozenge = 6$.\nThus, $\\lozenge \\times \\bigstar = 6 \\times 7 = 42$. Option D is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 13.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 21 ⇒ 3★ = 21 ⇒ ★ = 7.",
+      "3. Substitute to find ◊ = 6.",
+      "4. Calculate product: 6 × 7 = 42.",
+      "5. Confirm Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-005",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 27 \\\\ 2\\,\\lozenge + \\bigstar &= 24 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "70",
+      "34",
+      "77",
+      "80"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 51 \\implies \\lozenge + \\bigstar = 17$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 30 \\implies \\bigstar = 10$.\nSubstituting gives $\\lozenge = 7$.\nThus, $\\lozenge \\times \\bigstar = 7 \\times 10 = 70$. Option A is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 17.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 30 ⇒ 3★ = 30 ⇒ ★ = 10.",
+      "3. Substitute to find ◊ = 7.",
+      "4. Calculate product: 7 × 10 = 70.",
+      "5. Confirm Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-006",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 18 \\\\ 2\\,\\lozenge + \\bigstar &= 21 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "26",
+      "40",
+      "48",
+      "45"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 39 \\implies \\lozenge + \\bigstar = 13$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 15 \\implies \\bigstar = 5$.\nSubstituting gives $\\lozenge = 8$.\nThus, $\\lozenge \\times \\bigstar = 8 \\times 5 = 40$. Option B is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 13.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 15 ⇒ 3★ = 15 ⇒ ★ = 5.",
+      "3. Substitute to find ◊ = 8.",
+      "4. Calculate product: 8 × 5 = 40.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-007",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 18 \\\\ 2\\,\\lozenge + \\bigstar &= 12 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "18",
+      "20",
+      "16",
+      "24"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 30 \\implies \\lozenge + \\bigstar = 10$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 24 \\implies \\bigstar = 8$.\nSubstituting gives $\\lozenge = 2$.\nThus, $\\lozenge \\times \\bigstar = 2 \\times 8 = 16$. Option C is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 10.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 24 ⇒ 3★ = 24 ⇒ ★ = 8.",
+      "3. Substitute to find ◊ = 2.",
+      "4. Calculate product: 2 × 8 = 16.",
+      "5. Confirm Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-008",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 9 \\\\ 2\\,\\lozenge + \\bigstar &= 9 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "15",
+      "12",
+      "13",
+      "9"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 18 \\implies \\lozenge + \\bigstar = 6$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 9 \\implies \\bigstar = 3$.\nSubstituting gives $\\lozenge = 3$.\nThus, $\\lozenge \\times \\bigstar = 3 \\times 3 = 9$. Option D is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 6.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 9 ⇒ 3★ = 9 ⇒ ★ = 3.",
+      "3. Substitute to find ◊ = 3.",
+      "4. Calculate product: 3 × 3 = 9.",
+      "5. Confirm Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-009",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 16 \\\\ 2\\,\\lozenge + \\bigstar &= 14 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "24",
+      "20",
+      "28",
+      "30"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 30 \\implies \\lozenge + \\bigstar = 10$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 18 \\implies \\bigstar = 6$.\nSubstituting gives $\\lozenge = 4$.\nThus, $\\lozenge \\times \\bigstar = 4 \\times 6 = 24$. Option A is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 10.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 18 ⇒ 3★ = 18 ⇒ ★ = 6.",
+      "3. Substitute to find ◊ = 4.",
+      "4. Calculate product: 4 × 6 = 24.",
+      "5. Confirm Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-010",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 23 \\\\ 2\\,\\lozenge + \\bigstar &= 19 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "28",
+      "45",
+      "50",
+      "54"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 42 \\implies \\lozenge + \\bigstar = 14$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 27 \\implies \\bigstar = 9$.\nSubstituting gives $\\lozenge = 5$.\nThus, $\\lozenge \\times \\bigstar = 5 \\times 9 = 45$. Option B is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 14.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 27 ⇒ 3★ = 27 ⇒ ★ = 9.",
+      "3. Substitute to find ◊ = 5.",
+      "4. Calculate product: 5 × 9 = 45.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-011",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 14 \\\\ 2\\,\\lozenge + \\bigstar &= 16 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "30",
+      "20",
+      "24",
+      "28"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 30 \\implies \\lozenge + \\bigstar = 10$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 12 \\implies \\bigstar = 4$.\nSubstituting gives $\\lozenge = 6$.\nThus, $\\lozenge \\times \\bigstar = 6 \\times 4 = 24$. Option C is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 10.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 12 ⇒ 3★ = 12 ⇒ ★ = 4.",
+      "3. Substitute to find ◊ = 6.",
+      "4. Calculate product: 6 × 4 = 24.",
+      "5. Confirm Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-012",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 21 \\\\ 2\\,\\lozenge + \\bigstar &= 21 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "57",
+      "28",
+      "56",
+      "49"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 42 \\implies \\lozenge + \\bigstar = 14$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 21 \\implies \\bigstar = 7$.\nSubstituting gives $\\lozenge = 7$.\nThus, $\\lozenge \\times \\bigstar = 7 \\times 7 = 49$. Option D is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 14.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 21 ⇒ 3★ = 21 ⇒ ★ = 7.",
+      "3. Substitute to find ◊ = 7.",
+      "4. Calculate product: 7 × 7 = 49.",
+      "5. Confirm Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-013",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 28 \\\\ 2\\,\\lozenge + \\bigstar &= 26 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "80",
+      "36",
+      "88",
+      "90"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 54 \\implies \\lozenge + \\bigstar = 18$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 30 \\implies \\bigstar = 10$.\nSubstituting gives $\\lozenge = 8$.\nThus, $\\lozenge \\times \\bigstar = 8 \\times 10 = 80$. Option A is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 18.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 30 ⇒ 3★ = 30 ⇒ ★ = 10.",
+      "3. Substitute to find ◊ = 8.",
+      "4. Calculate product: 8 × 10 = 80.",
+      "5. Confirm Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-014",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 12 \\\\ 2\\,\\lozenge + \\bigstar &= 9 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "14",
+      "10",
+      "12",
+      "15"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 21 \\implies \\lozenge + \\bigstar = 7$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 15 \\implies \\bigstar = 5$.\nSubstituting gives $\\lozenge = 2$.\nThus, $\\lozenge \\times \\bigstar = 2 \\times 5 = 10$. Option B is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 7.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 15 ⇒ 3★ = 15 ⇒ ★ = 5.",
+      "3. Substitute to find ◊ = 2.",
+      "4. Calculate product: 2 × 5 = 10.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-015",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 19 \\\\ 2\\,\\lozenge + \\bigstar &= 14 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "27",
+      "22",
+      "24",
+      "32"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 33 \\implies \\lozenge + \\bigstar = 11$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 24 \\implies \\bigstar = 8$.\nSubstituting gives $\\lozenge = 3$.\nThus, $\\lozenge \\times \\bigstar = 3 \\times 8 = 24$. Option C is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 11.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 24 ⇒ 3★ = 24 ⇒ ★ = 8.",
+      "3. Substitute to find ◊ = 3.",
+      "4. Calculate product: 3 × 8 = 24.",
+      "5. Confirm Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-016",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 10 \\\\ 2\\,\\lozenge + \\bigstar &= 11 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "15",
+      "14",
+      "16",
+      "12"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 21 \\implies \\lozenge + \\bigstar = 7$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 9 \\implies \\bigstar = 3$.\nSubstituting gives $\\lozenge = 4$.\nThus, $\\lozenge \\times \\bigstar = 4 \\times 3 = 12$. Option D is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 7.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 9 ⇒ 3★ = 9 ⇒ ★ = 3.",
+      "3. Substitute to find ◊ = 4.",
+      "4. Calculate product: 4 × 3 = 12.",
+      "5. Confirm Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-017",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 17 \\\\ 2\\,\\lozenge + \\bigstar &= 16 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "30",
+      "22",
+      "35",
+      "36"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 33 \\implies \\lozenge + \\bigstar = 11$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 18 \\implies \\bigstar = 6$.\nSubstituting gives $\\lozenge = 5$.\nThus, $\\lozenge \\times \\bigstar = 5 \\times 6 = 30$. Option A is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 11.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 18 ⇒ 3★ = 18 ⇒ ★ = 6.",
+      "3. Substitute to find ◊ = 5.",
+      "4. Calculate product: 5 × 6 = 30.",
+      "5. Confirm Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-018",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 24 \\\\ 2\\,\\lozenge + \\bigstar &= 21 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "30",
+      "54",
+      "60",
+      "63"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 45 \\implies \\lozenge + \\bigstar = 15$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 27 \\implies \\bigstar = 9$.\nSubstituting gives $\\lozenge = 6$.\nThus, $\\lozenge \\times \\bigstar = 6 \\times 9 = 54$. Option B is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 15.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 27 ⇒ 3★ = 27 ⇒ ★ = 9.",
+      "3. Substitute to find ◊ = 6.",
+      "4. Calculate product: 6 × 9 = 54.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-019",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 15 \\\\ 2\\,\\lozenge + \\bigstar &= 18 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "35",
+      "22",
+      "28",
+      "32"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 33 \\implies \\lozenge + \\bigstar = 11$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 12 \\implies \\bigstar = 4$.\nSubstituting gives $\\lozenge = 7$.\nThus, $\\lozenge \\times \\bigstar = 7 \\times 4 = 28$. Option C is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 11.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 12 ⇒ 3★ = 12 ⇒ ★ = 4.",
+      "3. Substitute to find ◊ = 7.",
+      "4. Calculate product: 7 × 4 = 28.",
+      "5. Confirm Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-020",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 22 \\\\ 2\\,\\lozenge + \\bigstar &= 23 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "63",
+      "30",
+      "64",
+      "56"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 45 \\implies \\lozenge + \\bigstar = 15$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 21 \\implies \\bigstar = 7$.\nSubstituting gives $\\lozenge = 8$.\nThus, $\\lozenge \\times \\bigstar = 8 \\times 7 = 56$. Option D is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 15.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 21 ⇒ 3★ = 21 ⇒ ★ = 7.",
+      "3. Substitute to find ◊ = 8.",
+      "4. Calculate product: 8 × 7 = 56.",
+      "5. Confirm Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-021",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 22 \\\\ 2\\,\\lozenge + \\bigstar &= 14 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "20",
+      "24",
+      "22",
+      "30"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 36 \\implies \\lozenge + \\bigstar = 12$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 30 \\implies \\bigstar = 10$.\nSubstituting gives $\\lozenge = 2$.\nThus, $\\lozenge \\times \\bigstar = 2 \\times 10 = 20$. Option A is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 12.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 30 ⇒ 3★ = 30 ⇒ ★ = 10.",
+      "3. Substitute to find ◊ = 2.",
+      "4. Calculate product: 2 × 10 = 20.",
+      "5. Confirm Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-022",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 13 \\\\ 2\\,\\lozenge + \\bigstar &= 11 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "16",
+      "15",
+      "18",
+      "20"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 24 \\implies \\lozenge + \\bigstar = 8$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 15 \\implies \\bigstar = 5$.\nSubstituting gives $\\lozenge = 3$.\nThus, $\\lozenge \\times \\bigstar = 3 \\times 5 = 15$. Option B is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 8.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 15 ⇒ 3★ = 15 ⇒ ★ = 5.",
+      "3. Substitute to find ◊ = 3.",
+      "4. Calculate product: 3 × 5 = 15.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-023",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 20 \\\\ 2\\,\\lozenge + \\bigstar &= 16 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "36",
+      "24",
+      "32",
+      "40"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 36 \\implies \\lozenge + \\bigstar = 12$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 24 \\implies \\bigstar = 8$.\nSubstituting gives $\\lozenge = 4$.\nThus, $\\lozenge \\times \\bigstar = 4 \\times 8 = 32$. Option C is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 12.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 24 ⇒ 3★ = 24 ⇒ ★ = 8.",
+      "3. Substitute to find ◊ = 4.",
+      "4. Calculate product: 4 × 8 = 32.",
+      "5. Confirm Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-024",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 11 \\\\ 2\\,\\lozenge + \\bigstar &= 13 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "18",
+      "16",
+      "20",
+      "15"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 24 \\implies \\lozenge + \\bigstar = 8$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 9 \\implies \\bigstar = 3$.\nSubstituting gives $\\lozenge = 5$.\nThus, $\\lozenge \\times \\bigstar = 5 \\times 3 = 15$. Option D is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 8.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 9 ⇒ 3★ = 9 ⇒ ★ = 3.",
+      "3. Substitute to find ◊ = 5.",
+      "4. Calculate product: 5 × 3 = 15.",
+      "5. Confirm Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-025",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 18 \\\\ 2\\,\\lozenge + \\bigstar &= 18 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "36",
+      "24",
+      "42",
+      "43"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 36 \\implies \\lozenge + \\bigstar = 12$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 18 \\implies \\bigstar = 6$.\nSubstituting gives $\\lozenge = 6$.\nThus, $\\lozenge \\times \\bigstar = 6 \\times 6 = 36$. Option A is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 12.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 18 ⇒ 3★ = 18 ⇒ ★ = 6.",
+      "3. Substitute to find ◊ = 6.",
+      "4. Calculate product: 6 × 6 = 36.",
+      "5. Confirm Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-026",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 25 \\\\ 2\\,\\lozenge + \\bigstar &= 23 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "32",
+      "63",
+      "70",
+      "72"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 48 \\implies \\lozenge + \\bigstar = 16$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 27 \\implies \\bigstar = 9$.\nSubstituting gives $\\lozenge = 7$.\nThus, $\\lozenge \\times \\bigstar = 7 \\times 9 = 63$. Option B is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 16.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 27 ⇒ 3★ = 27 ⇒ ★ = 9.",
+      "3. Substitute to find ◊ = 7.",
+      "4. Calculate product: 7 × 9 = 63.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-027",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 16 \\\\ 2\\,\\lozenge + \\bigstar &= 20 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "40",
+      "24",
+      "32",
+      "36"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 36 \\implies \\lozenge + \\bigstar = 12$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 12 \\implies \\bigstar = 4$.\nSubstituting gives $\\lozenge = 8$.\nThus, $\\lozenge \\times \\bigstar = 8 \\times 4 = 32$. Option C is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 12.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 12 ⇒ 3★ = 12 ⇒ ★ = 4.",
+      "3. Substitute to find ◊ = 8.",
+      "4. Calculate product: 8 × 4 = 32.",
+      "5. Confirm Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-028",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 16 \\\\ 2\\,\\lozenge + \\bigstar &= 11 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "21",
+      "18",
+      "16",
+      "14"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 27 \\implies \\lozenge + \\bigstar = 9$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 21 \\implies \\bigstar = 7$.\nSubstituting gives $\\lozenge = 2$.\nThus, $\\lozenge \\times \\bigstar = 2 \\times 7 = 14$. Option D is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 9.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 21 ⇒ 3★ = 21 ⇒ ★ = 7.",
+      "3. Substitute to find ◊ = 2.",
+      "4. Calculate product: 2 × 7 = 14.",
+      "5. Confirm Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-029",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 23 \\\\ 2\\,\\lozenge + \\bigstar &= 16 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "30",
+      "26",
+      "33",
+      "40"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 39 \\implies \\lozenge + \\bigstar = 13$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 30 \\implies \\bigstar = 10$.\nSubstituting gives $\\lozenge = 3$.\nThus, $\\lozenge \\times \\bigstar = 3 \\times 10 = 30$. Option A is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 13.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 30 ⇒ 3★ = 30 ⇒ ★ = 10.",
+      "3. Substitute to find ◊ = 3.",
+      "4. Calculate product: 3 × 10 = 30.",
+      "5. Confirm Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-030",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 14 \\\\ 2\\,\\lozenge + \\bigstar &= 13 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "18",
+      "20",
+      "24",
+      "25"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 27 \\implies \\lozenge + \\bigstar = 9$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 15 \\implies \\bigstar = 5$.\nSubstituting gives $\\lozenge = 4$.\nThus, $\\lozenge \\times \\bigstar = 4 \\times 5 = 20$. Option B is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 9.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 15 ⇒ 3★ = 15 ⇒ ★ = 5.",
+      "3. Substitute to find ◊ = 4.",
+      "4. Calculate product: 4 × 5 = 20.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-031",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 21 \\\\ 2\\,\\lozenge + \\bigstar &= 18 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "45",
+      "26",
+      "40",
+      "48"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 39 \\implies \\lozenge + \\bigstar = 13$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 24 \\implies \\bigstar = 8$.\nSubstituting gives $\\lozenge = 5$.\nThus, $\\lozenge \\times \\bigstar = 5 \\times 8 = 40$. Option C is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 13.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 24 ⇒ 3★ = 24 ⇒ ★ = 8.",
+      "3. Substitute to find ◊ = 5.",
+      "4. Calculate product: 5 × 8 = 40.",
+      "5. Confirm Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-032",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 12 \\\\ 2\\,\\lozenge + \\bigstar &= 15 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "21",
+      "19",
+      "24",
+      "18"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 27 \\implies \\lozenge + \\bigstar = 9$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 9 \\implies \\bigstar = 3$.\nSubstituting gives $\\lozenge = 6$.\nThus, $\\lozenge \\times \\bigstar = 6 \\times 3 = 18$. Option D is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 9.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 9 ⇒ 3★ = 9 ⇒ ★ = 3.",
+      "3. Substitute to find ◊ = 6.",
+      "4. Calculate product: 6 × 3 = 18.",
+      "5. Confirm Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-033",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 19 \\\\ 2\\,\\lozenge + \\bigstar &= 20 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "42",
+      "26",
+      "49",
+      "48"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 39 \\implies \\lozenge + \\bigstar = 13$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 18 \\implies \\bigstar = 6$.\nSubstituting gives $\\lozenge = 7$.\nThus, $\\lozenge \\times \\bigstar = 7 \\times 6 = 42$. Option A is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 13.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 18 ⇒ 3★ = 18 ⇒ ★ = 6.",
+      "3. Substitute to find ◊ = 7.",
+      "4. Calculate product: 7 × 6 = 42.",
+      "5. Confirm Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-034",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 26 \\\\ 2\\,\\lozenge + \\bigstar &= 25 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "34",
+      "72",
+      "80",
+      "81"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 51 \\implies \\lozenge + \\bigstar = 17$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 27 \\implies \\bigstar = 9$.\nSubstituting gives $\\lozenge = 8$.\nThus, $\\lozenge \\times \\bigstar = 8 \\times 9 = 72$. Option B is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 17.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 27 ⇒ 3★ = 27 ⇒ ★ = 9.",
+      "3. Substitute to find ◊ = 8.",
+      "4. Calculate product: 8 × 9 = 72.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-035",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Linear Equations & Single-Variable Systems",
+    "subtopic": "Simultaneous Symbolic Linear Systems",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "Consider the symbolic system of equations where symbols represent positive integers:\n\n$$\\begin{aligned} \\lozenge + 2\\,\\bigstar &= 10 \\\\ 2\\,\\lozenge + \\bigstar &= 8 \\end{aligned}$$\n\nWhat is the exact value of the product $\\lozenge \\times \\bigstar$?",
+    "options": [
+      "10",
+      "12",
+      "8",
+      "13"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Adding both equations: $3(\\lozenge + \\bigstar) = 18 \\implies \\lozenge + \\bigstar = 6$.\nMultiplying the first by 2 and subtracting the second: $3\\bigstar = 12 \\implies \\bigstar = 4$.\nSubstituting gives $\\lozenge = 2$.\nThus, $\\lozenge \\times \\bigstar = 2 \\times 4 = 8$. Option C is correct.",
+    "solutionSteps": [
+      "1. Add equations to find (◊ + ★) = 6.",
+      "2. Eliminate ◊: 2(◊ + 2★) - (2◊ + ★) = 12 ⇒ 3★ = 12 ⇒ ★ = 4.",
+      "3. Substitute to find ◊ = 2.",
+      "4. Calculate product: 2 × 4 = 8.",
+      "5. Confirm Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-036",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 3$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "8",
+      "9",
+      "11",
+      "7"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 3$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 9$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 9 - 2 = 7$. Option D is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (3)² = 9.",
+      "3. Isolate: x² + 1/x² = 9 - 2 = 7.",
+      "4. Match with Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-037",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 4$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "14",
+      "16",
+      "18",
+      "15"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 4$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 16$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 16 - 2 = 14$. Option A is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (4)² = 16.",
+      "3. Isolate: x² + 1/x² = 16 - 2 = 14.",
+      "4. Match with Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-038",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 5$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "25",
+      "23",
+      "27",
+      "24"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 5$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 25$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 25 - 2 = 23$. Option B is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (5)² = 25.",
+      "3. Isolate: x² + 1/x² = 25 - 2 = 23.",
+      "4. Match with Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-039",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 6$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "38",
+      "36",
+      "34",
+      "35"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 6$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 36$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 36 - 2 = 34$. Option C is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (6)² = 36.",
+      "3. Isolate: x² + 1/x² = 36 - 2 = 34.",
+      "4. Match with Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-040",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 7$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "48",
+      "49",
+      "51",
+      "47"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 7$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 49$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 49 - 2 = 47$. Option D is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (7)² = 49.",
+      "3. Isolate: x² + 1/x² = 49 - 2 = 47.",
+      "4. Match with Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-041",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 8$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "62",
+      "64",
+      "66",
+      "63"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 8$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 64$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 64 - 2 = 62$. Option A is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (8)² = 64.",
+      "3. Isolate: x² + 1/x² = 64 - 2 = 62.",
+      "4. Match with Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-042",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 3$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "9",
+      "7",
+      "11",
+      "8"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 3$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 9$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 9 - 2 = 7$. Option B is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (3)² = 9.",
+      "3. Isolate: x² + 1/x² = 9 - 2 = 7.",
+      "4. Match with Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-043",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 4$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "18",
+      "16",
+      "14",
+      "15"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 4$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 16$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 16 - 2 = 14$. Option C is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (4)² = 16.",
+      "3. Isolate: x² + 1/x² = 16 - 2 = 14.",
+      "4. Match with Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-044",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 5$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "24",
+      "25",
+      "27",
+      "23"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 5$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 25$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 25 - 2 = 23$. Option D is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (5)² = 25.",
+      "3. Isolate: x² + 1/x² = 25 - 2 = 23.",
+      "4. Match with Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-045",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 6$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "34",
+      "36",
+      "38",
+      "35"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 6$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 36$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 36 - 2 = 34$. Option A is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (6)² = 36.",
+      "3. Isolate: x² + 1/x² = 36 - 2 = 34.",
+      "4. Match with Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-046",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 7$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "49",
+      "47",
+      "51",
+      "48"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 7$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 49$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 49 - 2 = 47$. Option B is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (7)² = 49.",
+      "3. Isolate: x² + 1/x² = 49 - 2 = 47.",
+      "4. Match with Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-047",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 8$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "66",
+      "64",
+      "62",
+      "63"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 8$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 64$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 64 - 2 = 62$. Option C is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (8)² = 64.",
+      "3. Isolate: x² + 1/x² = 64 - 2 = 62.",
+      "4. Match with Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-048",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 3$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "8",
+      "9",
+      "11",
+      "7"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 3$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 9$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 9 - 2 = 7$. Option D is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (3)² = 9.",
+      "3. Isolate: x² + 1/x² = 9 - 2 = 7.",
+      "4. Match with Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-049",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 4$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "14",
+      "16",
+      "18",
+      "15"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 4$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 16$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 16 - 2 = 14$. Option A is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (4)² = 16.",
+      "3. Isolate: x² + 1/x² = 16 - 2 = 14.",
+      "4. Match with Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-050",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 5$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "25",
+      "23",
+      "27",
+      "24"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 5$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 25$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 25 - 2 = 23$. Option B is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (5)² = 25.",
+      "3. Isolate: x² + 1/x² = 25 - 2 = 23.",
+      "4. Match with Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-051",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 6$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "38",
+      "36",
+      "34",
+      "35"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 6$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 36$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 36 - 2 = 34$. Option C is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (6)² = 36.",
+      "3. Isolate: x² + 1/x² = 36 - 2 = 34.",
+      "4. Match with Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-052",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 7$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "48",
+      "49",
+      "51",
+      "47"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 7$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 49$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 49 - 2 = 47$. Option D is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (7)² = 49.",
+      "3. Isolate: x² + 1/x² = 49 - 2 = 47.",
+      "4. Match with Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-053",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 8$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "62",
+      "64",
+      "66",
+      "63"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 8$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 64$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 64 - 2 = 62$. Option A is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (8)² = 64.",
+      "3. Isolate: x² + 1/x² = 64 - 2 = 62.",
+      "4. Match with Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-054",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 3$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "9",
+      "7",
+      "11",
+      "8"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 3$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 9$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 9 - 2 = 7$. Option B is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (3)² = 9.",
+      "3. Isolate: x² + 1/x² = 9 - 2 = 7.",
+      "4. Match with Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-055",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 4$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "18",
+      "16",
+      "14",
+      "15"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 4$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 16$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 16 - 2 = 14$. Option C is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (4)² = 16.",
+      "3. Isolate: x² + 1/x² = 16 - 2 = 14.",
+      "4. Match with Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-056",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 5$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "24",
+      "25",
+      "27",
+      "23"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 5$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 25$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 25 - 2 = 23$. Option D is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (5)² = 25.",
+      "3. Isolate: x² + 1/x² = 25 - 2 = 23.",
+      "4. Match with Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-057",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 6$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "34",
+      "36",
+      "38",
+      "35"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 6$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 36$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 36 - 2 = 34$. Option A is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (6)² = 36.",
+      "3. Isolate: x² + 1/x² = 36 - 2 = 34.",
+      "4. Match with Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-058",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 7$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "49",
+      "47",
+      "51",
+      "48"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 7$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 49$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 49 - 2 = 47$. Option B is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (7)² = 49.",
+      "3. Isolate: x² + 1/x² = 49 - 2 = 47.",
+      "4. Match with Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-059",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 8$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "66",
+      "64",
+      "62",
+      "63"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 8$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 64$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 64 - 2 = 62$. Option C is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (8)² = 64.",
+      "3. Isolate: x² + 1/x² = 64 - 2 = 62.",
+      "4. Match with Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-060",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 3$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "8",
+      "9",
+      "11",
+      "7"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 3$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 9$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 9 - 2 = 7$. Option D is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (3)² = 9.",
+      "3. Isolate: x² + 1/x² = 9 - 2 = 7.",
+      "4. Match with Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-061",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 4$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "14",
+      "16",
+      "18",
+      "15"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 4$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 16$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 16 - 2 = 14$. Option A is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (4)² = 16.",
+      "3. Isolate: x² + 1/x² = 16 - 2 = 14.",
+      "4. Match with Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-062",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 5$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "25",
+      "23",
+      "27",
+      "24"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 5$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 25$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 25 - 2 = 23$. Option B is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (5)² = 25.",
+      "3. Isolate: x² + 1/x² = 25 - 2 = 23.",
+      "4. Match with Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-063",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 6$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "38",
+      "36",
+      "34",
+      "35"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 6$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 36$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 36 - 2 = 34$. Option C is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (6)² = 36.",
+      "3. Isolate: x² + 1/x² = 36 - 2 = 34.",
+      "4. Match with Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-064",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 7$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "48",
+      "49",
+      "51",
+      "47"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 7$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 49$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 49 - 2 = 47$. Option D is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (7)² = 49.",
+      "3. Isolate: x² + 1/x² = 49 - 2 = 47.",
+      "4. Match with Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-065",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 8$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "62",
+      "64",
+      "66",
+      "63"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 8$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 64$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 64 - 2 = 62$. Option A is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (8)² = 64.",
+      "3. Isolate: x² + 1/x² = 64 - 2 = 62.",
+      "4. Match with Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-066",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 3$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "9",
+      "7",
+      "11",
+      "8"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 3$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 9$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 9 - 2 = 7$. Option B is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (3)² = 9.",
+      "3. Isolate: x² + 1/x² = 9 - 2 = 7.",
+      "4. Match with Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-067",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 4$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "18",
+      "16",
+      "14",
+      "15"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 4$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 16$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 16 - 2 = 14$. Option C is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (4)² = 16.",
+      "3. Isolate: x² + 1/x² = 16 - 2 = 14.",
+      "4. Match with Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-068",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 5$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "24",
+      "25",
+      "27",
+      "23"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 5$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 25$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 25 - 2 = 23$. Option D is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (5)² = 25.",
+      "3. Isolate: x² + 1/x² = 25 - 2 = 23.",
+      "4. Match with Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-069",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 6$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "34",
+      "36",
+      "38",
+      "35"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 6$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 36$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 36 - 2 = 34$. Option A is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (6)² = 36.",
+      "3. Isolate: x² + 1/x² = 36 - 2 = 34.",
+      "4. Match with Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-070",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Symmetric Rational Identities",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "If a non-zero real number $x$ satisfies the equation:\n\n$$x + \\frac{1}{x} = 7$$\n\nWhat is the value of $x^2 + \\frac{1}{x^2}$?",
+    "options": [
+      "49",
+      "47",
+      "51",
+      "48"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Squaring both sides of $x + \\frac{1}{x} = 7$ gives $\\left(x + \\frac{1}{x}\\right)^2 = x^2 + 2 + \\frac{1}{x^2} = 49$.\nSubtracting 2 from both sides yields $x^2 + \\frac{1}{x^2} = 49 - 2 = 47$. Option B is correct.",
+    "solutionSteps": [
+      "1. Apply square of sum: (x + 1/x)² = x² + 2(x)(1/x) + 1/x² = x² + 2 + 1/x².",
+      "2. Evaluate RHS: (7)² = 49.",
+      "3. Isolate: x² + 1/x² = 49 - 2 = 47.",
+      "4. Match with Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-071",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $14\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $7\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + 5\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "23",
+      "16",
+      "19",
+      "21"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Substituting $S = C + 5$ into Scale 1: $3C + 5 = 14 \\implies C = 3\\text{ kg}$.\nThen $S = 8\\text{ kg}$.\nFrom Scale 2: $C + 2T = 7 \\implies 2T = 4 \\implies T = 2\\text{ kg}$.\nTotal combined weight: $3(3) + 8 + 2 = 19\\text{ kg}$. Option C is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 3 kg.",
+      "2. Determine S = 8 kg.",
+      "3. Use Scale 2 to find T: 2T = 4 ⇒ T = 2 kg.",
+      "4. Compute sum: 3(3) + 8 + 2 = 19 kg.",
+      "5. Choose Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-072",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $11\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $6\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + -1\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "18",
+      "13",
+      "20",
+      "16"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Substituting $S = C + -1$ into Scale 1: $3C + -1 = 11 \\implies C = 4\\text{ kg}$.\nThen $S = 3\\text{ kg}$.\nFrom Scale 2: $C + 2T = 6 \\implies 2T = 2 \\implies T = 1\\text{ kg}$.\nTotal combined weight: $3(4) + 3 + 1 = 16\\text{ kg}$. Option D is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 4 kg.",
+      "2. Determine S = 3 kg.",
+      "3. Use Scale 2 to find T: 2T = 2 ⇒ T = 1 kg.",
+      "4. Compute sum: 3(4) + 3 + 1 = 16 kg.",
+      "5. Choose Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-073",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $16\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $17\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + 1\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "27",
+      "24",
+      "31",
+      "29"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Substituting $S = C + 1$ into Scale 1: $3C + 1 = 16 \\implies C = 5\\text{ kg}$.\nThen $S = 6\\text{ kg}$.\nFrom Scale 2: $C + 2T = 17 \\implies 2T = 12 \\implies T = 6\\text{ kg}$.\nTotal combined weight: $3(5) + 6 + 6 = 27\\text{ kg}$. Option A is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 5 kg.",
+      "2. Determine S = 6 kg.",
+      "3. Use Scale 2 to find T: 2T = 12 ⇒ T = 6 kg.",
+      "4. Compute sum: 3(5) + 6 + 6 = 27 kg.",
+      "5. Choose Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-074",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $21\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $16\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + 3\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "29",
+      "32",
+      "36",
+      "34"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Substituting $S = C + 3$ into Scale 1: $3C + 3 = 21 \\implies C = 6\\text{ kg}$.\nThen $S = 9\\text{ kg}$.\nFrom Scale 2: $C + 2T = 16 \\implies 2T = 10 \\implies T = 5\\text{ kg}$.\nTotal combined weight: $3(6) + 9 + 5 = 32\\text{ kg}$. Option B is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 6 kg.",
+      "2. Determine S = 9 kg.",
+      "3. Use Scale 2 to find T: 2T = 10 ⇒ T = 5 kg.",
+      "4. Compute sum: 3(6) + 9 + 5 = 32 kg.",
+      "5. Choose Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-075",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $18\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $15\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + -3\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "33",
+      "26",
+      "29",
+      "31"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Substituting $S = C + -3$ into Scale 1: $3C + -3 = 18 \\implies C = 7\\text{ kg}$.\nThen $S = 4\\text{ kg}$.\nFrom Scale 2: $C + 2T = 15 \\implies 2T = 8 \\implies T = 4\\text{ kg}$.\nTotal combined weight: $3(7) + 4 + 4 = 29\\text{ kg}$. Option C is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 7 kg.",
+      "2. Determine S = 4 kg.",
+      "3. Use Scale 2 to find T: 2T = 8 ⇒ T = 4 kg.",
+      "4. Compute sum: 3(7) + 4 + 4 = 29 kg.",
+      "5. Choose Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-076",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $23\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $14\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + -1\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "36",
+      "31",
+      "38",
+      "34"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Substituting $S = C + -1$ into Scale 1: $3C + -1 = 23 \\implies C = 8\\text{ kg}$.\nThen $S = 7\\text{ kg}$.\nFrom Scale 2: $C + 2T = 14 \\implies 2T = 6 \\implies T = 3\\text{ kg}$.\nTotal combined weight: $3(8) + 7 + 3 = 34\\text{ kg}$. Option D is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 8 kg.",
+      "2. Determine S = 7 kg.",
+      "3. Use Scale 2 to find T: 2T = 6 ⇒ T = 3 kg.",
+      "4. Compute sum: 3(8) + 7 + 3 = 34 kg.",
+      "5. Choose Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-077",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $14\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $6\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + 8\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "18",
+      "15",
+      "22",
+      "20"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Substituting $S = C + 8$ into Scale 1: $3C + 8 = 14 \\implies C = 2\\text{ kg}$.\nThen $S = 10\\text{ kg}$.\nFrom Scale 2: $C + 2T = 6 \\implies 2T = 4 \\implies T = 2\\text{ kg}$.\nTotal combined weight: $3(2) + 10 + 2 = 18\\text{ kg}$. Option A is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 2 kg.",
+      "2. Determine S = 10 kg.",
+      "3. Use Scale 2 to find T: 2T = 4 ⇒ T = 2 kg.",
+      "4. Compute sum: 3(2) + 10 + 2 = 18 kg.",
+      "5. Choose Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-078",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $11\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $5\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + 2\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "12",
+      "15",
+      "19",
+      "17"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Substituting $S = C + 2$ into Scale 1: $3C + 2 = 11 \\implies C = 3\\text{ kg}$.\nThen $S = 5\\text{ kg}$.\nFrom Scale 2: $C + 2T = 5 \\implies 2T = 2 \\implies T = 1\\text{ kg}$.\nTotal combined weight: $3(3) + 5 + 1 = 15\\text{ kg}$. Option B is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 3 kg.",
+      "2. Determine S = 5 kg.",
+      "3. Use Scale 2 to find T: 2T = 2 ⇒ T = 1 kg.",
+      "4. Compute sum: 3(3) + 5 + 1 = 15 kg.",
+      "5. Choose Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-079",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $16\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $16\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + 4\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "30",
+      "23",
+      "26",
+      "28"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Substituting $S = C + 4$ into Scale 1: $3C + 4 = 16 \\implies C = 4\\text{ kg}$.\nThen $S = 8\\text{ kg}$.\nFrom Scale 2: $C + 2T = 16 \\implies 2T = 12 \\implies T = 6\\text{ kg}$.\nTotal combined weight: $3(4) + 8 + 6 = 26\\text{ kg}$. Option C is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 4 kg.",
+      "2. Determine S = 8 kg.",
+      "3. Use Scale 2 to find T: 2T = 12 ⇒ T = 6 kg.",
+      "4. Compute sum: 3(4) + 8 + 6 = 26 kg.",
+      "5. Choose Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-080",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $13\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $15\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + -2\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "25",
+      "20",
+      "27",
+      "23"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Substituting $S = C + -2$ into Scale 1: $3C + -2 = 13 \\implies C = 5\\text{ kg}$.\nThen $S = 3\\text{ kg}$.\nFrom Scale 2: $C + 2T = 15 \\implies 2T = 10 \\implies T = 5\\text{ kg}$.\nTotal combined weight: $3(5) + 3 + 5 = 23\\text{ kg}$. Option D is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 5 kg.",
+      "2. Determine S = 3 kg.",
+      "3. Use Scale 2 to find T: 2T = 10 ⇒ T = 5 kg.",
+      "4. Compute sum: 3(5) + 3 + 5 = 23 kg.",
+      "5. Choose Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-081",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $18\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $14\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + 0\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "28",
+      "25",
+      "32",
+      "30"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Substituting $S = C + 0$ into Scale 1: $3C + 0 = 18 \\implies C = 6\\text{ kg}$.\nThen $S = 6\\text{ kg}$.\nFrom Scale 2: $C + 2T = 14 \\implies 2T = 8 \\implies T = 4\\text{ kg}$.\nTotal combined weight: $3(6) + 6 + 4 = 28\\text{ kg}$. Option A is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 6 kg.",
+      "2. Determine S = 6 kg.",
+      "3. Use Scale 2 to find T: 2T = 8 ⇒ T = 4 kg.",
+      "4. Compute sum: 3(6) + 6 + 4 = 28 kg.",
+      "5. Choose Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-082",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $23\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $13\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + 2\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "30",
+      "33",
+      "37",
+      "35"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Substituting $S = C + 2$ into Scale 1: $3C + 2 = 23 \\implies C = 7\\text{ kg}$.\nThen $S = 9\\text{ kg}$.\nFrom Scale 2: $C + 2T = 13 \\implies 2T = 6 \\implies T = 3\\text{ kg}$.\nTotal combined weight: $3(7) + 9 + 3 = 33\\text{ kg}$. Option B is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 7 kg.",
+      "2. Determine S = 9 kg.",
+      "3. Use Scale 2 to find T: 2T = 6 ⇒ T = 3 kg.",
+      "4. Compute sum: 3(7) + 9 + 3 = 33 kg.",
+      "5. Choose Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-083",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $20\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $12\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + -4\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "34",
+      "27",
+      "30",
+      "32"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Substituting $S = C + -4$ into Scale 1: $3C + -4 = 20 \\implies C = 8\\text{ kg}$.\nThen $S = 4\\text{ kg}$.\nFrom Scale 2: $C + 2T = 12 \\implies 2T = 4 \\implies T = 2\\text{ kg}$.\nTotal combined weight: $3(8) + 4 + 2 = 30\\text{ kg}$. Option C is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 8 kg.",
+      "2. Determine S = 4 kg.",
+      "3. Use Scale 2 to find T: 2T = 4 ⇒ T = 2 kg.",
+      "4. Compute sum: 3(8) + 4 + 2 = 30 kg.",
+      "5. Choose Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-084",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $11\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $4\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + 5\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "16",
+      "11",
+      "18",
+      "14"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Substituting $S = C + 5$ into Scale 1: $3C + 5 = 11 \\implies C = 2\\text{ kg}$.\nThen $S = 7\\text{ kg}$.\nFrom Scale 2: $C + 2T = 4 \\implies 2T = 2 \\implies T = 1\\text{ kg}$.\nTotal combined weight: $3(2) + 7 + 1 = 14\\text{ kg}$. Option D is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 2 kg.",
+      "2. Determine S = 7 kg.",
+      "3. Use Scale 2 to find T: 2T = 2 ⇒ T = 1 kg.",
+      "4. Compute sum: 3(2) + 7 + 1 = 14 kg.",
+      "5. Choose Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-085",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $16\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $15\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + 7\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "25",
+      "22",
+      "29",
+      "27"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Substituting $S = C + 7$ into Scale 1: $3C + 7 = 16 \\implies C = 3\\text{ kg}$.\nThen $S = 10\\text{ kg}$.\nFrom Scale 2: $C + 2T = 15 \\implies 2T = 12 \\implies T = 6\\text{ kg}$.\nTotal combined weight: $3(3) + 10 + 6 = 25\\text{ kg}$. Option A is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 3 kg.",
+      "2. Determine S = 10 kg.",
+      "3. Use Scale 2 to find T: 2T = 12 ⇒ T = 6 kg.",
+      "4. Compute sum: 3(3) + 10 + 6 = 25 kg.",
+      "5. Choose Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-086",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $13\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $14\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + 1\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "19",
+      "22",
+      "26",
+      "24"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Substituting $S = C + 1$ into Scale 1: $3C + 1 = 13 \\implies C = 4\\text{ kg}$.\nThen $S = 5\\text{ kg}$.\nFrom Scale 2: $C + 2T = 14 \\implies 2T = 10 \\implies T = 5\\text{ kg}$.\nTotal combined weight: $3(4) + 5 + 5 = 22\\text{ kg}$. Option B is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 4 kg.",
+      "2. Determine S = 5 kg.",
+      "3. Use Scale 2 to find T: 2T = 10 ⇒ T = 5 kg.",
+      "4. Compute sum: 3(4) + 5 + 5 = 22 kg.",
+      "5. Choose Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-087",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $18\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $13\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + 3\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "31",
+      "24",
+      "27",
+      "29"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Substituting $S = C + 3$ into Scale 1: $3C + 3 = 18 \\implies C = 5\\text{ kg}$.\nThen $S = 8\\text{ kg}$.\nFrom Scale 2: $C + 2T = 13 \\implies 2T = 8 \\implies T = 4\\text{ kg}$.\nTotal combined weight: $3(5) + 8 + 4 = 27\\text{ kg}$. Option C is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 5 kg.",
+      "2. Determine S = 8 kg.",
+      "3. Use Scale 2 to find T: 2T = 8 ⇒ T = 4 kg.",
+      "4. Compute sum: 3(5) + 8 + 4 = 27 kg.",
+      "5. Choose Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-088",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $15\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $12\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + -3\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "26",
+      "21",
+      "28",
+      "24"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Substituting $S = C + -3$ into Scale 1: $3C + -3 = 15 \\implies C = 6\\text{ kg}$.\nThen $S = 3\\text{ kg}$.\nFrom Scale 2: $C + 2T = 12 \\implies 2T = 6 \\implies T = 3\\text{ kg}$.\nTotal combined weight: $3(6) + 3 + 3 = 24\\text{ kg}$. Option D is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 6 kg.",
+      "2. Determine S = 3 kg.",
+      "3. Use Scale 2 to find T: 2T = 6 ⇒ T = 3 kg.",
+      "4. Compute sum: 3(6) + 3 + 3 = 24 kg.",
+      "5. Choose Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-089",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $20\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $11\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + -1\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "29",
+      "26",
+      "33",
+      "31"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Substituting $S = C + -1$ into Scale 1: $3C + -1 = 20 \\implies C = 7\\text{ kg}$.\nThen $S = 6\\text{ kg}$.\nFrom Scale 2: $C + 2T = 11 \\implies 2T = 4 \\implies T = 2\\text{ kg}$.\nTotal combined weight: $3(7) + 6 + 2 = 29\\text{ kg}$. Option A is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 7 kg.",
+      "2. Determine S = 6 kg.",
+      "3. Use Scale 2 to find T: 2T = 4 ⇒ T = 2 kg.",
+      "4. Compute sum: 3(7) + 6 + 2 = 29 kg.",
+      "5. Choose Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-090",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $25\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $10\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + 1\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "31",
+      "34",
+      "38",
+      "36"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Substituting $S = C + 1$ into Scale 1: $3C + 1 = 25 \\implies C = 8\\text{ kg}$.\nThen $S = 9\\text{ kg}$.\nFrom Scale 2: $C + 2T = 10 \\implies 2T = 2 \\implies T = 1\\text{ kg}$.\nTotal combined weight: $3(8) + 9 + 1 = 34\\text{ kg}$. Option B is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 8 kg.",
+      "2. Determine S = 9 kg.",
+      "3. Use Scale 2 to find T: 2T = 2 ⇒ T = 1 kg.",
+      "4. Compute sum: 3(8) + 9 + 1 = 34 kg.",
+      "5. Choose Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-091",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $8\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $14\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + 2\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "20",
+      "13",
+      "16",
+      "18"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Substituting $S = C + 2$ into Scale 1: $3C + 2 = 8 \\implies C = 2\\text{ kg}$.\nThen $S = 4\\text{ kg}$.\nFrom Scale 2: $C + 2T = 14 \\implies 2T = 12 \\implies T = 6\\text{ kg}$.\nTotal combined weight: $3(2) + 4 + 6 = 16\\text{ kg}$. Option C is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 2 kg.",
+      "2. Determine S = 4 kg.",
+      "3. Use Scale 2 to find T: 2T = 12 ⇒ T = 6 kg.",
+      "4. Compute sum: 3(2) + 4 + 6 = 16 kg.",
+      "5. Choose Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-092",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $13\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $13\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + 4\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "23",
+      "18",
+      "25",
+      "21"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Substituting $S = C + 4$ into Scale 1: $3C + 4 = 13 \\implies C = 3\\text{ kg}$.\nThen $S = 7\\text{ kg}$.\nFrom Scale 2: $C + 2T = 13 \\implies 2T = 10 \\implies T = 5\\text{ kg}$.\nTotal combined weight: $3(3) + 7 + 5 = 21\\text{ kg}$. Option D is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 3 kg.",
+      "2. Determine S = 7 kg.",
+      "3. Use Scale 2 to find T: 2T = 10 ⇒ T = 5 kg.",
+      "4. Compute sum: 3(3) + 7 + 5 = 21 kg.",
+      "5. Choose Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-093",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $18\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $12\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + 6\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "26",
+      "23",
+      "30",
+      "28"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Substituting $S = C + 6$ into Scale 1: $3C + 6 = 18 \\implies C = 4\\text{ kg}$.\nThen $S = 10\\text{ kg}$.\nFrom Scale 2: $C + 2T = 12 \\implies 2T = 8 \\implies T = 4\\text{ kg}$.\nTotal combined weight: $3(4) + 10 + 4 = 26\\text{ kg}$. Option A is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 4 kg.",
+      "2. Determine S = 10 kg.",
+      "3. Use Scale 2 to find T: 2T = 8 ⇒ T = 4 kg.",
+      "4. Compute sum: 3(4) + 10 + 4 = 26 kg.",
+      "5. Choose Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-094",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $15\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $11\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + 0\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "20",
+      "23",
+      "27",
+      "25"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Substituting $S = C + 0$ into Scale 1: $3C + 0 = 15 \\implies C = 5\\text{ kg}$.\nThen $S = 5\\text{ kg}$.\nFrom Scale 2: $C + 2T = 11 \\implies 2T = 6 \\implies T = 3\\text{ kg}$.\nTotal combined weight: $3(5) + 5 + 3 = 23\\text{ kg}$. Option B is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 5 kg.",
+      "2. Determine S = 5 kg.",
+      "3. Use Scale 2 to find T: 2T = 6 ⇒ T = 3 kg.",
+      "4. Compute sum: 3(5) + 5 + 3 = 23 kg.",
+      "5. Choose Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-095",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $20\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $10\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + 2\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "32",
+      "25",
+      "28",
+      "30"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Substituting $S = C + 2$ into Scale 1: $3C + 2 = 20 \\implies C = 6\\text{ kg}$.\nThen $S = 8\\text{ kg}$.\nFrom Scale 2: $C + 2T = 10 \\implies 2T = 4 \\implies T = 2\\text{ kg}$.\nTotal combined weight: $3(6) + 8 + 2 = 28\\text{ kg}$. Option C is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 6 kg.",
+      "2. Determine S = 8 kg.",
+      "3. Use Scale 2 to find T: 2T = 4 ⇒ T = 2 kg.",
+      "4. Compute sum: 3(6) + 8 + 2 = 28 kg.",
+      "5. Choose Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-096",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $17\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $9\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + -4\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "27",
+      "22",
+      "29",
+      "25"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Substituting $S = C + -4$ into Scale 1: $3C + -4 = 17 \\implies C = 7\\text{ kg}$.\nThen $S = 3\\text{ kg}$.\nFrom Scale 2: $C + 2T = 9 \\implies 2T = 2 \\implies T = 1\\text{ kg}$.\nTotal combined weight: $3(7) + 3 + 1 = 25\\text{ kg}$. Option D is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 7 kg.",
+      "2. Determine S = 3 kg.",
+      "3. Use Scale 2 to find T: 2T = 2 ⇒ T = 1 kg.",
+      "4. Compute sum: 3(7) + 3 + 1 = 25 kg.",
+      "5. Choose Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-097",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $22\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $20\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + -2\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "36",
+      "33",
+      "40",
+      "38"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Substituting $S = C + -2$ into Scale 1: $3C + -2 = 22 \\implies C = 8\\text{ kg}$.\nThen $S = 6\\text{ kg}$.\nFrom Scale 2: $C + 2T = 20 \\implies 2T = 12 \\implies T = 6\\text{ kg}$.\nTotal combined weight: $3(8) + 6 + 6 = 36\\text{ kg}$. Option A is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 8 kg.",
+      "2. Determine S = 6 kg.",
+      "3. Use Scale 2 to find T: 2T = 12 ⇒ T = 6 kg.",
+      "4. Compute sum: 3(8) + 6 + 6 = 36 kg.",
+      "5. Choose Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-098",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $13\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $12\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + 7\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "17",
+      "20",
+      "24",
+      "22"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Substituting $S = C + 7$ into Scale 1: $3C + 7 = 13 \\implies C = 2\\text{ kg}$.\nThen $S = 9\\text{ kg}$.\nFrom Scale 2: $C + 2T = 12 \\implies 2T = 10 \\implies T = 5\\text{ kg}$.\nTotal combined weight: $3(2) + 9 + 5 = 20\\text{ kg}$. Option B is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 2 kg.",
+      "2. Determine S = 9 kg.",
+      "3. Use Scale 2 to find T: 2T = 10 ⇒ T = 5 kg.",
+      "4. Compute sum: 3(2) + 9 + 5 = 20 kg.",
+      "5. Choose Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-099",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $10\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $11\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + 1\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "21",
+      "14",
+      "17",
+      "19"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Substituting $S = C + 1$ into Scale 1: $3C + 1 = 10 \\implies C = 3\\text{ kg}$.\nThen $S = 4\\text{ kg}$.\nFrom Scale 2: $C + 2T = 11 \\implies 2T = 8 \\implies T = 4\\text{ kg}$.\nTotal combined weight: $3(3) + 4 + 4 = 17\\text{ kg}$. Option C is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 3 kg.",
+      "2. Determine S = 4 kg.",
+      "3. Use Scale 2 to find T: 2T = 8 ⇒ T = 4 kg.",
+      "4. Compute sum: 3(3) + 4 + 4 = 17 kg.",
+      "5. Choose Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-100",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Substitution Methods & Multi-Variable Systems",
+    "subtopic": "Equilibrium Pan-Balance Deduction",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "Two pan-balances are in perfect balance:\n\n- Scale 1: $2 \\text{ Circles} + 1 \\text{ Square}$ balances a weight of $15\\text{ kg}$\n- Scale 2: $1 \\text{ Circle} + 2 \\text{ Triangles}$ balances a weight of $10\\text{ kg}$\n\nIf $1 \\text{ Square}$ weighs $1 \\text{ Circle} + 3\\text{ kg}$, what is the total weight of $3 \\text{ Circles} + 1 \\text{ Square} + 1 \\text{ Triangle}$?",
+    "options": [
+      "24",
+      "19",
+      "26",
+      "22"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Substituting $S = C + 3$ into Scale 1: $3C + 3 = 15 \\implies C = 4\\text{ kg}$.\nThen $S = 7\\text{ kg}$.\nFrom Scale 2: $C + 2T = 10 \\implies 2T = 6 \\implies T = 3\\text{ kg}$.\nTotal combined weight: $3(4) + 7 + 3 = 22\\text{ kg}$. Option D is correct.",
+    "solutionSteps": [
+      "1. Express S in terms of C and solve Scale 1: C = 4 kg.",
+      "2. Determine S = 7 kg.",
+      "3. Use Scale 2 to find T: 2T = 6 ⇒ T = 3 kg.",
+      "4. Compute sum: 3(4) + 7 + 3 = 22 kg.",
+      "5. Choose Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-101",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 5, \\quad a_{n+1} = 4\\,a_n - 2$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "278",
+      "280",
+      "274",
+      "282"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 5$\n- $a_2 = 4(5) - 2 = 18$\n- $a_3 = 4(18) - 2 = 70$\n- $a_4 = 4(70) - 2 = 278$.\nOption A is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 5.",
+      "2. Calculate a₂ = 4(5) - 2 = 18.",
+      "3. Calculate a₃ = 4(18) - 2 = 70.",
+      "4. Calculate a₄ = 4(70) - 2 = 278.",
+      "5. Confirm Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-102",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 6, \\quad a_{n+1} = 2\\,a_n - 3$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "30",
+      "27",
+      "25",
+      "33"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 6$\n- $a_2 = 2(6) - 3 = 9$\n- $a_3 = 2(9) - 3 = 15$\n- $a_4 = 2(15) - 3 = 27$.\nOption B is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 6.",
+      "2. Calculate a₂ = 2(6) - 3 = 9.",
+      "3. Calculate a₃ = 2(9) - 3 = 15.",
+      "4. Calculate a₄ = 2(15) - 3 = 27.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-103",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 7, \\quad a_{n+1} = 3\\,a_n - 4$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "134",
+      "141",
+      "137",
+      "145"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 7$\n- $a_2 = 3(7) - 4 = 17$\n- $a_3 = 3(17) - 4 = 47$\n- $a_4 = 3(47) - 4 = 137$.\nOption C is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 7.",
+      "2. Calculate a₂ = 3(7) - 4 = 17.",
+      "3. Calculate a₃ = 3(17) - 4 = 47.",
+      "4. Calculate a₄ = 3(47) - 4 = 137.",
+      "5. Confirm Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-104",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 8, \\quad a_{n+1} = 4\\,a_n - 1$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "493",
+      "492",
+      "487",
+      "491"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 8$\n- $a_2 = 4(8) - 1 = 31$\n- $a_3 = 4(31) - 1 = 123$\n- $a_4 = 4(123) - 1 = 491$.\nOption D is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 8.",
+      "2. Calculate a₂ = 4(8) - 1 = 31.",
+      "3. Calculate a₃ = 4(31) - 1 = 123.",
+      "4. Calculate a₄ = 4(123) - 1 = 491.",
+      "5. Confirm Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-105",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 2, \\quad a_{n+1} = 2\\,a_n - 2$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "2",
+      "4",
+      "0",
+      "6"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 2$\n- $a_2 = 2(2) - 2 = 2$\n- $a_3 = 2(2) - 2 = 2$\n- $a_4 = 2(2) - 2 = 2$.\nOption A is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 2.",
+      "2. Calculate a₂ = 2(2) - 2 = 2.",
+      "3. Calculate a₃ = 2(2) - 2 = 2.",
+      "4. Calculate a₄ = 2(2) - 2 = 2.",
+      "5. Confirm Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-106",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 3, \\quad a_{n+1} = 3\\,a_n - 3$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "45",
+      "42",
+      "39",
+      "48"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 3$\n- $a_2 = 3(3) - 3 = 6$\n- $a_3 = 3(6) - 3 = 15$\n- $a_4 = 3(15) - 3 = 42$.\nOption B is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 3.",
+      "2. Calculate a₂ = 3(3) - 3 = 6.",
+      "3. Calculate a₃ = 3(6) - 3 = 15.",
+      "4. Calculate a₄ = 3(15) - 3 = 42.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-107",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 4, \\quad a_{n+1} = 4\\,a_n - 4$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "168",
+      "176",
+      "172",
+      "180"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 4$\n- $a_2 = 4(4) - 4 = 12$\n- $a_3 = 4(12) - 4 = 44$\n- $a_4 = 4(44) - 4 = 172$.\nOption C is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 4.",
+      "2. Calculate a₂ = 4(4) - 4 = 12.",
+      "3. Calculate a₃ = 4(12) - 4 = 44.",
+      "4. Calculate a₄ = 4(44) - 4 = 172.",
+      "5. Confirm Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-108",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 5, \\quad a_{n+1} = 2\\,a_n - 1$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "35",
+      "34",
+      "31",
+      "33"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 5$\n- $a_2 = 2(5) - 1 = 9$\n- $a_3 = 2(9) - 1 = 17$\n- $a_4 = 2(17) - 1 = 33$.\nOption D is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 5.",
+      "2. Calculate a₂ = 2(5) - 1 = 9.",
+      "3. Calculate a₃ = 2(9) - 1 = 17.",
+      "4. Calculate a₄ = 2(17) - 1 = 33.",
+      "5. Confirm Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-109",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 6, \\quad a_{n+1} = 3\\,a_n - 2$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "136",
+      "138",
+      "133",
+      "140"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 6$\n- $a_2 = 3(6) - 2 = 16$\n- $a_3 = 3(16) - 2 = 46$\n- $a_4 = 3(46) - 2 = 136$.\nOption A is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 6.",
+      "2. Calculate a₂ = 3(6) - 2 = 16.",
+      "3. Calculate a₃ = 3(16) - 2 = 46.",
+      "4. Calculate a₄ = 3(46) - 2 = 136.",
+      "5. Confirm Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-110",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 7, \\quad a_{n+1} = 4\\,a_n - 3$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "388",
+      "385",
+      "381",
+      "391"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 7$\n- $a_2 = 4(7) - 3 = 25$\n- $a_3 = 4(25) - 3 = 97$\n- $a_4 = 4(97) - 3 = 385$.\nOption B is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 7.",
+      "2. Calculate a₂ = 4(7) - 3 = 25.",
+      "3. Calculate a₃ = 4(25) - 3 = 97.",
+      "4. Calculate a₄ = 4(97) - 3 = 385.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-111",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 8, \\quad a_{n+1} = 2\\,a_n - 4$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "34",
+      "40",
+      "36",
+      "44"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 8$\n- $a_2 = 2(8) - 4 = 12$\n- $a_3 = 2(12) - 4 = 20$\n- $a_4 = 2(20) - 4 = 36$.\nOption C is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 8.",
+      "2. Calculate a₂ = 2(8) - 4 = 12.",
+      "3. Calculate a₃ = 2(12) - 4 = 20.",
+      "4. Calculate a₄ = 2(20) - 4 = 36.",
+      "5. Confirm Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-112",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 2, \\quad a_{n+1} = 3\\,a_n - 1$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "43",
+      "42",
+      "38",
+      "41"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 2$\n- $a_2 = 3(2) - 1 = 5$\n- $a_3 = 3(5) - 1 = 14$\n- $a_4 = 3(14) - 1 = 41$.\nOption D is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 2.",
+      "2. Calculate a₂ = 3(2) - 1 = 5.",
+      "3. Calculate a₃ = 3(5) - 1 = 14.",
+      "4. Calculate a₄ = 3(14) - 1 = 41.",
+      "5. Confirm Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-113",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 3, \\quad a_{n+1} = 4\\,a_n - 2$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "150",
+      "152",
+      "146",
+      "154"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 3$\n- $a_2 = 4(3) - 2 = 10$\n- $a_3 = 4(10) - 2 = 38$\n- $a_4 = 4(38) - 2 = 150$.\nOption A is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 3.",
+      "2. Calculate a₂ = 4(3) - 2 = 10.",
+      "3. Calculate a₃ = 4(10) - 2 = 38.",
+      "4. Calculate a₄ = 4(38) - 2 = 150.",
+      "5. Confirm Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-114",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 4, \\quad a_{n+1} = 2\\,a_n - 3$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "14",
+      "11",
+      "9",
+      "17"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 4$\n- $a_2 = 2(4) - 3 = 5$\n- $a_3 = 2(5) - 3 = 7$\n- $a_4 = 2(7) - 3 = 11$.\nOption B is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 4.",
+      "2. Calculate a₂ = 2(4) - 3 = 5.",
+      "3. Calculate a₃ = 2(5) - 3 = 7.",
+      "4. Calculate a₄ = 2(7) - 3 = 11.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-115",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 5, \\quad a_{n+1} = 3\\,a_n - 4$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "80",
+      "87",
+      "83",
+      "91"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 5$\n- $a_2 = 3(5) - 4 = 11$\n- $a_3 = 3(11) - 4 = 29$\n- $a_4 = 3(29) - 4 = 83$.\nOption C is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 5.",
+      "2. Calculate a₂ = 3(5) - 4 = 11.",
+      "3. Calculate a₃ = 3(11) - 4 = 29.",
+      "4. Calculate a₄ = 3(29) - 4 = 83.",
+      "5. Confirm Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-116",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 6, \\quad a_{n+1} = 4\\,a_n - 1$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "365",
+      "364",
+      "359",
+      "363"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 6$\n- $a_2 = 4(6) - 1 = 23$\n- $a_3 = 4(23) - 1 = 91$\n- $a_4 = 4(91) - 1 = 363$.\nOption D is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 6.",
+      "2. Calculate a₂ = 4(6) - 1 = 23.",
+      "3. Calculate a₃ = 4(23) - 1 = 91.",
+      "4. Calculate a₄ = 4(91) - 1 = 363.",
+      "5. Confirm Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-117",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 7, \\quad a_{n+1} = 2\\,a_n - 2$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "42",
+      "44",
+      "40",
+      "46"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 7$\n- $a_2 = 2(7) - 2 = 12$\n- $a_3 = 2(12) - 2 = 22$\n- $a_4 = 2(22) - 2 = 42$.\nOption A is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 7.",
+      "2. Calculate a₂ = 2(7) - 2 = 12.",
+      "3. Calculate a₃ = 2(12) - 2 = 22.",
+      "4. Calculate a₄ = 2(22) - 2 = 42.",
+      "5. Confirm Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-118",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 8, \\quad a_{n+1} = 3\\,a_n - 3$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "180",
+      "177",
+      "174",
+      "183"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 8$\n- $a_2 = 3(8) - 3 = 21$\n- $a_3 = 3(21) - 3 = 60$\n- $a_4 = 3(60) - 3 = 177$.\nOption B is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 8.",
+      "2. Calculate a₂ = 3(8) - 3 = 21.",
+      "3. Calculate a₃ = 3(21) - 3 = 60.",
+      "4. Calculate a₄ = 3(60) - 3 = 177.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-119",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 2, \\quad a_{n+1} = 4\\,a_n - 4$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "40",
+      "48",
+      "44",
+      "52"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 2$\n- $a_2 = 4(2) - 4 = 4$\n- $a_3 = 4(4) - 4 = 12$\n- $a_4 = 4(12) - 4 = 44$.\nOption C is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 2.",
+      "2. Calculate a₂ = 4(2) - 4 = 4.",
+      "3. Calculate a₃ = 4(4) - 4 = 12.",
+      "4. Calculate a₄ = 4(12) - 4 = 44.",
+      "5. Confirm Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-120",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 3, \\quad a_{n+1} = 2\\,a_n - 1$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "19",
+      "18",
+      "15",
+      "17"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 3$\n- $a_2 = 2(3) - 1 = 5$\n- $a_3 = 2(5) - 1 = 9$\n- $a_4 = 2(9) - 1 = 17$.\nOption D is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 3.",
+      "2. Calculate a₂ = 2(3) - 1 = 5.",
+      "3. Calculate a₃ = 2(5) - 1 = 9.",
+      "4. Calculate a₄ = 2(9) - 1 = 17.",
+      "5. Confirm Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-121",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 4, \\quad a_{n+1} = 3\\,a_n - 2$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "82",
+      "84",
+      "79",
+      "86"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 4$\n- $a_2 = 3(4) - 2 = 10$\n- $a_3 = 3(10) - 2 = 28$\n- $a_4 = 3(28) - 2 = 82$.\nOption A is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 4.",
+      "2. Calculate a₂ = 3(4) - 2 = 10.",
+      "3. Calculate a₃ = 3(10) - 2 = 28.",
+      "4. Calculate a₄ = 3(28) - 2 = 82.",
+      "5. Confirm Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-122",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 5, \\quad a_{n+1} = 4\\,a_n - 3$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "260",
+      "257",
+      "253",
+      "263"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 5$\n- $a_2 = 4(5) - 3 = 17$\n- $a_3 = 4(17) - 3 = 65$\n- $a_4 = 4(65) - 3 = 257$.\nOption B is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 5.",
+      "2. Calculate a₂ = 4(5) - 3 = 17.",
+      "3. Calculate a₃ = 4(17) - 3 = 65.",
+      "4. Calculate a₄ = 4(65) - 3 = 257.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-123",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 6, \\quad a_{n+1} = 2\\,a_n - 4$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "18",
+      "24",
+      "20",
+      "28"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 6$\n- $a_2 = 2(6) - 4 = 8$\n- $a_3 = 2(8) - 4 = 12$\n- $a_4 = 2(12) - 4 = 20$.\nOption C is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 6.",
+      "2. Calculate a₂ = 2(6) - 4 = 8.",
+      "3. Calculate a₃ = 2(8) - 4 = 12.",
+      "4. Calculate a₄ = 2(12) - 4 = 20.",
+      "5. Confirm Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-124",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 7, \\quad a_{n+1} = 3\\,a_n - 1$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "178",
+      "177",
+      "173",
+      "176"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 7$\n- $a_2 = 3(7) - 1 = 20$\n- $a_3 = 3(20) - 1 = 59$\n- $a_4 = 3(59) - 1 = 176$.\nOption D is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 7.",
+      "2. Calculate a₂ = 3(7) - 1 = 20.",
+      "3. Calculate a₃ = 3(20) - 1 = 59.",
+      "4. Calculate a₄ = 3(59) - 1 = 176.",
+      "5. Confirm Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-125",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 8, \\quad a_{n+1} = 4\\,a_n - 2$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "470",
+      "472",
+      "466",
+      "474"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 8$\n- $a_2 = 4(8) - 2 = 30$\n- $a_3 = 4(30) - 2 = 118$\n- $a_4 = 4(118) - 2 = 470$.\nOption A is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 8.",
+      "2. Calculate a₂ = 4(8) - 2 = 30.",
+      "3. Calculate a₃ = 4(30) - 2 = 118.",
+      "4. Calculate a₄ = 4(118) - 2 = 470.",
+      "5. Confirm Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-126",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Easy",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 2, \\quad a_{n+1} = 2\\,a_n - 3$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "-2",
+      "-5",
+      "-7",
+      "1"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 2$\n- $a_2 = 2(2) - 3 = 1$\n- $a_3 = 2(1) - 3 = -1$\n- $a_4 = 2(-1) - 3 = -5$.\nOption B is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 2.",
+      "2. Calculate a₂ = 2(2) - 3 = 1.",
+      "3. Calculate a₃ = 2(1) - 3 = -1.",
+      "4. Calculate a₄ = 2(-1) - 3 = -5.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-127",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 3, \\quad a_{n+1} = 3\\,a_n - 4$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "26",
+      "33",
+      "29",
+      "37"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 3$\n- $a_2 = 3(3) - 4 = 5$\n- $a_3 = 3(5) - 4 = 11$\n- $a_4 = 3(11) - 4 = 29$.\nOption C is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 3.",
+      "2. Calculate a₂ = 3(3) - 4 = 5.",
+      "3. Calculate a₃ = 3(5) - 4 = 11.",
+      "4. Calculate a₄ = 3(11) - 4 = 29.",
+      "5. Confirm Option C."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-128",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 4, \\quad a_{n+1} = 4\\,a_n - 1$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "237",
+      "236",
+      "231",
+      "235"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 4$\n- $a_2 = 4(4) - 1 = 15$\n- $a_3 = 4(15) - 1 = 59$\n- $a_4 = 4(59) - 1 = 235$.\nOption D is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 4.",
+      "2. Calculate a₂ = 4(4) - 1 = 15.",
+      "3. Calculate a₃ = 4(15) - 1 = 59.",
+      "4. Calculate a₄ = 4(59) - 1 = 235.",
+      "5. Confirm Option D."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-129",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Medium",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 5, \\quad a_{n+1} = 2\\,a_n - 2$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "26",
+      "28",
+      "24",
+      "30"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 5$\n- $a_2 = 2(5) - 2 = 8$\n- $a_3 = 2(8) - 2 = 14$\n- $a_4 = 2(14) - 2 = 26$.\nOption A is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 5.",
+      "2. Calculate a₂ = 2(5) - 2 = 8.",
+      "3. Calculate a₃ = 2(8) - 2 = 14.",
+      "4. Calculate a₄ = 2(14) - 2 = 26.",
+      "5. Confirm Option A."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "mat-130",
+    "module": "core",
+    "section": "Mathematical Equations",
+    "topic": "Four-Variable Linear Systems & Simultaneous Elimination",
+    "subtopic": "Discrete Recurrence Sequences",
+    "difficulty": "Hard",
+    "questionType": "equation",
+    "questionText": "A discrete sequence is defined recursively by:\n\n$$a_1 = 6, \\quad a_{n+1} = 3\\,a_n - 3$$\n\nWhat is the exact numerical value of the term $a_4$?",
+    "options": [
+      "126",
+      "123",
+      "120",
+      "129"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Applying the recurrence step-by-step:\n- $a_1 = 6$\n- $a_2 = 3(6) - 3 = 15$\n- $a_3 = 3(15) - 3 = 42$\n- $a_4 = 3(42) - 3 = 123$.\nOption B is correct.",
+    "solutionSteps": [
+      "1. Start with a₁ = 6.",
+      "2. Calculate a₂ = 3(6) - 3 = 15.",
+      "3. Calculate a₃ = 3(15) - 3 = 42.",
+      "4. Calculate a₄ = 3(42) - 3 = 123.",
+      "5. Confirm Option B."
+    ],
+    "estimatedTime": 85,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Mathematical Equations aptitude problem",
+    "tags": [
+      "algebra",
+      "equations",
+      "reasoning",
+      "core_module"
+    ],
+    "enabled": true
+  }
+]

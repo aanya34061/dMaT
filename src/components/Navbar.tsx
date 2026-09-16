@@ -12,6 +12,7 @@ const navItems = [
   { name: 'Home', href: '/' },
   { name: '📖 Learn', href: '/learn' },
   { name: 'Practice', href: '/practice' },
+  { name: 'Mock Tests', href: '/mock-tests' },
   { name: 'Dashboard', href: '/dashboard' },
   { name: 'Bookmarks', href: '/bookmarks' },
   { name: 'About', href: '/about' },

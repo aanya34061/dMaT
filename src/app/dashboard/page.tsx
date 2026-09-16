@@ -5,7 +5,7 @@ import { useProgress } from '../../hooks/useProgress';
 import DashboardCards from '../../components/DashboardCards';
 import ProgressBar from '../../components/ProgressBar';
 import Link from 'next/link';
-import { ArrowRight, BookOpen, Activity, AlertCircle, ShieldCheck } from 'lucide-react';
+import { ArrowRight, BookOpen, Activity, AlertCircle, ShieldCheck, Sparkles } from 'lucide-react';
 
 export default function Dashboard() {
   const { isLoaded, questions, progress, resetProgress } = useProgress();
@@ -123,6 +123,29 @@ export default function Dashboard() {
         bookmarksCount={bookmarksCount}
         independentSolvesCount={independentSolvesCount}
       />
+
+      {/* Mock Examination Hub Callout */}
+      <div className="p-6 rounded-3xl bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 text-white shadow-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="space-y-1.5">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/20 text-[10px] font-extrabold uppercase tracking-wider">
+            <Sparkles className="w-3 h-3" />
+            Official CBT Exam Simulator
+          </div>
+          <h3 className="text-xl font-extrabold tracking-tight">
+            Ready to test your exam readiness?
+          </h3>
+          <p className="text-xs text-blue-100 max-w-xl leading-relaxed">
+            Take 5 distinct full-length 80-question dMAT simulations under authentic computer-based testing conditions. Real-time timer, sectional diagnostics, and weakness analysis.
+          </p>
+        </div>
+        <Link
+          href="/mock-tests"
+          className="px-5 py-3 bg-white text-blue-700 hover:bg-blue-50 font-extrabold text-xs rounded-xl shadow-md transition-all shrink-0 flex items-center gap-2"
+        >
+          Explore Mock Tests
+          <ArrowRight className="w-3.5 h-3.5" />
+        </Link>
+      </div>
 
       {/* Topics Needing Revision Block */}
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-4">

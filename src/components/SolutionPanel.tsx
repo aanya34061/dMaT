@@ -20,8 +20,10 @@ import {
   Sidebar,
   ChevronDown,
   ChevronUp,
-  Share2
+  Share2,
+  ZoomIn
 } from 'lucide-react';
+import ImageZoomModal from './ImageZoomModal';
 
 interface SolutionPanelProps {
   question: Question;
@@ -95,6 +97,9 @@ export default function SolutionPanel({
 }: SolutionPanelProps) {
   const [layoutMode, setLayoutMode] = useState<'drawer' | 'accordion' | 'modal'>('drawer');
   const [accordionOpen, setAccordionOpen] = useState(true);
+  const [zoomSrc, setZoomSrc] = useState<string | null>(null);
+
+  const isFigureSequence = question.chapter === 'Figure Sequences';
 
   if (!isOpen) return null;
 
@@ -195,12 +200,107 @@ export default function SolutionPanel({
 
       {/* 3. Visual Explanation (Diagram / Truth Table / Matrix) */}
       {sol.diagram && (
-        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-xs space-y-3">
-          <div className="flex items-center gap-2.5 text-emerald-600 dark:text-emerald-400 font-bold text-base border-b border-slate-100 dark:border-slate-800 pb-2">
-            <span className="p-1.5 bg-emerald-50 dark:bg-emerald-950/40 rounded-lg">📊</span>
-            <h3>Diagram / Visual Explanation</h3>
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-xs space-y-4">
+          <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
+            <div className="flex items-center gap-2.5 text-emerald-600 dark:text-emerald-400 font-bold text-base">
+              <span className="p-1.5 bg-emerald-50 dark:bg-emerald-950/40 rounded-lg">📊</span>
+              <h3>{isFigureSequence ? 'Complete Solved Sequence (Steps 1 to 6)' : 'Diagram / Visual Explanation'}</h3>
+            </div>
+            {isFigureSequence && (
+              <button
+                onClick={() => setZoomSrc(`/images/figure-sequences/q${question.id}_solved_sequence.png`)}
+                type="button"
+                className="px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-xs font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-1.5 transition-colors"
+                title="Inspect High-Resolution Sequence"
+              >
+                <ZoomIn className="w-3.5 h-3.5" />
+                <span>Zoom High-Res</span>
+              </button>
+            )}
           </div>
           <VisualExplanationRenderer diagram={sol.diagram} />
+
+          {/* Figure Sequences Candidate Matrix Breakdown */}
+          {isFigureSequence && (
+            <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 space-y-3">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-600 dark:text-slate-400">
+                Candidate Matrix Breakdown & Selection:
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Image 1 Choices */}
+                <div className="bg-slate-50 dark:bg-slate-850 p-4 rounded-xl border border-slate-200 dark:border-slate-800 space-y-2.5">
+                  <div className="flex justify-between items-center text-xs font-bold text-slate-700 dark:text-slate-300">
+                    <span>Image 1 (Step 5) Choices:</span>
+                    <span className="text-emerald-600 dark:text-emerald-400 font-extrabold">Correct: Matrix {Math.floor(question.correctAnswer / 3) + 1}</span>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2">
+                    {[1, 2, 3].map((val) => {
+                      const isCorrectVal = (Math.floor(question.correctAnswer / 3) + 1) === val;
+                      return (
+                        <div
+                          key={val}
+                          onClick={() => setZoomSrc(`/images/matrix_choices/q${question.id}_img1_m${val}.png`)}
+                          className={`p-2 rounded-lg border text-center text-xs flex flex-col items-center gap-1.5 cursor-pointer transition-all ${
+                            isCorrectVal
+                              ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-500 ring-2 ring-emerald-500/20 text-emerald-800 dark:text-emerald-200'
+                              : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-500 hover:border-slate-300'
+                          }`}
+                        >
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={`/images/matrix_choices/q${question.id}_img1_m${val}.png`}
+                            alt={`Image 1 Matrix ${val}`}
+                            className="w-full h-14 object-contain bg-white rounded p-0.5"
+                            style={{ imageRendering: 'crisp-edges' }}
+                          />
+                          <div className="flex items-center gap-1 font-bold">
+                            <span>Matrix {val}</span>
+                            {isCorrectVal ? <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> : <span className="text-rose-500 text-[10px]">✕</span>}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Image 2 Choices */}
+                <div className="bg-slate-50 dark:bg-slate-850 p-4 rounded-xl border border-slate-200 dark:border-slate-800 space-y-2.5">
+                  <div className="flex justify-between items-center text-xs font-bold text-slate-700 dark:text-slate-300">
+                    <span>Image 2 (Step 6) Choices:</span>
+                    <span className="text-emerald-600 dark:text-emerald-400 font-extrabold">Correct: Matrix {(question.correctAnswer % 3) + 1}</span>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2">
+                    {[1, 2, 3].map((val) => {
+                      const isCorrectVal = ((question.correctAnswer % 3) + 1) === val;
+                      return (
+                        <div
+                          key={val}
+                          onClick={() => setZoomSrc(`/images/matrix_choices/q${question.id}_img2_m${val}.png`)}
+                          className={`p-2 rounded-lg border text-center text-xs flex flex-col items-center gap-1.5 cursor-pointer transition-all ${
+                            isCorrectVal
+                              ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-500 ring-2 ring-emerald-500/20 text-emerald-800 dark:text-emerald-200'
+                              : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-500 hover:border-slate-300'
+                          }`}
+                        >
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={`/images/matrix_choices/q${question.id}_img2_m${val}.png`}
+                            alt={`Image 2 Matrix ${val}`}
+                            className="w-full h-14 object-contain bg-white rounded p-0.5"
+                            style={{ imageRendering: 'crisp-edges' }}
+                          />
+                          <div className="flex items-center gap-1 font-bold">
+                            <span>Matrix {val}</span>
+                            {isCorrectVal ? <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" /> : <span className="text-rose-500 text-[10px]">✕</span>}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       )}
 
@@ -361,78 +461,101 @@ export default function SolutionPanel({
   // Render Accordion Layout Mode
   if (layoutMode === 'accordion') {
     return (
-      <div className="my-6 border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 shadow-sm overflow-hidden transition-all">
-        <button
-          onClick={() => setAccordionOpen(!accordionOpen)}
-          className="w-full p-4 sm:p-5 flex items-center justify-between bg-slate-50 dark:bg-slate-850 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border-b border-slate-200 dark:border-slate-800"
-        >
-          <div className="flex items-center gap-3 text-left">
-            <span className="p-2 bg-blue-600 text-white rounded-xl font-bold text-sm">💡</span>
-            <div>
-              <h3 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white">
-                Detailed Teacher Solution & Walkthrough
-              </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400">
-                Complete 8-step explanation & visual breakdown
-              </p>
+      <>
+        <ImageZoomModal
+          isOpen={zoomSrc !== null}
+          src={zoomSrc || ''}
+          alt="Solution Figure Zoom"
+          onClose={() => setZoomSrc(null)}
+        />
+        <div className="my-6 border border-slate-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 shadow-sm overflow-hidden transition-all">
+          <button
+            onClick={() => setAccordionOpen(!accordionOpen)}
+            className="w-full p-4 sm:p-5 flex items-center justify-between bg-slate-50 dark:bg-slate-850 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border-b border-slate-200 dark:border-slate-800"
+          >
+            <div className="flex items-center gap-3 text-left">
+              <span className="p-2 bg-blue-600 text-white rounded-xl font-bold text-sm">💡</span>
+              <div>
+                <h3 className="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white">
+                  Detailed Teacher Solution & Walkthrough
+                </h3>
+                <p className="text-xs text-slate-500 dark:text-slate-400">
+                  Complete 8-step explanation & visual breakdown
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                onClose();
-              }}
-              className="text-slate-400 hover:text-slate-600 text-xs px-2 py-1 bg-white dark:bg-slate-800 rounded border border-slate-200 dark:border-slate-700"
-            >
-              Hide Solution
-            </button>
-            {accordionOpen ? <ChevronUp className="w-5 h-5 text-slate-500" /> : <ChevronDown className="w-5 h-5 text-slate-500" />}
-          </div>
-        </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onClose();
+                }}
+                className="text-slate-400 hover:text-slate-600 text-xs px-2 py-1 bg-white dark:bg-slate-800 rounded border border-slate-200 dark:border-slate-700"
+              >
+                Hide Solution
+              </button>
+              {accordionOpen ? <ChevronUp className="w-5 h-5 text-slate-500" /> : <ChevronDown className="w-5 h-5 text-slate-500" />}
+            </div>
+          </button>
 
-        {accordionOpen && (
-          <div className="p-4 sm:p-6 max-h-[80vh] overflow-y-auto">
-            {solutionContent}
-          </div>
-        )}
-      </div>
+          {accordionOpen && (
+            <div className="p-4 sm:p-6 max-h-[80vh] overflow-y-auto">
+              {solutionContent}
+            </div>
+          )}
+        </div>
+      </>
     );
   }
 
   // Render Modal Layout Mode (or mobile full screen)
   if (layoutMode === 'modal') {
     return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200">
-        <div className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-3xl w-full max-w-3xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
-          <div className="p-4 sm:p-5 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-900">
-            <div className="flex items-center gap-2.5">
-              <span className="p-2 bg-blue-600 text-white rounded-xl font-bold text-xs">📖</span>
-              <div>
-                <h3 className="font-bold text-sm text-slate-900 dark:text-white">
-                  Solution Panel • Question #{question.id}
-                </h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400">{question.topic}</p>
+      <>
+        <ImageZoomModal
+          isOpen={zoomSrc !== null}
+          src={zoomSrc || ''}
+          alt="Solution Figure Zoom"
+          onClose={() => setZoomSrc(null)}
+        />
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200">
+          <div className="bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-3xl w-full max-w-3xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+            <div className="p-4 sm:p-5 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-900">
+              <div className="flex items-center gap-2.5">
+                <span className="p-2 bg-blue-600 text-white rounded-xl font-bold text-xs">📖</span>
+                <div>
+                  <h3 className="font-bold text-sm text-slate-900 dark:text-white">
+                    Solution Panel • Question #{question.id}
+                  </h3>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">{question.topic}</p>
+                </div>
               </div>
+              <button
+                onClick={onClose}
+                className="p-2 rounded-xl text-slate-400 hover:text-slate-600 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
             </div>
-            <button
-              onClick={onClose}
-              className="p-2 rounded-xl text-slate-400 hover:text-slate-600 hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-          </div>
-          <div className="flex-1 overflow-y-auto p-4 sm:p-6">
-            {solutionContent}
+            <div className="flex-1 overflow-y-auto p-4 sm:p-6">
+              {solutionContent}
+            </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 
   // Default Drawer Layout (Slide-in Right Drawer on desktop, bottom sheet / full view on mobile)
   return (
     <>
+      <ImageZoomModal
+        isOpen={zoomSrc !== null}
+        src={zoomSrc || ''}
+        alt="Solution Figure Zoom"
+        onClose={() => setZoomSrc(null)}
+      />
+
       {/* Backdrop */}
       <div
         onClick={onClose}

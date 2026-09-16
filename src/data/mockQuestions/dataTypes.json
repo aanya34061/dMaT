@@ -1,0 +1,2550 @@
+[
+  {
+    "id": "dt-001",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "Optimal Primitive Sizing",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "You are designing a database record for a healthcare application with fields: \"isVaccinated\" (binary yes/no), \"patientAge\" (ranging strictly from 0 to 125), and \"patientId\" (unique sequential integer up to 500,000). Which combination of primitive types optimizes memory footprint without overflow risk?",
+    "options": [
+      "boolean isVaccinated; short patientAge; int patientId;",
+      "int isVaccinated; float patientAge; int patientId;",
+      "boolean isVaccinated; byte patientAge; short patientId;",
+      "short isVaccinated; short patientAge; double patientId;"
+    ],
+    "correctAnswer": 0,
+    "explanation": "isVaccinated requires only a 1-bit boolean flag. patientAge (0-125) safely fits into a 16-bit short (or signed byte up to 127, but short avoids signed boundary issues), while patientId (500,000) exceeds short's 32,767 maximum and requires a 32-bit int. Option A is optimal.",
+    "solutionSteps": [
+      "1. 'isVaccinated' represents a binary state -> boolean.",
+      "2. 'patientAge' is bounded by 125 -> short (16-bit) safely accommodates human lifespan.",
+      "3. 'patientId' exceeds 32,767 -> int (32-bit, up to 2.14 billion) is required.",
+      "4. Match with Option A."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-002",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "IEEE 754 Floating-Point Bit Layout",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "In the IEEE 754 standard for single-precision 32-bit floating-point numbers ('float'), how are the 32 bits partitioned between sign, exponent, and mantissa (fraction)?",
+    "options": [
+      "1 sign bit, 11 exponent bits, 20 mantissa bits",
+      "1 sign bit, 8 exponent bits, 23 mantissa bits",
+      "2 sign bits, 8 exponent bits, 22 mantissa bits",
+      "1 sign bit, 7 exponent bits, 24 mantissa bits"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under IEEE 754 single precision: Bit 31 is the Sign bit (1 bit), Bits 30-23 represent the Exponent with bias 127 (8 bits), and Bits 22-0 represent the fractional Mantissa (23 bits). Total = 1 + 8 + 23 = 32 bits. Option B is correct.",
+    "solutionSteps": [
+      "1. Total bit width for float is 32 bits.",
+      "2. Sign bit is always 1 bit (MSB).",
+      "3. Exponent occupies 8 bits (range -126 to +127 with bias).",
+      "4. Mantissa / fraction occupies the remaining 23 bits.",
+      "5. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-003",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "Double Precision Footprint",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "An algorithmic trading engine instantiates 1000 continuous pricing metrics of primitive type 'double'. What is the exact physical RAM footprint in bits and bytes?",
+    "options": [
+      "16000 Bits = 2000 Bytes",
+      "32000 Bits = 4000 Bytes",
+      "64000 Bits = 8000 Bytes",
+      "128000 Bits = 16000 Bytes"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A 64-bit IEEE 754 'double' consumes 8 bytes (64 bits). 1000 double variables require 1000 × 64 = 64000 bits = 8000 bytes. Option C is correct.",
+    "solutionSteps": [
+      "1. 1 double = 64 bits = 8 bytes.",
+      "2. Total bits: 1000 × 64 = 64000 bits.",
+      "3. Total bytes: 64000 / 8 = 8000 bytes.",
+      "4. Confirm Option C."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-004",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "IEEE 754 Float MemoryFootprint",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "An application needs to store an array of 1250 floating-point variables of primitive type 'float' in memory. According to the IEEE 754 standard, how much total memory is required?",
+    "options": [
+      "10000 Bits = 1250 Bytes",
+      "20000 Bits = 2500 Bytes",
+      "80000 Bits = 10000 Bytes",
+      "40000 Bits = 5000 Bytes"
+    ],
+    "correctAnswer": 3,
+    "explanation": "A primitive 'float' occupies exactly 32 bits (4 Bytes). For 1250 variables, total memory is 1250 × 32 = 40000 Bits. Dividing by 8 gives 5000 Bytes. Option D is correct.",
+    "solutionSteps": [
+      "1. Identify size of 1 float: 32 bits = 4 bytes.",
+      "2. Multiply by variable count: 1250 × 32 = 40000 bits.",
+      "3. Convert to bytes: 40000 / 8 = 5000 bytes.",
+      "4. Confirm Option D."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-005",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "Optimal Primitive Sizing",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "You are designing a database record for a healthcare application with fields: \"isVaccinated\" (binary yes/no), \"patientAge\" (ranging strictly from 0 to 125), and \"patientId\" (unique sequential integer up to 500,000). Which combination of primitive types optimizes memory footprint without overflow risk?",
+    "options": [
+      "boolean isVaccinated; short patientAge; int patientId;",
+      "int isVaccinated; float patientAge; int patientId;",
+      "boolean isVaccinated; byte patientAge; short patientId;",
+      "short isVaccinated; short patientAge; double patientId;"
+    ],
+    "correctAnswer": 0,
+    "explanation": "isVaccinated requires only a 1-bit boolean flag. patientAge (0-125) safely fits into a 16-bit short (or signed byte up to 127, but short avoids signed boundary issues), while patientId (500,000) exceeds short's 32,767 maximum and requires a 32-bit int. Option A is optimal.",
+    "solutionSteps": [
+      "1. 'isVaccinated' represents a binary state -> boolean.",
+      "2. 'patientAge' is bounded by 125 -> short (16-bit) safely accommodates human lifespan.",
+      "3. 'patientId' exceeds 32,767 -> int (32-bit, up to 2.14 billion) is required.",
+      "4. Match with Option A."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-006",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "IEEE 754 Floating-Point Bit Layout",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "In the IEEE 754 standard for single-precision 32-bit floating-point numbers ('float'), how are the 32 bits partitioned between sign, exponent, and mantissa (fraction)?",
+    "options": [
+      "1 sign bit, 11 exponent bits, 20 mantissa bits",
+      "1 sign bit, 8 exponent bits, 23 mantissa bits",
+      "2 sign bits, 8 exponent bits, 22 mantissa bits",
+      "1 sign bit, 7 exponent bits, 24 mantissa bits"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under IEEE 754 single precision: Bit 31 is the Sign bit (1 bit), Bits 30-23 represent the Exponent with bias 127 (8 bits), and Bits 22-0 represent the fractional Mantissa (23 bits). Total = 1 + 8 + 23 = 32 bits. Option B is correct.",
+    "solutionSteps": [
+      "1. Total bit width for float is 32 bits.",
+      "2. Sign bit is always 1 bit (MSB).",
+      "3. Exponent occupies 8 bits (range -126 to +127 with bias).",
+      "4. Mantissa / fraction occupies the remaining 23 bits.",
+      "5. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-007",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "Double Precision Footprint",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "An algorithmic trading engine instantiates 2000 continuous pricing metrics of primitive type 'double'. What is the exact physical RAM footprint in bits and bytes?",
+    "options": [
+      "32000 Bits = 4000 Bytes",
+      "64000 Bits = 8000 Bytes",
+      "128000 Bits = 16000 Bytes",
+      "256000 Bits = 32000 Bytes"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A 64-bit IEEE 754 'double' consumes 8 bytes (64 bits). 2000 double variables require 2000 × 64 = 128000 bits = 16000 bytes. Option C is correct.",
+    "solutionSteps": [
+      "1. 1 double = 64 bits = 8 bytes.",
+      "2. Total bits: 2000 × 64 = 128000 bits.",
+      "3. Total bytes: 128000 / 8 = 16000 bytes.",
+      "4. Confirm Option C."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-008",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "IEEE 754 Float MemoryFootprint",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "An application needs to store an array of 2250 floating-point variables of primitive type 'float' in memory. According to the IEEE 754 standard, how much total memory is required?",
+    "options": [
+      "18000 Bits = 2250 Bytes",
+      "36000 Bits = 4500 Bytes",
+      "144000 Bits = 18000 Bytes",
+      "72000 Bits = 9000 Bytes"
+    ],
+    "correctAnswer": 3,
+    "explanation": "A primitive 'float' occupies exactly 32 bits (4 Bytes). For 2250 variables, total memory is 2250 × 32 = 72000 Bits. Dividing by 8 gives 9000 Bytes. Option D is correct.",
+    "solutionSteps": [
+      "1. Identify size of 1 float: 32 bits = 4 bytes.",
+      "2. Multiply by variable count: 2250 × 32 = 72000 bits.",
+      "3. Convert to bytes: 72000 / 8 = 9000 bytes.",
+      "4. Confirm Option D."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-009",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "Optimal Primitive Sizing",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "You are designing a database record for a healthcare application with fields: \"isVaccinated\" (binary yes/no), \"patientAge\" (ranging strictly from 0 to 125), and \"patientId\" (unique sequential integer up to 500,000). Which combination of primitive types optimizes memory footprint without overflow risk?",
+    "options": [
+      "boolean isVaccinated; short patientAge; int patientId;",
+      "int isVaccinated; float patientAge; int patientId;",
+      "boolean isVaccinated; byte patientAge; short patientId;",
+      "short isVaccinated; short patientAge; double patientId;"
+    ],
+    "correctAnswer": 0,
+    "explanation": "isVaccinated requires only a 1-bit boolean flag. patientAge (0-125) safely fits into a 16-bit short (or signed byte up to 127, but short avoids signed boundary issues), while patientId (500,000) exceeds short's 32,767 maximum and requires a 32-bit int. Option A is optimal.",
+    "solutionSteps": [
+      "1. 'isVaccinated' represents a binary state -> boolean.",
+      "2. 'patientAge' is bounded by 125 -> short (16-bit) safely accommodates human lifespan.",
+      "3. 'patientId' exceeds 32,767 -> int (32-bit, up to 2.14 billion) is required.",
+      "4. Match with Option A."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-010",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "IEEE 754 Floating-Point Bit Layout",
+    "difficulty": "Very Hard",
+    "questionType": "multiple_choice",
+    "questionText": "In the IEEE 754 standard for single-precision 32-bit floating-point numbers ('float'), how are the 32 bits partitioned between sign, exponent, and mantissa (fraction)?",
+    "options": [
+      "1 sign bit, 11 exponent bits, 20 mantissa bits",
+      "1 sign bit, 8 exponent bits, 23 mantissa bits",
+      "2 sign bits, 8 exponent bits, 22 mantissa bits",
+      "1 sign bit, 7 exponent bits, 24 mantissa bits"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under IEEE 754 single precision: Bit 31 is the Sign bit (1 bit), Bits 30-23 represent the Exponent with bias 127 (8 bits), and Bits 22-0 represent the fractional Mantissa (23 bits). Total = 1 + 8 + 23 = 32 bits. Option B is correct.",
+    "solutionSteps": [
+      "1. Total bit width for float is 32 bits.",
+      "2. Sign bit is always 1 bit (MSB).",
+      "3. Exponent occupies 8 bits (range -126 to +127 with bias).",
+      "4. Mantissa / fraction occupies the remaining 23 bits.",
+      "5. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-011",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "Double Precision Footprint",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "An algorithmic trading engine instantiates 3000 continuous pricing metrics of primitive type 'double'. What is the exact physical RAM footprint in bits and bytes?",
+    "options": [
+      "48000 Bits = 6000 Bytes",
+      "96000 Bits = 12000 Bytes",
+      "192000 Bits = 24000 Bytes",
+      "384000 Bits = 48000 Bytes"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A 64-bit IEEE 754 'double' consumes 8 bytes (64 bits). 3000 double variables require 3000 × 64 = 192000 bits = 24000 bytes. Option C is correct.",
+    "solutionSteps": [
+      "1. 1 double = 64 bits = 8 bytes.",
+      "2. Total bits: 3000 × 64 = 192000 bits.",
+      "3. Total bytes: 192000 / 8 = 24000 bytes.",
+      "4. Confirm Option C."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-012",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "IEEE 754 Float MemoryFootprint",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "An application needs to store an array of 3250 floating-point variables of primitive type 'float' in memory. According to the IEEE 754 standard, how much total memory is required?",
+    "options": [
+      "26000 Bits = 3250 Bytes",
+      "52000 Bits = 6500 Bytes",
+      "208000 Bits = 26000 Bytes",
+      "104000 Bits = 13000 Bytes"
+    ],
+    "correctAnswer": 3,
+    "explanation": "A primitive 'float' occupies exactly 32 bits (4 Bytes). For 3250 variables, total memory is 3250 × 32 = 104000 Bits. Dividing by 8 gives 13000 Bytes. Option D is correct.",
+    "solutionSteps": [
+      "1. Identify size of 1 float: 32 bits = 4 bytes.",
+      "2. Multiply by variable count: 3250 × 32 = 104000 bits.",
+      "3. Convert to bytes: 104000 / 8 = 13000 bytes.",
+      "4. Confirm Option D."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-013",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "Optimal Primitive Sizing",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "You are designing a database record for a healthcare application with fields: \"isVaccinated\" (binary yes/no), \"patientAge\" (ranging strictly from 0 to 125), and \"patientId\" (unique sequential integer up to 500,000). Which combination of primitive types optimizes memory footprint without overflow risk?",
+    "options": [
+      "boolean isVaccinated; short patientAge; int patientId;",
+      "int isVaccinated; float patientAge; int patientId;",
+      "boolean isVaccinated; byte patientAge; short patientId;",
+      "short isVaccinated; short patientAge; double patientId;"
+    ],
+    "correctAnswer": 0,
+    "explanation": "isVaccinated requires only a 1-bit boolean flag. patientAge (0-125) safely fits into a 16-bit short (or signed byte up to 127, but short avoids signed boundary issues), while patientId (500,000) exceeds short's 32,767 maximum and requires a 32-bit int. Option A is optimal.",
+    "solutionSteps": [
+      "1. 'isVaccinated' represents a binary state -> boolean.",
+      "2. 'patientAge' is bounded by 125 -> short (16-bit) safely accommodates human lifespan.",
+      "3. 'patientId' exceeds 32,767 -> int (32-bit, up to 2.14 billion) is required.",
+      "4. Match with Option A."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-014",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "IEEE 754 Floating-Point Bit Layout",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "In the IEEE 754 standard for single-precision 32-bit floating-point numbers ('float'), how are the 32 bits partitioned between sign, exponent, and mantissa (fraction)?",
+    "options": [
+      "1 sign bit, 11 exponent bits, 20 mantissa bits",
+      "1 sign bit, 8 exponent bits, 23 mantissa bits",
+      "2 sign bits, 8 exponent bits, 22 mantissa bits",
+      "1 sign bit, 7 exponent bits, 24 mantissa bits"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under IEEE 754 single precision: Bit 31 is the Sign bit (1 bit), Bits 30-23 represent the Exponent with bias 127 (8 bits), and Bits 22-0 represent the fractional Mantissa (23 bits). Total = 1 + 8 + 23 = 32 bits. Option B is correct.",
+    "solutionSteps": [
+      "1. Total bit width for float is 32 bits.",
+      "2. Sign bit is always 1 bit (MSB).",
+      "3. Exponent occupies 8 bits (range -126 to +127 with bias).",
+      "4. Mantissa / fraction occupies the remaining 23 bits.",
+      "5. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-015",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "Double Precision Footprint",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "An algorithmic trading engine instantiates 4000 continuous pricing metrics of primitive type 'double'. What is the exact physical RAM footprint in bits and bytes?",
+    "options": [
+      "64000 Bits = 8000 Bytes",
+      "128000 Bits = 16000 Bytes",
+      "256000 Bits = 32000 Bytes",
+      "512000 Bits = 64000 Bytes"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A 64-bit IEEE 754 'double' consumes 8 bytes (64 bits). 4000 double variables require 4000 × 64 = 256000 bits = 32000 bytes. Option C is correct.",
+    "solutionSteps": [
+      "1. 1 double = 64 bits = 8 bytes.",
+      "2. Total bits: 4000 × 64 = 256000 bits.",
+      "3. Total bytes: 256000 / 8 = 32000 bytes.",
+      "4. Confirm Option C."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-016",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "IEEE 754 Float MemoryFootprint",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "An application needs to store an array of 4250 floating-point variables of primitive type 'float' in memory. According to the IEEE 754 standard, how much total memory is required?",
+    "options": [
+      "34000 Bits = 4250 Bytes",
+      "68000 Bits = 8500 Bytes",
+      "272000 Bits = 34000 Bytes",
+      "136000 Bits = 17000 Bytes"
+    ],
+    "correctAnswer": 3,
+    "explanation": "A primitive 'float' occupies exactly 32 bits (4 Bytes). For 4250 variables, total memory is 4250 × 32 = 136000 Bits. Dividing by 8 gives 17000 Bytes. Option D is correct.",
+    "solutionSteps": [
+      "1. Identify size of 1 float: 32 bits = 4 bytes.",
+      "2. Multiply by variable count: 4250 × 32 = 136000 bits.",
+      "3. Convert to bytes: 136000 / 8 = 17000 bytes.",
+      "4. Confirm Option D."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-017",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "Optimal Primitive Sizing",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "You are designing a database record for a healthcare application with fields: \"isVaccinated\" (binary yes/no), \"patientAge\" (ranging strictly from 0 to 125), and \"patientId\" (unique sequential integer up to 500,000). Which combination of primitive types optimizes memory footprint without overflow risk?",
+    "options": [
+      "boolean isVaccinated; short patientAge; int patientId;",
+      "int isVaccinated; float patientAge; int patientId;",
+      "boolean isVaccinated; byte patientAge; short patientId;",
+      "short isVaccinated; short patientAge; double patientId;"
+    ],
+    "correctAnswer": 0,
+    "explanation": "isVaccinated requires only a 1-bit boolean flag. patientAge (0-125) safely fits into a 16-bit short (or signed byte up to 127, but short avoids signed boundary issues), while patientId (500,000) exceeds short's 32,767 maximum and requires a 32-bit int. Option A is optimal.",
+    "solutionSteps": [
+      "1. 'isVaccinated' represents a binary state -> boolean.",
+      "2. 'patientAge' is bounded by 125 -> short (16-bit) safely accommodates human lifespan.",
+      "3. 'patientId' exceeds 32,767 -> int (32-bit, up to 2.14 billion) is required.",
+      "4. Match with Option A."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-018",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "IEEE 754 Floating-Point Bit Layout",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "In the IEEE 754 standard for single-precision 32-bit floating-point numbers ('float'), how are the 32 bits partitioned between sign, exponent, and mantissa (fraction)?",
+    "options": [
+      "1 sign bit, 11 exponent bits, 20 mantissa bits",
+      "1 sign bit, 8 exponent bits, 23 mantissa bits",
+      "2 sign bits, 8 exponent bits, 22 mantissa bits",
+      "1 sign bit, 7 exponent bits, 24 mantissa bits"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under IEEE 754 single precision: Bit 31 is the Sign bit (1 bit), Bits 30-23 represent the Exponent with bias 127 (8 bits), and Bits 22-0 represent the fractional Mantissa (23 bits). Total = 1 + 8 + 23 = 32 bits. Option B is correct.",
+    "solutionSteps": [
+      "1. Total bit width for float is 32 bits.",
+      "2. Sign bit is always 1 bit (MSB).",
+      "3. Exponent occupies 8 bits (range -126 to +127 with bias).",
+      "4. Mantissa / fraction occupies the remaining 23 bits.",
+      "5. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-019",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "Double Precision Footprint",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "An algorithmic trading engine instantiates 5000 continuous pricing metrics of primitive type 'double'. What is the exact physical RAM footprint in bits and bytes?",
+    "options": [
+      "80000 Bits = 10000 Bytes",
+      "160000 Bits = 20000 Bytes",
+      "320000 Bits = 40000 Bytes",
+      "640000 Bits = 80000 Bytes"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A 64-bit IEEE 754 'double' consumes 8 bytes (64 bits). 5000 double variables require 5000 × 64 = 320000 bits = 40000 bytes. Option C is correct.",
+    "solutionSteps": [
+      "1. 1 double = 64 bits = 8 bytes.",
+      "2. Total bits: 5000 × 64 = 320000 bits.",
+      "3. Total bytes: 320000 / 8 = 40000 bytes.",
+      "4. Confirm Option C."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-020",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "IEEE 754 Float MemoryFootprint",
+    "difficulty": "Very Hard",
+    "questionType": "multiple_choice",
+    "questionText": "An application needs to store an array of 5250 floating-point variables of primitive type 'float' in memory. According to the IEEE 754 standard, how much total memory is required?",
+    "options": [
+      "42000 Bits = 5250 Bytes",
+      "84000 Bits = 10500 Bytes",
+      "336000 Bits = 42000 Bytes",
+      "168000 Bits = 21000 Bytes"
+    ],
+    "correctAnswer": 3,
+    "explanation": "A primitive 'float' occupies exactly 32 bits (4 Bytes). For 5250 variables, total memory is 5250 × 32 = 168000 Bits. Dividing by 8 gives 21000 Bytes. Option D is correct.",
+    "solutionSteps": [
+      "1. Identify size of 1 float: 32 bits = 4 bytes.",
+      "2. Multiply by variable count: 5250 × 32 = 168000 bits.",
+      "3. Convert to bytes: 168000 / 8 = 21000 bytes.",
+      "4. Confirm Option D."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-021",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "Optimal Primitive Sizing",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "You are designing a database record for a healthcare application with fields: \"isVaccinated\" (binary yes/no), \"patientAge\" (ranging strictly from 0 to 125), and \"patientId\" (unique sequential integer up to 500,000). Which combination of primitive types optimizes memory footprint without overflow risk?",
+    "options": [
+      "boolean isVaccinated; short patientAge; int patientId;",
+      "int isVaccinated; float patientAge; int patientId;",
+      "boolean isVaccinated; byte patientAge; short patientId;",
+      "short isVaccinated; short patientAge; double patientId;"
+    ],
+    "correctAnswer": 0,
+    "explanation": "isVaccinated requires only a 1-bit boolean flag. patientAge (0-125) safely fits into a 16-bit short (or signed byte up to 127, but short avoids signed boundary issues), while patientId (500,000) exceeds short's 32,767 maximum and requires a 32-bit int. Option A is optimal.",
+    "solutionSteps": [
+      "1. 'isVaccinated' represents a binary state -> boolean.",
+      "2. 'patientAge' is bounded by 125 -> short (16-bit) safely accommodates human lifespan.",
+      "3. 'patientId' exceeds 32,767 -> int (32-bit, up to 2.14 billion) is required.",
+      "4. Match with Option A."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-022",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "IEEE 754 Floating-Point Bit Layout",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "In the IEEE 754 standard for single-precision 32-bit floating-point numbers ('float'), how are the 32 bits partitioned between sign, exponent, and mantissa (fraction)?",
+    "options": [
+      "1 sign bit, 11 exponent bits, 20 mantissa bits",
+      "1 sign bit, 8 exponent bits, 23 mantissa bits",
+      "2 sign bits, 8 exponent bits, 22 mantissa bits",
+      "1 sign bit, 7 exponent bits, 24 mantissa bits"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Under IEEE 754 single precision: Bit 31 is the Sign bit (1 bit), Bits 30-23 represent the Exponent with bias 127 (8 bits), and Bits 22-0 represent the fractional Mantissa (23 bits). Total = 1 + 8 + 23 = 32 bits. Option B is correct.",
+    "solutionSteps": [
+      "1. Total bit width for float is 32 bits.",
+      "2. Sign bit is always 1 bit (MSB).",
+      "3. Exponent occupies 8 bits (range -126 to +127 with bias).",
+      "4. Mantissa / fraction occupies the remaining 23 bits.",
+      "5. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-023",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "Double Precision Footprint",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "An algorithmic trading engine instantiates 6000 continuous pricing metrics of primitive type 'double'. What is the exact physical RAM footprint in bits and bytes?",
+    "options": [
+      "96000 Bits = 12000 Bytes",
+      "192000 Bits = 24000 Bytes",
+      "384000 Bits = 48000 Bytes",
+      "768000 Bits = 96000 Bytes"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A 64-bit IEEE 754 'double' consumes 8 bytes (64 bits). 6000 double variables require 6000 × 64 = 384000 bits = 48000 bytes. Option C is correct.",
+    "solutionSteps": [
+      "1. 1 double = 64 bits = 8 bytes.",
+      "2. Total bits: 6000 × 64 = 384000 bits.",
+      "3. Total bytes: 384000 / 8 = 48000 bytes.",
+      "4. Confirm Option C."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-024",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "IEEE 754 Float MemoryFootprint",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "An application needs to store an array of 6250 floating-point variables of primitive type 'float' in memory. According to the IEEE 754 standard, how much total memory is required?",
+    "options": [
+      "50000 Bits = 6250 Bytes",
+      "100000 Bits = 12500 Bytes",
+      "400000 Bits = 50000 Bytes",
+      "200000 Bits = 25000 Bytes"
+    ],
+    "correctAnswer": 3,
+    "explanation": "A primitive 'float' occupies exactly 32 bits (4 Bytes). For 6250 variables, total memory is 6250 × 32 = 200000 Bits. Dividing by 8 gives 25000 Bytes. Option D is correct.",
+    "solutionSteps": [
+      "1. Identify size of 1 float: 32 bits = 4 bytes.",
+      "2. Multiply by variable count: 6250 × 32 = 200000 bits.",
+      "3. Convert to bytes: 200000 / 8 = 25000 bytes.",
+      "4. Confirm Option D."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-025",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Primitive Data Types & Memory Allocation",
+    "subtopic": "Optimal Primitive Sizing",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "You are designing a database record for a healthcare application with fields: \"isVaccinated\" (binary yes/no), \"patientAge\" (ranging strictly from 0 to 125), and \"patientId\" (unique sequential integer up to 500,000). Which combination of primitive types optimizes memory footprint without overflow risk?",
+    "options": [
+      "boolean isVaccinated; short patientAge; int patientId;",
+      "int isVaccinated; float patientAge; int patientId;",
+      "boolean isVaccinated; byte patientAge; short patientId;",
+      "short isVaccinated; short patientAge; double patientId;"
+    ],
+    "correctAnswer": 0,
+    "explanation": "isVaccinated requires only a 1-bit boolean flag. patientAge (0-125) safely fits into a 16-bit short (or signed byte up to 127, but short avoids signed boundary issues), while patientId (500,000) exceeds short's 32,767 maximum and requires a 32-bit int. Option A is optimal.",
+    "solutionSteps": [
+      "1. 'isVaccinated' represents a binary state -> boolean.",
+      "2. 'patientAge' is bounded by 125 -> short (16-bit) safely accommodates human lifespan.",
+      "3. 'patientId' exceeds 32,767 -> int (32-bit, up to 2.14 billion) is required.",
+      "4. Match with Option A."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-026",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Binary Numeric Promotion of Short Operands",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "In Java arithmetic operations, two variables of type 'short' (16-bit) are multiplied: `short a = 15; short b = 4; var c = a * b;`. What is the evaluated data type of the multiplication expression before any assignment?",
+    "options": [
+      "short (16-bit signed integer)",
+      "int (32-bit signed integer)",
+      "float (32-bit floating point)",
+      "double (64-bit floating point)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "According to Java's binary numeric promotion rules (JLS §5.6.2), operands of type byte, short, or char are automatically promoted to 'int' before any binary arithmetic operation (+, -, *, /). Thus the product evaluates in int precision. Option B is correct.",
+    "solutionSteps": [
+      "1. Both operands are 'short' (16-bit).",
+      "2. Apply binary numeric promotion: types narrower than int are promoted to int.",
+      "3. Arithmetic is executed in 32-bit int precision.",
+      "4. Option B is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-027",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Floating Point Promotion in Expressions",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "When adding two primitive values from two 'float' variables in a Java expression without an explicit cast, the runtime promotes both operands. In which precision is the addition calculated?",
+    "options": [
+      "int precision (truncated before evaluation)",
+      "float precision (evaluated directly without promotion)",
+      "double precision (promoted implicitly to prevent loss of precision)",
+      "long precision (widened to 64-bit integer)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In standard mathematical expressions and binary promotion involving floating-point operands where mixed float/double precision is evaluated, calculations are carried out in double precision to prevent overflow and precision degradation. Option C is correct.",
+    "solutionSteps": [
+      "1. Observe numeric promotion rules for floating-point calculations.",
+      "2. Java evaluates floating expressions in double precision when promoted.",
+      "3. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-028",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Explicit Narrowing Cast Truncation",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the following Java statement executing a narrowing primitive conversion: `double val = 10.85; int res = (int) val;`. What is the exact value stored in variable 'res'?",
+    "options": [
+      "10.85",
+      "11",
+      "9",
+      "10"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Explicit casting from a floating-point type ('double' or 'float') to an integral type ('int') performs truncation toward zero, discarding all fractional digits after the decimal point. Thus, (int)10.85 yields exactly 10. Option D is correct.",
+    "solutionSteps": [
+      "1. Start with val = 10.85.",
+      "2. Narrowing cast (int) truncates fractional portion toward zero.",
+      "3. Result is 10.",
+      "4. Confirm Option D."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-029",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Binary Numeric Promotion of Short Operands",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "In Java arithmetic operations, two variables of type 'short' (16-bit) are multiplied: `short a = 15; short b = 4; var c = a * b;`. What is the evaluated data type of the multiplication expression before any assignment?",
+    "options": [
+      "int (32-bit signed integer)",
+      "short (16-bit signed integer)",
+      "float (32-bit floating point)",
+      "double (64-bit floating point)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "According to Java's binary numeric promotion rules (JLS §5.6.2), operands of type byte, short, or char are automatically promoted to 'int' before any binary arithmetic operation (+, -, *, /). Thus the product evaluates in int precision. Option A is correct.",
+    "solutionSteps": [
+      "1. Both operands are 'short' (16-bit).",
+      "2. Apply binary numeric promotion: types narrower than int are promoted to int.",
+      "3. Arithmetic is executed in 32-bit int precision.",
+      "4. Option A is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-030",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Floating Point Promotion in Expressions",
+    "difficulty": "Very Hard",
+    "questionType": "multiple_choice",
+    "questionText": "When adding two primitive values from two 'float' variables in a Java expression without an explicit cast, the runtime promotes both operands. In which precision is the addition calculated?",
+    "options": [
+      "float precision (evaluated directly without promotion)",
+      "double precision (promoted implicitly to prevent loss of precision)",
+      "int precision (truncated before evaluation)",
+      "long precision (widened to 64-bit integer)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In standard mathematical expressions and binary promotion involving floating-point operands where mixed float/double precision is evaluated, calculations are carried out in double precision to prevent overflow and precision degradation. Option B is correct.",
+    "solutionSteps": [
+      "1. Observe numeric promotion rules for floating-point calculations.",
+      "2. Java evaluates floating expressions in double precision when promoted.",
+      "3. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-031",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Explicit Narrowing Cast Truncation",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the following Java statement executing a narrowing primitive conversion: `double val = 8.85; int res = (int) val;`. What is the exact value stored in variable 'res'?",
+    "options": [
+      "7",
+      "9",
+      "8",
+      "8.85"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Explicit casting from a floating-point type ('double' or 'float') to an integral type ('int') performs truncation toward zero, discarding all fractional digits after the decimal point. Thus, (int)8.85 yields exactly 8. Option C is correct.",
+    "solutionSteps": [
+      "1. Start with val = 8.85.",
+      "2. Narrowing cast (int) truncates fractional portion toward zero.",
+      "3. Result is 8.",
+      "4. Confirm Option C."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-032",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Binary Numeric Promotion of Short Operands",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "In Java arithmetic operations, two variables of type 'short' (16-bit) are multiplied: `short a = 15; short b = 4; var c = a * b;`. What is the evaluated data type of the multiplication expression before any assignment?",
+    "options": [
+      "double (64-bit floating point)",
+      "short (16-bit signed integer)",
+      "float (32-bit floating point)",
+      "int (32-bit signed integer)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "According to Java's binary numeric promotion rules (JLS §5.6.2), operands of type byte, short, or char are automatically promoted to 'int' before any binary arithmetic operation (+, -, *, /). Thus the product evaluates in int precision. Option D is correct.",
+    "solutionSteps": [
+      "1. Both operands are 'short' (16-bit).",
+      "2. Apply binary numeric promotion: types narrower than int are promoted to int.",
+      "3. Arithmetic is executed in 32-bit int precision.",
+      "4. Option D is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-033",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Floating Point Promotion in Expressions",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "When adding two primitive values from two 'float' variables in a Java expression without an explicit cast, the runtime promotes both operands. In which precision is the addition calculated?",
+    "options": [
+      "double precision (promoted implicitly to prevent loss of precision)",
+      "float precision (evaluated directly without promotion)",
+      "int precision (truncated before evaluation)",
+      "long precision (widened to 64-bit integer)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "In standard mathematical expressions and binary promotion involving floating-point operands where mixed float/double precision is evaluated, calculations are carried out in double precision to prevent overflow and precision degradation. Option A is correct.",
+    "solutionSteps": [
+      "1. Observe numeric promotion rules for floating-point calculations.",
+      "2. Java evaluates floating expressions in double precision when promoted.",
+      "3. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-034",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Explicit Narrowing Cast Truncation",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the following Java statement executing a narrowing primitive conversion: `double val = 11.85; int res = (int) val;`. What is the exact value stored in variable 'res'?",
+    "options": [
+      "12",
+      "11",
+      "10",
+      "11.85"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Explicit casting from a floating-point type ('double' or 'float') to an integral type ('int') performs truncation toward zero, discarding all fractional digits after the decimal point. Thus, (int)11.85 yields exactly 11. Option B is correct.",
+    "solutionSteps": [
+      "1. Start with val = 11.85.",
+      "2. Narrowing cast (int) truncates fractional portion toward zero.",
+      "3. Result is 11.",
+      "4. Confirm Option B."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-035",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Binary Numeric Promotion of Short Operands",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "In Java arithmetic operations, two variables of type 'short' (16-bit) are multiplied: `short a = 15; short b = 4; var c = a * b;`. What is the evaluated data type of the multiplication expression before any assignment?",
+    "options": [
+      "float (32-bit floating point)",
+      "short (16-bit signed integer)",
+      "int (32-bit signed integer)",
+      "double (64-bit floating point)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "According to Java's binary numeric promotion rules (JLS §5.6.2), operands of type byte, short, or char are automatically promoted to 'int' before any binary arithmetic operation (+, -, *, /). Thus the product evaluates in int precision. Option C is correct.",
+    "solutionSteps": [
+      "1. Both operands are 'short' (16-bit).",
+      "2. Apply binary numeric promotion: types narrower than int are promoted to int.",
+      "3. Arithmetic is executed in 32-bit int precision.",
+      "4. Option C is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-036",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Floating Point Promotion in Expressions",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "When adding two primitive values from two 'float' variables in a Java expression without an explicit cast, the runtime promotes both operands. In which precision is the addition calculated?",
+    "options": [
+      "long precision (widened to 64-bit integer)",
+      "float precision (evaluated directly without promotion)",
+      "int precision (truncated before evaluation)",
+      "double precision (promoted implicitly to prevent loss of precision)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "In standard mathematical expressions and binary promotion involving floating-point operands where mixed float/double precision is evaluated, calculations are carried out in double precision to prevent overflow and precision degradation. Option D is correct.",
+    "solutionSteps": [
+      "1. Observe numeric promotion rules for floating-point calculations.",
+      "2. Java evaluates floating expressions in double precision when promoted.",
+      "3. Option D matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-037",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Explicit Narrowing Cast Truncation",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the following Java statement executing a narrowing primitive conversion: `double val = 9.85; int res = (int) val;`. What is the exact value stored in variable 'res'?",
+    "options": [
+      "9",
+      "10",
+      "8",
+      "9.85"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Explicit casting from a floating-point type ('double' or 'float') to an integral type ('int') performs truncation toward zero, discarding all fractional digits after the decimal point. Thus, (int)9.85 yields exactly 9. Option A is correct.",
+    "solutionSteps": [
+      "1. Start with val = 9.85.",
+      "2. Narrowing cast (int) truncates fractional portion toward zero.",
+      "3. Result is 9.",
+      "4. Confirm Option A."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-038",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Binary Numeric Promotion of Short Operands",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "In Java arithmetic operations, two variables of type 'short' (16-bit) are multiplied: `short a = 15; short b = 4; var c = a * b;`. What is the evaluated data type of the multiplication expression before any assignment?",
+    "options": [
+      "short (16-bit signed integer)",
+      "int (32-bit signed integer)",
+      "float (32-bit floating point)",
+      "double (64-bit floating point)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "According to Java's binary numeric promotion rules (JLS §5.6.2), operands of type byte, short, or char are automatically promoted to 'int' before any binary arithmetic operation (+, -, *, /). Thus the product evaluates in int precision. Option B is correct.",
+    "solutionSteps": [
+      "1. Both operands are 'short' (16-bit).",
+      "2. Apply binary numeric promotion: types narrower than int are promoted to int.",
+      "3. Arithmetic is executed in 32-bit int precision.",
+      "4. Option B is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-039",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Floating Point Promotion in Expressions",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "When adding two primitive values from two 'float' variables in a Java expression without an explicit cast, the runtime promotes both operands. In which precision is the addition calculated?",
+    "options": [
+      "int precision (truncated before evaluation)",
+      "float precision (evaluated directly without promotion)",
+      "double precision (promoted implicitly to prevent loss of precision)",
+      "long precision (widened to 64-bit integer)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In standard mathematical expressions and binary promotion involving floating-point operands where mixed float/double precision is evaluated, calculations are carried out in double precision to prevent overflow and precision degradation. Option C is correct.",
+    "solutionSteps": [
+      "1. Observe numeric promotion rules for floating-point calculations.",
+      "2. Java evaluates floating expressions in double precision when promoted.",
+      "3. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-040",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Explicit Narrowing Cast Truncation",
+    "difficulty": "Very Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the following Java statement executing a narrowing primitive conversion: `double val = 7.85; int res = (int) val;`. What is the exact value stored in variable 'res'?",
+    "options": [
+      "7.85",
+      "8",
+      "6",
+      "7"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Explicit casting from a floating-point type ('double' or 'float') to an integral type ('int') performs truncation toward zero, discarding all fractional digits after the decimal point. Thus, (int)7.85 yields exactly 7. Option D is correct.",
+    "solutionSteps": [
+      "1. Start with val = 7.85.",
+      "2. Narrowing cast (int) truncates fractional portion toward zero.",
+      "3. Result is 7.",
+      "4. Confirm Option D."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-041",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Binary Numeric Promotion of Short Operands",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "In Java arithmetic operations, two variables of type 'short' (16-bit) are multiplied: `short a = 15; short b = 4; var c = a * b;`. What is the evaluated data type of the multiplication expression before any assignment?",
+    "options": [
+      "int (32-bit signed integer)",
+      "short (16-bit signed integer)",
+      "float (32-bit floating point)",
+      "double (64-bit floating point)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "According to Java's binary numeric promotion rules (JLS §5.6.2), operands of type byte, short, or char are automatically promoted to 'int' before any binary arithmetic operation (+, -, *, /). Thus the product evaluates in int precision. Option A is correct.",
+    "solutionSteps": [
+      "1. Both operands are 'short' (16-bit).",
+      "2. Apply binary numeric promotion: types narrower than int are promoted to int.",
+      "3. Arithmetic is executed in 32-bit int precision.",
+      "4. Option A is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-042",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Floating Point Promotion in Expressions",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "When adding two primitive values from two 'float' variables in a Java expression without an explicit cast, the runtime promotes both operands. In which precision is the addition calculated?",
+    "options": [
+      "float precision (evaluated directly without promotion)",
+      "double precision (promoted implicitly to prevent loss of precision)",
+      "int precision (truncated before evaluation)",
+      "long precision (widened to 64-bit integer)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In standard mathematical expressions and binary promotion involving floating-point operands where mixed float/double precision is evaluated, calculations are carried out in double precision to prevent overflow and precision degradation. Option B is correct.",
+    "solutionSteps": [
+      "1. Observe numeric promotion rules for floating-point calculations.",
+      "2. Java evaluates floating expressions in double precision when promoted.",
+      "3. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-043",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Explicit Narrowing Cast Truncation",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the following Java statement executing a narrowing primitive conversion: `double val = 10.85; int res = (int) val;`. What is the exact value stored in variable 'res'?",
+    "options": [
+      "9",
+      "11",
+      "10",
+      "10.85"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Explicit casting from a floating-point type ('double' or 'float') to an integral type ('int') performs truncation toward zero, discarding all fractional digits after the decimal point. Thus, (int)10.85 yields exactly 10. Option C is correct.",
+    "solutionSteps": [
+      "1. Start with val = 10.85.",
+      "2. Narrowing cast (int) truncates fractional portion toward zero.",
+      "3. Result is 10.",
+      "4. Confirm Option C."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-044",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Binary Numeric Promotion of Short Operands",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "In Java arithmetic operations, two variables of type 'short' (16-bit) are multiplied: `short a = 15; short b = 4; var c = a * b;`. What is the evaluated data type of the multiplication expression before any assignment?",
+    "options": [
+      "double (64-bit floating point)",
+      "short (16-bit signed integer)",
+      "float (32-bit floating point)",
+      "int (32-bit signed integer)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "According to Java's binary numeric promotion rules (JLS §5.6.2), operands of type byte, short, or char are automatically promoted to 'int' before any binary arithmetic operation (+, -, *, /). Thus the product evaluates in int precision. Option D is correct.",
+    "solutionSteps": [
+      "1. Both operands are 'short' (16-bit).",
+      "2. Apply binary numeric promotion: types narrower than int are promoted to int.",
+      "3. Arithmetic is executed in 32-bit int precision.",
+      "4. Option D is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-045",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Floating Point Promotion in Expressions",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "When adding two primitive values from two 'float' variables in a Java expression without an explicit cast, the runtime promotes both operands. In which precision is the addition calculated?",
+    "options": [
+      "double precision (promoted implicitly to prevent loss of precision)",
+      "float precision (evaluated directly without promotion)",
+      "int precision (truncated before evaluation)",
+      "long precision (widened to 64-bit integer)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "In standard mathematical expressions and binary promotion involving floating-point operands where mixed float/double precision is evaluated, calculations are carried out in double precision to prevent overflow and precision degradation. Option A is correct.",
+    "solutionSteps": [
+      "1. Observe numeric promotion rules for floating-point calculations.",
+      "2. Java evaluates floating expressions in double precision when promoted.",
+      "3. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-046",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Explicit Narrowing Cast Truncation",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the following Java statement executing a narrowing primitive conversion: `double val = 8.85; int res = (int) val;`. What is the exact value stored in variable 'res'?",
+    "options": [
+      "9",
+      "8",
+      "7",
+      "8.85"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Explicit casting from a floating-point type ('double' or 'float') to an integral type ('int') performs truncation toward zero, discarding all fractional digits after the decimal point. Thus, (int)8.85 yields exactly 8. Option B is correct.",
+    "solutionSteps": [
+      "1. Start with val = 8.85.",
+      "2. Narrowing cast (int) truncates fractional portion toward zero.",
+      "3. Result is 8.",
+      "4. Confirm Option B."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-047",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Binary Numeric Promotion of Short Operands",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "In Java arithmetic operations, two variables of type 'short' (16-bit) are multiplied: `short a = 15; short b = 4; var c = a * b;`. What is the evaluated data type of the multiplication expression before any assignment?",
+    "options": [
+      "float (32-bit floating point)",
+      "short (16-bit signed integer)",
+      "int (32-bit signed integer)",
+      "double (64-bit floating point)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "According to Java's binary numeric promotion rules (JLS §5.6.2), operands of type byte, short, or char are automatically promoted to 'int' before any binary arithmetic operation (+, -, *, /). Thus the product evaluates in int precision. Option C is correct.",
+    "solutionSteps": [
+      "1. Both operands are 'short' (16-bit).",
+      "2. Apply binary numeric promotion: types narrower than int are promoted to int.",
+      "3. Arithmetic is executed in 32-bit int precision.",
+      "4. Option C is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-048",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Floating Point Promotion in Expressions",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "When adding two primitive values from two 'float' variables in a Java expression without an explicit cast, the runtime promotes both operands. In which precision is the addition calculated?",
+    "options": [
+      "long precision (widened to 64-bit integer)",
+      "float precision (evaluated directly without promotion)",
+      "int precision (truncated before evaluation)",
+      "double precision (promoted implicitly to prevent loss of precision)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "In standard mathematical expressions and binary promotion involving floating-point operands where mixed float/double precision is evaluated, calculations are carried out in double precision to prevent overflow and precision degradation. Option D is correct.",
+    "solutionSteps": [
+      "1. Observe numeric promotion rules for floating-point calculations.",
+      "2. Java evaluates floating expressions in double precision when promoted.",
+      "3. Option D matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-049",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Explicit Narrowing Cast Truncation",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Consider the following Java statement executing a narrowing primitive conversion: `double val = 11.85; int res = (int) val;`. What is the exact value stored in variable 'res'?",
+    "options": [
+      "11",
+      "12",
+      "10",
+      "11.85"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Explicit casting from a floating-point type ('double' or 'float') to an integral type ('int') performs truncation toward zero, discarding all fractional digits after the decimal point. Thus, (int)11.85 yields exactly 11. Option A is correct.",
+    "solutionSteps": [
+      "1. Start with val = 11.85.",
+      "2. Narrowing cast (int) truncates fractional portion toward zero.",
+      "3. Result is 11.",
+      "4. Confirm Option A."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-050",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Implicit & Explicit Type Conversion",
+    "subtopic": "Binary Numeric Promotion of Short Operands",
+    "difficulty": "Very Hard",
+    "questionType": "multiple_choice",
+    "questionText": "In Java arithmetic operations, two variables of type 'short' (16-bit) are multiplied: `short a = 15; short b = 4; var c = a * b;`. What is the evaluated data type of the multiplication expression before any assignment?",
+    "options": [
+      "short (16-bit signed integer)",
+      "int (32-bit signed integer)",
+      "float (32-bit floating point)",
+      "double (64-bit floating point)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "According to Java's binary numeric promotion rules (JLS §5.6.2), operands of type byte, short, or char are automatically promoted to 'int' before any binary arithmetic operation (+, -, *, /). Thus the product evaluates in int precision. Option B is correct.",
+    "solutionSteps": [
+      "1. Both operands are 'short' (16-bit).",
+      "2. Apply binary numeric promotion: types narrower than int are promoted to int.",
+      "3. Arithmetic is executed in 32-bit int precision.",
+      "4. Option B is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-051",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Integer Division Truncation",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "The following Java code snippet is executed:\n```java\nshort s = 6;\nfloat x = 4 + s / 3;\n```\nWhat is the exact numeric value assigned to 'x'?",
+    "options": [
+      "4.0",
+      "6.0000",
+      "6.0 (or 6)",
+      "7.0"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In the expression `s / 3`, variable `s` (6) promotes to int, and `3` is an int literal. Performing integer division 6 / 3 truncates the fractional portion, resulting in 2. Adding 4 yields 6, which is converted to float 6.0 upon assignment to x. Option C is correct.",
+    "solutionSteps": [
+      "1. Evaluate integer division: s / 3 = 6 / 3 = 2 (fraction truncated).",
+      "2. Perform addition: 4 + 2 = 6.",
+      "3. Assign to float x: 6.0.",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-052",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Unary Negation and Precedence",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "The following Java program is evaluated:\n```java\nint i = 4;\ndouble d = (-i) * (1 / i) + 3f;\n```\nWhat is the exact value stored in variable 'd'?",
+    "options": [
+      "-4.0",
+      "0.0",
+      "2.0",
+      "3.0 (or 3)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "In `1 / i`, both 1 and 4 are integers, so integer division 1 / 4 truncates to 0. Then `(-4) * 0 = 0`. Adding `3f` results in `0 + 3f = 3.0`. Option D is correct.",
+    "solutionSteps": [
+      "1. Evaluate (1 / i): 1 / 4 = 0 (integer division).",
+      "2. Multiply: (-4) * 0 = 0.",
+      "3. Add 3f: 0 + 3f = 3.0.",
+      "4. Option D matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-053",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Modulo Operator Precedence",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Evaluate the output of the following arithmetic expression obeying Java operator precedence:\n`int result = 20 % 4 * 3 + 2;`",
+    "options": [
+      "2",
+      "0",
+      "10",
+      "4"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Multiplicative operators (%, *, /) have higher precedence than addition (+), and evaluate left-to-right. First: 20 % 4 = 0. Next: 0 * 3 = 0. Finally: 0 + 2 = 2. Option A is correct.",
+    "solutionSteps": [
+      "1. Leftmost multiplicative operation: 20 % 4 = 0.",
+      "2. Next multiplicative operation: 0 * 3 = 0.",
+      "3. Addition: 0 + 2 = 2.",
+      "4. Option A is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-054",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Integer Division Truncation",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "The following Java code snippet is executed:\n```java\nshort s = 9;\nfloat x = 4 + s / 3;\n```\nWhat is the exact numeric value assigned to 'x'?",
+    "options": [
+      "7.0000",
+      "7.0 (or 7)",
+      "4.0",
+      "8.0"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In the expression `s / 3`, variable `s` (9) promotes to int, and `3` is an int literal. Performing integer division 9 / 3 truncates the fractional portion, resulting in 3. Adding 4 yields 7, which is converted to float 7.0 upon assignment to x. Option B is correct.",
+    "solutionSteps": [
+      "1. Evaluate integer division: s / 3 = 9 / 3 = 3 (fraction truncated).",
+      "2. Perform addition: 4 + 3 = 7.",
+      "3. Assign to float x: 7.0.",
+      "4. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-055",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Unary Negation and Precedence",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "The following Java program is evaluated:\n```java\nint i = 4;\ndouble d = (-i) * (1 / i) + 2f;\n```\nWhat is the exact value stored in variable 'd'?",
+    "options": [
+      "1.0",
+      "0.0",
+      "2.0 (or 2)",
+      "-4.0"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In `1 / i`, both 1 and 4 are integers, so integer division 1 / 4 truncates to 0. Then `(-4) * 0 = 0`. Adding `2f` results in `0 + 2f = 2.0`. Option C is correct.",
+    "solutionSteps": [
+      "1. Evaluate (1 / i): 1 / 4 = 0 (integer division).",
+      "2. Multiply: (-4) * 0 = 0.",
+      "3. Add 2f: 0 + 2f = 2.0.",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-056",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Modulo Operator Precedence",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "Evaluate the output of the following arithmetic expression obeying Java operator precedence:\n`int result = 23 % 4 * 3 + 2;`",
+    "options": [
+      "14",
+      "15",
+      "13",
+      "11"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Multiplicative operators (%, *, /) have higher precedence than addition (+), and evaluate left-to-right. First: 23 % 4 = 3. Next: 3 * 3 = 9. Finally: 9 + 2 = 11. Option D is correct.",
+    "solutionSteps": [
+      "1. Leftmost multiplicative operation: 23 % 4 = 3.",
+      "2. Next multiplicative operation: 3 * 3 = 9.",
+      "3. Addition: 9 + 2 = 11.",
+      "4. Option D is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-057",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Integer Division Truncation",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "The following Java code snippet is executed:\n```java\nshort s = 7;\nfloat x = 4 + s / 3;\n```\nWhat is the exact numeric value assigned to 'x'?",
+    "options": [
+      "6.0 (or 6)",
+      "6.3333",
+      "4.0",
+      "7.0"
+    ],
+    "correctAnswer": 0,
+    "explanation": "In the expression `s / 3`, variable `s` (7) promotes to int, and `3` is an int literal. Performing integer division 7 / 3 truncates the fractional portion, resulting in 2. Adding 4 yields 6, which is converted to float 6.0 upon assignment to x. Option A is correct.",
+    "solutionSteps": [
+      "1. Evaluate integer division: s / 3 = 7 / 3 = 2 (fraction truncated).",
+      "2. Perform addition: 4 + 2 = 6.",
+      "3. Assign to float x: 6.0.",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-058",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Unary Negation and Precedence",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "The following Java program is evaluated:\n```java\nint i = 4;\ndouble d = (-i) * (1 / i) + 1f;\n```\nWhat is the exact value stored in variable 'd'?",
+    "options": [
+      "0.0",
+      "1.0 (or 1)",
+      "1",
+      "-4.0"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In `1 / i`, both 1 and 4 are integers, so integer division 1 / 4 truncates to 0. Then `(-4) * 0 = 0`. Adding `1f` results in `0 + 1f = 1.0`. Option B is correct.",
+    "solutionSteps": [
+      "1. Evaluate (1 / i): 1 / 4 = 0 (integer division).",
+      "2. Multiply: (-4) * 0 = 0.",
+      "3. Add 1f: 0 + 1f = 1.0.",
+      "4. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-059",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Modulo Operator Precedence",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Evaluate the output of the following arithmetic expression obeying Java operator precedence:\n`int result = 19 % 4 * 3 + 2;`",
+    "options": [
+      "9",
+      "15",
+      "11",
+      "13"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Multiplicative operators (%, *, /) have higher precedence than addition (+), and evaluate left-to-right. First: 19 % 4 = 3. Next: 3 * 3 = 9. Finally: 9 + 2 = 11. Option C is correct.",
+    "solutionSteps": [
+      "1. Leftmost multiplicative operation: 19 % 4 = 3.",
+      "2. Next multiplicative operation: 3 * 3 = 9.",
+      "3. Addition: 9 + 2 = 11.",
+      "4. Option C is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-060",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Integer Division Truncation",
+    "difficulty": "Very Hard",
+    "questionType": "multiple_choice",
+    "questionText": "The following Java code snippet is executed:\n```java\nshort s = 5;\nfloat x = 4 + s / 3;\n```\nWhat is the exact numeric value assigned to 'x'?",
+    "options": [
+      "6.0",
+      "5.6667",
+      "4.0",
+      "5.0 (or 5)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "In the expression `s / 3`, variable `s` (5) promotes to int, and `3` is an int literal. Performing integer division 5 / 3 truncates the fractional portion, resulting in 1. Adding 4 yields 5, which is converted to float 5.0 upon assignment to x. Option D is correct.",
+    "solutionSteps": [
+      "1. Evaluate integer division: s / 3 = 5 / 3 = 1 (fraction truncated).",
+      "2. Perform addition: 4 + 1 = 5.",
+      "3. Assign to float x: 5.0.",
+      "4. Option D matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-061",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Unary Negation and Precedence",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "The following Java program is evaluated:\n```java\nint i = 4;\ndouble d = (-i) * (1 / i) + 4f;\n```\nWhat is the exact value stored in variable 'd'?",
+    "options": [
+      "4.0 (or 4)",
+      "0.0",
+      "3.0",
+      "-4.0"
+    ],
+    "correctAnswer": 0,
+    "explanation": "In `1 / i`, both 1 and 4 are integers, so integer division 1 / 4 truncates to 0. Then `(-4) * 0 = 0`. Adding `4f` results in `0 + 4f = 4.0`. Option A is correct.",
+    "solutionSteps": [
+      "1. Evaluate (1 / i): 1 / 4 = 0 (integer division).",
+      "2. Multiply: (-4) * 0 = 0.",
+      "3. Add 4f: 0 + 4f = 4.0.",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-062",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Modulo Operator Precedence",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Evaluate the output of the following arithmetic expression obeying Java operator precedence:\n`int result = 22 % 4 * 3 + 2;`",
+    "options": [
+      "10",
+      "8",
+      "12",
+      "11"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Multiplicative operators (%, *, /) have higher precedence than addition (+), and evaluate left-to-right. First: 22 % 4 = 2. Next: 2 * 3 = 6. Finally: 6 + 2 = 8. Option B is correct.",
+    "solutionSteps": [
+      "1. Leftmost multiplicative operation: 22 % 4 = 2.",
+      "2. Next multiplicative operation: 2 * 3 = 6.",
+      "3. Addition: 6 + 2 = 8.",
+      "4. Option B is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-063",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Integer Division Truncation",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "The following Java code snippet is executed:\n```java\nshort s = 8;\nfloat x = 4 + s / 3;\n```\nWhat is the exact numeric value assigned to 'x'?",
+    "options": [
+      "4.0",
+      "6.6667",
+      "6.0 (or 6)",
+      "7.0"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In the expression `s / 3`, variable `s` (8) promotes to int, and `3` is an int literal. Performing integer division 8 / 3 truncates the fractional portion, resulting in 2. Adding 4 yields 6, which is converted to float 6.0 upon assignment to x. Option C is correct.",
+    "solutionSteps": [
+      "1. Evaluate integer division: s / 3 = 8 / 3 = 2 (fraction truncated).",
+      "2. Perform addition: 4 + 2 = 6.",
+      "3. Assign to float x: 6.0.",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-064",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Unary Negation and Precedence",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "The following Java program is evaluated:\n```java\nint i = 4;\ndouble d = (-i) * (1 / i) + 3f;\n```\nWhat is the exact value stored in variable 'd'?",
+    "options": [
+      "-4.0",
+      "0.0",
+      "2.0",
+      "3.0 (or 3)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "In `1 / i`, both 1 and 4 are integers, so integer division 1 / 4 truncates to 0. Then `(-4) * 0 = 0`. Adding `3f` results in `0 + 3f = 3.0`. Option D is correct.",
+    "solutionSteps": [
+      "1. Evaluate (1 / i): 1 / 4 = 0 (integer division).",
+      "2. Multiply: (-4) * 0 = 0.",
+      "3. Add 3f: 0 + 3f = 3.0.",
+      "4. Option D matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-065",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Modulo Operator Precedence",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Evaluate the output of the following arithmetic expression obeying Java operator precedence:\n`int result = 18 % 4 * 3 + 2;`",
+    "options": [
+      "8",
+      "10",
+      "9",
+      "11"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Multiplicative operators (%, *, /) have higher precedence than addition (+), and evaluate left-to-right. First: 18 % 4 = 2. Next: 2 * 3 = 6. Finally: 6 + 2 = 8. Option A is correct.",
+    "solutionSteps": [
+      "1. Leftmost multiplicative operation: 18 % 4 = 2.",
+      "2. Next multiplicative operation: 2 * 3 = 6.",
+      "3. Addition: 6 + 2 = 8.",
+      "4. Option A is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-066",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Integer Division Truncation",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "The following Java code snippet is executed:\n```java\nshort s = 6;\nfloat x = 4 + s / 3;\n```\nWhat is the exact numeric value assigned to 'x'?",
+    "options": [
+      "6.0000",
+      "6.0 (or 6)",
+      "4.0",
+      "7.0"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In the expression `s / 3`, variable `s` (6) promotes to int, and `3` is an int literal. Performing integer division 6 / 3 truncates the fractional portion, resulting in 2. Adding 4 yields 6, which is converted to float 6.0 upon assignment to x. Option B is correct.",
+    "solutionSteps": [
+      "1. Evaluate integer division: s / 3 = 6 / 3 = 2 (fraction truncated).",
+      "2. Perform addition: 4 + 2 = 6.",
+      "3. Assign to float x: 6.0.",
+      "4. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-067",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Unary Negation and Precedence",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "The following Java program is evaluated:\n```java\nint i = 4;\ndouble d = (-i) * (1 / i) + 2f;\n```\nWhat is the exact value stored in variable 'd'?",
+    "options": [
+      "1.0",
+      "0.0",
+      "2.0 (or 2)",
+      "-4.0"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In `1 / i`, both 1 and 4 are integers, so integer division 1 / 4 truncates to 0. Then `(-4) * 0 = 0`. Adding `2f` results in `0 + 2f = 2.0`. Option C is correct.",
+    "solutionSteps": [
+      "1. Evaluate (1 / i): 1 / 4 = 0 (integer division).",
+      "2. Multiply: (-4) * 0 = 0.",
+      "3. Add 2f: 0 + 2f = 2.0.",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-068",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Modulo Operator Precedence",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "Evaluate the output of the following arithmetic expression obeying Java operator precedence:\n`int result = 21 % 4 * 3 + 2;`",
+    "options": [
+      "7",
+      "6",
+      "11",
+      "5"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Multiplicative operators (%, *, /) have higher precedence than addition (+), and evaluate left-to-right. First: 21 % 4 = 1. Next: 1 * 3 = 3. Finally: 3 + 2 = 5. Option D is correct.",
+    "solutionSteps": [
+      "1. Leftmost multiplicative operation: 21 % 4 = 1.",
+      "2. Next multiplicative operation: 1 * 3 = 3.",
+      "3. Addition: 3 + 2 = 5.",
+      "4. Option D is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-069",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Integer Division Truncation",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "The following Java code snippet is executed:\n```java\nshort s = 9;\nfloat x = 4 + s / 3;\n```\nWhat is the exact numeric value assigned to 'x'?",
+    "options": [
+      "7.0 (or 7)",
+      "7.0000",
+      "4.0",
+      "8.0"
+    ],
+    "correctAnswer": 0,
+    "explanation": "In the expression `s / 3`, variable `s` (9) promotes to int, and `3` is an int literal. Performing integer division 9 / 3 truncates the fractional portion, resulting in 3. Adding 4 yields 7, which is converted to float 7.0 upon assignment to x. Option A is correct.",
+    "solutionSteps": [
+      "1. Evaluate integer division: s / 3 = 9 / 3 = 3 (fraction truncated).",
+      "2. Perform addition: 4 + 3 = 7.",
+      "3. Assign to float x: 7.0.",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-070",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Unary Negation and Precedence",
+    "difficulty": "Very Hard",
+    "questionType": "multiple_choice",
+    "questionText": "The following Java program is evaluated:\n```java\nint i = 4;\ndouble d = (-i) * (1 / i) + 1f;\n```\nWhat is the exact value stored in variable 'd'?",
+    "options": [
+      "0.0",
+      "1.0 (or 1)",
+      "1",
+      "-4.0"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In `1 / i`, both 1 and 4 are integers, so integer division 1 / 4 truncates to 0. Then `(-4) * 0 = 0`. Adding `1f` results in `0 + 1f = 1.0`. Option B is correct.",
+    "solutionSteps": [
+      "1. Evaluate (1 / i): 1 / 4 = 0 (integer division).",
+      "2. Multiply: (-4) * 0 = 0.",
+      "3. Add 1f: 0 + 1f = 1.0.",
+      "4. Option B matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-071",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Modulo Operator Precedence",
+    "difficulty": "Easy",
+    "questionType": "multiple_choice",
+    "questionText": "Evaluate the output of the following arithmetic expression obeying Java operator precedence:\n`int result = 17 % 4 * 3 + 2;`",
+    "options": [
+      "7",
+      "6",
+      "5",
+      "8"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Multiplicative operators (%, *, /) have higher precedence than addition (+), and evaluate left-to-right. First: 17 % 4 = 1. Next: 1 * 3 = 3. Finally: 3 + 2 = 5. Option C is correct.",
+    "solutionSteps": [
+      "1. Leftmost multiplicative operation: 17 % 4 = 1.",
+      "2. Next multiplicative operation: 1 * 3 = 3.",
+      "3. Addition: 3 + 2 = 5.",
+      "4. Option C is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-072",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Integer Division Truncation",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "The following Java code snippet is executed:\n```java\nshort s = 7;\nfloat x = 4 + s / 3;\n```\nWhat is the exact numeric value assigned to 'x'?",
+    "options": [
+      "7.0",
+      "6.3333",
+      "4.0",
+      "6.0 (or 6)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "In the expression `s / 3`, variable `s` (7) promotes to int, and `3` is an int literal. Performing integer division 7 / 3 truncates the fractional portion, resulting in 2. Adding 4 yields 6, which is converted to float 6.0 upon assignment to x. Option D is correct.",
+    "solutionSteps": [
+      "1. Evaluate integer division: s / 3 = 7 / 3 = 2 (fraction truncated).",
+      "2. Perform addition: 4 + 2 = 6.",
+      "3. Assign to float x: 6.0.",
+      "4. Option D matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-073",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Unary Negation and Precedence",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "The following Java program is evaluated:\n```java\nint i = 4;\ndouble d = (-i) * (1 / i) + 4f;\n```\nWhat is the exact value stored in variable 'd'?",
+    "options": [
+      "4.0 (or 4)",
+      "0.0",
+      "3.0",
+      "-4.0"
+    ],
+    "correctAnswer": 0,
+    "explanation": "In `1 / i`, both 1 and 4 are integers, so integer division 1 / 4 truncates to 0. Then `(-4) * 0 = 0`. Adding `4f` results in `0 + 4f = 4.0`. Option A is correct.",
+    "solutionSteps": [
+      "1. Evaluate (1 / i): 1 / 4 = 0 (integer division).",
+      "2. Multiply: (-4) * 0 = 0.",
+      "3. Add 4f: 0 + 4f = 4.0.",
+      "4. Option A matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-074",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Modulo Operator Precedence",
+    "difficulty": "Hard",
+    "questionType": "multiple_choice",
+    "questionText": "Evaluate the output of the following arithmetic expression obeying Java operator precedence:\n`int result = 20 % 4 * 3 + 2;`",
+    "options": [
+      "0",
+      "2",
+      "10",
+      "4"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Multiplicative operators (%, *, /) have higher precedence than addition (+), and evaluate left-to-right. First: 20 % 4 = 0. Next: 0 * 3 = 0. Finally: 0 + 2 = 2. Option B is correct.",
+    "solutionSteps": [
+      "1. Leftmost multiplicative operation: 20 % 4 = 0.",
+      "2. Next multiplicative operation: 0 * 3 = 0.",
+      "3. Addition: 0 + 2 = 2.",
+      "4. Option B is correct."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  },
+  {
+    "id": "dt-075",
+    "module": "core",
+    "section": "Data Types",
+    "topic": "Integer Division & Order of Operations",
+    "subtopic": "Integer Division Truncation",
+    "difficulty": "Medium",
+    "questionType": "multiple_choice",
+    "questionText": "The following Java code snippet is executed:\n```java\nshort s = 5;\nfloat x = 4 + s / 3;\n```\nWhat is the exact numeric value assigned to 'x'?",
+    "options": [
+      "4.0",
+      "5.6667",
+      "5.0 (or 5)",
+      "6.0"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In the expression `s / 3`, variable `s` (5) promotes to int, and `3` is an int literal. Performing integer division 5 / 3 truncates the fractional portion, resulting in 1. Adding 4 yields 5, which is converted to float 5.0 upon assignment to x. Option C is correct.",
+    "solutionSteps": [
+      "1. Evaluate integer division: s / 3 = 5 / 3 = 1 (fraction truncated).",
+      "2. Perform addition: 4 + 1 = 5.",
+      "3. Assign to float x: 5.0.",
+      "4. Option C matches."
+    ],
+    "estimatedTime": 75,
+    "sourceType": "original",
+    "sourceReference": "Original dMAT Data Types cognitive reasoning problem",
+    "tags": [
+      "data_types",
+      "memory",
+      "primitives",
+      "core_module"
+    ],
+    "enabled": true
+  }
+]
